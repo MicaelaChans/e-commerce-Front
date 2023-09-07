@@ -14,7 +14,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route
           path="/iniciar-sesion"
-          el
+          element={<Navigate replace to="/register" />}
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
