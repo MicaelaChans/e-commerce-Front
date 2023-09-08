@@ -1,0 +1,34 @@
+/* NavBar CSS */
+.title {
+  font-size: 15rem;
+}
+.navBarItems {
+  font-size: 1.7rem;
+  color: black;
+}
+
+/* ScrollSection CSS */
+
+.scroll-section-outer {
+  overflow: hidden;
+}
+.scroll-section-inner {
+  height: 100vh;
+  width: 400vw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.scroll-section {
+  max-width: 80vh;
+}
+.scroll-img {
+  height: 80vh;
+}
+/* List of Products CSS */
+
+/* Products CSS */
+
+/* Contact CSS */
+
+/* About Us CSS */
