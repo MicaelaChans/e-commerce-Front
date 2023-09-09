@@ -8,10 +8,11 @@ import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/partials/ContactUs";
 import Cart from "./components/Cart";
 import Product from "./components/Product"
-
+import NavBar from "./components/partials/NavBar";
 function App() {
   return (
     <>
+    <NavBar />
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/registro" element={<Navigate replace to="/register" />} />

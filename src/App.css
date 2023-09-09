@@ -1,12 +1,13 @@
 /* NavBar CSS */
-.title {
-  font-size: 15rem;
-}
+
 .navBarItems {
   font-size: 1.7rem;
   color: black;
 }
-
+/* Hero CSS */
+.hero-title {
+  font-size: 15rem;
+}
 /* ScrollSection CSS */
 
 .scroll-section-outer {

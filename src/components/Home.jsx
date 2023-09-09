@@ -3,6 +3,7 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import NavBarr from "./partials/NavBar";
+import Hero from "./partials/Hero";
 import ScrollingSection from "./partials/ScrollingSection";
 function Home() {
   // const navigate = useNavigate();
@@ -14,11 +15,9 @@ function Home() {
 
   return (
     <>
-      <NavBarr />
+      <Hero />
       <ScrollingSection />
-      <div className="container">
-       
-      </div>
+      <div className="container"></div>
       <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti vero
         dicta corrupti quo reprehenderit, necessitatibus fugiat excepturi

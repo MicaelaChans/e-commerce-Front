@@ -1,21 +1,41 @@
-import { NavLink } from "react-router-dom";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 function NavBar() {
   return (
-    <div className="d-flex justify-content-between">
-      <div>
-        <NavLink>
-          <i className="bi bi-justify navBarItems ms-3"></i>
-        </NavLink>
-      </div>
-      <div>
-        <h2 className="title App-header transition bignadpis">Drachen</h2>
-      </div>
-      <div>
-        <NavLink>
-          <i className="bi bi-cart3 navBarItems me-3"></i>
-        </NavLink>
-      </div>
-    </div>
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="/">Drachen</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <NavDropdown title="Our Products" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">
+                Wood Stoves
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Pellet Stoves
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">
+                Accessories
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                All Products
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+        <Nav>
+          <Nav.Link href="/login">Login</Nav.Link>
+          <Nav.Link href="/contactUs">Contacto</Nav.Link>
+          <Nav.Link href="/aboutUs">About Us</Nav.Link>
+
+          <i className="bi bi-cart3 mt-2"></i>
+        </Nav>
+      </Container>
+    </Navbar>
   );
 }
 
