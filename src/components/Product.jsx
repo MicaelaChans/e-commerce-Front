@@ -8,17 +8,7 @@ import { getProducts } from "../redux/productSlice";
 function Product() {
 
   const products = useSelector((state) => state.products);
-  const [wood, setWood] = useState([]);
-  const [pellets, setPellets] = useState([]);
-  const [accesories, setAccesories] = useState([]);
   const dispatch = useDispatch();
-
-  function getProdByCat(allProducts,category){
-     const res = [];
-     for(let i=0; i<productsList.length; i++){
-       
-     }
-  }
 
   useEffect(()=>{
     const listProducts = async () => {
@@ -31,10 +21,10 @@ function Product() {
     listProducts();
   },[])
 
-  console.log(products)
-
+ const wood = products.filter((product)=>product.category.name == "wood");
+ const pellet = products.filter((product)=>product.category.name == "pellet");
+ const accessories = products.filter((product)=>product.category.name == "accessories");
  
-
   return (
     <div className="container">
       <h1>PRODUCTS</h1>
