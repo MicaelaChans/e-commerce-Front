@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import UsersList from "./UsersList";
+
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import NavBarr from "./partials/NavBar";
@@ -17,7 +17,7 @@ function Home() {
       <NavBarr />
       <ScrollingSection />
       <div className="container">
-        <UsersList />
+       
       </div>
       <div>
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti vero

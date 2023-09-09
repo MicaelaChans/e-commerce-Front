@@ -4,11 +4,8 @@ const productSlice = createSlice({
   name: "product",
   initialState: [],
   reducers: {
-    login(state, action) {
+    getProducts(state, action) {
       return action.payload;
-    },
-    logout(state, action) {
-      return state;
     },
   },
 });
