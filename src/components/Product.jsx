@@ -8,7 +8,17 @@ import { getProducts } from "../redux/productSlice";
 function Product() {
 
   const products = useSelector((state) => state.products);
+  const [wood, setWood] = useState([]);
+  const [pellets, setPellets] = useState([]);
+  const [accesories, setAccesories] = useState([]);
   const dispatch = useDispatch();
+
+  function getProdByCat(allProducts,category){
+     const res = [];
+     for(let i=0; i<productsList.length; i++){
+       
+     }
+  }
 
   useEffect(()=>{
     const listProducts = async () => {
