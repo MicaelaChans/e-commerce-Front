@@ -11,5 +11,5 @@ const productSlice = createSlice({
 });
 
 const { actions, reducer } = productSlice;
-export const { login, logout } = actions;
+export const { getProducts } = actions;
 export default reducer;

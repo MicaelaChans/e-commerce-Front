@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import NavBarr from "./partials/NavBar";
 import ScrollingSection from "./partials/ScrollingSection";
 function Home() {
