@@ -31,6 +31,10 @@ function Product() {
  const firstCategory = products.filter((product)=>product.category.name == "wood");
  const secondCategory = products.filter((product)=>product.category.name == "pellet");
  const thirdCategory = products.filter((product)=>product.category.name == "accessories");
+ const cantFirstCategory = firstCategory.length;
+ const cantSecondCategory = secondCategory.length;
+ const cantThirdCategory = thirdCategory.length;
+ 
  
  const responsive = {
   desktop: {
@@ -41,7 +45,7 @@ function Product() {
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 2,
-    slidesToSlide: 2 // optional, default to 1.
+    slidesToSlide: 1 // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
@@ -58,8 +62,8 @@ function Product() {
         <Carousel responsive={responsive}>    
         {firstCategory.map((product, id = product.id)=>(
           <div key={id} className="mt-3">
-           <h6 style={{marginLeft:"50px"}}>{product.name}</h6 >
-           <img src={product.image} alt={product.name} style={{width:"150px"}}/>
+           <h6 style={{marginLeft:"35%"}}>{product.name}</h6 >
+           <img src={product.image} alt={product.name} style={{width:"85%"}}/>
          </div>     
         ))}     
          </Carousel>
@@ -69,21 +73,23 @@ function Product() {
         <Carousel responsive={responsive}>   
         {secondCategory.map((product, id = product.id)=>(
           <div key={id} className="mt-3">
-           <h6 style={{marginLeft:"50px"}}>{product.name}</h6>
-           <img src={product.image} alt={product.name} style={{width:"150px"}}/>
+           <h6 style={{marginLeft:"35%"}}>{product.name}</h6>
+           <img src={product.image} alt={product.name} style={{width:"85%"}}/>
          </div>
         ))}
         </Carousel>
       </div>
       <div className="row my-5">
         <h2>Accesories</h2> 
-        <Carousel responsive={responsive} style={{display:"none"}}> 
+        <Carousel responsive={responsive} > 
+        
         {thirdCategory.map((product, id = product.id)=>(
           <div key={id} className="mt-3">
-           <h6>{product.name}</h6>
-           <img src={product.image} alt={product.name} style={{width:"150px"}}/>
+           <h6 style={{marginLeft:"35%"}}>{product.name}</h6>
+           <img src={product.image} alt={product.name} style={{width:"85%"}}/>
          </div>
         ))}
+        
         </Carousel>
       </div>
     </div>
