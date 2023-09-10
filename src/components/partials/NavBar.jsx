@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -31,7 +32,9 @@ function NavBar() {
           <Nav.Link Link="/login">Login</Nav.Link>
           <Nav.Link Link="/contact">Contacto</Nav.Link>
           <Nav.Link Link="/aboutUs">About Us</Nav.Link>
-          <i className="bi bi-cart3 mt-2"></i>
+          <Nav.Link Link="/cart">
+            <i className="bi bi-cart3 mt-2"></i>
+          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>
