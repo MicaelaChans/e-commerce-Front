@@ -3,10 +3,17 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getProducts } from "../redux/productSlice";
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+
+
+   
+  
 
 
 function Product() {
-
+   
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
@@ -24,40 +31,61 @@ function Product() {
  const firstCategory = products.filter((product)=>product.category.name == "wood");
  const secondCategory = products.filter((product)=>product.category.name == "pellet");
  const thirdCategory = products.filter((product)=>product.category.name == "accessories");
-
- console.log(firstCategory[0].image)
  
+ const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4,
+    slidesToSlide: 1 // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2 // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
+  }
+};
+
+
   return (
-    <div className="container">
-      
-      <div className="row mt-3">
+    <div className="container">    
+     <div className="row my-5">
         <h2>Wood stoves</h2> 
+        <Carousel responsive={responsive}>    
         {firstCategory.map((product, id = product.id)=>(
-          <div key={id} className="col-3 mt-3 text-center">
-           <h6 >{product.name}</h6 >
+          <div key={id} className="mt-3">
+           <h6 style={{marginLeft:"50px"}}>{product.name}</h6 >
            <img src={product.image} alt={product.name} style={{width:"150px"}}/>
-         </div>
-        ))}
+         </div>     
+        ))}     
+         </Carousel>
       </div>
-      <div className="row mt-5">
+      <div className="row my-5">
         <h2>Pellet stoves</h2> 
+        <Carousel responsive={responsive}>   
         {secondCategory.map((product, id = product.id)=>(
-          <div key={id} className="col mt-3 text-center">
-           <h6 >{product.name}</h6>
+          <div key={id} className="mt-3">
+           <h6 style={{marginLeft:"50px"}}>{product.name}</h6>
            <img src={product.image} alt={product.name} style={{width:"150px"}}/>
          </div>
         ))}
+        </Carousel>
       </div>
-      <div className="row mt-5">
+      <div className="row my-5">
         <h2>Accesories</h2> 
+        <Carousel responsive={responsive} style={{display:"none"}}> 
         {thirdCategory.map((product, id = product.id)=>(
-          <div key={id} className="col mt-3 text-center">
+          <div key={id} className="mt-3">
            <h6>{product.name}</h6>
            <img src={product.image} alt={product.name} style={{width:"150px"}}/>
          </div>
         ))}
+        </Carousel>
       </div>
-      
     </div>
   );
 }
