@@ -5,12 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { getProducts } from "../redux/productSlice";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-
-
-
-   
-  
-
+import "../App.css"
 
 function Product() {
    
@@ -56,40 +51,63 @@ function Product() {
 
 
   return (
-    <div className="container">    
+    <div className="container" >    
      <div className="row my-5">
         <h2>Wood stoves</h2> 
         <Carousel responsive={responsive}>    
         {firstCategory.map((product, id = product.id)=>(
-          <div key={id} className="mt-3">
-           <h6 style={{marginLeft:"35%"}}>{product.name}</h6 >
-           <img src={product.image} alt={product.name} style={{width:"85%"}}/>
-         </div>     
+          <div key={id} >
+            <div  className="mt-4 border rounded-3 mx-3 p-4 bg-white shadow card-product" >
+              <img className="image-product" src={product.image} alt={product.name} />
+              <Link className="btn btn-secondary link-product">Go to page</Link>  
+           </div> 
+           <h5 className="text-center mt-2" >{product.name} - {product.otherProperties.nominalPower}KW</h5>
+           <hr  className="hr-product mt-3"/> 
+           <div className="d-flex justify-content-center mt-3 p-sizes-product"> 
+             <p className="text-center mx-2">Height: {product.otherProperties.height}</p>
+             <p className="text-center mx-2 "> Width: {product.otherProperties.width}</p>
+             <p className="text-center mx-2"> Depth: {product.otherProperties.depth}</p>
+           </div>       
+         </div>
         ))}     
-         </Carousel>
-      </div>
+        </Carousel>
+     </div>
       <div className="row my-5">
         <h2>Pellet stoves</h2> 
         <Carousel responsive={responsive}>   
         {secondCategory.map((product, id = product.id)=>(
-          <div key={id} className="mt-3">
-           <h6 style={{marginLeft:"35%"}}>{product.name}</h6>
-           <img src={product.image} alt={product.name} style={{width:"85%"}}/>
-         </div>
+          <div key={id} >
+          <div  className="mt-4 border rounded-3 mx-3 p-4 bg-white shadow card-product" >
+            <img className="image-product" src={product.image} alt={product.name} />
+            <Link className="btn btn-secondary link-product">Go to page</Link>  
+         </div> 
+         <h5 className="text-center mt-2" >{product.name} - {product.otherProperties.nominalPower}KW</h5>
+         <hr  className="hr-product mt-3"/> 
+         <div className="d-flex justify-content-center mt-3 p-sizes-product"> 
+           <p className="text-center mx-2">Height: {product.otherProperties.height}</p>
+           <p className="text-center mx-2 "> Width: {product.otherProperties.width}</p>
+           <p className="text-center mx-2"> Depth: {product.otherProperties.depth}</p>
+         </div>       
+       </div>
         ))}
         </Carousel>
       </div>
       <div className="row my-5">
         <h2>Accesories</h2> 
-        <Carousel responsive={responsive} > 
-        
+        <Carousel responsive={responsive} >        
         {thirdCategory.map((product, id = product.id)=>(
-          <div key={id} className="mt-3">
-           <h6 style={{marginLeft:"35%"}}>{product.name}</h6>
-           <img src={product.image} alt={product.name} style={{width:"85%"}}/>
-         </div>
-        ))}
-        
+          <div key={id} >
+            <div  className="mt-4 border rounded-3 mx-3 p-4 bg-white shadow card-product" >
+              <img className="image-product" src={product.image} alt={product.name} />
+              <Link className="btn btn-secondary link-product">Go to page</Link>  
+            </div> 
+            <h5 className="text-center mt-2" >{product.name}</h5>
+            <hr  className="hr-product mt-3"/> 
+            <div className="d-flex justify-content-center mt-3 p-sizes-product"> 
+              <p className="text-center mx-2">{product.description}</p>        
+            </div>       
+          </div>        
+        ))}       
         </Carousel>
       </div>
     </div>
