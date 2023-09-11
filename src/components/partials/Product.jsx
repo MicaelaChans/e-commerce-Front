@@ -20,7 +20,6 @@ function Product() {
     getOneProduct();
   }, []);
 
-   console.log(product)
    return  (
     <div>
       <h1>{product.name}</h1>
