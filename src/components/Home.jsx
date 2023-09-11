@@ -1,12 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import NavBarr from "./partials/NavBar";
 import Hero from "./partials/Hero";
 import ScrollingSection from "./partials/ScrollingSection";
 import Footer from "./partials/Footer";
-
+import ProductsList from "./ProductsList";
 function Home() {
   // const navigate = useNavigate();
   // const user = useSelector((state) => state.user);
@@ -38,6 +33,7 @@ function Home() {
         delectus consequatur voluptate illum! Nulla minus sequi debitis, ea
         repellat officiis sunt quod.
       </div>
+      <ProductsList />
       <Footer />
     </>
   );

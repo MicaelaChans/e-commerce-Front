@@ -7,9 +7,12 @@ const productSlice = createSlice({
     getProducts(state, action) {
       return action.payload;
     },
+    getProduct(state, action) {
+      return action.payload;
+    },
   },
 });
 
 const { actions, reducer } = productSlice;
-export const { getProducts } = actions;
+export const { getProducts, getProduct } = actions;
 export default reducer;

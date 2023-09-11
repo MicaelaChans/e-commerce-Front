@@ -7,12 +7,13 @@ import NotFound from "./components/NotFound";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/partials/ContactUs";
 import Cart from "./components/Cart";
-import ProductsList from "./components/ProductsList"
+import ProductsList from "./components/ProductsList";
 import NavBar from "./components/partials/NavBar";
+import Product from "./components/partials/Product";
 function App() {
   return (
     <>
-    <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/registro" element={<Navigate replace to="/register" />} />
@@ -32,6 +33,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/carrito" element={<Navigate replace to="/cart" />} />
         <Route path="/productsList" element={<ProductsList />} />
+        <Route path="/products/:id" element={<Product />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
