@@ -9,7 +9,7 @@ import ContactUs from "./components/partials/ContactUs";
 import Cart from "./components/Cart";
 import ProductsList from "./components/ProductsList";
 import NavBar from "./components/partials/NavBar";
-import Product from "./components/partials/Product";
+import ProductPage from "./components/ProductPage";
 function App() {
   return (
     <>
@@ -33,7 +33,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/carrito" element={<Navigate replace to="/cart" />} />
         <Route path="/productsList" element={<ProductsList />} />
-        <Route path="/products/:id" element={<Product />} />
+        <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
