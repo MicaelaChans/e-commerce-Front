@@ -52,7 +52,10 @@
 }
 .card-product {
   position: relative;
+  
 }
+
+
 
 /* One Product CSS */
 .one-product-background {
@@ -74,17 +77,18 @@
   padding: 0;
 }
 
-body {
-  background-color: #eaeaea;
-}
-
-#cartContainer {
-  background-color: white;
+.productImg {
+  width: 170px;
+  height: 150px;
 }
 
 #purchase {
-  display: flex;
-  margin-left: auto;
+  width: 100%;
+}
+
+#trashButton {
+  border: 0;
+  background-color: transparent;
 }
 
 /* Footer CSS */
