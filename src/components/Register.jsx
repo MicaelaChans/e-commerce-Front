@@ -23,18 +23,14 @@ function Register() {
   };
 
   return (
-    <div className="container" style={{width:"80%"}}>
-      <div className="row border rounded-5 shadow">
-        <div className=" col-sm-7 d-flex justify-content-center border align-items-center">
-          <div>
-          <img className="pt-5" src="./src/assets/drachen_logo_black.png" alt="drachen logo" />
-
-          </div>
-
+    <div className="body-register d-flex  align-items-center">
+    <div className="container d-flex justify-content-center" >
+      <div className="row  rounded-5 shadow container-register">
+        <div className=" d-none d-md-block col-md-7 py-5 border d-flex justify-content-center  align-items-center">
+            <img className="pt-5 image-register" src="./src/assets/drachen_logo_black.png" alt="drachen logo"  />         
         </div>
-        <div className="col col-sm-5 d-flex justify-content-center flex-column align-items-center">
-          
-            <h2 className="my-5">Sign up!</h2>
+        <div className="col py-5 px-5 px-lg-5 px-md-3 col-md-5 d-flex justify-content-center flex-column">         
+            <h2 className="mb-3 pt-3">Sign up!</h2>
             <form method="POST" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <input
@@ -96,7 +92,11 @@ function Register() {
                     onChange={(e) => setPassword(e.target.value)}
                   />
               </div>
-              <button type="submit">Sign up</button>
+              <div className="d-grid gap-2 pb-3  mt-5">
+              <button className="btn btn-primary rounded-5" type="submit">Sign up</button>
+
+              </div>
+              
             </form>
           
           
@@ -104,7 +104,7 @@ function Register() {
         </div>
       </div>
     </div>
-    
+    </div>
    
   );
 }
