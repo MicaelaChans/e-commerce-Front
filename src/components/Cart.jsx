@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { NavLink } from "react-bootstrap";
@@ -32,8 +31,8 @@ function Cart() {
             <div className="col-6 mt-3 p-3">
               <h2 className="d-flex fs-4">
                 product.name
-                <button type="submit">
-                  <i className="bi bi-trash3 ms-auto"></i>
+                <button id="trashButton" type="submit">
+                  <i className="bi bi-trash3 m-auto"></i>
                 </button>
               </h2>
               <h5>product.price</h5>

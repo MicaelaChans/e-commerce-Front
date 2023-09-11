@@ -80,6 +80,11 @@
   width: 100%;
 }
 
+#trashButton {
+  border: 0;
+  background-color: transparent;
+}
+
 /* Footer CSS */
 
 #footer {
