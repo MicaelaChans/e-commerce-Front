@@ -84,6 +84,16 @@ body {
   margin-left: auto;
 }
 
+/* Footer CSS */
+
+#footer {
+  background-color: black;
+  max-width: 100%;
+  height: auto;
+  background-repeat: no-repeat;
+  color: white;
+}
+
 /* Not Found */
 
 .notFound {

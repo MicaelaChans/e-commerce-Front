@@ -5,6 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 import NavBarr from "./partials/NavBar";
 import Hero from "./partials/Hero";
 import ScrollingSection from "./partials/ScrollingSection";
+import Footer from "./partials/Footer";
+
 function Home() {
   // const navigate = useNavigate();
   // const user = useSelector((state) => state.user);
@@ -36,14 +38,7 @@ function Home() {
         delectus consequatur voluptate illum! Nulla minus sequi debitis, ea
         repellat officiis sunt quod.
       </div>
-      <img
-        src="https://imgs.elpais.com.uy/dims4/default/888d428/2147483647/strip/true/crop/931x640+15+0/resize/2880x1980!/quality/90/?url=https%3A%2F%2Fel-pais-uruguay-production-web.s3.amazonaws.com%2Fbrightspot%2Fuploads%2F2019%2F07%2F12%2F5d28957b4b184.jpeg"
-        alt=""
-      />
-      <img
-        src="https://imgs.elpais.com.uy/dims4/default/888d428/2147483647/strip/true/crop/931x640+15+0/resize/2880x1980!/quality/90/?url=https%3A%2F%2Fel-pais-uruguay-production-web.s3.amazonaws.com%2Fbrightspot%2Fuploads%2F2019%2F07%2F12%2F5d28957b4b184.jpeg"
-        alt=""
-      />
+      <Footer />
     </>
   );
 }

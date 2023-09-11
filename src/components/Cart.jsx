@@ -1,4 +1,21 @@
+import React from "react";
+import axios from "axios";
+import { useSelector } from "react-redux";
+
 function Cart() {
+  const product = useSelector((state) => state.product);
+
+  const handleDelete = async (productId) => {
+    const response = await axios({
+      url: `http://localhost:8000/product/${productId}`,
+      method: "DELETE",
+      data: { productId },
+      headers: {
+        //Authorization: "Bearer " + (user && user.token),
+      },
+    });
+  };
+
   return (
     <div className="container rounded shadow mt-5 p-4" id="cartContainer">
       <h2>Cart</h2>
@@ -10,9 +27,7 @@ function Cart() {
           />
         </div>
         <div className="col-6 mt-3 p-3">
-          <h2 className="d-flex">
-            product.name <i className="bi bi-trash3 ms-auto"></i>
-          </h2>
+          <h2 className="d-flex">product.name</h2>
           <h5>Quantity:</h5>
           <select name="number" id="number">
             <option value="1">1</option>
@@ -28,3 +43,11 @@ function Cart() {
   );
 }
 export default Cart;
+/*{`${window.location.href}` ===
+            `http://localhost:5173/${product._id}` ? (
+              <button type="submit" onClick={() => handleDelete(product._id)}>
+                <i className="bi bi-trash3 ms-auto"></i>
+              </button>
+            ) : (
+              ""
+            )}32 39*/
