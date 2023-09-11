@@ -7,7 +7,7 @@ import NotFound from "./components/NotFound";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/partials/ContactUs";
 import Cart from "./components/Cart";
-import Product from "./components/Product"
+import ProductsList from "./components/ProductsList"
 import NavBar from "./components/partials/NavBar";
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
         />
         <Route path="/cart" element={<Cart />} />
         <Route path="/carrito" element={<Navigate replace to="/cart" />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/productsList" element={<ProductsList />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

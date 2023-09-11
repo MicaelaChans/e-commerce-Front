@@ -22,7 +22,7 @@ function Product() {
     }; 
     listProducts();
   },[])
-
+console.log(products)
  const firstCategory = products.filter((product)=>product.category.name == "wood");
  const secondCategory = products.filter((product)=>product.category.name == "pellet");
  const thirdCategory = products.filter((product)=>product.category.name == "accessories");
