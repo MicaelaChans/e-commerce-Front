@@ -24,6 +24,57 @@
   max-width: 80vw;
 }
 
+/* Home CSS */
+
+.section-white {
+  background-color: #FFFFFF;
+}
+.box-cyan {
+  position: relative;
+  background-color: #F0F7FD;
+}
+.box-cyan h3 {
+  position: absolute;
+  left: 60px;
+  top: -20px;
+}
+
+.content-icon {
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.box-cyan h4 {
+  min-height: 75px;
+}
+.box-cyan p {
+  min-height: 10px;
+}
+.icon-calefaccion {
+  width: 75px;
+  height: 155px;
+}
+.icon-sist-mile {
+  width: 88px;
+  height: 112px;
+}
+.btn-green {
+  color: #FFFFFF;
+  background-color: #679186;
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .btn-green {
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+  }
+}
+.btn-green:hover {
+  background-color: #496a61;
+  transition: 0.35s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* List of Products CSS */
 
 /* Products CSS */
