@@ -26,6 +26,8 @@
 .scroll-img {
   height: 80vh;
 }
+
+
 /* List of Products CSS */
 
 /* Products CSS */
@@ -54,7 +56,9 @@
 }
 .card-product{
   position: relative;
+  
 }
+
 
 
 /* Contact CSS */

@@ -96,7 +96,7 @@ function Product() {
         <h2>Accesories</h2> 
         <Carousel responsive={responsive} >        
         {thirdCategory.map((product, id = product.id)=>(
-          <div key={id} >
+          <div  key={id} >
             <div  className="mt-4 border rounded-3 mx-3 p-4 bg-white shadow card-product" >
               <img className="image-product" src={product.image} alt={product.name} />
               <Link className="btn btn-secondary link-product">Go to page</Link>  
