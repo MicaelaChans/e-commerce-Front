@@ -13,7 +13,7 @@ function ScrollingSection() {
       sectionRef.current,
       { translateX: 0 },
       {
-        translateX: "-300vw",
+        translateX: "-180vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -33,14 +33,10 @@ function ScrollingSection() {
   return (
     <section className="scroll-section-outer">
       <div ref={triggerRef}>
-        <div ref={sectionRef} className="scroll-secction-inner">
-          <div className="scroll-section">
-            <img
-              className="scroll-img"
-              src="https://cdn.elobservador.com.uy/072019/1563303471992.jpg"
-              alt=""
-            />
-          </div>
+        <div
+          ref={sectionRef}
+          className="scroll-section-inner position-relative d-flex"
+        >
           <div className="scroll-section">
             <img
               className="scroll-img"
