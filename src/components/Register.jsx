@@ -18,6 +18,7 @@ function Register() {
    await axios({
       method : "POST",
       url: `http://localhost:8000/register`, 
+      data: {firstname,lastname,email,phone,adress,password},
     });  
     navigate("/login")    
   };
