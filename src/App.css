@@ -116,7 +116,14 @@
 }
 .image-register{
   width: 100%;
+ 
 }
+.image-register-container{
+  height: 100%;
+  background-image:
+  linear-gradient(to bottom,rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("./assets/flame-circle.jpg");
+}
+
 
 /* One Product CSS */
 .one-product-background {
