@@ -21,14 +21,25 @@ function ProductPage() {
   }, []);
 
   return (
-    <div className="container-product-page container">
-      <div className="row h-100">
+    <div className="container-product-page container d-flex flex-column justify-content-center align-items-center">
+      <div className="row shadow rounded-2">
+        <div className="col-6 rounded-start p-0">
+          <div className="one-product-background rounded-start">
+            <img
+              className="product-in-background"
+              src={product.image}
+              alt={product.name}
+            />
+          </div>
+        </div>
         <div className="col-6 text-center">
-          <div className="text-product-page d-flex flex-column justify-content-center align-items-center">
-            <h2>{product.name}</h2>
-            <p>{product.description}</p>
-            <div>
-              <h4>Detailed info:</h4>
+          <div className="text-product-page d-flex flex-column justify-content-evenly align-items-center">
+            <h2 className="m-0">{product.name}</h2>
+            <p className="m-0 description-product-page">
+              {product.description}
+            </p>
+            {/* <div>
+              <h5>Detailed info:</h5>
               <li className="list-group">
                 <ul className="m-0 list-group-item">
                   Height: {product.otherProperties.height}
@@ -49,22 +60,20 @@ function ProductPage() {
                   Consumption: {product.otherProperties.consumption}
                 </ul>
               </li>
-            </div>
+            </div> */}
             <div className="d-flex justify-align-items align-items-center">
-              <p className="m-0">US$ {product.price}</p>
-              <button className="btn">Add to Cart</button>
+              <p className="m-0 me-3 fs-4">US$ {product.price}</p>
+              <button className="btn buy-button border-0 text-white">
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
-        <div className="col-6">
-          <div className="one-product-background">
-            <img
-              className="product-in-background"
-              src={product.image}
-              alt={product.name}
-            />
-          </div>
-        </div>
+      </div>
+      <div className="pt-4 d-flex">
+        <div className="circle-selected mx-2"></div>
+        <div className="circle-no-selected mx-2"></div>
+        <div className="circle-no-selected mx-2"></div>
       </div>
     </div>
   );
