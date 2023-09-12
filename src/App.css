@@ -4,6 +4,10 @@
   font-size: 1.7rem;
   color: black;
 }
+.image-navbar{
+  width: 130px;
+
+}
 /* Hero CSS */
 .hero-title {
   font-size: 15rem;
