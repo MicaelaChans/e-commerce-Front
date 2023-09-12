@@ -102,6 +102,7 @@ function Register() {
                     placeholder="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
               </div>
               <div className="mb-3">
@@ -112,6 +113,7 @@ function Register() {
                     placeholder="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
               </div>
               <div className="d-grid gap-2 pb-3  mt-5">

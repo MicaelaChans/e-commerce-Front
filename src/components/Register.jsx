@@ -10,18 +10,28 @@ function Register() {
   const [phone, setPhone] = useState("");
   const [adress, setAdress] = useState("");
   const [password, setPassword] = useState("");
+  const [warningMsg, setWarningMsg] = useState("")
   const navigate = useNavigate();
   
 
   const handleSubmit = async (e) => {
     e.preventDefault();    
-   await axios({
+   const response = await axios({
       method : "POST",
       url: `http://localhost:8000/register`, 
       data: {firstname,lastname,email,phone,adress,password},
-    });  
-    navigate("/login")    
+    });
+    console.log(response.data); 
+    if(response.data == "ya existe usuario con este email"){
+      setWarningMsg("There's an existing account with this email")
+    } else if(response.data == "ya existe usuario con este telefono"){
+      setWarningMsg("There's an existing account with this phone")
+    }else{
+      setWarningMsg("");
+      navigate("/login") 
+    }
   };
+  
 
   return (
     <div className="body-register d-flex  align-items-center">
@@ -51,26 +61,30 @@ function Register() {
                     placeholder="Lastname"
                     value={lastname}
                     onChange={(e) => setLastname(e.target.value)}
+                    required
                   />
               </div>
               <div className="mb-3">
               <input
-                    type="text"
+                    type="email"
                     name="email"
                     className="form-control"
                     placeholder="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                   />
               </div>
               <div className="mb-3">
               <input
-                    type="text"
+                    type="tel"
+                    pattern="[0-9]{9}" 
                     name="phone"
                     className="form-control"
                     placeholder="phone"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
+                    required
                   />
               </div>
               <div className="mb-3">
@@ -81,6 +95,7 @@ function Register() {
                     placeholder="adress"
                     value={adress}
                     onChange={(e) => setAdress(e.target.value)}
+                    required
                   />
               </div>
               <div className="mb-3">
@@ -91,6 +106,7 @@ function Register() {
                     placeholder="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
+                    required
                   />
               </div>
               <div className="d-grid gap-2 pb-3  mt-5">
@@ -98,6 +114,7 @@ function Register() {
               </div>           
             </form>
             <p className="text-center mt-1">Go to <Link to={"/login"} className="link-register">Login</Link></p>
+            <p className="text-danger text-center">{warningMsg}</p>
           
           
 
