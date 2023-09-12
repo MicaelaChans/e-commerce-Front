@@ -22,9 +22,9 @@ function Register() {
       data: {firstname,lastname,email,phone,adress,password},
     });
     console.log(response.data); 
-    if(response.data == "ya existe usuario con este email"){
+    if(response.data == "existent email already"){
       setWarningMsg("There's an existing account with this email")
-    } else if(response.data == "ya existe usuario con este telefono"){
+    } else if(response.data == "existent phone already"){
       setWarningMsg("There's an existing account with this phone")
     }else{
       setWarningMsg("");
