@@ -184,79 +184,41 @@
 }
 
 /* One Product CSS */
-.text-product-page {
-  height: 100%;
-}
 
-.description-product-page {
-  text-align: justify;
-}
-
-.container-product-page {
-  height: 88vh;
-}
-
-.buy-button {
-  background-color: #679186;
-}
-
-.buy-button:hover {
-  background-color: #496a61;
-}
-@media (min-width: 1px) {
-  .product-in-background {
-    height: 250px;
-    width: 200px;
-    bottom: 30px;
-    left: 5px;
-    object-fit: cover;
-    position: absolute;
-  }
-}
-@media (min-width: 576px) {
-  .product-in-background {
-    height: 250px;
-    width: 200px;
-    bottom: 30px;
-    left: 40px;
-    object-fit: cover;
-    position: absolute;
-  }
-}
-@media (min-width: 992px) {
-  .product-in-background {
-    height: 250px;
-    width: 200px;
-    bottom: 30px;
-    left: 150px;
-    object-fit: cover;
-    position: absolute;
-  }
-}
-
-.one-product-background {
-  background-image: url("/decoracion-minimalista.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 10% 100%;
+.img-product-page {
   height: 500px;
-  position: relative;
 }
 
-.circle-selected {
-  background: orange;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+.left-column-product {
+  background-color: #f3f3f3;
+  height: 600px;
+  width: 300px;
 }
 
-.circle-no-selected {
-  background: lightblue;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+.btn-product-page {
+  background-color: white;
+  border: 1px;
+  width: 90%;
+  margin: 5%;
 }
+
+.line-description-product {
+  height: 1px;
+}
+
+.right-column-product {
+  height: 100vh;
+}
+
+.details-right-column-product {
+  height: 125px;
+  background-color: #f3f3f3;
+}
+
+.image-right-column-product {
+  height: 150px;
+}
+
 /* About Us CSS */
 
 /*Cart CSS*/

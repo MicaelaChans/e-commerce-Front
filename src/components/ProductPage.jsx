@@ -21,59 +21,63 @@ function ProductPage() {
   }, []);
 
   return (
-    <div className="container-product-page container d-flex flex-column justify-content-center align-items-center">
-      <div className="row shadow rounded-2">
-        <div className="col-6 rounded-start p-0">
-          <div className="one-product-background rounded-start">
+    <div className="container-product-page container">
+      <div className="row">
+        <div className="col-10">
+          <div className="row container">
+            <div className="col-5">
+              <div className="left-column-product pt-5">
+                <img
+                  className="img-product-page"
+                  src={product.image}
+                  alt={product.name}
+                />
+                <button className="btn-product-page fw-semibold">
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+            <div className="col-7 pe-5 pt-5">
+              <h3>{product.name}</h3>
+              <div className="d-flex align-items-center">
+                <p className="m-0 me-3">Description</p>
+                <div className="line-description-product border-bottom w-100"></div>
+              </div>
+              <p>{product.description}</p>
+              <div className="d-flex align-items-center">
+                <p className="m-0 me-3">Size</p>
+                <div className="line-description-product border-bottom w-100"></div>
+              </div>
+              <div className="d-flex justify-content-between">
+                <div className="d-flex">
+                  <p className="fw-semibold me-1">Height:</p>
+                  {/* <p>{product.otherProperties.height}</p> */}
+                </div>
+                <div className="d-flex">
+                  <p className="fw-semibold me-1">Width:</p>
+                  {/* <p>{product.otherProperties.width}</p> */}
+                </div>
+                <div className="d-flex">
+                  <p className="fw-semibold me-1">Depth:</p>
+                  {/* <p>{product.otherProperties.depth}</p> */}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="col-2 pt-5 border-start right-column-product">
+          <div className="details-right-column-product d-flex">
+            <div className="m-2">
+              <h5 className="text-uppercase">{product.name}</h5>
+              <p className="fw-semibold">US$ {product.price}</p>
+            </div>
             <img
-              className="product-in-background"
+              className="image-right-column-product"
               src={product.image}
               alt={product.name}
             />
           </div>
         </div>
-        <div className="col-6 text-center">
-          <div className="text-product-page d-flex flex-column justify-content-evenly align-items-center">
-            <h2 className="m-0">{product.name}</h2>
-            <p className="m-0 description-product-page">
-              {product.description}
-            </p>
-            {/* <div>
-              <h5>Detailed info:</h5>
-              <li className="list-group">
-                <ul className="m-0 list-group-item">
-                  Height: {product.otherProperties.height}
-                </ul>
-                <ul className="m-0 list-group-item">
-                  Width: {product.otherProperties.width}
-                </ul>
-                <ul className="m-0 list-group-item">
-                  Depth: {product.otherProperties.depth}
-                </ul>
-                <ul className="m-0 list-group-item">
-                  Nominal Power: {product.otherProperties.nominalPower}
-                </ul>
-                <ul className="m-0 list-group-item">
-                  Efficiency: {product.otherProperties.eficiency}
-                </ul>
-                <ul className="m-0 list-group-item">
-                  Consumption: {product.otherProperties.consumption}
-                </ul>
-              </li>
-            </div> */}
-            <div className="d-flex justify-align-items align-items-center">
-              <p className="m-0 me-3 fs-4">US$ {product.price}</p>
-              <button className="btn buy-button border-0 text-white">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="pt-4 d-flex">
-        <div className="circle-selected mx-2"></div>
-        <div className="circle-no-selected mx-2"></div>
-        <div className="circle-no-selected mx-2"></div>
       </div>
     </div>
   );
