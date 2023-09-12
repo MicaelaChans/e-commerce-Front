@@ -11,7 +11,7 @@ function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="/"><img className="mb-3  image-navbar" src="./src/assets/drachen_logo_black.png" alt="drachen logo"/>  </Navbar.Brand>
+        <Navbar.Brand className="p-0" href="/"><img className="mb-3 image-navbar" src="./src/assets/drachen_logo_black.png" alt="drachen logo"/>  </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
