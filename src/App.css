@@ -120,7 +120,7 @@
   overflow: hidden;
 }
 .body-register{
-  height: 86vh;
+  height: calc(100vh - 107.297px);
 }
 .image-register{
   width: 100%;
