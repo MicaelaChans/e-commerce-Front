@@ -26,14 +26,14 @@ function NavBar() {
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
-        <Nav>
-        <NavDropdown title={<i className="bi bi-person-fill"></i>} id="basic-nav-dropdown">
-         <NavDropdown.Item as={Link} to={"/login"}>Login</NavDropdown.Item>
-          <NavDropdown.Item as={Link} to={"/register"}>Sign up</NavDropdown.Item>
-          <NavDropdown.Item >Log out</NavDropdown.Item>
-        </NavDropdown>      
+        <Nav>     
           <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
           <Nav.Link as={Link} to="/aboutUs">About Us</Nav.Link>
+          <NavDropdown title={<i className="bi bi-person-fill"></i>} id="basic-nav-dropdown">
+            <NavDropdown.Item as={Link} to={"/login"}>Login</NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/register"}>Sign up</NavDropdown.Item>
+            <NavDropdown.Item >Log out</NavDropdown.Item>
+          </NavDropdown> 
           <Nav.Link as={Link} to="/cart">
             <i className="bi bi-cart3 mt-2"></i>
           </Nav.Link>
