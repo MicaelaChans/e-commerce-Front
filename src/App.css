@@ -8,6 +8,10 @@
   width: 130px;
 
 }
+.about-this-project{
+  color: orangered;
+  font-weight: bold;
+}
 /* Hero CSS */
 .hero-title {
   font-size: 15rem;

@@ -27,7 +27,7 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
         <Nav>     
-          <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
+          <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
           <Nav.Link as={Link} to="/aboutUs">About Us</Nav.Link>
           <NavDropdown title={<i className="bi bi-person-fill"></i>} id="basic-nav-dropdown">
             <NavDropdown.Item as={Link} to={"/login"}>Login</NavDropdown.Item>
@@ -37,6 +37,8 @@ function NavBar() {
           <Nav.Link as={Link} to="/cart">
             <i className="bi bi-cart3 mt-2"></i>
           </Nav.Link>
+          <Nav.Link as={Link}>Admin</Nav.Link>
+          <Nav.Link className="about-this-project" as={Link}>About this project</Nav.Link>
         </Nav>
       </Container>
     </Navbar>
