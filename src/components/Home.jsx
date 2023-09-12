@@ -1,7 +1,6 @@
 import Hero from "./partials/Hero";
 import ScrollingSection from "./partials/ScrollingSection";
 import Footer from "./partials/Footer";
-import ProductsList from "./ProductsList";
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -113,7 +112,6 @@ function Home() {
           </div>
         </div>
       </div>
-      <ProductsList />
       <Footer />
     </>
   );
