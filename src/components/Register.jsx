@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import axios from "axios";
 
 
@@ -26,7 +26,7 @@ function Register() {
   return (
     <div className="body-register d-flex  align-items-center">
     <div className="container d-flex justify-content-center" >
-      <div className="row  rounded-5 shadow container-register ">
+      <div className="row  rounded-3 shadow container-register ">
         <div className=" d-none col-md-7 flex-column border d-md-flex justify-content-center image-register-container  align-items-center " >
             <img className="pt-5 image-register" src="./src/assets/drachen_logo_white.png" alt="drachen logo" />         
         </div>
@@ -94,11 +94,10 @@ function Register() {
                   />
               </div>
               <div className="d-grid gap-2 pb-3  mt-5">
-              <button className="btn btn-light border rounded-5" type="submit">Sign up</button>
-
-              </div>
-              
+              <button className="btn btn-light border border-black rounded-5" type="submit">Sign up</button>
+              </div>           
             </form>
+            <p className="text-center mt-1">Go to <Link to={"/login"} className="link-register">Login</Link></p>
           
           
 
