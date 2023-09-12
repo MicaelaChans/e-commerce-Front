@@ -244,7 +244,7 @@
 
 /* Footer CSS */
 #footer {
-  background-image: url("../public/footerr.jpg");
+  background-image: url("/footerrr.jpg");
   max-width: 100%;
   height: 100%;
   background-repeat: no-repeat;
