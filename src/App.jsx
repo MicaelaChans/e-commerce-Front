@@ -12,7 +12,7 @@ import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
 function App() {
   return (
-    <>
+    <div>
       <NavBar />
       <Routes>
         <Route path="/register" element={<Register />} />
@@ -36,7 +36,7 @@ function App() {
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
