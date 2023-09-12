@@ -9,12 +9,12 @@ import Cart from "../Cart";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary p-0">
       <Container>
-        <Navbar.Brand className="p-0" as={Link} to="/"><img className="mb-3 image-navbar" src="./src/assets/drachen_logo_black.png" alt="drachen logo"/>  </Navbar.Brand>
+        <Navbar.Brand  as={Link} to="/"><img className="mb-3 image-navbar" src="./src/assets/drachen_logo_black.png" alt="drachen logo"/>  </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ml-auto ">
             <NavDropdown className="mx-3" title="Our Products" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="#action/3.1">Wood Stoves</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="#action/3.2">
