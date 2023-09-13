@@ -129,18 +129,24 @@
 
 /* ProductsWood CSS */
 .image-product-wood {
-  width: 100%; 
+  width: 100%;
 }
 .hr-product-wood {
-  width: 12%;
+  width: 20%;
   margin: auto;
-  color: black;
-  background-color: black;
   height: 1.5px;
+  color: orangered;
 }
 .p-sizes-product {
   color: grey;
   font-size: 0.8rem;
+  display: flex;
+}
+.discover-section{
+  position: absolute;
+  z-index: 9;
+  display:flex;
+  flex-direction: column;
 }
 .banner-wood-stoves{
   background-image: 
@@ -159,7 +165,6 @@
   margin-left: 10%;
   color: white;
   font-size: 4rem;
-  text-align: center;
 }
 .banner-wood-text-paragraph{
   margin-left: 3%;
@@ -176,9 +181,34 @@
   } 
   .banner-wood-text-title{
     margin-left: 0;
-    
+    text-align: center;   
   }
 }
+@media (min-width: 0px) and  (max-width: 576px){
+  .image-product-wood{
+    width: 60%;
+  }
+}
+.hr-wood{
+  margin-top: 30px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.alt-title-wood{
+  font-size: 3rem;
+}
+.link-product-wood{
+  text-decoration: none;
+  color: orangered;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+.product-wood:hover .p-sizes-product{
+  display: flex;
+}
+
+
 
 
 /*Register y Login CSS*/

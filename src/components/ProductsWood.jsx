@@ -27,48 +27,50 @@ function ProductsList() {
 
   return (
     <div>
-    <div className="banner-wood-stoves d-none d-sm-flex align-items-center">
-        <h2 className="banner-wood-text-title mb-3">WOOD STOVES</h2>
+      <div className="banner-wood-stoves d-none d-sm-flex align-items-center">
+        <h1 className="banner-wood-text-title mb-3">WOOD STOVES</h1>
         <p className="banner-wood-text-paragraph">For Drachen, heating is more than just a practical or aesthetic matter. We see our stoves as innovative pieces of forniture that suit a modern lifestyle.</p>
-    </div>
-    <div className="container">
-      <div className="row">       
-        {firstCategory.map((product, id = product.id) => (
-            <div className="col-lg-3 col-md-4 col-sm-6 col-12 g-5" key={id}>
-              <div className="mt-4  mx-3 d-flex justify-content-center  bg-white">
+      </div>
+      <div className="container">
+        <div className="text-center mt-5 d-block d-sm-none">
+          <h2 className="alt-title-wood">WOOD STOVES</h2>
+          <hr className="hr-wood"/>
+        </div>
+        <div className="row">       
+          {firstCategory.map((product, id = product.id) => (
+            <div className="col-lg-3 product-wood col-md-4 col-sm-6 col-12 g-5 mb-5" key={id}>
+            <div className="mt-sm-4  mx-3 d-flex justify-content-center  bg-white">
+              <a href=""></a>
+              <Link className="image-product-wood" to={`/products/${product.id}`} >
                 <img
-                  className="image-product-wood"
+                  className="image-product-wood "
                   src={product.image}
                   alt={product.name}
                 />
-              </div>
+             </Link>
+            </div>
+            <Link className="pt-1 link-product-wood" style={{color:"black"}} to={`/products/${product.id}`}>
               <h5 className="text-center mt-2">
                 {product.name} - {product.otherProperties.nominalPower}KW
               </h5>
-              <hr className="hr-product-wood mt-3" />
-              <div className="d-flex justify-content-center mt-3 p-sizes-product">
-                <p className="text-center mx-2">
-                  Height: {product.otherProperties.height}
-                </p>
-                <p className="text-center mx-2 ">
-                  {" "}
-                  Width: {product.otherProperties.width}
-                </p>
-                <p className="text-center mx-2">
-                  {" "}
-                  Depth: {product.otherProperties.depth}
-                </p>
-              </div>
-              <Link
-                  to={`/products/${product.id}`}
-                  className="btn btn-secondary "
-                >
-                  Go to page
-                </Link>
+            </Link>
+            <div className="discover-section">          
+            <div className=" justify-content-center align-items-center mt-3  p-sizes-product">
+              
+                <p className="text-center mx-2">H: {product.otherProperties.height}</p>
+                <p className="text-center mx-2 ">{" "}W: {product.otherProperties.width}</p>
+                <p className="text-center mx-2">{" "}D: {product.otherProperties.depth}</p>
+              
             </div>
-          ))}
-         
-      </div>
+            <div className="d-flex justify-content-center">
+             <hr className="hr-product-wood mx-2 mt-3" />
+              <Link className="pt-2 link-product-wood " to={`/products/${product.id}`}>DISCOVER</Link>
+              <hr className="hr-product-wood mx-2 mt-3" />
+            </div>
+            </div> 
+            </div>           
+          ))}        
+        </div>
       </div>
     </div>
   );
