@@ -151,22 +151,23 @@
 }
 .hr-product-wood {
   width: 60px;
-  margin: auto;
-  color: black;
-  background-color: black;
-  height: 1.8px;
+  margin: auto; 
 }
 .hr-product-wood-top {
   width: 80px;
   margin: auto;
-  color: black;
-  background-color: black;
-  height: 1.8px;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: all 0.4s ease-in-out;
   display: flex;
+}
+.hr-wood {
+  margin-top: 30px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 1.8px;
 }
 .p-sizes-product {
   color: grey;
@@ -219,12 +220,7 @@
     margin-left: 15%;
   }
 }
-.hr-wood {
-  margin-top: 30px;
-  width: 55%;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .alt-title-wood {
   font-size: 3rem;
 }
@@ -240,7 +236,7 @@
   max-height: 100px;
 }
 .product-wood:hover .hr-product-wood-top {
-  opacity: 1;
+  opacity: 0.3;
 }
 .product-wood {
   margin-bottom: 100px;
