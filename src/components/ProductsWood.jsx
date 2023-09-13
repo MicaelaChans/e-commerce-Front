@@ -61,9 +61,9 @@ function ProductsList() {
                 <p className="text-center mx-2">{" "}D: {product.otherProperties.depth}</p>              
             </div>
             <div className="d-flex justify-content-center">
-             <hr className="hr-product-wood mx-2 mt-3" />
+             <hr className="hr-product-wood  mx-2 mt-3" />
               <Link className="pt-2 link-product-wood " to={`/products/${product.id}`}><span className="down">🡻</span><span className="up">🡹</span></Link>
-              <hr className="hr-product-wood mx-2 mt-3" />
+              <hr className="hr-product-wood  mx-2 mt-3" />
             </div>
             </div> 
             </div> 
