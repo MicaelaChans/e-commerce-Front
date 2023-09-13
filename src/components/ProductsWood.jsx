@@ -10,6 +10,7 @@ import Footer from "./partials/Footer";
 function ProductsList() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -24,12 +25,17 @@ function ProductsList() {
   const firstCategory = products.filter(
     (product) => product.category.name == "wood"
   );
+  useEffect(() => {
+    setTimeout(() => {
+        setAnimate(true);
+    }, 200);
+}, []);
 
   return (
     <div>
       <div className="banner-wood-stoves mb-5 d-none d-sm-flex align-items-center">
-        <h1 className="banner-wood-text-title mb-3">WOOD STOVES</h1>
-        <p className="banner-wood-text-paragraph">For Drachen, heating is more than just a practical or aesthetic matter. We see our stoves as innovative pieces of forniture that suit a modern lifestyle.</p>
+        <h1 className={`banner-wood-text-title mb-3 ${animate ? "animate-from-left" : ""}`}>WOOD STOVES</h1>
+        <p className={`banner-wood-text-paragraph ${animate ? "animate-from-right" : ""}`}>For Drachen, heating is more than just a practical or aesthetic matter. We see our stoves as innovative pieces of forniture that suit a modern lifestyle.</p>
       </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
