@@ -19,7 +19,7 @@ function Cart() {
         placement="end"
         show={show}
         onHide={handleClose}
-        className="w-25"
+        className="w-25%"
       >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="fs-3">Carrito</Offcanvas.Title>
@@ -35,10 +35,7 @@ function Cart() {
             </div>
             <div className="col-6 mt-3 p-3">
               <h2 className="d-flex fs-4">
-                product.name
-                <button id="trashButton" type="submit">
-                  <i className="bi bi-trash3 m-auto"></i>
-                </button>
+                product.name <i className="bi bi-trash3"></i>
               </h2>
               <h5>product.price</h5>
               <h5>Quantity:</h5>

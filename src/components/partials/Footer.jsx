@@ -4,12 +4,14 @@ function Footer() {
     <div className="container py-md-5 px-4 px-md-3" id="footer">
       <div className="row">
         <div className="col-lg-4">
-          <span className="fs-1 ">Drachen</span>
-          <div className="">
-            <h3>
-              <i className="bi bi-linkedin"></i>{" "}
-              <i className="bi bi-github"></i>
-            </h3>
+          <span className="fs-1 m-3">Drachen</span>
+          <div className="m-3">
+            <h4>
+              <i className="bi bi-instagram"></i>{" "}
+              <i className="bi bi-twitter"></i>{" "}
+              <i className="bi bi-facebook"></i>{" "}
+              <i className="bi bi-whatsapp"></i>{" "}
+            </h4>
           </div>
         </div>
         <div className="col-6 col-lg-2 mb-3 p-3">
