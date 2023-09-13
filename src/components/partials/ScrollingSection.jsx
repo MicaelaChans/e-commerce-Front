@@ -13,7 +13,7 @@ function ScrollingSection() {
       sectionRef.current,
       { translateX: 0 },
       {
-        translateX: "-160vw",
+        translateX: "-217vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
