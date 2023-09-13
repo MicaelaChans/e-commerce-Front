@@ -7,7 +7,7 @@ import NotFound from "./components/NotFound";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/partials/ContactUs";
 import Cart from "./components/Cart";
-import ProductsList from "./components/ProductsList";
+import ProductsList from "./components/partials/ProductsList";
 import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
 function App() {
