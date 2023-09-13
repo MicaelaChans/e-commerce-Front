@@ -8,7 +8,7 @@ import Cart from "../Cart";
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    /*<Navbar collapseOnSelect expand="lg" className="bg-body-tertiary p-0">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -19,8 +19,11 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <NavDropdown title="Our Products" id="collasible-nav-dropdown">
+          <Nav className="mr-auto ">
+            <NavDropdown            
+              title="Our Products"
+              id="collasible-nav-dropdown"
+            >
               <NavDropdown.Item as={Link} to="#action/3.1">
                 Wood Stoves
               </NavDropdown.Item>
@@ -46,7 +49,7 @@ function NavBar() {
           </Nav.Link>
           <NavDropdown
             title={<i className="bi bi-person-fill"></i>}
-            id="basic-nav-dropdown"
+            id="collasible-nav-dropdown"
           >
             <NavDropdown.Item as={Link} to={"/login"}>
               Login
@@ -56,14 +59,84 @@ function NavBar() {
             </NavDropdown.Item>
             <NavDropdown.Item>Log out</NavDropdown.Item>
           </NavDropdown>
-          <Cart />
+          <Nav.Link as={Link} to="/cart">
+            <i className="bi bi-cart3 mt-2"></i>
+          </Nav.Link>
           <Nav.Link as={Link}>Admin</Nav.Link>
           <Nav.Link className="about-this-project" as={Link}>
             About this project
           </Nav.Link>
         </Nav>
       </Container>
+    </Navbar>*/
+    
+
+
+ 
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container>
+      <Navbar.Brand as={Link} to="/">
+          <img
+            className="mb-3 image-navbar"
+            src="./src/assets/drachen_logo_black.png"
+            alt="drachen logo"
+          />{" "}
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+          <NavDropdown            
+              title="Our Products"
+              id="collasible-nav-dropdown"
+            >
+              <NavDropdown.Item as={Link} to="#action/3.1">
+                Wood Stoves
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="#action/3.2">
+                Pellet Stoves
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="#action/3.3">
+                Accessories
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={Link} to="#action/3.4">
+                All Products
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+          <Nav>
+          <Nav.Link as={Link} to="/contact">
+            Contact
+          </Nav.Link>
+          <Nav.Link as={Link} to="/aboutUs">
+            About Us
+          </Nav.Link>
+          <NavDropdown
+            title={<i className="bi bi-person-fill"></i>}
+            id="collasible-nav-dropdown"
+          >
+            <NavDropdown.Item as={Link} to={"/login"}>
+              Login
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to={"/register"}>
+              Sign up
+            </NavDropdown.Item>
+            <NavDropdown.Item>Log out</NavDropdown.Item>
+          </NavDropdown>
+          <Nav.Link as={Link} to="/cart">
+            <i className="bi bi-cart3 mt-2"></i>
+          </Nav.Link>
+          <Nav.Link as={Link}>Admin</Nav.Link>
+          <Nav.Link className="about-this-project" as={Link}>
+            About this project
+          </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
+ 
+
+    
   );
 }
 
