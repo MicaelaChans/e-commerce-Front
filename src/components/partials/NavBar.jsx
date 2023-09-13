@@ -46,7 +46,7 @@ function NavBar() {
           </Nav>
           <Nav>
             <NavDropdown
-              title={<i className="bi bi-person-fill"></i>}
+              title={<i className="bi bi-person-fill" style={{fontSize:"1.5rem"}}></i>}
               id="collasible-nav-dropdown"
             >
               <NavDropdown.Item as={Link} to={"/login"}>

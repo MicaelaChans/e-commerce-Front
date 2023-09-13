@@ -13,7 +13,7 @@ function Cart() {
   return (
     <>
       <NavLink onClick={handleShow}>
-        <i className="bi bi-cart3 mt-2"></i>
+        <i className="bi bi-cart3 mt-2" style={{fontSize:"1.5rem"}}> <sup>(1)</sup> </i>
       </NavLink>
       <Offcanvas
         placement="end"
@@ -22,7 +22,7 @@ function Cart() {
         className="w-25%"
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title className="fs-3">Carrito</Offcanvas.Title>
+          <Offcanvas.Title className="fs-3">Cart</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className="d-flex flex-column h-100 justify-content-between">
           <div className="row">
@@ -40,7 +40,7 @@ function Cart() {
               <select name="number" id="number">
                 <option value="1">1</option>
               </select>
-              <i className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end"></i>
+              <i className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end" ></i>
             </div>
           </div>
           <div className="flex-column">
