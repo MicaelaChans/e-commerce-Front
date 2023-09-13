@@ -1,3 +1,4 @@
+import Footer from "./partials/Footer";
 function AboutThisProject() {
   return (
     <>
@@ -150,6 +151,7 @@ function AboutThisProject() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,3 +1,5 @@
+import Form from "react-bootstrap/Form";
+import Footer from "./Footer";
 function ContactUs() {
   return (
     <>
@@ -22,6 +24,25 @@ function ContactUs() {
           </div>
         </div>
       </div>
+      <div className="d-flex flex-column align-items-center justify-content-center p-5">
+        <div className="w-75 mb-5 lh-lg">
+          <Form className="fs-3">
+            <Form.Group className="mb-3" controlId="example">
+              <Form.Label>Firstname</Form.Label>
+              <Form.Control type="email" placeholder="Mary" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="example">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control type="email" placeholder="name@example.com" />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="example">
+              <Form.Label>Leave us a comment...</Form.Label>
+              <Form.Control as="textarea" rows={3} />
+            </Form.Group>
+          </Form>
+        </div>
+      </div>
+      <Footer />
     </>
   );
 }

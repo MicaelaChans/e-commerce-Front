@@ -33,15 +33,14 @@ function Cart() {
                 alt="productImg"
               />
             </div>
-            <div className="col-6 mt-3 p-3">
-              <h2 className="d-flex fs-4">
-                product.name <i className="bi bi-trash3"></i>
-              </h2>
+            <div className="col-6 mt-3 p-3 ">
+              <h2 className="d-flex fs-4">product.name</h2>
               <h5>product.price</h5>
               <h5>Quantity:</h5>
               <select name="number" id="number">
                 <option value="1">1</option>
               </select>
+              <i className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end"></i>
             </div>
           </div>
           <div className="flex-column">
