@@ -24,7 +24,7 @@ function NavBar() {
               title="Our Products"
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item as={Link} to="#action/3.1">
+              <NavDropdown.Item as={Link} to="/productsWood">
                 Wood Stoves
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="#action/3.2">

@@ -27,7 +27,7 @@ function ProductsList() {
 
   return (
     <div>
-      <div className="banner-wood-stoves mb-5 d-none d-sm-flex align-items-center">
+      <div className="banner-wood-stoves  d-none d-sm-flex align-items-center">
         <h1 className="banner-wood-text-title mb-3">WOOD STOVES</h1>
         <p className="banner-wood-text-paragraph">For Drachen, heating is more than just a practical or aesthetic matter. We see our stoves as innovative pieces of forniture that suit a modern lifestyle.</p>
       </div>
