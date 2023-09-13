@@ -29,10 +29,6 @@ function NavBar() {
               <NavDropdown.Item as={Link} to="productsAccessories">
                 Accessories
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="#action/3.4">
-                All Products
-              </NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
