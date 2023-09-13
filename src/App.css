@@ -7,7 +7,7 @@
   width: 130px;
 }
 .about-this-project {
-  color: orangered;
+  color: rgb(12, 12, 12);
   font-weight: bold;
 }
 
@@ -130,16 +130,23 @@
 /* Products of Category CSS */
 
 .image-product-wood {
-  width: 100%;
-  width: 100%;
+  width: 85%;
+  margin: auto;
 }
-
 .hr-product-wood {
   width: 60px;
   margin: auto;
   color: black;
   background-color: black;
   height: 1.8px;
+}
+.hr-product-wood-top {
+  width: 80px;
+  margin: auto;
+  color: black;
+  background-color: black;
+  height: 1.8px;
+  display: none;
 }
 .p-sizes-product {
   color: grey;
@@ -185,7 +192,7 @@
 @media (min-width: 0px) and (max-width: 576px) {
   .image-product-wood {
     width: 70%;
-    margin-left: 7%;
+    margin-left: 15%;
   }
 }
 .hr-wood {
@@ -207,8 +214,13 @@
   display: flex;
   margin-top: 20px;
 }
+.product-wood:hover .hr-product-wood-top {
+  display: flex;
+  margin-top: 10px;
+}
 .product-wood {
   margin-bottom: 100px;
+  position: relative;
 }
 .product-wood :hover {
   margin-top: 0;

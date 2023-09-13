@@ -8,7 +8,7 @@ import Cart from "../Cart";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary p-0">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -17,14 +17,10 @@ function NavBar() {
             alt="drachen logo"
           />{" "}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto ">
-            <NavDropdown
-              className="mx-3"
-              title="Our Products"
-              id="basic-nav-dropdown"
-            >
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown title="Our Products" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="#action/3.1">
                 Wood Stoves
               </NavDropdown.Item>
