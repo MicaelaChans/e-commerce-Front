@@ -209,6 +209,15 @@
   display: flex;
   margin-top: 20px;
 }
+.product-wood:hover .down{
+  display: none;
+}
+.up{
+  display: none;
+}
+.product-wood:hover .up{
+  display: block;
+}
 .product-wood{
   margin-bottom: 100px;
 }
