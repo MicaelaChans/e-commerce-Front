@@ -113,7 +113,7 @@ function Register() {
               <button className="btn btn-light border border-black rounded-5" type="submit">Sign up</button>
               </div>           
             </form>
-            <p className="text-center mt-1">Go to <Link to={"/login"} className="link-register">Login</Link></p>
+            <p className="text-center mt-1">Go to <Link to={"/login"} className="link-register" style={{color:"blue"}}>Login</Link></p>
             <p className="text-danger text-center">{warningMsg}</p>
           
           

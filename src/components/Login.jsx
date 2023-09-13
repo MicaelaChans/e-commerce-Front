@@ -120,8 +120,8 @@ function Register() {
               <button className="btn btn-light border border-black rounded-5" type="submit">Log in</button>
               </div>             
             </form>
-            <p className="text-center mt-3">Don´t have an account yet? Register <Link className="link-register" to={"/register"}>here</Link>.</p>
-            <p className="text-center">Forgot your password? <button className="link-register">recover password</button>.</p>
+            <p className="text-center mt-3">Don´t have an account yet? Register <Link className="link-register" to={"/register"} style={{color:"blue"}}>here</Link>.</p>
+            <p className="text-center">Forgot your password? <button className="link-register" style={{border:"none",backgroundColor:"transparent", textDecoration:"underline",color:"rgb(35, 35, 255)"}}>recover password</button>.</p>
         </div>
       </div>
     </div>
