@@ -39,6 +39,7 @@ function ProductsList() {
         <div className="row">       
           {firstCategory.map((product, id = product.id) => (
             <div className="col-lg-3 product-wood col-md-4 col-sm-6 col-12 g-5" key={id}>
+              
               <div className="mt-sm-4  mx-3  bg-white">
                 <Link className=" image-product-wood d-flex justify-content-center" to={`/products/${product.id}`} >
                   <img

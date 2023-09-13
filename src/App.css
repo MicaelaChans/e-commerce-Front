@@ -7,7 +7,7 @@
   width: 130px;
 }
 .about-this-project {
-  color: orangered;
+  color: rgb(12, 12, 12);
   font-weight: bold;
 }
 
@@ -221,6 +221,7 @@
 }
 .product-wood{
   margin-bottom: 100px;
+  position: relative;
 }
 .product-wood :hover{
   margin-top: 0;
@@ -232,7 +233,6 @@
   position:absolute;
   z-index: 9; 
 }
-
 
 /*Register y Login CSS*/
 .container-register {
