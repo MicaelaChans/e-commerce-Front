@@ -128,25 +128,24 @@
 /* List of Products CSS */
 
 /* ProductsWood CSS */
+
 .image-product-wood {
   width: 100%;
 }
+
 .hr-product-wood {
   width: 20%;
   margin: auto;
+  color: black;
+  background-color: black;
   height: 1.5px;
   color: orangered;
 }
 .p-sizes-product {
   color: grey;
   font-size: 0.8rem;
-  display: flex;
-}
-.discover-section{
-  position: absolute;
-  z-index: 9;
-  display:flex;
-  flex-direction: column;
+  margin-top: 20px;
+  display: none;
 }
 .banner-wood-stoves{
   background-image: 
@@ -186,7 +185,8 @@
 }
 @media (min-width: 0px) and  (max-width: 576px){
   .image-product-wood{
-    width: 60%;
+    width: 70%;
+    margin-left: 7%
   }
 }
 .hr-wood{
@@ -206,9 +206,21 @@
 }
 .product-wood:hover .p-sizes-product{
   display: flex;
+  margin-top: 20px;
 }
-
-
+.product-wood{
+  margin-bottom: 100px;
+}
+.product-wood :hover{
+  margin-top: 0;
+}
+.product-wood{
+  position: relative;
+}
+.discover-section{
+  position:absolute;
+  z-index: 9; 
+}
 
 
 /*Register y Login CSS*/
