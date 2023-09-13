@@ -9,9 +9,11 @@ import ContactUs from "./components/partials/ContactUs";
 import Cart from "./components/Cart";
 import ProductsPellet from "./components/ProductsPellet"
 import ProductsWood from "./components/ProductsWood";
+import ProductsAccessories from "./components/ProductsAccessories"
 import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
 import AboutThisProject from "./components/AboutThisProject";
+
 function App() {
   return (
     <div>
@@ -39,6 +41,7 @@ function App() {
         />
         <Route path="/productsWood" element={<ProductsWood />} />
         <Route path="/productsPellet" element={<ProductsPellet />} />
+        <Route path="/productsAccessories" element={<ProductsAccessories />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

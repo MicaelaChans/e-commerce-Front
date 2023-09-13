@@ -23,7 +23,7 @@ function ProductsList() {
     listProducts();
   }, []);
   const firstCategory = products.filter(
-    (product) => product.category.name == "wood"
+    (product) => product.category.name == "accessories"
   );
   useEffect(() => {
     setAnimate(true);
@@ -33,11 +33,11 @@ function ProductsList() {
     <div>
       <div className="banner-wood-stoves mb-5 d-none d-sm-flex align-items-center">
         <h1
-          className={`banner-wood-text-title mb-3 ${
+          className={`banner-wood-text-title mb-3 me-2 ${
             animate ? "animate-from-left" : ""
           }`}
         >
-          WOOD STOVES
+          ACCESSORIES
         </h1>
         <p
           className={`banner-wood-text-paragraph ${
@@ -51,7 +51,7 @@ function ProductsList() {
       </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
-          <h2 className="alt-title-wood">WOOD STOVES</h2>
+          <h2 className="alt-title-wood">ACCESSORIES</h2>
           <hr className="hr-wood" />
         </div>
         <div className="row mb-5">
