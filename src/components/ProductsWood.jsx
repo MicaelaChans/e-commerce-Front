@@ -24,134 +24,51 @@ function ProductsList() {
   const firstCategory = products.filter(
     (product) => product.category.name == "wood"
   );
-  const secondCategory = products.filter(
-    (product) => product.category.name == "pellet"
-  );
-  const thirdCategory = products.filter(
-    (product) => product.category.name == "accessories"
-  );
-  const cantFirstCategory = firstCategory.length;
-  const cantSecondCategory = secondCategory.length;
-  const cantThirdCategory = thirdCategory.length;
-
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 4,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 2,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
-  };
 
   return (
+    <div>
+    <div className="banner-wood-stoves d-none d-sm-flex align-items-center">
+        <h2 className="banner-wood-text-title mb-3">WOOD STOVES</h2>
+        <p className="banner-wood-text-paragraph">For Drachen, heating is more than just a practical or aesthetic matter. We see our stoves as innovative pieces of forniture that suit a modern lifestyle.</p>
+    </div>
     <div className="container">
-      <div className="row my-5">
-        <h2>Wood stoves</h2>
-        <Carousel responsive={responsive}>
-          {firstCategory.map((product, id = product.id) => (
-            <div key={id}>
-              <div className="mt-4 border rounded-3 mx-3 p-4 bg-white shadow card-product">
+      <div className="row">       
+        {firstCategory.map((product, id = product.id) => (
+            <div className="col-lg-3 col-md-4 col-sm-6 col-12 g-5" key={id}>
+              <div className="mt-4  mx-3 d-flex justify-content-center  bg-white">
                 <img
-                  className="image-product"
+                  className="image-product-wood"
                   src={product.image}
                   alt={product.name}
                 />
-                <Link
+              </div>
+              <h5 className="text-center mt-2">
+                {product.name} - {product.otherProperties.nominalPower}KW
+              </h5>
+              <hr className="hr-product-wood mt-3" />
+              <div className="d-flex justify-content-center mt-3 p-sizes-product">
+                <p className="text-center mx-2">
+                  Height: {product.otherProperties.height}
+                </p>
+                <p className="text-center mx-2 ">
+                  {" "}
+                  Width: {product.otherProperties.width}
+                </p>
+                <p className="text-center mx-2">
+                  {" "}
+                  Depth: {product.otherProperties.depth}
+                </p>
+              </div>
+              <Link
                   to={`/products/${product.id}`}
-                  className="btn btn-secondary link-product"
+                  className="btn btn-secondary "
                 >
                   Go to page
                 </Link>
-              </div>
-              <h5 className="text-center mt-2">
-                {product.name} - {product.otherProperties.nominalPower}KW
-              </h5>
-              <hr className="hr-product mt-3" />
-              <div className="d-flex justify-content-center mt-3 p-sizes-product">
-                <p className="text-center mx-2">
-                  Height: {product.otherProperties.height}
-                </p>
-                <p className="text-center mx-2 ">
-                  {" "}
-                  Width: {product.otherProperties.width}
-                </p>
-                <p className="text-center mx-2">
-                  {" "}
-                  Depth: {product.otherProperties.depth}
-                </p>
-              </div>
             </div>
           ))}
-        </Carousel>
+         
       </div>
-      <div className="row my-5">
-        <h2>Pellet stoves</h2>
-        <Carousel responsive={responsive}>
-          {secondCategory.map((product, id = product.id) => (
-            <div key={id}>
-              <div className="mt-4 border rounded-3 mx-3 p-4 bg-white shadow card-product">
-                <img
-                  className="image-product"
-                  src={product.image}
-                  alt={product.name}
-                />
-                <Link className="btn btn-secondary link-product">
-                  Go to page
-                </Link>
-              </div>
-              <h5 className="text-center mt-2">
-                {product.name} - {product.otherProperties.nominalPower}KW
-              </h5>
-              <hr className="hr-product mt-3" />
-              <div className="d-flex justify-content-center mt-3 p-sizes-product">
-                <p className="text-center mx-2">
-                  Height: {product.otherProperties.height}
-                </p>
-                <p className="text-center mx-2 ">
-                  {" "}
-                  Width: {product.otherProperties.width}
-                </p>
-                <p className="text-center mx-2">
-                  {" "}
-                  Depth: {product.otherProperties.depth}
-                </p>
-              </div>
-            </div>
-          ))}
-        </Carousel>
-      </div>
-      <div className="row my-5">
-        <h2>Accesories</h2>
-        <Carousel responsive={responsive}>
-          {thirdCategory.map((product, id = product.id) => (
-            <div key={id}>
-              <div className="mt-4 border rounded-3 mx-3 p-4 bg-white shadow card-product">
-                <img
-                  className="image-product"
-                  src={product.image}
-                  alt={product.name}
-                />
-                <Link className="btn btn-secondary link-product">
-                  Go to page
-                </Link>
-              </div>
-              <h5 className="text-center mt-2">{product.name}</h5>
-              <hr className="hr-product mt-3" />
-              <div className="d-flex justify-content-center mt-3 p-sizes-product">
-                <p className="text-center mx-2">{product.description}</p>
-              </div>
-            </div>
-          ))}
-        </Carousel>
       </div>
     </div>
   );

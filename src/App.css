@@ -127,12 +127,11 @@
 }
 /* List of Products CSS */
 
-/* Products CSS */
-.image-product {
-  width: 100%;
-  height: 260px;
+/* ProductsWood CSS */
+.image-product-wood {
+  width: 100%; 
 }
-.hr-product {
+.hr-product-wood {
   width: 12%;
   margin: auto;
   color: black;
@@ -143,17 +142,44 @@
   color: grey;
   font-size: 0.8rem;
 }
-.link-product {
-  font-size: 0.9rem;
-  position: absolute;
-  bottom: 5%;
-  right: 5%;
-  background-color: rgba(128, 128, 128, 0.781);
+.banner-wood-stoves{
+  background-image: 
+  linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+  url("./assets/wood_stoves_banner_2.jpg");
+  height: 50vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.card-product {
-  position: relative;
-  position: relative;
+.banner-wood-text-title{
+  margin-left: 10%;
+  color: white;
+  font-size: 4rem;
+  text-align: center;
 }
+.banner-wood-text-paragraph{
+  margin-left: 3%;
+  margin-right: 3%;
+  color: white;
+  font-size: 1.3rem; 
+}
+@media (min-width: 577px) and  (max-width: 992px) {
+  .banner-wood-stoves{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  } 
+  .banner-wood-text-title{
+    margin-left: 0;
+    
+  }
+}
+
 
 /*Register y Login CSS*/
 .container-register {
