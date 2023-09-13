@@ -10,7 +10,7 @@ function NavBar() {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+      <Navbar.Brand as={Link} to="/">
           <img
             className="mb-3 image-navbar"
             src="./src/assets/drachen_logo_black.png"
@@ -20,8 +20,11 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavDropdown title="Our Products" id="collasible-nav-dropdown">
-              <NavDropdown.Item as={Link} to="#action/3.1">
+          <NavDropdown            
+              title="Our Products"
+              id="collasible-nav-dropdown"
+            >
+              <NavDropdown.Item as={Link} to="/productsWood">
                 Wood Stoves
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="#action/3.2">
@@ -36,8 +39,7 @@ function NavBar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-        </Navbar.Collapse>
-        <Nav>
+          <Nav>
           <Nav.Link as={Link} to="/contact">
             Contact
           </Nav.Link>
@@ -46,7 +48,7 @@ function NavBar() {
           </Nav.Link>
           <NavDropdown
             title={<i className="bi bi-person-fill"></i>}
-            id="basic-nav-dropdown"
+            id="collasible-nav-dropdown"
           >
             <NavDropdown.Item as={Link} to={"/login"}>
               Login
@@ -56,14 +58,20 @@ function NavBar() {
             </NavDropdown.Item>
             <NavDropdown.Item>Log out</NavDropdown.Item>
           </NavDropdown>
-          <Cart />
+          <Nav.Link as={Link} to="/cart">
+            <i className="bi bi-cart3 mt-2"></i>
+          </Nav.Link>
           <Nav.Link as={Link}>Admin</Nav.Link>
           <Nav.Link className="about-this-project" as={Link}>
             About this project
           </Nav.Link>
-        </Nav>
+          </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
+ 
+
+    
   );
 }
 

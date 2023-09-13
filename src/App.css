@@ -155,24 +155,33 @@
 }
 .hr-product-wood {
   width: 60px;
-  margin: auto;
-  color: black;
-  background-color: black;
-  height: 1.8px;
+  margin: auto; 
 }
 .hr-product-wood-top {
   width: 80px;
   margin: auto;
-  color: black;
-  background-color: black;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  display: flex;
+}
+.hr-wood {
+  margin-top: 30px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
   height: 1.8px;
-  display: none;
 }
 .p-sizes-product {
   color: grey;
   font-size: 0.8rem;
   margin-top: 20px;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  display: flex;
 }
 .banner-wood-stoves {
   background-image: linear-gradient(
@@ -215,12 +224,7 @@
     margin-left: 15%;
   }
 }
-.hr-wood {
-  margin-top: 30px;
-  width: 55%;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .alt-title-wood {
   font-size: 3rem;
 }
@@ -231,12 +235,12 @@
   font-size: 0.7rem;
 }
 .product-wood:hover .p-sizes-product {
-  display: flex;
+  opacity: 1;
   margin-top: 20px;
+  max-height: 100px;
 }
 .product-wood:hover .hr-product-wood-top {
-  display: flex;
-  margin-top: 10px;
+  opacity: 0.3;
 }
 .product-wood {
   margin-bottom: 100px;
@@ -253,6 +257,35 @@
   z-index: 9;
 }
 
+@keyframes slideFromLeft {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.animate-from-left {
+  animation: slideFromLeft 1.25s forwards;
+}
+
+.animate-from-right {
+  animation: slideFromRight 1.25s forwards;
+}
 /*Register y Login CSS*/
 .container-register {
   width: 86%;
@@ -288,9 +321,13 @@
 }
 
 .left-column-product {
-  background-color: #f3f3f3;
+  background-color: #f4f4f4;
   height: 600px;
   width: 300px;
+}
+
+.container-left-product-page {
+  margin: 0px 130px;
 }
 
 .btn-product-page {
@@ -304,17 +341,49 @@
   height: 1px;
 }
 
+.circle-color-product {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 50%;
+}
+
 .right-column-product {
   height: 100vh;
+  width: 550px;
+  position: sticky;
+  top: 0;
 }
 
 .details-right-column-product {
   height: 125px;
-  background-color: #f3f3f3;
+  background-color: #f4f4f4;
 }
 
 .image-right-column-product {
   height: 150px;
+}
+
+.ul-product-page {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.li-product-page {
+  background-color: #e4e4e4;
+  width: 300px;
+}
+.li-product-page-light {
+  background-color: #fefefe;
+  width: 300px;
+}
+
+.li-product-page p {
+  width: 50%;
+}
+.li-product-page-light p {
+  width: 50%;
 }
 
 /* About Us CSS */

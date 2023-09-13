@@ -3,13 +3,14 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getProducts } from "../redux/productSlice";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "../App.css";
+import Footer from "./partials/Footer";
 
 function ProductsList() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
+  const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -24,12 +25,17 @@ function ProductsList() {
   const firstCategory = products.filter(
     (product) => product.category.name == "wood"
   );
+  useEffect(() => {
+    setTimeout(() => {
+        setAnimate(true);
+    }, 200);
+}, []);
 
   return (
     <div>
       <div className="banner-wood-stoves mb-5 d-none d-sm-flex align-items-center">
-        <h1 className="banner-wood-text-title mb-3">WOOD STOVES</h1>
-        <p className="banner-wood-text-paragraph">For Drachen, heating is more than just a practical or aesthetic matter. We see our stoves as innovative pieces of forniture that suit a modern lifestyle.</p>
+        <h1 className={`banner-wood-text-title mb-3 ${animate ? "animate-from-left" : ""}`}>WOOD STOVES</h1>
+        <p className={`banner-wood-text-paragraph ${animate ? "animate-from-right" : ""}`}>For Drachen, heating is more than just a practical or aesthetic matter. We see our stoves as innovative pieces of forniture that suit a modern lifestyle.</p>
       </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
@@ -38,8 +44,7 @@ function ProductsList() {
         </div>
         <div className="row">       
           {firstCategory.map((product, id = product.id) => (
-            <div className="col-lg-3 product-wood col-md-4 col-sm-6 col-12 g-5" key={id}>
-              
+            <div className="col-lg-3 product-wood col-md-4 col-sm-6 col-12 g-5" key={id}>         
               <div className="mt-sm-4  mx-3  bg-white">
                 <Link className=" image-product-wood d-flex justify-content-center" to={`/products/${product.id}`} >
                   <img
@@ -73,6 +78,7 @@ function ProductsList() {
           ))}        
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

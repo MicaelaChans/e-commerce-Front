@@ -4,7 +4,7 @@ import Footer from "./partials/Footer";
 import ProductsList from "./partials/ProductsList";
 import { Link } from "react-router-dom";
 import Categories from "./partials/Categories";
-//import { Link } from 'react-router-dom';
+
 
 function Home() {
   // const navigate = useNavigate();
