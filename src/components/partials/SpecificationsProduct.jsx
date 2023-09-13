@@ -35,15 +35,15 @@ function SpecificationsProduct(params) {
       </ul>
       <ul className="ul-product-page">
         <li className="li-product-page p-2 d-flex">
-          <p className="m-0">Closed combustion</p>
+          <p className="m-0">Closed combustion:</p>
           <p className="m-0">Data</p>
         </li>
         <li className="li-product-page-light p-2 d-flex">
-          <p className="m-0">Clean burn</p>
+          <p className="m-0">Clean burn:</p>
           <p className="m-0">Data</p>
         </li>
         <li className="li-product-page p-2 d-flex">
-          <p className="m-0">External air intake</p>
+          <p className="m-0">External air intake:</p>
           <p className="m-0">Data</p>
         </li>
       </ul>
