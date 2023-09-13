@@ -368,12 +368,16 @@
   margin-left: 10%;
   color: white;
   font-size: 4rem;
+  opacity: 0;
+  transform: translateX(-100%);
 }
 .banner-wood-text-paragraph {
   margin-left: 3%;
   margin-right: 3%;
   color: white;
   font-size: 1.3rem;
+  opacity: 0;
+  transform: translateX(100%);
 }
 @media (min-width: 577px) and (max-width: 992px) {
   .banner-wood-stoves {
