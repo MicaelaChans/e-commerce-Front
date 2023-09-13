@@ -3,9 +3,9 @@ import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getProducts } from "../redux/productSlice";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "../App.css";
+import Footer from "./partials/Footer";
 
 function ProductsList() {
   const products = useSelector((state) => state.products);
@@ -72,6 +72,7 @@ function ProductsList() {
           ))}        
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
