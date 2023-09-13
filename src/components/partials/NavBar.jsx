@@ -19,7 +19,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
-            <NavDropdown title="Our Products" id="collasible-nav-dropdown">
+            <NavDropdown title="Our Products" className="mx-2" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/productsWood">
                 Wood Stoves
               </NavDropdown.Item>
@@ -30,14 +30,14 @@ function NavBar() {
                 Accessories
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/contact">
+            <Nav.Link as={Link} className="mx-2" to="/contact">
               Contact
             </Nav.Link>
-            <Nav.Link as={Link} to="/aboutUs">
+            <Nav.Link as={Link} className="mx-2" to="/aboutUs">
               About Us
             </Nav.Link>
             <Nav.Link
-              className="about-this-project"
+              className="about-this-project mx-2"
               to="/aboutThisProject"
               as={Link}
             >
