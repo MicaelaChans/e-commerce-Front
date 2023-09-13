@@ -33,7 +33,7 @@ function ProductsList() {
     <div>
       <div className="banner-wood-stoves mb-5 d-none d-sm-flex align-items-center">
         <h1
-          className={`banner-wood-text-title mb-3 ${
+          className={`banner-wood-text-title mb-3 me-2 ${
             animate ? "animate-from-left" : ""
           }`}
         >
