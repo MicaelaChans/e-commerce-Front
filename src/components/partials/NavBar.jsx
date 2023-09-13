@@ -58,7 +58,11 @@ function NavBar() {
           </NavDropdown>
           <Cart />
           <Nav.Link as={Link}>Admin</Nav.Link>
-          <Nav.Link className="about-this-project" as={Link}>
+          <Nav.Link
+            className="about-this-project"
+            to="/aboutThisProject"
+            as={Link}
+          >
             About this project
           </Nav.Link>
         </Nav>

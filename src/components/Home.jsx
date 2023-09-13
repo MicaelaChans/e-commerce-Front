@@ -4,7 +4,6 @@ import Footer from "./partials/Footer";
 import ProductsList from "./partials/ProductsList";
 import { Link } from "react-router-dom";
 import Categories from "./partials/Categories";
-import { Link } from 'react-router-dom';
 
 function Home() {
   // const navigate = useNavigate();
@@ -54,7 +53,7 @@ function Home() {
                     cualquiera de tus ambientes.
                   </p>
 
-                  <Link className="p-3 px-5 btn-green text-decoration-none">
+                  <Link className="p-3 px-5 btn-green text-decoration-none text-black">
                     <span>CONOCÉ MÁS &rarr;</span>
                   </Link>
                 </div>
@@ -80,7 +79,7 @@ function Home() {
                     mejor distribución del calor y aprovechamiento de la leña.
                   </p>
 
-                  <Link className="p-3 px-5 btn-green text-decoration-none">
+                  <Link className="p-3 px-5 btn-green text-decoration-none text-black">
                     <span>CONOCÉ MÁS &rarr;</span>
                   </Link>
                 </div>
@@ -106,7 +105,7 @@ function Home() {
                     accesorios adecuados.
                   </p>
 
-                  <Link className="p-3 px-5 btn-green text-decoration-none">
+                  <Link className="p-3 px-5 btn-green text-decoration-none text-black">
                     <span>CONOCÉ MÁS &rarr;</span>
                   </Link>
                 </div>

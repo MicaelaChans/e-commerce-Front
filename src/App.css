@@ -315,7 +315,12 @@
 
 /* About Us CSS */
 .background-about {
-  background-image: linear-gradient(120deg,rgba(0,0,0,0.87) 0%,rgba(0,0,0,0.57) 100%), url("/public/about.jpg");
+  background-image: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.87) 0%,
+      rgba(0, 0, 0, 0.57) 100%
+    ),
+    url("https://www.hergom.com/wp-content/uploads/2022/05/manchester-blog.jpg");
   background-size: cover;
   color: white;
   padding-top: 110px;
@@ -325,12 +330,63 @@
   max-width: 1080px;
 }
 .info-about {
-  background-color: #EFE9E4;
+  background-color: #efe9e4;
 }
 .team-about {
   background-color: #434241;
   color: white;
 }
+
+/* About This Project*/
+
+.background-aboutProject {
+  background-image: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.87) 0%,
+      rgba(0, 0, 0, 0.57) 100%
+    ),
+    url("/public/about.jpg");
+  background-size: cover;
+  color: white;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+.text-about {
+  max-width: 1080px;
+}
+.info-about {
+  background-color: #efe9e4;
+}
+.team-about {
+  background-color: #434241;
+  color: white;
+}
+
+/*ContactUs CSS*/
+
+.background-contact {
+  background-image: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.87) 0%,
+      rgba(0, 0, 0, 0.57) 100%
+    ),
+    url("https://www.chimeneasllama.net/73-large_default/hergom-e-30-s.jpg");
+  background-size: cover;
+  color: white;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+.text-about {
+  max-width: 1080px;
+}
+.info-about {
+  background-color: #efe9e4;
+}
+.team-about {
+  background-color: #434241;
+  color: white;
+}
+
 /* Try Again CSS */
 
 /*Cart CSS*/

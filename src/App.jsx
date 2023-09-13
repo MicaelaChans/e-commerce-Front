@@ -11,6 +11,7 @@ import ProductsList from "./components/partials/ProductsList";
 import ProductsWood from "./components/ProductsWood";
 import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
+import AboutThisProject from "./components/AboutThisProject";
 function App() {
   return (
     <div>
@@ -30,6 +31,11 @@ function App() {
         <Route
           path="/sobreNosotros"
           element={<Navigate replace to="/aboutUs" />}
+        />
+        <Route path="/aboutThisProject" element={<AboutThisProject />} />
+        <Route
+          path="/sobreElProyecto"
+          element={<Navigate replace to="/aboutThisProject" />}
         />
         <Route path="/productsWood" element={<ProductsWood />} />
         <Route path="/products/:id" element={<ProductPage />} />

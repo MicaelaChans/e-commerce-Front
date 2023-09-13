@@ -3,7 +3,7 @@ function AboutUs() {
     <>
       <div className="background-about">
         <div className="container pt-5">
-          <h2 className="mb-3 fs-1">What is DRACHEN?</h2>
+          <h2 className="mb-3 fs-1">About US?</h2>
           <div className="text-about fs-5">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
@@ -23,7 +23,7 @@ function AboutUs() {
         </div>
       </div>
       <div className="info-about d-flex flex-column align-items-center justify-content-center text-center p-5">
-        <h3 className="my-5 fs-3">TECHNOLOGIES & TOOLS</h3>
+        <h3 className="my-5 fs-3">MISSION AND VISION</h3>
         <div className="w-75 mb-5 lh-lg">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
@@ -39,91 +39,6 @@ function AboutUs() {
             molestiae magni autem! Vel temporibus deserunt magni reiciendis
             magnam, maiores recusandae perspiciatis ipsa culpa?
           </p>
-        </div>
-        <div className="d-flex justify-content-center align-self-center flex-wrap gap-2 m-0 col-xl-6 col-md-8 col-sm-10 col-12 mb-5">
-          <div className="icon-tech">
-            <i></i>
-            <small>Bootstrap</small>
-          </div>
-          <div className="icon-tech">
-            <i></i>
-            <small>CSS</small>
-          </div>
-          <div className="icon-tech">
-            <i></i>
-            <small>Figma</small>
-          </div>
-          <div className="icon-tech">
-            <i></i>
-            <small>GitHub</small>
-          </div>
-          <div className="icon-tech">
-            <i></i>
-            <small>JavaScript</small>
-          </div>
-          <div className="icon-tech">
-            <i></i>
-            <small>MongoDB</small>
-          </div>
-        </div>
-      </div>
-      <div className="team-about d-flex flex-column align-items-center justify-content-center text-center p-5">
-        <h4 className="my-5">OUR TEAM</h4>
-        <div className="row mb-5">
-          <div className="col-2">
-            <img src="" alt="" />
-            <h5 className="mt-4">Nombre Apellido</h5>
-            <p>Full Stack Developer</p>
-            <div>
-              <small>Linkedin</small>
-              <small>GitHub</small>
-            </div>
-          </div>
-          <div className="col-2">
-            <img src="" alt="" />
-            <h5 className="mt-4">Nombre Apellido</h5>
-            <p>Full Stack Developer</p>
-            <div>
-              <small>Linkedin</small>
-              <small>GitHub</small>
-            </div>
-          </div>
-          <div className="col-2">
-            <img src="" alt="" />
-            <h5 className="mt-4">Nombre Apellido</h5>
-            <p>Full Stack Developer</p>
-            <div>
-              <small>Linkedin</small>
-              <small>GitHub</small>
-            </div>
-          </div>
-          <div className="col-2">
-            <img src="" alt="" />
-            <h5 className="mt-4">Nombre Apellido</h5>
-            <p>Full Stack Developer</p>
-            <div>
-              <small>Linkedin</small>
-              <small>GitHub</small>
-            </div>
-          </div>
-          <div className="col-2">
-            <img src="" alt="" />
-            <h5 className="mt-4">Nombre Apellido</h5>
-            <p>Full Stack Developer</p>
-            <div>
-              <small>Linkedin</small>
-              <small>GitHub</small>
-            </div>
-          </div>
-          <div className="col-2">
-            <img src="" alt="" />
-            <h5 className="mt-4">Nombre Apellido</h5>
-            <p>Full Stack Developer</p>
-            <div>
-              <small>Linkedin</small>
-              <small>GitHub</small>
-            </div>
-          </div>
         </div>
       </div>
     </>
