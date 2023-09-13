@@ -42,6 +42,13 @@ function NavBar() {
             <Nav.Link as={Link} to="/aboutUs">
               About Us
             </Nav.Link>
+            <Nav.Link
+              className="about-this-project"
+              to="/aboutThisProject"
+              as={Link}
+            >
+              About This Project
+            </Nav.Link>
             <NavDropdown
               title={<i className="bi bi-person-fill"></i>}
               id="collasible-nav-dropdown"
@@ -55,13 +62,6 @@ function NavBar() {
               <NavDropdown.Item>Log out</NavDropdown.Item>
             </NavDropdown>
             <Cart />
-            <Nav.Link
-              className="about-this-project"
-              to="/aboutThisProject"
-              as={Link}
-            >
-              About this project
-            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
