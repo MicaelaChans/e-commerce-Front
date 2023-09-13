@@ -18,7 +18,7 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="m-auto">
             <NavDropdown title="Our Products" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/productsWood">
                 Wood Stoves
@@ -30,8 +30,6 @@ function NavBar() {
                 Accessories
               </NavDropdown.Item>
             </NavDropdown>
-          </Nav>
-          <Nav>
             <Nav.Link as={Link} to="/contact">
               Contact
             </Nav.Link>
@@ -45,6 +43,8 @@ function NavBar() {
             >
               About This Project
             </Nav.Link>
+          </Nav>
+          <Nav>
             <NavDropdown
               title={<i className="bi bi-person-fill"></i>}
               id="collasible-nav-dropdown"
