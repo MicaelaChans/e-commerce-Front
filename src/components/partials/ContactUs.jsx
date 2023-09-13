@@ -26,18 +26,30 @@ function ContactUs() {
       </div>
       <div className="d-flex flex-column align-items-center justify-content-center p-5">
         <div className="w-75 mb-5 lh-lg">
-          <Form className="fs-3">
+          <Form className="fs-3 ">
             <Form.Group className="mb-3" controlId="example">
               <Form.Label>Firstname</Form.Label>
-              <Form.Control type="email" placeholder="Mary" />
+              <Form.Control
+                className="shadow border-0"
+                type="email"
+                placeholder="Mary"
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="example">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="name@example.com" />
+              <Form.Control
+                className="shadow border-0"
+                type="email"
+                placeholder="name@example.com"
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="example">
               <Form.Label>Leave us a comment...</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control
+                className="shadow border-0"
+                as="textarea"
+                rows={3}
+              />
             </Form.Group>
           </Form>
         </div>
