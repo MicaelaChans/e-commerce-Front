@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 function Footer() {
   return (
-    <div className="container py-4 py-md-5 px-4 px-md-3" id="footer">
+    <div className="container py-md-5 px-4 px-md-3" id="footer">
       <div className="row">
         <div className="col-lg-4">
           <span className="fs-1 m-3">Drachen</span>
