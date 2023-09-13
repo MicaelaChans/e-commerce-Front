@@ -31,7 +31,7 @@ function ProductsList() {
 
   return (
     <div>
-      <div className="banner-wood-stoves mb-5 d-none d-sm-flex align-items-center">
+      <div className="banner-accessories-stoves mb-5 d-none d-sm-flex align-items-center">
         <h1
           className={`banner-wood-text-title mb-3 me-2 ${
             animate ? "animate-from-left" : ""
@@ -40,7 +40,7 @@ function ProductsList() {
           ACCESSORIES
         </h1>
         <p
-          className={`banner-wood-text-paragraph ${
+          className={`banner-wood-text-paragraph  ${
             animate ? "animate-from-right" : ""
           }`}
         >
