@@ -253,6 +253,35 @@
   z-index: 9;
 }
 
+@keyframes slideFromLeft {
+  0% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+.animate-from-left {
+  animation: slideFromLeft 1.25s forwards;
+}
+
+.animate-from-right {
+  animation: slideFromRight 1.25s forwards;
+}
 /*Register y Login CSS*/
 .container-register {
   width: 86%;
