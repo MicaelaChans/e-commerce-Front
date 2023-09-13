@@ -80,10 +80,9 @@
   margin: 0;
   background-color: #c9c7ac;
   height: 240vh;
-  width: 100vw;
 }
 .row-category {
-  width: 100vw;
+  width: 100%;
 }
 .categories-contaier {
   width: 100vw;
@@ -118,8 +117,11 @@
 
 .categories-first-div-img {
   background-color: #efe9e4;
+  margin: 0;
+  padding: 0;
 }
 .section-first-title {
+  padding: 0;
   color: #3d3d3d;
 }
 
@@ -127,6 +129,7 @@
   color: #8d8b8a;
 }
 .categories-section-img {
+  width: 75vw;
   height: 80vh;
 }
 .categories-section-img-3 {
@@ -138,6 +141,7 @@
 }
 .categories-img {
   height: 80vh;
+  width: 100%;
   padding: 0;
 }
 
@@ -151,7 +155,7 @@
 }
 .hr-product-wood {
   width: 60px;
-  margin: auto; 
+  margin: auto;
 }
 .hr-product-wood-top {
   width: 80px;
@@ -255,23 +259,23 @@
 
 @keyframes slideFromLeft {
   0% {
-      transform: translateX(-100%);
-      opacity: 0;
+    transform: translateX(-100%);
+    opacity: 0;
   }
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideFromRight {
   0% {
-      transform: translateX(100%);
-      opacity: 0;
+    transform: translateX(100%);
+    opacity: 0;
   }
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -449,6 +453,7 @@
   max-width: 1080px;
 }
 .info-about {
+  background-color: #efe9e4;
   background-color: #efe9e4;
 }
 .team-about {
