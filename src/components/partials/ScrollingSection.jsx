@@ -31,7 +31,7 @@ function ScrollingSection() {
   }, []);
 
   return (
-    <section className="scroll-section-outer">
+    <section className="scroll-section-outer bk">
       <div ref={triggerRef}>
         <div
           ref={sectionRef}

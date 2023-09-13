@@ -174,7 +174,6 @@
 
 /* ScrollSection CSS */
 .scroll-section-outer {
-  background-color: rgb(213, 213, 213);
   overflow: hidden;
 }
 .scroll-section-inner {
@@ -192,10 +191,12 @@
 }
 .scroll-img {
   object-fit: cover;
-  width: 97.5%;
+  width: 100%;
   height: 99%;
 }
-
+.bk {
+  background-color: #efe9e4;
+}
 @media (max-width: 375px) {
   .scroll-section-outer {
     display: none;
@@ -203,7 +204,6 @@
 }
 @media (max-width: 768) {
   .scroll-section-outer {
-    background-color: rgb(213, 213, 213);
     overflow: hidden;
   }
   .scroll-section-inner {
@@ -231,7 +231,7 @@
 .categories-section {
   padding: 0;
   margin: 0;
-  background-color: #c9c7ac;
+
   height: 240vh;
 }
 .row-category {
@@ -264,7 +264,7 @@
   border-radius: 3px;
   border: none;
   padding: 4px 3px;
-  background-color: #fdb467;
+  background-color: #f3a149;
   color: #ffebd6;
 }
 
@@ -297,6 +297,7 @@
   width: 100%;
   padding: 0;
 }
+
 
 /* List of Products CSS */
 

@@ -17,7 +17,6 @@ function Home() {
     <>
       <Hero />
       <ScrollingSection />
-      <h2>See our categories</h2>
       <Categories />
       <Footer />
     </>

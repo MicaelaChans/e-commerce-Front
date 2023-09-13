@@ -11,14 +11,16 @@ function CategoryProducts() {
         </div>
 
         <div className="col-3 categories-first-div-img m-0 p-0">
-          <h2 className="section-first-title ps-3">Wood Stoves and Heaters.</h2>
+          <h2 className="section-first-title ps-3 mt-3">
+            Wood Stoves and Heaters.
+          </h2>
           <p className="section-first-p p-3">
             Our products, in addition to being more efficient and
             environmentally friendly, feature vitroceramic glass doors that
             provide a relaxing and cozy view of the fire while preventing the
             escape of hot air.
           </p>
-          <div className="m-4">
+          <div className="mt-5 ms-5 btn btn-lg">
             <button className="categories-button-show-products m-5">
               Show Products
             </button>
@@ -33,7 +35,7 @@ function CategoryProducts() {
             provide a relaxing and cozy view of the fire while preventing the
             escape of hot air.
           </p>
-          <div className="m-4">
+          <div className="mt-5 ms-5 btn btn-lg">
             <button className="categories-button-show-products">
               Show Products
             </button>
@@ -56,7 +58,7 @@ function CategoryProducts() {
               alt="algo"
             />
           </div>
-          <div className="col-3 categories-first-div-img m-0 p-0">
+          <div className="col-3  categories-first-div-img m-0 p-0">
             <h2 className="section-first-title p-3">
               Wood Stoves and Heaters.
             </h2>
@@ -66,7 +68,7 @@ function CategoryProducts() {
               provide a relaxing and cozy view of the fire while preventing the
               escape of hot air.
             </p>
-            <div className="m-4">
+            <div className="mt-5 ms-5 btn btn-lg">
               <button className="categories-button-show-products m-5">
                 Show Products
               </button>
