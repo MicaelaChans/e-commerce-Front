@@ -62,7 +62,7 @@ function ProductsList() {
             </div>
             <div className="d-flex justify-content-center">
              <hr className="hr-product-wood  mx-2 mt-3" />
-              <Link className="pt-2 link-product-wood " to={`/products/${product.id}`}><span className="down">🡻</span><span className="up">🡹</span></Link>
+              <Link className="pt-2 link-product-wood " to={`/products/${product.id}`}>MEASURES</Link>
               <hr className="hr-product-wood  mx-2 mt-3" />
             </div>
             </div> 
