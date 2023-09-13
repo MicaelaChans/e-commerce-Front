@@ -153,6 +153,11 @@
   width: 85%;
   margin: auto;
 }
+.image-product-pellet {
+  width: 100%;
+  margin: auto;
+  height: 250px;
+}
 .hr-product-wood {
   width: 60px;
   margin: auto;
@@ -224,6 +229,11 @@
     margin-left: 15%;
   }
 }
+@media (min-width: 992px) {
+  .image-product-pellet {
+    margin-bottom: 20px
+  }
+}
 
 .alt-title-wood {
   font-size: 3rem;
@@ -236,7 +246,6 @@
 }
 .product-wood:hover .p-sizes-product {
   opacity: 1;
-  margin-top: 20px;
   max-height: 100px;
 }
 .product-wood:hover .hr-product-wood-top {
@@ -246,9 +255,7 @@
   margin-bottom: 100px;
   position: relative;
 }
-.product-wood :hover {
-  margin-top: 0;
-}
+
 .product-wood {
   position: relative;
 }
@@ -292,7 +299,7 @@
   overflow: hidden;
 }
 .body-register {
-  height: calc(100vh - 107.297px);
+  height: 73vh;
 }
 .image-register {
   width: 100%;

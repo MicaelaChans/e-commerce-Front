@@ -23,7 +23,7 @@ function NavBar() {
               <NavDropdown.Item as={Link} to="/productsWood">
                 Wood Stoves
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="#action/3.2">
+              <NavDropdown.Item as={Link} to="productsPellet">
                 Pellet Stoves
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to="#action/3.3">
