@@ -15,11 +15,16 @@ function Cart() {
       <NavLink onClick={handleShow}>
         <i className="bi bi-cart3 mt-2"></i>
       </NavLink>
-      <Offcanvas placement="end" show={show} onHide={handleClose}>
+      <Offcanvas
+        placement="end"
+        show={show}
+        onHide={handleClose}
+        className="w-25"
+      >
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="fs-3">Carrito</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className="d-flex flex-column h-100 justify-content-between">
           <div className="row">
             <div className="col-6 mt-3 p-3">
               <img

@@ -8,6 +8,7 @@ import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/partials/ContactUs";
 import Cart from "./components/Cart";
 import ProductsList from "./components/partials/ProductsList";
+import ProductsWood from "./components/ProductsWood";
 import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
 function App() {
@@ -30,9 +31,7 @@ function App() {
           path="/sobreNosotros"
           element={<Navigate replace to="/aboutUs" />}
         />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/carrito" element={<Navigate replace to="/cart" />} />
-        <Route path="/productsList" element={<ProductsList />} />
+        <Route path="/productsWood" element={<ProductsWood />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

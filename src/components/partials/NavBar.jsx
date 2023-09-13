@@ -3,13 +3,12 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
 import Cart from "../Cart";
 
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary p-0">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -18,14 +17,10 @@ function NavBar() {
             alt="drachen logo"
           />{" "}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto ">
-            <NavDropdown
-              className="mx-3"
-              title="Our Products"
-              id="basic-nav-dropdown"
-            >
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <NavDropdown title="Our Products" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="#action/3.1">
                 Wood Stoves
               </NavDropdown.Item>
@@ -61,9 +56,7 @@ function NavBar() {
             </NavDropdown.Item>
             <NavDropdown.Item>Log out</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link as={Link} to="/cart">
-            <i className="bi bi-cart3 mt-2"></i>
-          </Nav.Link>
+          <Cart />
           <Nav.Link as={Link}>Admin</Nav.Link>
           <Nav.Link className="about-this-project" as={Link}>
             About this project

@@ -7,7 +7,7 @@
   width: 130px;
 }
 .about-this-project {
-  color: orangered;
+  color: rgb(12, 12, 12);
   font-weight: bold;
 }
 
@@ -143,32 +143,110 @@
 
 /* List of Products CSS */
 
-/* Products CSS */
-.image-product {
-  width: 100%;
-  height: 260px;
+/* Products of Category CSS */
+
+.image-product-wood {
+  width: 85%;
+  margin: auto;
 }
-.hr-product {
-  width: 12%;
+.hr-product-wood {
+  width: 60px;
   margin: auto;
   color: black;
   background-color: black;
-  height: 1.5px;
+  height: 1.8px;
+}
+.hr-product-wood-top {
+  width: 80px;
+  margin: auto;
+  color: black;
+  background-color: black;
+  height: 1.8px;
+  display: none;
 }
 .p-sizes-product {
   color: grey;
   font-size: 0.8rem;
+  margin-top: 20px;
+  display: none;
 }
-.link-product {
-  font-size: 0.9rem;
+.banner-wood-stoves {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url("./assets/wood_stoves_banner_2.jpg");
+  height: 50vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.banner-wood-text-title {
+  margin-left: 10%;
+  color: white;
+  font-size: 4rem;
+}
+.banner-wood-text-paragraph {
+  margin-left: 3%;
+  margin-right: 3%;
+  color: white;
+  font-size: 1.3rem;
+}
+@media (min-width: 577px) and (max-width: 992px) {
+  .banner-wood-stoves {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .banner-wood-text-title {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+@media (min-width: 0px) and (max-width: 576px) {
+  .image-product-wood {
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+.hr-wood {
+  margin-top: 30px;
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.alt-title-wood {
+  font-size: 3rem;
+}
+.link-product-wood {
+  text-decoration: none;
+  color: orangered;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+.product-wood:hover .p-sizes-product {
+  display: flex;
+  margin-top: 20px;
+}
+.product-wood:hover .hr-product-wood-top {
+  display: flex;
+  margin-top: 10px;
+}
+.product-wood {
+  margin-bottom: 100px;
+  position: relative;
+}
+.product-wood :hover {
+  margin-top: 0;
+}
+.product-wood {
+  position: relative;
+}
+.discover-section {
   position: absolute;
-  bottom: 5%;
-  right: 5%;
-  background-color: rgba(128, 128, 128, 0.781);
-}
-.card-product {
-  position: relative;
-  position: relative;
+  z-index: 9;
 }
 
 /*Register y Login CSS*/
@@ -200,79 +278,41 @@
 }
 
 /* One Product CSS */
-.text-product-page {
-  height: 100%;
-}
 
-.description-product-page {
-  text-align: justify;
-}
-
-.container-product-page {
-  height: 88vh;
-}
-
-.buy-button {
-  background-color: #679186;
-}
-
-.buy-button:hover {
-  background-color: #496a61;
-}
-@media (min-width: 1px) {
-  .product-in-background {
-    height: 250px;
-    width: 200px;
-    bottom: 30px;
-    left: 5px;
-    object-fit: cover;
-    position: absolute;
-  }
-}
-@media (min-width: 576px) {
-  .product-in-background {
-    height: 250px;
-    width: 200px;
-    bottom: 30px;
-    left: 40px;
-    object-fit: cover;
-    position: absolute;
-  }
-}
-@media (min-width: 992px) {
-  .product-in-background {
-    height: 250px;
-    width: 200px;
-    bottom: 30px;
-    left: 150px;
-    object-fit: cover;
-    position: absolute;
-  }
-}
-
-.one-product-background {
-  background-image: url("/decoracion-minimalista.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 10% 100%;
+.img-product-page {
   height: 500px;
-  position: relative;
 }
 
-.circle-selected {
-  background: orange;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+.left-column-product {
+  background-color: #f3f3f3;
+  height: 600px;
+  width: 300px;
 }
 
-.circle-no-selected {
-  background: lightblue;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
+.btn-product-page {
+  background-color: white;
+  border: 1px;
+  width: 90%;
+  margin: 5%;
 }
+
+.line-description-product {
+  height: 1px;
+}
+
+.right-column-product {
+  height: 100vh;
+}
+
+.details-right-column-product {
+  height: 125px;
+  background-color: #f3f3f3;
+}
+
+.image-right-column-product {
+  height: 150px;
+}
+
 /* About Us CSS */
 
 /*Cart CSS*/
@@ -290,13 +330,9 @@
 
 /* Footer CSS */
 #footer {
-  background-image: url("/footerrr.jpg");
+  background-color: hsl(0, 6%, 50%);
   max-width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
   color: white;
-  background-position: center;
-  background-size: cover;
 }
 
 /* Not Found */
