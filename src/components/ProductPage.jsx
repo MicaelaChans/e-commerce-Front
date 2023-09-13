@@ -30,7 +30,7 @@ function ProductPage() {
         <div className="d-flex">
           <div className="container-left-product-page">
             <div className="row mb-5">
-              <div className="col-5">
+              <div className="col-md-12 col-lg-5">
                 <div className="left-column-product pt-5">
                   <img
                     className="img-product-page"
