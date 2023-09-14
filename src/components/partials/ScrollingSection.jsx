@@ -13,7 +13,7 @@ function ScrollingSection() {
       sectionRef.current,
       { translateX: 0 },
       {
-        translateX: "-217vw",
+        translateX: "-300vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -62,7 +62,7 @@ function ScrollingSection() {
           <div className="scroll-section">
             <img
               className="scroll-img"
-              src="https://fotografias.flooxernow.com/clipping/cmsimages02/2017/05/17/6A6AA009-4B58-4942-9CF9-C8F1573BCF8A/98.jpg?crop=1600,900,x0,y85&width=1900&height=1069&optimize=high&format=webply"
+              src="https://images-ext-2.discordapp.net/external/qWUjc-1AmSpMyvURwWgeR9LpfZatMfYcfAI3iqn_jjA/https/panadero.com/wp-content/uploads/2023/04/reemplazar-estufa-lena.jpg?width=1681&height=925"
               alt=""
             />
           </div>
