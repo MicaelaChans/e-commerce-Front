@@ -78,36 +78,18 @@ function ProductsList() {
                 to={`/products/${product.id}`}
               >
                 <h5 className="text-center mt-2">
-                  {product.name} - {product.otherProperties.nominalPower}KW
+                  {product.name}
                 </h5>
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <hr className="hr-product-wood-top" style={{}} />
-                  <div className=" justify-content-center align-items-center p-sizes-product">
-                    <p className="text-center mx-2">
-                      H: {product.otherProperties.height}
-                    </p>
-                    <p className="text-center mx-2 ">
-                      {" "}
-                      W: {product.otherProperties.width}
-                    </p>
-                    <p className="text-center mx-2">
-                      {" "}
-                      D: {product.otherProperties.depth}
-                    </p>
-                  </div>
-                  <hr className="hr-product-wood-top mb-1" />
-                  <div className="d-flex justify-content-center">
-                    
+                  <div className="d-flex justify-content-center">              
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     >
-                      <button className="btn btn-light btn-sm shadow">Add to cart</button>
-                      
-                    </Link>
-                   
+                      <button className="btn btn-light btn-sm shadow">Add to cart</button>           
+                    </Link>                  
                   </div>
                 </div>
               </div>
