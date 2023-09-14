@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { getProduct } from "../redux/productSlice";
+import { getProducts } from "../redux/productSlice";
 import { useParams } from "react-router-dom";
 import SidebarProduct from "./partials/SidebarProduct";
 import SpecificationsProduct from "./partials/SpecificationsProduct";
@@ -11,20 +11,21 @@ import { addItem } from "../redux/cartSlice";
 
 function ProductPage() {
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products);
   const params = useParams();
 
   useEffect(() => {
     const getOneProduct = async () => {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:8000/products/${params.id}`,
+        url: `http://localhost:8000/products`,
       });
-      dispatch(getProduct(response.data));
+      dispatch(getProducts(response.data));
     };
     getOneProduct();
   }, [params.id]);
-
+  const productFilter = products.filter((item) => item.id == params.id);
+  const product = productFilter[0];
   const handleAddItem = (item) => {
     dispatch(
       addItem({
@@ -54,6 +55,7 @@ function ProductPage() {
                   <button
                     className="btn-product-page fw-semibold p-2"
                     onClick={() => handleAddItem(product)}
+                    style={{backgroundColor:"#f9b468"}}
                   >
                     Add to Cart
                   </button>
