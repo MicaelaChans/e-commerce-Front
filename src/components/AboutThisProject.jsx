@@ -56,7 +56,7 @@ function AboutThisProject() {
           </div>
           <div className="icon-tech">
             <h6>
-              <i className="fa-brands mx-1 fa-2x fa-figma"></i>
+              <i className="fa-brands fa-2x fa-figma"></i>
             </h6>
             <small>Figma</small>
           </div>
