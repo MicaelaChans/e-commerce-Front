@@ -407,6 +407,9 @@
     width: 60%;
     margin-left: 20%;
   }
+  .about-this-project-btn{
+    display: none;
+  }
   
 }
 @media (min-width: 992px) {
