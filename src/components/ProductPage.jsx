@@ -55,7 +55,6 @@ function ProductPage() {
                   <button
                     className="btn-product-page fw-semibold p-2"
                     onClick={() => handleAddItem(product)}
-                    style={{ backgroundColor: "#f9b468" }}
                   >
                     Add to Cart
                   </button>
