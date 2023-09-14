@@ -116,7 +116,7 @@
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("./assets/flame-circle.jpg");
+    url("/assets/flame-circle.jpg");
 }
 .card-product {
   position: relative;
@@ -337,7 +337,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./assets/wood_stoves_banner_2.jpg");
+    url("/assets/wood_stoves_banner_2.jpg");
   height: 50vh;
   margin-top: 100px;
   background-position: center center;
@@ -350,7 +350,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./assets/pellet_stoves_banner.jpg");
+    url("/assets/pellet_stoves_banner.jpg");
   height: 50vh;
   background-position: center center;
   background-repeat: no-repeat;
@@ -363,7 +363,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./assets/wood_stoves_banner.jpg");
+    url("/assets/wood_stoves_banner.jpg");
   height: 50vh;
   background-position: center 67%;
   background-repeat: no-repeat;
