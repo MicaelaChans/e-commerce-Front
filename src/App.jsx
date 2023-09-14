@@ -7,18 +7,23 @@ import NotFound from "./components/NotFound";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/partials/ContactUs";
 import Cart from "./components/Cart";
-import ProductsPellet from "./components/ProductsPellet"
+import ProductsPellet from "./components/ProductsPellet";
 import ProductsWood from "./components/ProductsWood";
-import ProductsAccessories from "./components/ProductsAccessories"
+import ProductsAccessories from "./components/ProductsAccessories";
 import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
 import AboutThisProject from "./components/AboutThisProject";
 import { Link, useNavigate } from "react-router-dom";
-
+import ScrollingSection from "./components/partials/ScrollingSection";
+import CategoryProducts from "./components/partials/Categories";
 function App() {
   return (
     <div>
-     <Link to={"/aboutThisProject"}><button className="btn btn-lg btn-light about-this-project-btn">About this project</button></Link> 
+      <Link to={"/aboutThisProject"}>
+        <button className="btn btn-lg btn-light about-this-project-btn">
+          About this project
+        </button>
+      </Link>
       <NavBar />
       <Routes>
         <Route path="/register" element={<Register />} />
@@ -46,6 +51,7 @@ function App() {
         <Route path="/productsAccessories" element={<ProductsAccessories />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/scrolling" element={<CategoryProducts />} />
       </Routes>
     </div>
   );
