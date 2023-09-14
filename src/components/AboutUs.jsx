@@ -4,7 +4,7 @@ function AboutUs() {
     <>
       <div className="background-about">
         <div className="container pt-5">
-          <h2 className="mb-3 fs-1">About US?</h2>
+          <h2 className="mb-3 fs-1">About Us</h2>
           <div className="text-about fs-5">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,

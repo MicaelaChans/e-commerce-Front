@@ -7,6 +7,7 @@ import SidebarProduct from "./partials/SidebarProduct";
 import SpecificationsProduct from "./partials/SpecificationsProduct";
 import DescriptionsProduct from "./partials/DescriptionsProduct";
 import Footer from "./partials/Footer";
+import { addItem } from "../redux/cartSlice";
 
 function ProductPage() {
   const dispatch = useDispatch();
@@ -24,6 +25,17 @@ function ProductPage() {
     getOneProduct();
   }, [params.id]);
 
+  const handleAddItem = (item) => {
+    dispatch(
+      addItem({
+        id: item.id,
+        image: item.image,
+        name: item.name,
+        price: item.price,
+      })
+    );
+  };
+
   return (
     <>
       <div className="container-product-page">
@@ -39,7 +51,10 @@ function ProductPage() {
                       alt={product.name}
                     />
                   </div>
-                  <button className="btn-product-page fw-semibold p-2">
+                  <button
+                    className="btn-product-page fw-semibold p-2"
+                    onClick={() => handleAddItem(product)}
+                  >
                     Add to Cart
                   </button>
                 </div>

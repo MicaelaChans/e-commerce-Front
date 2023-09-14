@@ -6,6 +6,7 @@ import { getProducts } from "../redux/productSlice";
 import "react-multi-carousel/lib/styles.css";
 import "../App.css";
 import Footer from "./partials/Footer";
+import { addItem } from "../redux/cartSlice";
 
 function ProductsList() {
   const products = useSelector((state) => state.products);
@@ -28,6 +29,17 @@ function ProductsList() {
   useEffect(() => {
     setAnimate(true);
   }, []);
+
+  const handleAddItem = (item) => {
+    dispatch(
+      addItem({
+        id: item.id,
+        image: item.image,
+        name: item.name,
+        price: item.price,
+      })
+    );
+  };
 
   return (
     <div>
@@ -99,14 +111,21 @@ function ProductsList() {
                   </div>
                   <hr className="hr-product-wood-top mb-1" />
                   <div className="d-flex justify-content-center">
-                    
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
+                    ></Link>
+                    <button
+                      className="btn btn-light btn-sm shadow "
+                      style={{
+                        backgroundColor: "#f3a149",
+                        color: "white",
+                        fontWeight: "600",
+                      }}
+                      onClick={() => handleAddItem(product)}
                     >
-                     <button className="btn btn-light btn-sm shadow " style={{backgroundColor:"#f3a149", color:"white", fontWeight: "600"}}>Add to cart</button>
-                    </Link>
-                    
+                      Add to cart
+                    </button>
                   </div>
                 </div>
               </div>
@@ -115,7 +134,7 @@ function ProductsList() {
         </div>
       </div>
       <div className="mt-5">
-      <Footer />
+        <Footer />
       </div>
     </div>
   );

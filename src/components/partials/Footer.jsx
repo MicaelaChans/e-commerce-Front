@@ -1,6 +1,58 @@
 import { NavLink } from "react-router-dom";
+import React from 'react';
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+} from 'mdb-react-ui-kit';
+
+
 function Footer() {
-  return (
+return (
+<div className="bg-body-tertiary">
+  <div className="container ">
+    <div className="row ">
+      <div className="col-6">
+        <img
+          className="mb-3 image-navbar"
+          src="./src/assets/drachen_logo_black.png"
+            alt="drachen logo"
+        />
+        <p style={{paddingRight:"100px"}}>For Drachen, heating is more than just a practical or aesthetic
+          matter. We see our stoves as innovative pieces of forniture that suit
+          a modern lifestyle.</p>
+      </div>
+      <div className="col-3 pt-4 text-center">
+         <h5 className="mb-3">PRODUCTS</h5>
+         <p className="mb-2">Wood stoves</p>
+         <p  className="mb-2">Pellet stoves</p>
+         <p className="mb-1">Accesories</p>
+      </div>
+      <div className="col-3 pt-4 text-center">
+        <h5 className="mb-3">VISIT OUR STORE</h5>
+        <p className="mb-2">Montevideo, Blvar Artigas 1574</p>
+        <p>From 9:00 to 18:00</p>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col py-3 d-flex justify-content-center" style={{fontSize:"1.5rem"}}>
+        <i className="bi bi-instagram mx-2"></i>{" "}
+        <i className="bi bi-twitter mx-2"></i>{" "}
+        <i className="bi bi-facebook mx-2 "></i>{" "}
+        <i className="bi bi-whatsapp mx-2"></i>{" "}
+      </div>  
+    </div>
+  </div>
+</div>
+  );
+  
+
+
+ 
+
+
+ /* return (
     <div className="container py-md-5 px-4 px-md-3" id="footer">
       <div className="row">
         <div className="col-lg-4">
@@ -74,7 +126,7 @@ function Footer() {
         </div>
       </div>
     </div>
-  );
+  );*/
 }
 
 export default Footer;

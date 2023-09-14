@@ -6,7 +6,7 @@
 .about-this-project-btn {
   position: fixed;
   bottom: 5%;
-  left:5%;
+  left: 5%;
   background-color: #ff990098;
   color: white;
   font-weight: "600";
@@ -128,10 +128,6 @@
   position: relative;
 }
 
-/* Contact CSS */
-
-/* About Us CSS */
-
 /*Cart CSS*/
 
 .productImg {
@@ -251,7 +247,7 @@
   border-radius: 3px;
   border: none;
   padding: 10px 15px;
-  background-color: #F9B468;
+  background-color: #f9b468;
   color: #ffebd6;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
@@ -568,12 +564,13 @@
 .image-right-column-product {
   height: 150px;
 }
-
-.ul-product-page {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 33%;
+@media (min-width: 992px) {
+  .ul-product-page {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+  }
 }
 
 .li-product-page {
@@ -650,6 +647,16 @@
   align-items: center;
   justify-content: center;
 }
+
+.photoStaff {
+  width: 200px;
+  height: auto;
+}
+
+.hop:hover {
+  transform: translateY(-10px);
+}
+
 @media (max-width: 576px) {
   .background-aboutProject {
     text-align: center;
@@ -691,6 +698,16 @@
   color: white;
 }
 
+.form {
+  padding: 100px;
+  margin-right: 250px;
+  margin-left: 250px;
+}
+
+.btnSend {
+  width: 100px;
+}
+
 /* Try Again CSS */
 
 /*Cart CSS*/
@@ -705,7 +722,7 @@
   width: 170px;
   height: 150px;
 }
-#purchase {
+#checkOut {
   width: 100%;
 }
 

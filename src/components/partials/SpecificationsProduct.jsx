@@ -1,7 +1,7 @@
 function SpecificationsProduct(params) {
   return (
     <div className="d-sm-block d-lg-flex justify-content-around">
-      <ul className="ul-product-page">
+      <ul className="ul-product-page m-0 p-0">
         <li className="li-product-page p-2 d-flex">
           <p className="m-0">Height:</p>
           <p className="m-0">Data</p>
@@ -15,7 +15,7 @@ function SpecificationsProduct(params) {
           <p className="m-0">Data</p>
         </li>
       </ul>
-      <ul className="ul-product-page">
+      <ul className="ul-product-page m-0 p-0">
         <li className="li-product-page-light p-2 d-flex">
           <p className="m-0">Weight:</p>
           <p className="m-0">Data</p>
@@ -29,7 +29,7 @@ function SpecificationsProduct(params) {
           <p className="m-0">Data</p>
         </li>
       </ul>
-      <ul className="ul-product-page">
+      <ul className="ul-product-page m-0 p-0">
         <li className="li-product-page p-2 d-flex">
           <p className="m-0">Efficiency:</p>
           <p className="m-0">Data</p>

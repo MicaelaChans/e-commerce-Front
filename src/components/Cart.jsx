@@ -1,8 +1,9 @@
 import React from "react";
-import axios from "axios";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { NavLink } from "react-bootstrap";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 function Cart() {
   const [show, setShow] = useState(false);
@@ -10,10 +11,15 @@ function Cart() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const cart = useSelector((state) => state.cart);
+
   return (
     <>
       <NavLink onClick={handleShow}>
-        <i className="bi bi-cart3 mt-2" style={{fontSize:"1.5rem"}}> <sup>(1)</sup> </i>
+        <i className="bi bi-cart3 mt-2" style={{ fontSize: "1.5rem" }}>
+          {" "}
+          <sup>(1)</sup>{" "}
+        </i>
       </NavLink>
       <Offcanvas
         placement="end"
@@ -26,29 +32,32 @@ function Cart() {
         </Offcanvas.Header>
         <Offcanvas.Body className="d-flex flex-column h-100 justify-content-between">
           <div className="row">
-            <div className="col-6 mt-3 p-3">
-              <img
-                className="productImg"
-                src="https://empuruguay.uy/wp-content/uploads/2021/03/Forno-560-2.jpg"
-                alt="productImg"
-              />
-            </div>
-            <div className="col-6 mt-3 p-3 ">
-              <h2 className="d-flex fs-4">product.name</h2>
-              <h5>product.price</h5>
-              <h5>Quantity:</h5>
-              <select name="number" id="number">
-                <option value="1">1</option>
-              </select>
-              <i className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end" ></i>
-            </div>
+            {cart.map((item) => (
+              <div key={item.id} className="row">
+                <div className="col-6 mt-3 p-3">
+                  <img
+                    className="productImg"
+                    src={item.image}
+                    alt="productImg"
+                  />
+                </div>
+                <div className="col-6 mt-3 p-3 ">
+                  <h2 className="d-flex fs-4">{item.name}</h2>
+                  <select name="number" id="number">
+                    <option value="1">1</option>
+                  </select>
+                  <p className="fs-5">USD {item.price}</p>
+                  <i className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end"></i>
+                </div>
+              </div>
+            ))}
           </div>
           <div className="flex-column">
             <hr />
             <h3>Total Price:</h3>
             <div>
-              <button className="btn btn-dark mt-3 shadow" id="purchase">
-                Purchase
+              <button className="btn btn-dark mt-3 shadow" id="checkOut">
+                Check Out
               </button>
             </div>
           </div>
@@ -59,3 +68,24 @@ function Cart() {
 }
 
 export default Cart;
+
+/*
+import { addItem, removeList } from "../redux/listSlice";
+
+const params = useParams();
+const dispatch = useDispatch();
+const [newItem, setNewItem] = useState("");
+
+
+
+const handleAddItem = (e) => {
+  e.preventDefault();
+  dispatch(
+    addItem({
+      
+    })
+  );
+};
+
+};
+*/
