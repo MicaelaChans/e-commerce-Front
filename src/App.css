@@ -148,12 +148,9 @@
 
 /* Footer CSS */
 
-#footer {
-  background-color: black;
-  max-width: 100%;
-  height: auto;
-  background-repeat: no-repeat;
-  color: white;
+.footer-link {
+  text-decoration: none;
+  color: black
 }
 
 /* Not Found */
