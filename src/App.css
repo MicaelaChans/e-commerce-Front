@@ -7,8 +7,9 @@
   position: fixed;
   bottom: 5%;
   left: 5%;
-  background-color: #ff990098;
-  color: white;
+  background-color: #f7edde98;
+  color: black;
+  border: solid 1px black;
   font-weight: "600";
   z-index: 5;
 }
@@ -701,8 +702,12 @@
 
 .form {
   padding: 100px;
-  margin-right: 250px;
-  margin-left: 250px;
+  background-color: black;
+  color: white;
+}
+
+.formControl {
+  background-color: black;
 }
 
 .btnSend {
