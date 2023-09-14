@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Cart.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { NavLink } from "react-bootstrap";

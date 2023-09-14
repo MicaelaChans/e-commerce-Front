@@ -1,5 +1,6 @@
 import { Col, Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import "../../styles/CategorySection.css";
 
 function CategoryProducts() {
   return (
@@ -81,12 +82,12 @@ function CategoryProducts() {
             it comes to perfect warmth.
           </p>
           <Link to={"/productsAccessories"}>
-          <Button
-            variant="dark"
-            className="categories-button-show-products mb-4 mt-4 w-50"
-          >
-            SHOW PRODUCTS
-          </Button>
+            <Button
+              variant="dark"
+              className="categories-button-show-products mb-4 mt-4 w-50"
+            >
+              SHOW PRODUCTS
+            </Button>
           </Link>
         </Col>
       </Row>

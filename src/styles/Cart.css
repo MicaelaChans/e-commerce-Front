@@ -1,0 +1,25 @@
+/*Cart CSS*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.productImg {
+  width: 170px;
+  height: 150px;
+}
+
+#purchase {
+  width: 100%;
+}
+
+#trashButton {
+  border: 0;
+  background-color: transparent;
+}
+
+#checkOut {
+  width: 100%;
+}

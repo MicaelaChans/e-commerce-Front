@@ -1,0 +1,27 @@
+/* About Us CSS */
+
+.background-about {
+  background-image: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.87) 0%,
+      rgba(0, 0, 0, 0.57) 100%
+    ),
+    url("https://www.hergom.com/wp-content/uploads/2022/05/manchester-blog.jpg");
+  background-size: cover;
+  color: white;
+  padding-top: 200px;
+  padding-bottom: 110px;
+}
+
+.text-about {
+  max-width: 1080px;
+}
+
+.info-about {
+  background-color: #efe9e4;
+}
+
+.team-about {
+  background-color: #434241;
+  color: white;
+}

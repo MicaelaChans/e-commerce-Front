@@ -1,0 +1,34 @@
+/*Register y Login CSS*/
+
+.image-register-container {
+  height: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("./assets/flame-circle.jpg");
+}
+
+.image-register-container {
+  height: 100%;
+  background-color: black;
+}
+
+.card-product {
+  position: relative;
+}
+
+.container-register {
+  width: 86%;
+  overflow: hidden;
+}
+
+.body-register {
+  height: 73vh;
+  margin-top: 250px;
+}
+
+.image-register {
+  width: 100%;
+}

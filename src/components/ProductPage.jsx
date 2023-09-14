@@ -8,6 +8,7 @@ import SpecificationsProduct from "./partials/SpecificationsProduct";
 import DescriptionsProduct from "./partials/DescriptionsProduct";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
+import "../styles/OneProduct.css";
 
 function ProductPage() {
   const dispatch = useDispatch();

@@ -7,6 +7,8 @@ import "react-multi-carousel/lib/styles.css";
 import "../App.css";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
+import "../styles/ProductsOfCategory.css";
+import "../styles/Products.css";
 
 function ProductsList() {
   const products = useSelector((state) => state.products);

@@ -62,6 +62,7 @@ export default Login;*/
 
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "../styles/RegisterLogin.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 

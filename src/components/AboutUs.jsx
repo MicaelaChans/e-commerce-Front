@@ -1,3 +1,4 @@
+import "../styles/AboutUs.css";
 import Footer from "../components/partials/Footer";
 function AboutUs() {
   return (

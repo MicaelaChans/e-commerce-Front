@@ -3,6 +3,7 @@ import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useState } from "react";
+import "../../styles/ScrollSection.css";
 function ScrollingSection() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);

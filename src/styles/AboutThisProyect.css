@@ -1,0 +1,62 @@
+/* About This Project*/
+
+.background-aboutProject {
+  background-image: linear-gradient(
+      120deg,
+      rgba(0, 0, 0, 0.87) 0%,
+      rgba(0, 0, 0, 0.57) 100%
+    ),
+    url("/about.jpg");
+  background-size: cover;
+  color: white;
+  padding-top: 200px;
+  padding-bottom: 110px;
+}
+
+.text-about {
+  max-width: 1080px;
+}
+
+.info-about {
+  background-color: #efe9e4;
+}
+
+.icon-tech {
+  width: 10%;
+}
+
+.team-about {
+  background-color: #434241;
+  color: white;
+}
+
+.team-about h5 {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photoStaff {
+  width: 200px;
+  height: auto;
+}
+
+.hop:hover {
+  transform: translateY(-10px);
+}
+
+@media (max-width: 576px) {
+  .background-aboutProject {
+    text-align: center;
+  }
+  .background-aboutProject .text-about {
+    width: 75vw;
+    margin: auto;
+    padding-top: 12px;
+  }
+  .background-aboutProject .text-about p {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}

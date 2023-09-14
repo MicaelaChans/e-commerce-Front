@@ -1,4 +1,6 @@
 import Footer from "./partials/Footer";
+import "../styles/AboutThisProyect.css";
+
 function AboutThisProject() {
   return (
     <>

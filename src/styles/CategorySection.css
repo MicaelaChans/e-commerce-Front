@@ -1,0 +1,103 @@
+/* Categories Section CSS */
+
+.categories-section {
+  margin: 0 !important;
+}
+.categories-image-container {
+  overflow: hidden;
+}
+
+.categories-img,
+.categories-section-img1,
+.categories-section-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin: 0 !important;
+}
+
+.categories-first-div,
+.categories-second-div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-first-title,
+.section-second-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.section-first-p,
+.section-second-p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.categories-button-show-products {
+  border-radius: 3px;
+  border: none;
+  padding: 10px 15px;
+  background-color: #f9b468;
+  color: white;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.categories-button-show-products:hover {
+  background-color: #f3a149;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+@media (min-width: 992px) and (max-width: 1224px) {
+  .categories-button-show-products {
+    width: 180px !important;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 992px) {
+  .categories-button-show-products {
+    width: 180px !important;
+  }
+}
+
+.categories-second-div {
+  background-color: rgba(40, 38, 36, 1);
+}
+
+.section-second-title {
+  color: #efefef;
+}
+
+.section-second-p {
+  color: #b5b4b3;
+}
+
+.categories-first-div {
+  background-color: #efe9e4;
+}
+
+.section-first-title {
+  color: #3d3d3d;
+}
+
+.section-first-p {
+  color: #666666;
+}
+
+@media (max-width: 996px) {
+  .categories-first-div,
+  .categories-second-div {
+    padding: 15px;
+  }
+}
+
+.divider-home {
+  height: 4px;
+  width: 50px;
+  background-color: #fdb467;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
