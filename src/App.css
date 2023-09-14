@@ -43,7 +43,13 @@
   width: 100%;
   object-fit: cover;
 }
+.hide-on-desktop {
+  display: none;
+}
 
+.hide-on-mobile {
+  display: none;
+}
 /* List of Products CSS */
 
 /* Products CSS */
@@ -116,7 +122,7 @@
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("./assets/flame-circle.jpg");
+    url("/assets/flame-circle.jpg");
 }
 .card-product {
   position: relative;
@@ -187,9 +193,9 @@
   flex: 1;
 }
 .scroll-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 .bk {
   background-color: #efe9e4;
@@ -209,7 +215,12 @@
   width: 100%;
 }
 
-.categories-first-div,
+.categories-section-img1 {
+  object-fit:cover;
+  height: 100% !important;
+  padding: 0;
+  margin: 0;
+}
 .categories-second-div {
   padding: 20px;
   display: flex;
@@ -267,6 +278,10 @@
 }
 
 .categories-first-div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #efe9e4;
 }
 
@@ -337,7 +352,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./assets/wood_stoves_banner_2.jpg");
+    url("/assets/wood_stoves_banner_2.jpg");
   height: 50vh;
   margin-top: 100px;
   background-position: center center;
@@ -350,7 +365,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./assets/pellet_stoves_banner.jpg");
+    url("/assets/pellet_stoves_banner.jpg");
   height: 50vh;
   background-position: center center;
   background-repeat: no-repeat;
@@ -363,7 +378,7 @@
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
     ),
-    url("./assets/wood_stoves_banner.jpg");
+    url("/assets/wood_stoves_banner.jpg");
   height: 50vh;
   background-position: center 67%;
   background-repeat: no-repeat;

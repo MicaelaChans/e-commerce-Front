@@ -41,7 +41,10 @@ function AboutThisProject() {
             magnam, maiores recusandae perspiciatis ipsa culpa?
           </p>
         </div>
-        <div className="d-flex justify-content-center align-self-center flex-wrap gap-2 m-0 col-xl-6 col-md-8 col-sm-10 col-12 mb-5">
+        <div
+          id="staff-section"
+          className="d-flex justify-content-center align-self-center flex-wrap gap-2 m-0 col-xl-6 col-md-8 col-sm-10 col-12 mb-5"
+        >
           <div className="icon-tech">
             <h6>
               <i className="fa-brands fa-2x fa-bootstrap"></i>

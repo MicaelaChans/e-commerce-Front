@@ -1,4 +1,5 @@
 import { Col, Button, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function CategoryProducts() {
   return (
@@ -39,12 +40,14 @@ function CategoryProducts() {
             aesthetics. The vitroceramic glass doors enhance safety, offering a
             relaxing and intimate view of the fire.
           </p>
+          
           <Button
             variant="dark"
             className="categories-button-show-products mb-4 mt-4 w-50"
           >
             SHOW PRODUCTS
           </Button>
+          
         </Col>
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
@@ -72,12 +75,14 @@ function CategoryProducts() {
             adding a touch of elegance to your decor. Every detail counts when
             it comes to perfect warmth.
           </p>
+          
           <Button
             variant="dark"
             className="categories-button-show-products mb-4 mt-4 w-50"
           >
             SHOW PRODUCTS
           </Button>
+          
         </Col>
       </Row>
     </section>

@@ -7,19 +7,28 @@ import Cart from "../Cart";
 
 function NavBar() {
   return (
-    <Navbar fixed="top" collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar
+      fixed="top"
+      collapseOnSelect
+      expand="lg"
+      className="bg-body-tertiary"
+    >
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
             className="mb-3 image-navbar"
-            src="./src/assets/drachen_logo_black.png"
+            src="/assets/drachen_logo_black.png"
             alt="drachen logo"
           />{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
-            <NavDropdown title="Our Products" className="mx-2" id="collasible-nav-dropdown">
+            <NavDropdown
+              title="Our Products"
+              className="mx-2"
+              id="collasible-nav-dropdown"
+            >
               <NavDropdown.Item as={Link} to="/productsWood">
                 Wood Stoves
               </NavDropdown.Item>
@@ -46,7 +55,12 @@ function NavBar() {
           </Nav>
           <Nav>
             <NavDropdown
-              title={<i className="bi bi-person-fill" style={{fontSize:"1.5rem"}}></i>}
+              title={
+                <i
+                  className="bi bi-person-fill"
+                  style={{ fontSize: "1.5rem" }}
+                ></i>
+              }
               id="collasible-nav-dropdown"
             >
               <NavDropdown.Item as={Link} to={"/login"}>
