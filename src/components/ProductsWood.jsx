@@ -118,7 +118,7 @@ function ProductsList() {
                     <button
                       className="btn btn-light btn-sm shadow"
                       style={{
-                        backgroundColor: "#f3a149",
+                        backgroundColor: "#f9b468",
                         color: "white",
                         fontWeight: "600",
                       }}
