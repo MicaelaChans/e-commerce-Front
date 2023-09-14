@@ -44,37 +44,37 @@ function AboutThisProject() {
         <div className="d-flex justify-content-center align-self-center flex-wrap gap-2 m-0 col-xl-6 col-md-8 col-sm-10 col-12 mb-5">
           <div className="icon-tech">
             <h6>
-              <i className="fa-brands fa-bootstrap"></i>
+              <i className="fa-brands fa-2x fa-bootstrap"></i>
             </h6>
             <small>Bootstrap</small>
           </div>
           <div className="icon-tech">
             <h6>
-              <i className="fa-brands fa-css3"></i>
+              <i className="fa-brands fa-2x fa-css3"></i>
             </h6>
             <small>CSS</small>
           </div>
           <div className="icon-tech">
             <h6>
-              <i className="fa-brands fa-figma"></i>
+              <i className="fa-brands fa-2x fa-figma"></i>
             </h6>
             <small>Figma</small>
           </div>
           <div className="icon-tech">
             <h6>
-              <i className="fa-brands fa-github"></i>
+              <i className="fa-brands fa-2x fa-github"></i>
             </h6>
             <small>GitHub</small>
           </div>
           <div className="icon-tech">
             <h6>
-              <i class="fa-brands fa-js"></i>
+              <i class="fa-brands fa-2x fa-js"></i>
             </h6>
             <small>JavaScript</small>
           </div>
           <div className="icon-tech">
             <h6>
-              <i className="fa-brands fa-envira"></i>
+              <i className="fa-brands fa-2x fa-envira"></i>
             </h6>
             <small>MongoDB</small>
           </div>
@@ -83,10 +83,12 @@ function AboutThisProject() {
       <div className="team-about d-flex flex-column align-items-center justify-content-center text-center p-5">
         <h4 className="my-5">OUR TEAM</h4>
         <div className="row mb-5">
-          <div className="col-2">
+          <div className="col-6 col-md-4 col-lg-2 my-4">
             <img src="" alt="photoStaff" />
-            <h5 className="mt-4">Agustín Martínez</h5>
-            <p>Full Stack Developer</p>
+            <div className="member-info">
+              <h5 className="mt-4">Agustín Martínez</h5>
+              <p>Full Stack Developer</p>
+            </div>
             <div>
               <h5>
                 <i className="bi bi-linkedin"></i>{" "}
@@ -94,10 +96,12 @@ function AboutThisProject() {
               </h5>
             </div>
           </div>
-          <div className="col-2">
+          <div className="col-6 col-md-4 col-lg-2 my-4">
             <img src="" alt="photoStaff" />
-            <h5 className="mt-4">Facundo Centurión</h5>
-            <p>Full Stack Developer</p>
+            <div className="member-info">
+              <h5 className="mt-4">Facundo Centurión</h5>
+              <p>Full Stack Developer</p>
+            </div>
             <div>
               <h5>
                 <i className="bi bi-linkedin"></i>{" "}
@@ -105,10 +109,12 @@ function AboutThisProject() {
               </h5>
             </div>
           </div>
-          <div className="col-2">
+          <div className="col-6 col-md-4 col-lg-2 my-4">
             <img src="" alt="photoStaff" />
-            <h5 className="mt-4">Federico Mier</h5>
-            <p>Full Stack Developer</p>
+            <div className="member-info">
+              <h5 className="mt-4">Federico Mier</h5>
+              <p>Full Stack Developer</p>
+            </div>            
             <div>
               <h5>
                 <i className="bi bi-linkedin"></i>{" "}
@@ -116,10 +122,12 @@ function AboutThisProject() {
               </h5>
             </div>
           </div>
-          <div className="col-2">
+          <div className="col-6 col-md-4 col-lg-2 my-4">
             <img src="" alt="photoStaff" />
-            <h5 className="mt-4">Martín Gestido</h5>
-            <p>Full Stack Developer</p>
+            <div className="member-info">
+              <h5 className="mt-4">Martín Gestido</h5>
+              <p>Full Stack Developer</p>
+            </div>            
             <div>
               <h5>
                 <i className="bi bi-linkedin"></i>{" "}
@@ -127,10 +135,12 @@ function AboutThisProject() {
               </h5>
             </div>
           </div>
-          <div className="col-2">
+          <div className="col-6 col-md-4 col-lg-2 my-4">
             <img src="" alt="photoStaff" />
-            <h5 className="mt-4">Mauro de Nava</h5>
-            <p>Full Stack Developer</p>
+            <div className="member-info">
+              <h5 className="mt-4">Mauro de Nava</h5>
+              <p>Full Stack Developer</p>
+            </div>            
             <div>
               <h5>
                 <i className="bi bi-linkedin"></i>{" "}
@@ -138,10 +148,12 @@ function AboutThisProject() {
               </h5>
             </div>
           </div>
-          <div className="col-2">
+          <div className="col-6 col-md-4 col-lg-2 my-4">
             <img src="" alt="photoStaff" />
-            <h5 className="mt-4">Micaela Chans</h5>
-            <p>Full Stack Developer</p>
+            <div className="member-info">
+              <h5 className="mt-4">Micaela Chans</h5>
+              <p>Full Stack Developer</p>
+            </div>            
             <div>
               <h5>
                 <i className="bi bi-linkedin"></i>{" "}
