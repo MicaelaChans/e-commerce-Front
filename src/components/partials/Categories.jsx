@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CategoryProducts() {
   return (
-    <section className="categories-section">
+    <section className="categories-section m-0">
       <Row className="row-category">
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
@@ -13,7 +13,8 @@ function CategoryProducts() {
           />
         </Col>
         <Col xs={12} lg={4} className="categories-first-div px-5">
-          <h2 className="section-first-title mt-3">Pellet Stoves</h2>
+          <h2 className="section-first-title fs-3 mt-3">Pellet Stoves</h2>
+          <div className="divider-home"></div>
           <p className="section-first-p my-4">
             Experience the future of heating with our state-of-the-art pellet
             stoves. Designed for efficiency and sustainability, these stoves not
@@ -21,18 +22,21 @@ function CategoryProducts() {
             glass doors. Witness the serene dance of the flames while ensuring
             no hot air escapes, making your spaces cozier than ever.
           </p>
-          <Button
-            variant="dark"
-            className="categories-button-show-products mb-4 mt-4 w-50"
-          >
-            SHOW PRODUCTS
-          </Button>
+          <Link to={"/productsPellet"}>
+            <Button
+              variant="dark"
+              className="categories-button-show-products mb-4 mt-4 w-50"
+            >
+              SHOW PRODUCTS
+            </Button>
+          </Link>
         </Col>
       </Row>
 
-      <Row className="row-category">
+      <Row className="row-category w-100">
         <Col xs={12} lg={4} className="categories-second-div px-5">
-          <h2 className="section-second-title mt-3">Wood Stoves</h2>
+          <h2 className="section-second-title fs-3 mt-3">Wood Stoves</h2>
+          <div className="divider-home"></div>
           <p className="section-second-p my-4">
             Embrace tradition combined with innovation through our wood stoves.
             Crafted for those who value the timeless charm of wood heating, our
@@ -40,14 +44,14 @@ function CategoryProducts() {
             aesthetics. The vitroceramic glass doors enhance safety, offering a
             relaxing and intimate view of the fire.
           </p>
-          
-          <Button
-            variant="dark"
-            className="categories-button-show-products mb-4 mt-4 w-50"
-          >
-            SHOW PRODUCTS
-          </Button>
-          
+          <Link to={"/productsWood"}>
+            <Button
+              variant="dark"
+              className="categories-button-show-products mb-4 mt-4 w-50"
+            >
+              SHOW PRODUCTS
+            </Button>
+          </Link>
         </Col>
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
@@ -67,7 +71,8 @@ function CategoryProducts() {
           />
         </Col>
         <Col xs={12} lg={4} className="categories-first-div px-5">
-          <h2 className="section-first-title mt-3 mt-2">Accessories</h2>
+          <h2 className="section-first-title fs-3 mt-3 mt-2">Accessories</h2>
+          <div className="divider-home"></div>
           <p className="section-first-p my-4">
             Elevate your heating experience with our curated range of
             accessories. Handpicked for their quality and design, these
@@ -75,14 +80,14 @@ function CategoryProducts() {
             adding a touch of elegance to your decor. Every detail counts when
             it comes to perfect warmth.
           </p>
-          
+          <Link to={"/productsAccessories"}>
           <Button
             variant="dark"
             className="categories-button-show-products mb-4 mt-4 w-50"
           >
             SHOW PRODUCTS
           </Button>
-          
+          </Link>
         </Col>
       </Row>
     </section>
