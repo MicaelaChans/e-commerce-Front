@@ -26,7 +26,7 @@ function ProductPage() {
 
   return (
     <>
-      <div className="container-product-page">
+      <div className="container-product-page pt-5">
         <div className="d-flex justify-content-center">
           <div className="container-left-product-page">
             <div className="row mb-5">
