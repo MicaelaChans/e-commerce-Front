@@ -34,7 +34,7 @@ function NavBar() {
               Contact
             </Nav.Link>
             <Nav.Link as={Link} className="mx-2" to="/aboutUs">
-              About Us
+              About us
             </Nav.Link>
             <Nav.Link
               className="about-this-project mx-2"
