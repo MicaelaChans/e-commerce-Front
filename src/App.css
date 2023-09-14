@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 /* NavBar CSS */
 
 .navBarItems {
@@ -15,17 +20,19 @@
 }
 .scroll-section-inner {
   height: 100vh;
-  width: 330vw;
+  width: 370vw;
   display: flex;
   flex-direction: row;
   position: relative;
 }
 .scroll-section {
-  width: 80vh;
+  width: 100vw;
+  height: 100vh;
 }
 .scroll-img {
-  height: 80vh;
+  height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 
 /* List of Products CSS */
@@ -110,15 +117,7 @@
 
 /* About Us CSS */
 
-/* Try Again CSS */
-
 /*Cart CSS*/
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 .productImg {
   width: 170px;
@@ -178,21 +177,21 @@
 }
 .scroll-section-inner {
   height: 100vh;
-  width: 900vw;
+  width: 400%;
   display: flex;
   flex-direction: row;
   position: relative;
+  transition: transform 0.3s ease;
 }
 .scroll-section {
-  width: 80vw;
-  height: 100vh;
-  padding: auto;
   flex-direction: row;
+  width: 100%;
+  flex: 1;
 }
 .scroll-img {
-  object-fit: cover;
   width: 100%;
-  height: 99%;
+  height: auto;
+  object-fit: cover;
 }
 .bk {
   background-color: #efe9e4;
@@ -208,7 +207,7 @@
   }
   .scroll-section-inner {
     height: 100vh;
-    width: 900vw;
+    width: 400vw;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -221,9 +220,8 @@
   }
 
   .scroll-img {
-    object-fit: cover;
-    width: 97.5%;
-    height: 99%;
+    width: 100%;
+    height: 100%;
   }
 }
 
@@ -231,25 +229,40 @@
 .categories-section {
   padding: 0;
   margin: 0;
-
-  height: 240vh;
 }
+
 .row-category {
   width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
-.categories-contaier {
+
+.categories-container {
   width: 100vw;
   background-color: red;
 }
+
 .categories-image-container {
+  height: 100%;
   overflow: hidden;
-  padding: 0;
+  margin: 0; 
+  padding: 0; 
 }
-.categories-second-div-img {
+
+.categories-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  margin: 0; 
+  padding: 0; 
+}
+
+.categories-second-div {
   background-color: rgba(40, 38, 36, 255);
   overflow: hidden;
-  height: 80vh;
 }
+
 .section-second-title {
   color: rgba(239, 239, 239, 255);
 }
@@ -257,22 +270,28 @@
 .section-second-p {
   color: #989796;
 }
-.categories-img {
-  object-fit: fill;
-}
+
 .categories-button-show-products {
   border-radius: 3px;
   border: none;
   padding: 4px 3px;
   background-color: #f3a149;
   color: #ffebd6;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
-.categories-first-div-img {
+.categories-button-show-products:hover {
+  background-color: #ff9900;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.categories-first-div {
   background-color: #efe9e4;
   margin: 0;
   padding: 0;
 }
+
 .section-first-title {
   padding: 0;
   color: #3d3d3d;
@@ -281,23 +300,19 @@
 .section-first-p {
   color: #8d8b8a;
 }
+
 .categories-section-img {
-  width: 75vw;
-  height: 80vh;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
+
 .categories-section-img-3 {
   object-fit: cover;
   height: 80vh;
-  width: 75vw;
   padding: 0;
   margin: 0;
 }
-.categories-img {
-  height: 80vh;
-  width: 100%;
-  padding: 0;
-}
-
 
 /* List of Products CSS */
 
@@ -394,7 +409,9 @@
   transform: translateX(100%);
 }
 @media (min-width: 577px) and (max-width: 992px) {
-  .banner-wood-stoves, .banner-pellet-stoves, .banner-accessories-stoves {
+  .banner-wood-stoves,
+  .banner-pellet-stoves,
+  .banner-accessories-stoves {
     flex-direction: column;
     justify-content: center;
     align-items: center;

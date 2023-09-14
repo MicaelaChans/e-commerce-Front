@@ -1,81 +1,97 @@
+import { Col, Button, Row } from "react-bootstrap";
+
 function CategoryProducts() {
   return (
     <section className="categories-section m-0 p-0">
-      <div className="row g-0 row-col-2 row-category">
-        <div className="col-9 categories-image-container">
+      <Row className="g-0 row-category">
+        <Col xs={12} md={8} className="categories-image-container d-flex h-100">
           <img
-            className="categories-section-img"
+            className="categories-section-img img-fluid"
             src="https://cdn.thewirecutter.com/wp-content/media/2022/03/pelletstoves-2048px-piazzetta-2x1-1.jpg?auto=webp&quality=75&crop=2:1&width=1024"
             alt="algo"
           />
-        </div>
-
-        <div className="col-3 categories-first-div-img m-0 p-0">
-          <h2 className="section-first-title ps-3 mt-3">
-            Wood Stoves and Heaters.
+        </Col>
+        <Col
+          xs={12}
+          md={4}
+          className="categories-first-div d-flex flex-column align-items-center"
+        >
+          <h2 className="section-first-title ps-5 my-5">
+            Wood Stoves and Heaters
           </h2>
-          <p className="section-first-p p-3">
-            Our products, in addition to being more efficient and
-            environmentally friendly, feature vitroceramic glass doors that
-            provide a relaxing and cozy view of the fire while preventing the
-            escape of hot air.
+          <p className="section-second-p fs-3 ps-5 my-5">
+            Our products are not only more efficient and environmentally
+            friendly but also feature vitroceramic glass doors that provide a
+            relaxing and cozy view of the fire while preventing the escape of
+            hot air.
           </p>
-          <div className="mt-5 ms-5 btn btn-lg">
-            <button className="categories-button-show-products m-5">
+          <div className="mt-5">
+            <Button variant="dark" className="categories-button-show-products">
               Show Products
-            </button>
+            </Button>
           </div>
-        </div>
+        </Col>
+      </Row>
 
-        <div className="col-3 categories-second-div-img m-0 p-0">
-          <h2 className="section-second-title p-3">Wood Stoves and Heaters.</h2>
-          <p className="section-second-p p-3">
-            Our products, in addition to being more efficient and
-            environmentally friendly, feature vitroceramic glass doors that
-            provide a relaxing and cozy view of the fire while preventing the
-            escape of hot air.
+      <Row className="row g-0 row-category">
+        <Col
+          xs={12}
+          md={4}
+          className="categories-second-div d-flex flex-column align-items-center"
+        >
+          <h2 className="section-second-title ps-5 my-5">
+            Wood Stoves and Heaters
+          </h2>
+          <p className="section-second-p fs-3 ps-5 my-5">
+            Our products are not only more efficient and environmentally
+            friendly but also feature vitroceramic glass doors that provide a
+            relaxing and cozy view of the fire while preventing the escape of
+            hot air.
           </p>
-          <div className="mt-5 ms-5 btn btn-lg">
-            <button className="categories-button-show-products">
+          <div className="mt-5">
+            <Button variant="dark" className="categories-button-show-products">
               Show Products
-            </button>
+            </Button>
           </div>
-        </div>
-
-        <div className="col-9 p-0 categories-image-container">
+        </Col>
+        <Col xs={12} md={8} className="categories-image-container">
           <img
             className="categories-img"
             src="https://www.stovax.com/wp-content/uploads/Futura-8-Woodburning_02-copy-1.jpg"
             alt="algo"
           />
-        </div>
+        </Col>
+      </Row>
 
-        <div className="row m-0 p-0">
-          <div className="col-9 categories-image-container">
-            <img
-              className="categories-section-img-3"
-              src="https://www.stovax.com/wp-content/uploads/Huntingdon-30-2-scaled.jpg"
-              alt="algo"
-            />
+      <Row className="row g-0 row-category">
+        <Col xs={12} md={8} className="categories-image-container">
+          <img
+            className="categories-section-img"
+            src="https://www.stovax.com/wp-content/uploads/Huntingdon-30-2-scaled.jpg"
+            alt="algo"
+          />
+        </Col>
+        <Col
+          xs={12}
+          md={4}
+          className="categories-first-div d-flex flex-column align-items-center"
+        >
+          <h2 className="section-first-title ps-5 my-5">
+            Wood Stoves and Heaters
+          </h2>
+          <p className="section-second-p fs-3 ps-5 my-5">
+            Our products are not only more efficient and environmentally
+            friendly but also feature vitroceramic glass doors that provide a
+            relaxing and cozy view of the fire while preventing the escape of
+            hot air.
+          </p>
+          <div className="mt-5">
+            <Button variant="dark" className="categories-button-show-products">
+              Show Products
+            </Button>
           </div>
-          <div className="col-3  categories-first-div-img m-0 p-0">
-            <h2 className="section-first-title p-3">
-              Wood Stoves and Heaters.
-            </h2>
-            <p className="section-first-p p-3">
-              Our products, in addition to being more efficient and
-              environmentally friendly, feature vitroceramic glass doors that
-              provide a relaxing and cozy view of the fire while preventing the
-              escape of hot air.
-            </p>
-            <div className="mt-5 ms-5 btn btn-lg">
-              <button className="categories-button-show-products m-5">
-                Show Products
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
     </section>
   );
 }
