@@ -29,7 +29,7 @@
 }
 .scroll-section-inner {
   height: 100vh;
-  width: 370vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   position: relative;
@@ -148,7 +148,7 @@
 
 .footer-link {
   text-decoration: none;
-  color:  black;
+  color: black;
 }
 
 /* Not Found */
@@ -216,7 +216,7 @@
 }
 
 .categories-section-img1 {
-  object-fit:cover;
+  object-fit: cover;
   height: 100% !important;
   padding: 0;
   margin: 0;
