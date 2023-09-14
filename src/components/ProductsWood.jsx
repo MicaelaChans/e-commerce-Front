@@ -97,15 +97,16 @@ function ProductsList() {
                       D: {product.otherProperties.depth}
                     </p>
                   </div>
+                  <hr className="hr-product-wood-top mb-1" />
                   <div className="d-flex justify-content-center">
-                    <hr className="hr-product-wood  mx-2 mt-3" />
+                    
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     >
-                      MEASURES
+                      <button className="btn btn-light btn-sm shadow">Add to cart</button>
                     </Link>
-                    <hr className="hr-product-wood  mx-2 mt-3" />
+                   
                   </div>
                 </div>
               </div>
