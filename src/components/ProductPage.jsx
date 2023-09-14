@@ -22,7 +22,7 @@ function ProductPage() {
       dispatch(getProduct(response.data));
     };
     getOneProduct();
-  }, []);
+  }, [params.id]);
 
   return (
     <>
@@ -30,14 +30,16 @@ function ProductPage() {
         <div className="d-flex justify-content-center">
           <div className="container-left-product-page">
             <div className="row mb-5">
-              <div className="col-md-12 col-lg-5">
-                <div className="left-column-product pt-5">
-                  <img
-                    className="img-product-page"
-                    src={product.image}
-                    alt={product.name}
-                  />
-                  <button className="btn-product-page fw-semibold">
+              <div className="col-md-12 col-xxl-4">
+                <div className="left-column-product pt-5 d-flex flex-column justify-content-between">
+                  <div>
+                    <img
+                      className="img-product-page"
+                      src={product.image}
+                      alt={product.name}
+                    />
+                  </div>
+                  <button className="btn-product-page fw-semibold p-2">
                     Add to Cart
                   </button>
                 </div>
@@ -45,6 +47,9 @@ function ProductPage() {
               <DescriptionsProduct
                 name={product.name}
                 description={product.description}
+                // height={product.otherProperties.height}
+                // width={product.otherProperties.width}
+                // depth={product.otherProperties.depth}
               />
             </div>
             <div className="py-5">

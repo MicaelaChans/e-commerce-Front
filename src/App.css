@@ -505,7 +505,7 @@
 
 .left-column-product {
   background-color: #f4f4f4;
-  height: 600px;
+  height: 650px;
   width: 300px;
 }
 
@@ -515,10 +515,14 @@
 }
 
 .btn-product-page {
-  background-color: white;
+  background-color: #ffa23e;
+  color: white;
   border: 1px;
   width: 90%;
   margin: 5%;
+}
+.btn-product-page:hover {
+  background-color: #ff901a;
 }
 
 .line-description-product {
@@ -552,15 +556,16 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  width: 33%;
 }
 
 .li-product-page {
   background-color: #e4e4e4;
-  width: 300px;
+  width: 100%;
 }
 .li-product-page-light {
   background-color: #fefefe;
-  width: 300px;
+  width: 100%;
 }
 
 .li-product-page p {
