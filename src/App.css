@@ -550,12 +550,13 @@
 .image-right-column-product {
   height: 150px;
 }
-
-.ul-product-page {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 33%;
+@media (min-width: 992px) {
+  .ul-product-page {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+  }
 }
 
 .li-product-page {
