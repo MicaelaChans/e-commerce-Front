@@ -80,7 +80,7 @@ function AboutThisProject() {
           </div>
           <div className="icon-tech">
             <h6>
-              <i class="fa-brands fa-react"></i>
+              <i class="fa-brands fa-2x fa-react"></i>
             </h6>
             <small>React</small>
           </div>
@@ -89,80 +89,104 @@ function AboutThisProject() {
       <div className="team-about d-flex flex-column align-items-center justify-content-center text-center p-5">
         <h4 className="my-5">OUR TEAM</h4>
         <div className="row mb-5">
-          <div className="col-6 col-md-4 col-lg-2 my-4">
-            <img src="" alt="photoStaff" />
+          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+              alt="photoStaff"
+              className="photoStaff"
+            />
             <div className="member-info">
               <h5 className="mt-4">Agustín Martínez</h5>
               <p>Full Stack Developer</p>
             </div>
             <div>
-              <h5>
+              <h5 className="gap-2">
                 <i className="bi bi-linkedin"></i>{" "}
                 <i className="bi bi-github"></i>
               </h5>
             </div>
           </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4">
-            <img src="" alt="photoStaff" />
+          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+              alt="photoStaff"
+              className="photoStaff"
+            />
             <div className="member-info">
               <h5 className="mt-4">Facundo Centurión</h5>
               <p>Full Stack Developer</p>
             </div>
             <div>
-              <h5>
+              <h5 className="gap-2">
                 <i className="bi bi-linkedin"></i>{" "}
                 <i className="bi bi-github"></i>
               </h5>
             </div>
           </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4">
-            <img src="" alt="photoStaff" />
+          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+              alt="photoStaff"
+              className="photoStaff"
+            />
             <div className="member-info">
               <h5 className="mt-4">Federico Mier</h5>
               <p>Full Stack Developer</p>
-            </div>            
+            </div>
             <div>
-              <h5>
+              <h5 className="gap-2">
                 <i className="bi bi-linkedin"></i>{" "}
                 <i className="bi bi-github"></i>
               </h5>
             </div>
           </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4">
-            <img src="" alt="photoStaff" />
+          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+              alt="photoStaff"
+              className="photoStaff"
+            />
             <div className="member-info">
               <h5 className="mt-4">Martín Gestido</h5>
               <p>Full Stack Developer</p>
-            </div>            
+            </div>
             <div>
-              <h5>
+              <h5 className="gap-2">
                 <i className="bi bi-linkedin"></i>{" "}
                 <i className="bi bi-github"></i>
               </h5>
             </div>
           </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4">
-            <img src="" alt="photoStaff" />
+          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+              alt="photoStaff"
+              className="photoStaff "
+            />
             <div className="member-info">
               <h5 className="mt-4">Mauro de Nava</h5>
               <p>Full Stack Developer</p>
-            </div>            
+            </div>
             <div>
-              <h5>
+              <h5 className="gap-2">
                 <i className="bi bi-linkedin"></i>{" "}
                 <i className="bi bi-github"></i>
               </h5>
             </div>
           </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4">
-            <img src="" alt="photoStaff" />
+          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+              alt="photoStaff"
+              className="photoStaff"
+            />
             <div className="member-info">
               <h5 className="mt-4">Micaela Chans</h5>
               <p>Full Stack Developer</p>
-            </div>            
+            </div>
             <div>
-              <h5>
-                <i className="bi bi-linkedin"></i>{" "}
+              <h5 className="gap-2">
+                <i className="bi bi-linkedin"></i>
                 <i className="bi bi-github"></i>
               </h5>
             </div>
