@@ -28,15 +28,15 @@ function ContactUs() {
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-12">
             <Form className="fs-3 ">
-              <Form.Group className="mb-3" controlId="example">
+              <Form.Group className="mb-3 border-bottom" controlId="example">
                 <Form.Label>Name</Form.Label>
                 <Form.Control className=" border-0 formControl" type="email" />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="example">
+              <Form.Group className="mb-3 border-bottom" controlId="example">
                 <Form.Label>Email </Form.Label>
                 <Form.Control className=" border-0 formControl" type="email" />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="example">
+              <Form.Group className="mb-3 border-bottom" controlId="example">
                 <Form.Label>Phone</Form.Label>
                 <Form.Control className=" border-0 formControl" type="phone" />
               </Form.Group>
@@ -44,14 +44,14 @@ function ContactUs() {
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12">
             <Form className="fs-3 ">
-              <Form.Group className="mb-3" controlId="example">
+              <Form.Group className="mb-3 border-bottom" controlId="example">
                 <Form.Label>Subject</Form.Label>
                 <Form.Control
                   className="border-0  formControl"
                   type="subject"
                 />
               </Form.Group>
-              <Form.Group className="mb-3 " controlId="example">
+              <Form.Group className="mb-3 border-bottom" controlId="example">
                 <Form.Label>Comment</Form.Label>
                 <Form.Control
                   className=" border-0 formControl"
