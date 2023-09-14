@@ -13,7 +13,7 @@ function ScrollingSection() {
       sectionRef.current,
       { translateX: 0 },
       {
-        translateX: "-300vw",
+        translateX: "-295vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -55,7 +55,7 @@ function ScrollingSection() {
           <div className="scroll-section">
             <img
               className="scroll-img"
-              src="https://cdn.palbincdn.com/users/18409/images/BERGEN-CATALOGO-WEB-1645118598.jpg"
+              src="../../../public/fotoscroll.png"
               alt=""
             />
           </div>

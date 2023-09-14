@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
 }
-.about-this-project-btn{
+.about-this-project-btn {
   position: fixed;
   bottom: 5%;
-  right:5%;
+  right: 5%;
   background-color: #ff990098;
   color: white;
-  font-weight:"600";
+  font-weight: "600";
   z-index: 5;
 }
 /* NavBar CSS */
@@ -194,9 +194,9 @@
   flex: 1;
 }
 .scroll-img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
 }
 .bk {
   background-color: #efe9e4;
@@ -235,7 +235,7 @@
 }
 
 .categories-section-img1 {
-  object-fit:cover;
+  object-fit: cover;
   height: 100% !important;
   padding: 0;
   margin: 0;
@@ -407,10 +407,9 @@
     width: 60%;
     margin-left: 20%;
   }
-  .about-this-project-btn{
+  .about-this-project-btn {
     display: none;
   }
-  
 }
 @media (min-width: 992px) {
   .image-product-pellet {
@@ -639,7 +638,6 @@
 @media (max-width: 576px) {
   .background-aboutProject {
     text-align: center;
-    
   }
   .background-aboutProject .text-about {
     width: 75vw;
