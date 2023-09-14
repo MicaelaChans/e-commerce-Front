@@ -6,14 +6,14 @@ function Footer() {
 return (
 <div className="bg-body-tertiary">
   <div className="container ">
-    <div className="row py-lg-4 py-4">
-      <div className="col-12 col-lg-6">
+    <div className="row py-lg-4 pb-1 pt-0">
+      <div className="col-12 col-lg-6 text-center text-lg-start">
         <img
           className="mb-3 image-navbar"
           src="./src/assets/drachen_logo_black.png"
             alt="drachen logo"
         />
-        <p style={{paddingRight:"100px"}}>For Drachen, heating is more than just a practical or aesthetic
+        <p >For Drachen, heating is more than just a practical or aesthetic
           matter. We see our stoves as innovative pieces of forniture that suit
           a modern lifestyle.</p>
       </div>
