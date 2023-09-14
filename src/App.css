@@ -278,6 +278,10 @@
 }
 
 .categories-first-div {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #efe9e4;
 }
 

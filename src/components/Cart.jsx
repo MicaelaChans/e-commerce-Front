@@ -2,8 +2,8 @@ import React from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { NavLink } from "react-bootstrap";
-import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import { removeItem } from "../redux/cartSlice";
 
 function Cart() {
   const [show, setShow] = useState(false);
@@ -12,6 +12,11 @@ function Cart() {
   const handleShow = () => setShow(true);
 
   const cart = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  const handleRemoveItem = (itemId) => {
+    dispatch(removeItem(itemId));
+  };
 
   return (
     <>
@@ -47,7 +52,10 @@ function Cart() {
                     <option value="1">1</option>
                   </select>
                   <p className="fs-5">USD {item.price}</p>
-                  <i className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end"></i>
+                  <i
+                    className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end"
+                    onClick={() => handleRemoveItem(item.id)}
+                  ></i>
                 </div>
               </div>
             ))}
@@ -68,24 +76,3 @@ function Cart() {
 }
 
 export default Cart;
-
-/*
-import { addItem, removeList } from "../redux/listSlice";
-
-const params = useParams();
-const dispatch = useDispatch();
-const [newItem, setNewItem] = useState("");
-
-
-
-const handleAddItem = (e) => {
-  e.preventDefault();
-  dispatch(
-    addItem({
-      
-    })
-  );
-};
-
-};
-*/
