@@ -67,7 +67,7 @@ function ScrollingSection() {
               className={`scroll-img mobile ${
                 isMobile ? "" : "hide-on-mobile"
               }`}
-              src="https://img.interempresas.net/fotos/P2950841.jpeg"
+              src="../../../public/fotomobilefaltante.png"
               alt=""
             />
           </div>
