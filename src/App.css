@@ -7,8 +7,9 @@
   position: fixed;
   bottom: 5%;
   left: 5%;
-  background-color: #ff990098;
-  color: white;
+  background-color: #f7edde98;
+  color: black;
+  border: solid 1px black;
   font-weight: "600";
   z-index: 5;
 }
@@ -153,12 +154,9 @@
 
 /* Footer CSS */
 
-#footer {
-  background-color: black;
-  max-width: 100%;
-  height: auto;
-  background-repeat: no-repeat;
-  color: white;
+.footer-link {
+  text-decoration: none;
+  color: black
 }
 
 /* Not Found */
@@ -521,8 +519,8 @@
 }
 
 /* One Product CSS */
-.container-product-page {
-  margin-top: 100px;
+.container-left-product-page {
+  padding-top: 122px;
 }
 
 .img-product-page {
@@ -541,7 +539,7 @@
 }
 
 .btn-product-page {
-  background-color: #ffa23e;
+  background-color: #f9b468;
   color: white;
   border: 1px;
   width: 90%;
@@ -566,7 +564,7 @@
   height: 100vh;
   width: 380px;
   position: sticky;
-  top: 0;
+  top: 122px;
 }
 
 .details-right-column-product {
@@ -712,8 +710,12 @@
 
 .form {
   padding: 100px;
-  margin-right: 250px;
-  margin-left: 250px;
+  background-color: black;
+  color: white;
+}
+
+.formControl {
+  background-color: black;
 }
 
 .btnSend {
