@@ -1,4 +1,5 @@
 import { Col, Button, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function CategoryProducts() {
   return (
@@ -25,11 +26,11 @@ function CategoryProducts() {
             relaxing and cozy view of the fire while preventing the escape of
             hot air.
           </p>
-          <div className="mt-5">
+          <Link to="/products/pellet" className="mt-5">
             <Button variant="dark" className="categories-button-show-products">
               Show Products
             </Button>
-          </div>
+          </Link>
         </Col>
       </Row>
 
@@ -48,11 +49,11 @@ function CategoryProducts() {
             relaxing and cozy view of the fire while preventing the escape of
             hot air.
           </p>
-          <div className="mt-5">
+          <Link to="/products/pellet" className="mt-5">
             <Button variant="dark" className="categories-button-show-products">
               Show Products
             </Button>
-          </div>
+          </Link>
         </Col>
         <Col xs={12} md={8} className="categories-image-container">
           <img
@@ -85,11 +86,11 @@ function CategoryProducts() {
             relaxing and cozy view of the fire while preventing the escape of
             hot air.
           </p>
-          <div className="mt-5">
+          <Link to="/products/pellet" className="mt-5">
             <Button variant="dark" className="categories-button-show-products">
               Show Products
             </Button>
-          </div>
+          </Link>
         </Col>
       </Row>
     </section>

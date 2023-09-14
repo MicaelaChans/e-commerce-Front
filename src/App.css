@@ -43,7 +43,13 @@
   width: 100%;
   object-fit: cover;
 }
+.hide-on-desktop {
+  display: none;
+}
 
+.hide-on-mobile {
+  display: none;
+}
 /* List of Products CSS */
 
 /* Products CSS */

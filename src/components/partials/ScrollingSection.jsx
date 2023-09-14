@@ -1,12 +1,14 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
+import { useState } from "react";
 function ScrollingSection() {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
 
   gsap.registerPlugin(ScrollTrigger);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const pin = gsap.fromTo(
@@ -39,8 +41,17 @@ function ScrollingSection() {
         >
           <div className="scroll-section">
             <img
-              className="scroll-img"
-              src="https://cdn.palbincdn.com/users/18409/images/BOHEME-CATALOGO-WEB-1645121171.jpg"
+              className={`scroll-img desktop ${
+                isMobile ? "hide-on-desktop" : ""
+              }`}
+              src="https://hips.hearstapps.com/hmg-prod/images/salon-colorido-con-chimenea-exenta-bauhaus-1602585438.jpg"
+              alt=""
+            />
+            <img
+              className={`scroll-img mobile ${
+                isMobile ? "" : "hide-on-mobile"
+              }`}
+              src="https://media.adeo.com/marketplace/LMES/81874643/1830365.png?width=3000&height=3000&format=jpg&quality=80&fit=bounds"
               alt=""
             />
           </div>
@@ -48,21 +59,25 @@ function ScrollingSection() {
           <div className="scroll-section">
             <img
               className="scroll-img"
-              src="https://i.blogs.es/a08dd1/estufas/1366_2000.jpg"
+              src="https://media.adeo.com/marketplace/LMES/17195094/1831403.jpeg"
               alt=""
             />
           </div>
           <div className="scroll-section">
             <img
-              className="scroll-img"
-              src="../../../public/fotoscroll.png"
+              className={`scroll-img desktop ${
+                isMobile ? "hide-on-desktop" : ""
+              }`}
+              src="https://img.interempresas.net/fotos/P2950841.jpeg"
               alt=""
             />
           </div>
           <div className="scroll-section">
             <img
-              className="scroll-img"
-              src="https://images-ext-2.discordapp.net/external/qWUjc-1AmSpMyvURwWgeR9LpfZatMfYcfAI3iqn_jjA/https/panadero.com/wp-content/uploads/2023/04/reemplazar-estufa-lena.jpg?width=1681&height=925"
+              className={`scroll-img mobile ${
+                isMobile ? "" : "hide-on-mobile"
+              }`}
+              src="https://media.adeo.com/marketplace/LMES/81874643/1830365.png?width=3000&height=3000&format=jpg&quality=80&fit=bounds"
               alt=""
             />
           </div>

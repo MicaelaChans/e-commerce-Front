@@ -18,12 +18,18 @@ function Footer() {
           <h5>About</h5>
           <ul className="list-unstyled text-white">
             <li className="mb-2">
-              <NavLink to="#" className="text-decoration-none text-white">
+              <NavLink
+                to="#"
+                className="text-decoration-none text-white"
+              >
                 Staff
               </NavLink>
             </li>
             <li className="mb-2">
-              <NavLink to="#" className="text-decoration-none text-white">
+              <NavLink
+                to="/contact"
+                className="text-decoration-none text-white"
+              >
                 Contact US
               </NavLink>
             </li>
