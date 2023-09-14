@@ -159,7 +159,6 @@
   width: 130px;
 }
 
-
 /* Hero CSS */
 .hero-container {
   background-color: white; /* hay que cambiar esto */
@@ -193,34 +192,6 @@
 .bk {
   background-color: #efe9e4;
 }
-@media (max-width: 375px) {
-  .scroll-section-outer {
-    display: none;
-  }
-}
-@media (max-width: 768) {
-  .scroll-section-outer {
-    overflow: hidden;
-  }
-  .scroll-section-inner {
-    height: 100vh;
-    width: 400vw;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-  }
-  .scroll-section {
-    width: 100vw;
-    height: 100vh;
-    padding: auto;
-    flex-direction: row;
-  }
-
-  .scroll-img {
-    width: 100%;
-    height: 100%;
-  }
-}
 
 /* Categories Section CSS */
 .categories-section {
@@ -241,20 +212,25 @@
 }
 
 .categories-image-container {
-  height: 100%;
   overflow: hidden;
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
 }
 
 .categories-img {
   object-fit: cover;
   height: 100%;
   width: 100%;
-  margin: 0; 
-  padding: 0; 
+  margin: 0;
+  padding: 0;
 }
 
+.categories-section-img1 {
+  object-fit:cover;
+  height: 100% !important;
+  padding: 0;
+  margin: 0;
+}
 .categories-second-div {
   background-color: rgba(40, 38, 36, 255);
   overflow: hidden;
@@ -302,13 +278,6 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-}
-
-.categories-section-img-3 {
-  object-fit: cover;
-  height: 80vh;
-  padding: 0;
-  margin: 0;
 }
 
 /* List of Products CSS */
@@ -436,7 +405,7 @@
 
 .alt-title-wood {
   font-size: 3rem;
-  margin-top: 150px
+  margin-top: 150px;
 }
 .link-product-wood {
   text-decoration: none;

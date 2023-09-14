@@ -4,9 +4,9 @@ function CategoryProducts() {
   return (
     <section className="categories-section m-0 p-0">
       <Row className="g-0 row-category">
-        <Col xs={12} md={8} className="categories-image-container d-flex h-100">
+        <Col xs={12} md={8} className="categories-image-container">
           <img
-            className="categories-section-img img-fluid"
+            className="categories-section-img1 img-fluid"
             src="https://cdn.thewirecutter.com/wp-content/media/2022/03/pelletstoves-2048px-piazzetta-2x1-1.jpg?auto=webp&quality=75&crop=2:1&width=1024"
             alt="algo"
           />
