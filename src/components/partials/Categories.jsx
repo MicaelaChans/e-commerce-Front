@@ -13,7 +13,8 @@ function CategoryProducts() {
           />
         </Col>
         <Col xs={12} lg={4} className="categories-first-div px-5">
-          <h2 className="section-first-title mt-3">Pellet Stoves</h2>
+          <h2 className="section-first-title fs-3 mt-3">Pellet Stoves</h2>
+          <div className="divider-home"></div>
           <p className="section-first-p my-4">
             Experience the future of heating with our state-of-the-art pellet
             stoves. Designed for efficiency and sustainability, these stoves not
@@ -34,7 +35,8 @@ function CategoryProducts() {
 
       <Row className="row-category w-100">
         <Col xs={12} lg={4} className="categories-second-div px-5">
-          <h2 className="section-second-title mt-3">Wood Stoves</h2>
+          <h2 className="section-second-title fs-3 mt-3">Wood Stoves</h2>
+          <div className="divider-home"></div>
           <p className="section-second-p my-4">
             Embrace tradition combined with innovation through our wood stoves.
             Crafted for those who value the timeless charm of wood heating, our
@@ -69,7 +71,8 @@ function CategoryProducts() {
           />
         </Col>
         <Col xs={12} lg={4} className="categories-first-div px-5">
-          <h2 className="section-first-title mt-3 mt-2">Accessories</h2>
+          <h2 className="section-first-title fs-3 mt-3 mt-2">Accessories</h2>
+          <div className="divider-home"></div>
           <p className="section-first-p my-4">
             Elevate your heating experience with our curated range of
             accessories. Handpicked for their quality and design, these
@@ -77,13 +80,14 @@ function CategoryProducts() {
             adding a touch of elegance to your decor. Every detail counts when
             it comes to perfect warmth.
           </p>
-
+          <Link to={"/productsAccessories"}>
           <Button
             variant="dark"
             className="categories-button-show-products mb-4 mt-4 w-50"
           >
             SHOW PRODUCTS
           </Button>
+          </Link>
         </Col>
       </Row>
     </section>
