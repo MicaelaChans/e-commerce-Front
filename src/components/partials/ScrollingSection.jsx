@@ -15,7 +15,7 @@ function ScrollingSection() {
       sectionRef.current,
       { translateX: 0 },
       {
-        translateX: "-295vw",
+        translateX: "-298vw",
         ease: "none",
         duration: 1,
         scrollTrigger: {
@@ -51,14 +51,38 @@ function ScrollingSection() {
               className={`scroll-img mobile ${
                 isMobile ? "" : "hide-on-mobile"
               }`}
-              src="https://media.adeo.com/marketplace/LMES/81874643/1830365.png?width=3000&height=3000&format=jpg&quality=80&fit=bounds"
+              src="https://hips.hearstapps.com/hmg-prod/images/salon-colorido-con-chimenea-exenta-bauhaus-1602585438.jpg"
               alt=""
             />
           </div>
-
           <div className="scroll-section">
             <img
-              className="scroll-img"
+              className={`scroll-img desktop ${
+                isMobile ? "hide-on-desktop" : ""
+              }`}
+              src="https://www.jotul.co.uk/sites/uk/files/styles/desktop_homepage_story_background/public/2019-01/home_0.jpg?itok=Fcr9kT-k"
+              alt=""
+            />
+            <img
+              className={`scroll-img mobile ${
+                isMobile ? "" : "hide-on-mobile"
+              }`}
+              src="https://img.interempresas.net/fotos/P2950841.jpeg"
+              alt=""
+            />
+          </div>
+          <div className="scroll-section">
+            <img
+              className={`scroll-img desktop ${
+                isMobile ? "hide-on-desktop" : ""
+              }`}
+              src="https://www.theheatingcentre.co.uk/wp-content/uploads/2022/03/Flavel-Arundel-multifuel-stove.jpg"
+              alt=""
+            />
+            <img
+              className={`scroll-img mobile ${
+                isMobile ? "" : "hide-on-mobile"
+              }`}
               src="https://media.adeo.com/marketplace/LMES/17195094/1831403.jpeg"
               alt=""
             />
@@ -68,22 +92,21 @@ function ScrollingSection() {
               className={`scroll-img desktop ${
                 isMobile ? "hide-on-desktop" : ""
               }`}
-              src="https://img.interempresas.net/fotos/P2950841.jpeg"
+              src="https://www.contura.eu/images/18.3c96363e1671040fdb269b/1542619585651/contura-330g-wood-burning-stove-design-house.jpg"
               alt=""
             />
-          </div>
-          <div className="scroll-section">
             <img
               className={`scroll-img mobile ${
                 isMobile ? "" : "hide-on-mobile"
               }`}
-              src="https://media.adeo.com/marketplace/LMES/81874643/1830365.png?width=3000&height=3000&format=jpg&quality=80&fit=bounds"
+              src="https://www.contura.eu/images/18.5c7f7d6917826b21fa83a03/1617785576319/contura-556g-style-black-woodburning-stove.jpg"
               alt=""
             />
           </div>
         </div>
       </div>
     </section>
+    //
   );
 }
 
