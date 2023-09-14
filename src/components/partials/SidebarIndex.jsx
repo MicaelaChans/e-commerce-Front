@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 function SidebarIndex() {
   return (
     <div className="pt-5 d-flex flex-column">
-      <Link>PRESENTATION</Link>
-      <Link>TECHNICAL SPECIFICATIONS</Link>
-      <Link>EXTRA DATA</Link>
+      <Link className="text-reset text-decoration-none mb-2">PRESENTATION</Link>
+      <Link className="text-reset text-decoration-none mb-2">
+        TECHNICAL SPECIFICATIONS
+      </Link>
+      <Link className="text-reset text-decoration-none">EXTRA DATA</Link>
     </div>
   );
 }
