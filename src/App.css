@@ -300,6 +300,8 @@
 .hr-product-wood-top {
   width: 80px;
   margin: auto;
+  margin-top: 3px;
+  margin-bottom: 3px;
   max-height: 0;
   overflow: hidden;
   opacity: 0;
@@ -393,9 +395,10 @@
 }
 @media (min-width: 0px) and (max-width: 576px) {
   .image-product-wood {
-    width: 70%;
-    margin-left: 15%;
+    width: 60%;
+    margin-left: 20%;
   }
+  
 }
 @media (min-width: 992px) {
   .image-product-pellet {

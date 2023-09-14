@@ -104,7 +104,7 @@ function ProductsList() {
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     >
-                     <button className="btn btn-light btn-sm shadow" style={{backgroundColor:"#f3a149", color:"white", fontWeight: "600"}}>Add to cart</button>
+                     <button className="btn btn-light btn-sm shadow " style={{backgroundColor:"#f3a149", color:"white", fontWeight: "600"}}>Add to cart</button>
                     </Link>
                     
                   </div>
@@ -114,7 +114,9 @@ function ProductsList() {
           ))}
         </div>
       </div>
+      <div className="mt-5">
       <Footer />
+      </div>
     </div>
   );
 }
