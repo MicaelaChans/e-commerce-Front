@@ -78,6 +78,12 @@ function AboutThisProject() {
             </h6>
             <small>MongoDB</small>
           </div>
+          <div className="icon-tech">
+            <h6>
+              <i class="fa-brands fa-react"></i>
+            </h6>
+            <small>React</small>
+          </div>
         </div>
       </div>
       <div className="team-about d-flex flex-column align-items-center justify-content-center text-center p-5">

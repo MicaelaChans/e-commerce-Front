@@ -30,26 +30,40 @@ function ContactUs() {
             <Form.Group className="mb-3" controlId="example">
               <Form.Label>Firstname</Form.Label>
               <Form.Control
-                className="shadow border-0"
+                className="shadow p-3 mb-5 bg-body-tertiary rounded border-0"
                 type="email"
                 placeholder="Mary"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="example">
-              <Form.Label>Email address</Form.Label>
+              <Form.Label>Email</Form.Label>
               <Form.Control
-                className="shadow border-0"
+                className="shadow p-3 mb-5 bg-body-tertiary rounded border-0"
                 type="email"
                 placeholder="name@example.com"
               />
             </Form.Group>
             <Form.Group className="mb-3" controlId="example">
-              <Form.Label>Leave us a comment...</Form.Label>
+              <Form.Label>Phone</Form.Label>
               <Form.Control
-                className="shadow border-0"
+                className="shadow p-3 mb-5 bg-body-tertiary rounded border-0"
+                type="phone"
+                placeholder="091 234 567"
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="example">
+              <Form.Label>Comment</Form.Label>
+              <Form.Control
+                className="shadow p-3 mb-5 bg-body-tertiary rounded border-0"
                 as="textarea"
+                placeholder="Leave us a comment..."
                 rows={3}
               />
+            </Form.Group>
+            <Form.Group className="d-flex justify-content-end">
+              <button className="btn btn-dark shadow" type="button">
+                Send
+              </button>
             </Form.Group>
           </Form>
         </div>
