@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  margin: 0 !important;
+  margin: 0;
   padding: 0;
 }
 .about-this-project-btn {
@@ -23,41 +23,7 @@
 .hero-title {
   font-size: 15rem;
 }
-/* ScrollSection CSS */
 
-.scroll-section-outer {
-  overflow: hidden;
-  margin: 0 !important;
-}
-.scroll-section-inner {
-  height: 100vh;
-  width: 370vw;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
-.scroll-section {
-  width: 100vw;
-  height: 100vh;
-}
-.scroll-img {
-  height: 100% !important;
-  width: 100% !important;
-  object-fit: cover;
-}
-.hide-on-desktop {
-  display: none;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-}
-
-.hide-on-mobile {
-  display: none;
-  width: 100% !important;
-  height: 100% !important;
-  margin: 0 !important;
-}
 /* List of Products CSS */
 
 /* Products CSS */
@@ -156,7 +122,7 @@
 
 .footer-link {
   text-decoration: none;
-  color: black
+  color: black;
 }
 
 /* Not Found */
@@ -575,13 +541,21 @@
 .image-right-column-product {
   height: 150px;
 }
+@media (min-width: 992px) {
+  .ul-product-page {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+  }
+}
 
-.ul-product-page {
+/* .ul-product-page {
   list-style-type: none;
   margin: 0;
   padding: 0;
   width: 33%;
-}
+} */
 
 .li-product-page {
   background-color: #e4e4e4;
