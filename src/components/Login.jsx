@@ -86,7 +86,7 @@ function Register() {
   };
   return (
     <div className="body-register m-5 d-flex  align-items-center">
-    <div className="container  d-flex justify-content-center" >
+    <div className="container  d-flex justify-content-center" style={{marginTop:"250px"}} >
       <div className="row rounded-3 shadow container-register ">
         <div className="  d-none col-md-7 flex-column border d-md-flex justify-content-center image-register-container  align-items-center " >
             <img className="pt-5 image-register" src="./src/assets/drachen_logo_white.png" alt="drachen logo" />         
@@ -120,8 +120,8 @@ function Register() {
               <button className="btn btn-light border border-black rounded-5" type="submit">Log in</button>
               </div>             
             </form>
-            <p className="text-center mt-3">Don´t have an account yet? Register <Link className="link-register" to={"/register"} style={{color:"blue"}}>here</Link>.</p>
-            <p className="text-center">Forgot your password? <button className="link-register" style={{border:"none",backgroundColor:"transparent", textDecoration:"underline",color:"rgb(35, 35, 255)"}}>recover password</button>.</p>
+            <p className="text-center mt-3">Don´t have an account yet? Register <Link className="link-register" to={"/register"} style={{color:"blue",textDecoration:"none"}}>here</Link>.</p>
+            <p className="text-center">Forgot your password? <button className="link-register" style={{border:"none",backgroundColor:"transparent", textDecoration:"none",color:"blue"}}>recover password</button>.</p>
         </div>
       </div>
     </div>
