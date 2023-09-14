@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function CategoryProducts() {
   return (
-    <section className="categories-section">
+    <section className="categories-section m-0">
       <Row className="row-category">
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
