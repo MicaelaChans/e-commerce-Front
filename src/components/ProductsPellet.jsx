@@ -103,7 +103,7 @@ function ProductsList() {
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     >
-                      MEASURES
+                      ADD TO CART
                     </Link>
                     <hr className="hr-product-wood  mx-2 mt-3" />
                   </div>
