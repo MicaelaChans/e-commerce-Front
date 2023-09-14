@@ -1,19 +1,13 @@
-import { NavLink } from "react-router-dom";
 import React from 'react';
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBCol,
-  MDBRow,
-} from 'mdb-react-ui-kit';
+import { Link } from "react-router-dom";
 
 
 function Footer() {
 return (
 <div className="bg-body-tertiary">
   <div className="container ">
-    <div className="row ">
-      <div className="col-6">
+    <div className="row py-lg-4 py-4">
+      <div className="col-12 col-lg-6">
         <img
           className="mb-3 image-navbar"
           src="./src/assets/drachen_logo_black.png"
@@ -23,19 +17,20 @@ return (
           matter. We see our stoves as innovative pieces of forniture that suit
           a modern lifestyle.</p>
       </div>
-      <div className="col-3 pt-4 text-center">
+      <div className="col-lg-3 col-6 pt-4 text-center">
          <h5 className="mb-3">PRODUCTS</h5>
-         <p className="mb-2">Wood stoves</p>
-         <p  className="mb-2">Pellet stoves</p>
-         <p className="mb-1">Accesories</p>
+         <Link className='footer-link' to={"/productsWood"}><p className="mb-2">Wood stoves</p></Link>
+         <Link className='footer-link' to={"/productsPellet"}><p  className="mb-2">Pellet stoves</p></Link>
+         <Link className='footer-link' to={"/productsAccessories"}><p className="mb-1">Accesories</p></Link>
       </div>
-      <div className="col-3 pt-4 text-center">
+      <div className="col-lg-3 col-6 pt-4 text-center">
         <h5 className="mb-3">VISIT OUR STORE</h5>
         <p className="mb-2">Montevideo, Blvar Artigas 1574</p>
         <p>From 9:00 to 18:00</p>
       </div>
     </div>
-    <div className="row">
+  </div>
+  <div className="row" style={{backgroundColor:"#efe9e4"}}>
       <div className="col py-3 d-flex justify-content-center" style={{fontSize:"1.5rem"}}>
         <i className="bi bi-instagram mx-2"></i>{" "}
         <i className="bi bi-twitter mx-2"></i>{" "}
@@ -43,7 +38,6 @@ return (
         <i className="bi bi-whatsapp mx-2"></i>{" "}
       </div>  
     </div>
-  </div>
 </div>
   );
   
