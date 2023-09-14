@@ -6,7 +6,7 @@
 .about-this-project-btn{
   position: fixed;
   bottom: 5%;
-  right:5%;
+  left:5%;
   background-color: #ff990098;
   color: white;
   font-weight:"600";
