@@ -3,13 +3,13 @@
   margin: 0;
   padding: 0;
 }
-.about-this-project-btn{
+.about-this-project-btn {
   position: fixed;
   bottom: 5%;
-  right:5%;
+  right: 5%;
   background-color: #ff990098;
   color: white;
-  font-weight:"600";
+  font-weight: "600";
   z-index: 5;
 }
 /* NavBar CSS */
@@ -122,10 +122,6 @@
   position: relative;
 }
 
-/* Contact CSS */
-
-/* About Us CSS */
-
 /*Cart CSS*/
 
 .productImg {
@@ -235,7 +231,7 @@
 }
 
 .categories-section-img1 {
-  object-fit:cover;
+  object-fit: cover;
   height: 100% !important;
   padding: 0;
   margin: 0;
@@ -407,10 +403,9 @@
     width: 60%;
     margin-left: 20%;
   }
-  .about-this-project-btn{
+  .about-this-project-btn {
     display: none;
   }
-  
 }
 @media (min-width: 992px) {
   .image-product-pellet {
@@ -636,10 +631,19 @@
   align-items: center;
   justify-content: center;
 }
+
+.photoStaff {
+  width: 200px;
+  height: auto;
+}
+
+.hop:hover {
+  transform: translateY(-10px);
+}
+
 @media (max-width: 576px) {
   .background-aboutProject {
     text-align: center;
-    
   }
   .background-aboutProject .text-about {
     width: 75vw;
@@ -678,6 +682,16 @@
   color: white;
 }
 
+.form {
+  padding: 100px;
+  margin-right: 250px;
+  margin-left: 250px;
+}
+
+.btnSend {
+  width: 100px;
+}
+
 /* Try Again CSS */
 
 /*Cart CSS*/
@@ -692,7 +706,7 @@
   width: 170px;
   height: 150px;
 }
-#purchase {
+#checkOut {
   width: 100%;
 }
 
