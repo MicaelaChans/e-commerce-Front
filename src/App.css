@@ -6,7 +6,7 @@
 .about-this-project-btn {
   position: fixed;
   bottom: 5%;
-  right: 5%;
+  left:5%;
   background-color: #ff990098;
   color: white;
   font-weight: "600";
@@ -209,79 +209,86 @@
 }
 
 /* Categories Section CSS */
-.categories-section {
-  padding: 0;
-  margin: 0;
-}
-
-.row-category {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.categories-container {
-  width: 100vw;
-  background-color: red;
-}
 
 .categories-image-container {
   overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
 
-.categories-img {
+.categories-img,
+.categories-section-img1,
+.categories-section-img {
   object-fit: cover;
   height: 100%;
   width: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 .categories-section-img1 {
-  object-fit: cover;
+  object-fit:cover;
   height: 100% !important;
   padding: 0;
   margin: 0;
 }
 .categories-second-div {
-  background-color: rgba(40, 38, 36, 255);
-  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-first-title,
+.section-second-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.section-first-p,
+.section-second-p {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.categories-button-show-products {
+  border-radius: 3px;
+  border: none;
+  padding: 10px 15px;
+  background-color: #F9B468;
+  color: #ffebd6;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.categories-button-show-products:hover {
+  background-color: #f3a149;
+  color: #fff;
+  transform: scale(1.05);
+}
+@media (min-width: 992px) and (max-width: 1224px) {
+  .categories-button-show-products {
+    width: 180px !important;
+  }
+}
+@media (min-width: 400px) and (max-width: 992px) {
+  .categories-button-show-products {
+    width: 180px !important;
+  }
+}
+
+.categories-second-div {
+  background-color: rgba(40, 38, 36, 1);
 }
 
 .section-second-title {
-  color: rgba(239, 239, 239, 255);
+  color: #efefef;
 }
 
 .section-second-p {
   color: #989796;
 }
 
-.categories-button-show-products {
-  border-radius: 3px;
-  border: none;
-  padding: 4px 3px;
-  background-color: #f3a149;
-  color: #ffebd6;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
-}
-
-.categories-button-show-products:hover {
-  background-color: #ff9900;
-  color: #fff;
-  transform: scale(1.05);
-}
-
 .categories-first-div {
   background-color: #efe9e4;
-  margin: 0;
-  padding: 0;
 }
 
 .section-first-title {
-  padding: 0;
   color: #3d3d3d;
 }
 
@@ -289,10 +296,11 @@
   color: #8d8b8a;
 }
 
-.categories-section-img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+@media (max-width: 996px) {
+  .categories-first-div,
+  .categories-second-div {
+    padding: 15px;
+  }
 }
 
 /* List of Products CSS */
@@ -301,6 +309,7 @@
 
 .image-product-wood {
   width: 85%;
+  height: 180px;
   margin: auto;
 }
 .image-product-pellet {
@@ -593,7 +602,7 @@
     url("https://www.hergom.com/wp-content/uploads/2022/05/manchester-blog.jpg");
   background-size: cover;
   color: white;
-  padding-top: 110px;
+  padding-top: 200px;
   padding-bottom: 110px;
 }
 .text-about {
@@ -667,7 +676,7 @@
     url("https://www.chimeneasllama.net/73-large_default/hergom-e-30-s.jpg");
   background-size: cover;
   color: white;
-  padding-top: 110px;
+  padding-top: 200px;
   padding-bottom: 110px;
 }
 .text-about {

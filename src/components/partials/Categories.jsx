@@ -3,94 +3,80 @@ import { Link } from "react-router-dom";
 
 function CategoryProducts() {
   return (
-    <section className="categories-section m-0 p-0">
-      <Row className="g-0 row-category">
-        <Col xs={12} md={8} className="categories-image-container">
+    <section className="categories-section">
+      <Row className="row-category">
+        <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
             className="categories-section-img1 img-fluid"
             src="https://cdn.thewirecutter.com/wp-content/media/2022/03/pelletstoves-2048px-piazzetta-2x1-1.jpg?auto=webp&quality=75&crop=2:1&width=1024"
-            alt="algo"
+            alt="Wood Stove"
           />
         </Col>
-        <Col
-          xs={12}
-          md={4}
-          className="categories-first-div d-flex flex-column align-items-center"
-        >
-          <h2 className="section-first-title ps-5 my-5">
-            Wood Stoves and Heaters
-          </h2>
-          <p className="section-second-p fs-3 ps-5 my-5">
-            Our products are not only more efficient and environmentally
-            friendly but also feature vitroceramic glass doors that provide a
-            relaxing and cozy view of the fire while preventing the escape of
-            hot air.
+        <Col xs={12} lg={4} className="categories-first-div px-5">
+          <h2 className="section-first-title mt-3">Pellet Stoves</h2>
+          <p className="section-first-p my-4">
+            Experience the future of heating with our state-of-the-art pellet
+            stoves. Designed for efficiency and sustainability, these stoves not
+            only reduce your carbon footprint but also feature vitroceramic
+            glass doors. Witness the serene dance of the flames while ensuring
+            no hot air escapes, making your spaces cozier than ever.
           </p>
-          <Link to="/products/pellet" className="mt-5">
-            <Button variant="dark" className="categories-button-show-products">
-              Show Products
-            </Button>
-          </Link>
+          <Button
+            variant="dark"
+            className="categories-button-show-products mb-4 mt-4 w-50"
+          >
+            SHOW PRODUCTS
+          </Button>
         </Col>
       </Row>
 
-      <Row className="row g-0 row-category">
-        <Col
-          xs={12}
-          md={4}
-          className="categories-second-div d-flex flex-column align-items-center"
-        >
-          <h2 className="section-second-title ps-5 my-5">
-            Wood Stoves and Heaters
-          </h2>
-          <p className="section-second-p fs-3 ps-5 my-5">
-            Our products are not only more efficient and environmentally
-            friendly but also feature vitroceramic glass doors that provide a
-            relaxing and cozy view of the fire while preventing the escape of
-            hot air.
+      <Row className="row-category">
+        <Col xs={12} lg={4} className="categories-second-div px-5">
+          <h2 className="section-second-title mt-3">Wood Stoves</h2>
+          <p className="section-second-p my-4">
+            Embrace tradition combined with innovation through our wood stoves.
+            Crafted for those who value the timeless charm of wood heating, our
+            stoves provide an eco-friendly solution without compromising on
+            aesthetics. The vitroceramic glass doors enhance safety, offering a
+            relaxing and intimate view of the fire.
           </p>
-          <Link to="/products/pellet" className="mt-5">
+          <div className="mt-5">
             <Button variant="dark" className="categories-button-show-products">
               Show Products
             </Button>
-          </Link>
+          </div>
         </Col>
-        <Col xs={12} md={8} className="categories-image-container">
+        <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
-            className="categories-img"
+            className="categories-img img-fluid"
             src="https://www.stovax.com/wp-content/uploads/Futura-8-Woodburning_02-copy-1.jpg"
-            alt="algo"
+            alt="Wood Stove"
           />
         </Col>
       </Row>
 
-      <Row className="row g-0 row-category">
-        <Col xs={12} md={8} className="categories-image-container">
+      <Row className="row-category">
+        <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
-            className="categories-section-img"
+            className="categories-section-img img-fluid"
             src="https://www.stovax.com/wp-content/uploads/Huntingdon-30-2-scaled.jpg"
-            alt="algo"
+            alt="Wood Stove"
           />
         </Col>
-        <Col
-          xs={12}
-          md={4}
-          className="categories-first-div d-flex flex-column align-items-center"
-        >
-          <h2 className="section-first-title ps-5 my-5">
-            Wood Stoves and Heaters
-          </h2>
-          <p className="section-second-p fs-3 ps-5 my-5">
-            Our products are not only more efficient and environmentally
-            friendly but also feature vitroceramic glass doors that provide a
-            relaxing and cozy view of the fire while preventing the escape of
-            hot air.
+        <Col xs={12} lg={4} className="categories-first-div px-5">
+          <h2 className="section-first-title mt-3 mt-2">Accessories</h2>
+          <p className="section-first-p my-4">
+            Elevate your heating experience with our curated range of
+            accessories. Handpicked for their quality and design, these
+            additions ensure that your stoves function at their peak while
+            adding a touch of elegance to your decor. Every detail counts when
+            it comes to perfect warmth.
           </p>
-          <Link to="/products/pellet" className="mt-5">
+          <div className="mt-5">
             <Button variant="dark" className="categories-button-show-products">
               Show Products
             </Button>
-          </Link>
+          </div>
         </Col>
       </Row>
     </section>

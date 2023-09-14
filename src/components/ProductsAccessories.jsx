@@ -77,19 +77,26 @@ function ProductsList() {
                 style={{ color: "black" }}
                 to={`/products/${product.id}`}
               >
-                <h5 className="text-center mt-2">
-                  {product.name}
-                </h5>
+                <h5 className="text-center mt-2">{product.name}</h5>
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <div className="d-flex justify-content-center">              
+                  <div className="d-flex justify-content-center">
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     >
-                      <button className="btn btn-light btn-sm shadow" style={{backgroundColor:"#f3a149", color:"white", fontWeight: "600"}}>Add to cart</button>           
-                    </Link>                  
+                      <button
+                        className="btn btn-light btn-sm shadow"
+                        style={{
+                          backgroundColor: "#f3a149",
+                          color: "white",
+                          fontWeight: "600",
+                        }}
+                      >
+                        Add to cart
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
