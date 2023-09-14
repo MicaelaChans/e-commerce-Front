@@ -32,7 +32,7 @@ function CategoryProducts() {
         </Col>
       </Row>
 
-      <Row className="row-category">
+      <Row className="row-category w-100">
         <Col xs={12} lg={4} className="categories-second-div px-5">
           <h2 className="section-second-title mt-3">Wood Stoves</h2>
           <p className="section-second-p my-4">
@@ -49,7 +49,7 @@ function CategoryProducts() {
           >
             SHOW PRODUCTS
           </Button>
-          </Link>
+          
         </Col>
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
@@ -77,14 +77,14 @@ function CategoryProducts() {
             adding a touch of elegance to your decor. Every detail counts when
             it comes to perfect warmth.
           </p>
-          <Link to={"/productsAccessories"}>
+          
           <Button
             variant="dark"
             className="categories-button-show-products mb-4 mt-4 w-50"
           >
             SHOW PRODUCTS
           </Button>
-          </Link>
+          
         </Col>
       </Row>
     </section>

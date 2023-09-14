@@ -45,10 +45,12 @@
 }
 .hide-on-desktop {
   display: none;
+  width: 100% !important;
 }
 
 .hide-on-mobile {
   display: none;
+  width: 100% !important;
 }
 /* List of Products CSS */
 
