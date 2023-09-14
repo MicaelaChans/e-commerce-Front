@@ -158,10 +158,7 @@
 .image-navbar {
   width: 130px;
 }
-.about-this-project {
-  color: rgb(12, 12, 12);
-  font-weight: bold;
-}
+
 
 /* Hero CSS */
 .hero-container {
@@ -365,6 +362,7 @@
     ),
     url("./assets/wood_stoves_banner_2.jpg");
   height: 50vh;
+  margin-top: 100px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -380,6 +378,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 100px;
 }
 .banner-accessories-stoves {
   background-image: linear-gradient(
@@ -392,6 +391,7 @@
   background-position: center 67%;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 100px;
 }
 .banner-wood-text-title {
   margin-left: 10%;
@@ -436,6 +436,7 @@
 
 .alt-title-wood {
   font-size: 3rem;
+  margin-top: 150px
 }
 .link-product-wood {
   text-decoration: none;
@@ -499,18 +500,14 @@
 }
 .body-register {
   height: 73vh;
+  margin-top: 250px;
 }
 .image-register {
   width: 100%;
 }
 .image-register-container {
   height: 100%;
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6)
-    ),
-    url("./assets/flame-circle.jpg");
+  background-color: black;
 }
 .card-product {
   position: relative;
@@ -621,7 +618,7 @@
       rgba(0, 0, 0, 0.87) 0%,
       rgba(0, 0, 0, 0.57) 100%
     ),
-    url("/public/about.jpg");
+    url("/about.jpg");
   background-size: cover;
   color: white;
   padding-top: 110px;

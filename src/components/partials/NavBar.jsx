@@ -7,7 +7,7 @@ import Cart from "../Cart";
 
 function NavBar() {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar fixed="top" collapseOnSelect expand="lg" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -18,8 +18,8 @@ function NavBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <NavDropdown title="Our Products" id="collasible-nav-dropdown">
+          <Nav className="m-auto">
+            <NavDropdown title="Our Products" className="mx-2" id="collasible-nav-dropdown">
               <NavDropdown.Item as={Link} to="/productsWood">
                 Wood Stoves
               </NavDropdown.Item>
@@ -29,28 +29,24 @@ function NavBar() {
               <NavDropdown.Item as={Link} to="productsAccessories">
                 Accessories
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="#action/3.4">
-                All Products
-              </NavDropdown.Item>
             </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link as={Link} to="/contact">
+            <Nav.Link as={Link} className="mx-2" to="/contact">
               Contact
             </Nav.Link>
-            <Nav.Link as={Link} to="/aboutUs">
-              About Us
+            <Nav.Link as={Link} className="mx-2" to="/aboutUs">
+              About us
             </Nav.Link>
             <Nav.Link
-              className="about-this-project"
+              className="about-this-project mx-2"
               to="/aboutThisProject"
               as={Link}
             >
               About This Project
             </Nav.Link>
+          </Nav>
+          <Nav>
             <NavDropdown
-              title={<i className="bi bi-person-fill"></i>}
+              title={<i className="bi bi-person-fill" style={{fontSize:"1.5rem"}}></i>}
               id="collasible-nav-dropdown"
             >
               <NavDropdown.Item as={Link} to={"/login"}>
