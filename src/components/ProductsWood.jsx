@@ -25,7 +25,7 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
-    setFirstCategory(products.filter(
+     setFirstCategory(products.filter(
       (product) => product.category.name == "wood"
     ));
   }, []);
@@ -44,22 +44,22 @@ function ProductsList() {
       })
     );
   };
-  function harmonyFilter(){
-    setFirstCategory(products.filter(
-      (product) => product.category.name == "wood"
-    ));
-    setFirstCategory(firstCategory.filter((item)=>item.name.includes("Harmony")));
+  function harmonyFilter(){    
+      const firstFilter = (products.filter(
+        (product) => product.category.name == "wood"))
+        setFirstCategory(firstFilter.filter((item)=>item.name.includes("Harmony")));   
   }
   function boxFilter(){
-     setFirstCategory(products.filter(
-      (product) => product.category.name == "wood"
-    ));
-  setFirstCategory(firstCategory.filter((item)=>item.name.includes("Box")));
+    const firstFilter = (products.filter(
+      (product) => product.category.name == "wood"))
+      setFirstCategory(firstFilter.filter((item)=>item.name.includes("Box")));
   }
   function allFilter(){
+   
     setFirstCategory(products.filter(
       (product) => product.category.name == "wood"
     ));
+   
   }
 
   return (
