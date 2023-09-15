@@ -138,6 +138,9 @@
   .filter-section {
     margin-top: 120px;
     background-color: black;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:flex-end;
   }
 }
 

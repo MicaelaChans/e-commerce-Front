@@ -38,7 +38,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="row" style={{ backgroundColor: "#efe9e4" }}>
+      <div  style={{ backgroundColor: "#efe9e4" }}>
         <div
           className="col py-3 d-flex justify-content-center"
           style={{ fontSize: "1.5rem" }}
