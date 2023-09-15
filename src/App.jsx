@@ -20,7 +20,7 @@ function App() {
   return (
     <div>
       <Link to={"/aboutThisProject"}>
-        <button className="btn btn-lg btn-light about-this-project-btn">
+        <button className="fw-semibold rounded-top about-this-project-btn">
           About this project
         </button>
       </Link>
