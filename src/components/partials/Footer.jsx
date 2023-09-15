@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <div className="bg-body-tertiary">
+    <div className="bg-body-tertiary border-top">
       <div className="container ">
         <div className="row py-lg-4 pb-1 pt-0">
           <div className="col-12 col-lg-6 text-lg-start">
@@ -11,6 +11,7 @@ function Footer() {
               className="mb-3 image-navbar"
               src="/assets/drachen_logo_black.png"
               alt="drachen logo"
+              style={{width:"100px"}}
             />
             <p>
               For Drachen, heating is more than just a practical or aesthetic

@@ -14,6 +14,7 @@ function ProductsList() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
+  const [firstCategory, setFirstCategory] = useState([]);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -24,10 +25,11 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
+    setFirstCategory(products.filter(
+      (product) => product.category.name == "wood"
+    ));
   }, []);
-  const firstCategory = products.filter(
-    (product) => product.category.name == "wood"
-  );
+  
   useEffect(() => {
     setAnimate(true);
   }, []);
@@ -42,10 +44,27 @@ function ProductsList() {
       })
     );
   };
+  function harmonyFilter(){
+    setFirstCategory(products.filter(
+      (product) => product.category.name == "wood"
+    ));
+    setFirstCategory(firstCategory.filter((item)=>item.name.includes("Harmony")));
+  }
+  function boxFilter(){
+     setFirstCategory(products.filter(
+      (product) => product.category.name == "wood"
+    ));
+  setFirstCategory(firstCategory.filter((item)=>item.name.includes("Box")));
+  }
+  function allFilter(){
+    setFirstCategory(products.filter(
+      (product) => product.category.name == "wood"
+    ));
+  }
 
   return (
     <div>
-      <div className="banner-wood-stoves mb-5 d-none d-sm-flex align-items-center">
+      <div className="banner-wood-stoves d-none d-sm-flex align-items-center">
         <h1
           className={`banner-wood-text-title mb-3 me-2 ${
             animate ? "animate-from-left" : ""
@@ -63,15 +82,22 @@ function ProductsList() {
           a modern lifestyle.
         </p>
       </div>
+      <div className="d-flex justify-content-center align-items-center py-4 bg-light">
+          <h4 className="mx-4">Filter by model:</h4>    
+          <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>harmonyFilter()}>Harmony</button>
+          <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>boxFilter()}>Box</button>
+          <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>allFilter()}>All products</button>
+      </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
           <h2 className="alt-title-wood">WOOD STOVES</h2>
           <hr className="hr-wood" />
         </div>
+        
         <div className="row mb-5">
           {firstCategory.map((product, id = product.id) => (
             <div
-              className="col-lg-3 product-wood col-md-4 col-sm-6 col-12 g-5"
+              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5"
               key={id}
             >
               <div className="mt-sm-4  mx-3  bg-white">
@@ -118,7 +144,7 @@ function ProductsList() {
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light btn-sm shadow"
+                      className="btn btn-light shadow"
                       style={{
                         backgroundColor: "#f9b468",
                         color: "white",
