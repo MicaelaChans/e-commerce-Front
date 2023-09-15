@@ -124,7 +124,7 @@ function Register() {
               </div>
             </form>
             <p className="text-center mt-1">
-              Go to{" "}
+              I'm already signed up. Go to{" "}
               <Link
                 to={"/login"}
                 className="link-register"
