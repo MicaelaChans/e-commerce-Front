@@ -53,28 +53,36 @@ function ProductPage() {
                       alt={product.name}
                     />
                   </div>
-                  <button
-                    className="btn-product-page fw-semibold p-2"
-                    onClick={() => handleAddItem(product)}
-                  >
-                    Add to Cart
-                  </button>
                 </div>
               </div>
               <DescriptionsProduct
                 name={product.name}
                 description={product.description}
-                // height={product.otherProperties.height}
-                // width={product.otherProperties.width}
-                // depth={product.otherProperties.depth}
-              />
+                height={product.otherProperties.height}
+                width={product.otherProperties.width}
+                depth={product.otherProperties.depth}
+              >
+                <button
+                  className="btn-product-page fw-semibold p-2"
+                  onClick={() => handleAddItem(product)}
+                >
+                  Add to Cart
+                </button>
+              </DescriptionsProduct>
             </div>
-            <div className="py-5">
+            <div className="pb-5">
               <div className="d-flex mb-4 align-items-center">
                 <p className="m-0 fw-semibold">TECHNICAL SPECIFICATIONS</p>
                 <div className="line-description-product border-bottom w-100"></div>
               </div>
-              <SpecificationsProduct />
+              <SpecificationsProduct
+                height={product.otherProperties.height}
+                width={product.otherProperties.width}
+                depth={product.otherProperties.depth}
+                consumption={product.otherProperties.consumption}
+                efficiency={product.otherProperties.eficiency}
+                nominal={product.otherProperties.nominalPower}
+              />
             </div>
           </div>
           <SidebarProduct
