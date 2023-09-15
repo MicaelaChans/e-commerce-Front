@@ -2,6 +2,8 @@
 
 .container-left-product-page {
   padding-top: 122px;
+  width: 100%;
+  margin: 0px 130px;
 }
 
 .img-product-page {
@@ -10,21 +12,16 @@
 
 .left-column-product {
   background-color: #f4f4f4;
-  height: 650px;
+  height: 550px;
   width: 300px;
-}
-
-.container-left-product-page {
-  width: 100%;
-  margin: 0px 130px;
 }
 
 .btn-product-page {
   background-color: #f9b468;
   color: white;
-  border: 1px;
-  width: 90%;
-  margin: 5%;
+  border: 0;
+  height: 50px;
+  width: 150px;
 }
 .btn-product-page:hover {
   background-color: #ff901a;
@@ -46,6 +43,7 @@
   width: 380px;
   position: sticky;
   top: 122px;
+  margin-top: 122px;
 }
 
 .details-right-column-product {

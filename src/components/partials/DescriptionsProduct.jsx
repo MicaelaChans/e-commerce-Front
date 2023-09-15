@@ -1,6 +1,13 @@
-function DescriptionsProduct({ name, description, height, width, depth }) {
+function DescriptionsProduct({
+  name,
+  description,
+  height,
+  width,
+  depth,
+  children,
+}) {
   return (
-    <div className="col-md-12 col-xxl-8 p-5 pe-0">
+    <div className="col-md-12 col-xxl-8 p-5">
       <h3 className="mb-4">{name}</h3>
       <div className="d-flex mb-4 align-items-center">
         <p className="m-0 me-3 fw-semibold">Description</p>
@@ -25,16 +32,10 @@ function DescriptionsProduct({ name, description, height, width, depth }) {
           <p className="m-0">{depth}</p>
         </div>
       </div>
-      <div className="d-flex mb-4 align-items-center">
-        <p className="m-0 me-3 fw-semibold">Colors</p>
-        <div className="line-description-product border-bottom w-100"></div>
-      </div>
-      <div className="m-4">
-        <div className="circle-color-product"></div>
-      </div>
       <div className="mb-4">
         <div className="line-description-product border-bottom w-100"></div>
       </div>
+      {children}
     </div>
   );
 }
