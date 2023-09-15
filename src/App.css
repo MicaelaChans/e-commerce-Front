@@ -6,13 +6,23 @@
 
 .about-this-project-btn {
   position: fixed;
-  bottom: 5%;
-  left: 5%;
-  background-color: #f7edde98;
-  color: black;
-  border: solid 1px black;
-  font-weight: "600";
+  bottom: 50%;
+  left: -74px;
+  height: 46px;
+  width: 195px;
+  background-color: #f9b368;
+  color: white;
+  border: 0;
+  font-size: large;
   z-index: 5;
+  transform: rotate(90deg);
+  transition: 1s;
+}
+
+.about-this-project-btn:hover {
+  background-color: #ff901a;
+  color: white;
+  transform: scale(1.1) rotate(90deg);
 }
 
 /* Hero CSS */
