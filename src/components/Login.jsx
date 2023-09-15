@@ -150,7 +150,7 @@ function Register() {
                   color: "blue",
                 }}
               >
-                recover password
+                Recover password
               </button>
               .
             </p>
