@@ -23,8 +23,7 @@ function Cart() {
     <>
       <NavLink onClick={handleShow}>
         <i className="bi bi-cart3 mt-2" style={{ fontSize: "1.5rem" }}>
-          {" "}
-          <sup>(1)</sup>{" "}
+          <sup>(1)</sup>
         </i>
       </NavLink>
       <Offcanvas
@@ -52,7 +51,7 @@ function Cart() {
                   <select name="number" id="number">
                     <option value="1">1</option>
                   </select>
-                  <p className="fs-5">USD {item.price}</p>
+                  <p className="fs-6">USD {item.price}</p>
                   <i
                     className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end"
                     onClick={() => handleRemoveItem(item.id)}

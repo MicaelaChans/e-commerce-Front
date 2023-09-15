@@ -25,69 +25,73 @@ function AboutThisProject() {
           </div>
         </div>
       </div>
-      <div className="info-about d-flex flex-column align-items-center justify-content-center text-center p-5">
-        <h3 className="my-5 fs-3">TECHNOLOGIES & TOOLS</h3>
-        <div className="w-75 mb-5 lh-lg">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
-            beatae eaque quo quam, sapiente aperiam quidem nostrum laborum nobis
-            vel sunt iure tempora aut dolorem repellat! Natus facere et quae!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-            maxime, eos a fugit ad sunt. Minus saepe debitis modi perferendis,
-            a, tenetur cum iure recusandae nostrum atque, odio optio laudantium.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-            voluptatem fuga rerum cupiditate assumenda maiores provident
-            molestiae magni autem! Vel temporibus deserunt magni reiciendis
-            magnam, maiores recusandae perspiciatis ipsa culpa?
-          </p>
-        </div>
-        <div
-          id="staff-section"
-          className="d-flex justify-content-center align-self-center flex-wrap gap-2 m-0 col-xl-6 col-md-8 col-sm-10 col-12 mb-5"
-        >
-          <div className="icon-tech">
-            <h6>
-              <i className="fa-brands fa-2x fa-bootstrap"></i>
-            </h6>
-            <small>Bootstrap</small>
+      <div className="info-about py-5">
+        <div className="container">
+          <h3 className="my-3 text-center">TECHNOLOGIES & TOOLS</h3>
+          <div className="text-about mt-5">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
+              beatae eaque quo quam, sapiente aperiam quidem nostrum laborum
+              nobis vel sunt iure tempora aut dolorem repellat! Natus facere et
+              quae! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Incidunt maxime, eos a fugit ad sunt. Minus saepe debitis modi
+              perferendis, a, tenetur cum iure recusandae nostrum atque, odio
+              optio laudantium.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+              voluptatem fuga rerum cupiditate assumenda maiores provident
+              molestiae magni autem! Vel temporibus deserunt magni reiciendis
+              magnam, maiores recusandae perspiciatis ipsa culpa?
+            </p>
           </div>
-          <div className="icon-tech">
-            <h6>
-              <i className="fa-brands fa-2x fa-css3"></i>
-            </h6>
-            <small>CSS</small>
-          </div>
-          <div className="icon-tech">
-            <h6>
-              <i className="fa-brands fa-2x fa-figma"></i>
-            </h6>
-            <small>Figma</small>
-          </div>
-          <div className="icon-tech">
-            <h6>
-              <i className="fa-brands fa-2x fa-github"></i>
-            </h6>
-            <small>GitHub</small>
-          </div>
-          <div className="icon-tech">
-            <h6>
-              <i class="fa-brands fa-2x fa-js"></i>
-            </h6>
-            <small>JavaScript</small>
-          </div>
-          <div className="icon-tech">
-            <h6>
-              <i className="fa-brands fa-2x fa-envira"></i>
-            </h6>
-            <small>MongoDB</small>
-          </div>
-          <div className="icon-tech">
-            <h6>
-              <i class="fa-brands fa-2x fa-react"></i>
-            </h6>
-            <small>React</small>
+
+          <div
+            id="staff-section"
+            className="d-flex justify-content-center m-auto text-center pt-5 gap-2 m-0 col-xl-6 col-md-8 col-sm-10 col-12 mb-5"
+          >
+            <div className="icon-tech">
+              <h6>
+                <i className="fa-brands fa-2x fa-bootstrap"></i>
+              </h6>
+              <small>Bootstrap</small>
+            </div>
+            <div className="icon-tech">
+              <h6>
+                <i className="fa-brands fa-2x fa-css3"></i>
+              </h6>
+              <small>CSS</small>
+            </div>
+            <div className="icon-tech">
+              <h6>
+                <i className="fa-brands fa-2x fa-figma"></i>
+              </h6>
+              <small>Figma</small>
+            </div>
+            <div className="icon-tech">
+              <h6>
+                <i className="fa-brands fa-2x fa-github"></i>
+              </h6>
+              <small>GitHub</small>
+            </div>
+            <div className="icon-tech">
+              <h6>
+                <i class="fa-brands fa-2x fa-js"></i>
+              </h6>
+              <small>JavaScript</small>
+            </div>
+            <div className="icon-tech">
+              <h6>
+                <i className="fa-brands fa-2x fa-envira"></i>
+              </h6>
+              <small>MongoDB</small>
+            </div>
+            <div className="icon-tech">
+              <h6>
+                <i class="fa-brands fa-2x fa-react"></i>
+              </h6>
+              <small>React</small>
+            </div>
           </div>
         </div>
       </div>
