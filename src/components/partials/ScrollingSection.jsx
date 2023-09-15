@@ -69,7 +69,7 @@ function ScrollingSection() {
               className={`scroll-img mobile ${
                 isMobile ? "" : "hide-on-mobile"
               }`}
-              src="../../../public/fotomobilefaltante.png"
+              src="/fotomobilefaltante.png"
               alt=""
             />
           </div>
