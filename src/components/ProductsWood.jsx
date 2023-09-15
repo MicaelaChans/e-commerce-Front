@@ -84,9 +84,9 @@ function ProductsList() {
       </div>
       <div className="d-flex filter-section justify-content-center align-items-center py-4">
           <h4 className="mx-4">Filter by model:</h4>    
-          <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>harmonyFilter()}>Harmony</button>
-          <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>boxFilter()}>Box</button>
-          <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>allFilter()}>All products</button>
+          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>harmonyFilter()}>Harmony</button>
+          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>boxFilter()}>Box</button>
+          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>allFilter()}>All products</button>
       </div>
       <div className="container">
         <div className="text-center d-block d-sm-none">
@@ -144,7 +144,7 @@ function ProductsList() {
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light shadow"
+                      className="btn shadow"
                       style={{
                         backgroundColor: "#f9b468",
                         color: "white",

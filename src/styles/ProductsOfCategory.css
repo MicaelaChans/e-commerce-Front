@@ -159,6 +159,13 @@
   font-size: 0.7rem;
 }
 
+.filter-button{
+  background-color: #f9b468;
+  color: white;
+  font-weight: 600;
+}
+
+
 .product-wood:hover .p-sizes-product {
   opacity: 1;
   max-height: 100px;
