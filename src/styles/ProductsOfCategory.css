@@ -122,6 +122,10 @@
     text-align: center;
   }
 }
+.filter-section {
+  color:white;
+  background-color: rgba(0, 0, 0, 0.575);
+}
 
 @media (min-width: 0px) and (max-width: 576px) {
   .image-product-wood {
@@ -130,6 +134,10 @@
   }
   .about-this-project-btn {
     display: none;
+  }
+  .filter-section {
+    margin-top: 120px;
+    background-color: black;
   }
 }
 
@@ -141,7 +149,7 @@
 
 .alt-title-wood {
   font-size: 3rem;
-  margin-top: 150px;
+  
 }
 
 .link-product-wood {

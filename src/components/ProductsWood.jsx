@@ -82,15 +82,15 @@ function ProductsList() {
           a modern lifestyle.
         </p>
       </div>
-      <div className="d-flex justify-content-center align-items-center py-4 bg-light">
+      <div className="d-flex filter-section justify-content-center align-items-center py-4">
           <h4 className="mx-4">Filter by model:</h4>    
           <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>harmonyFilter()}>Harmony</button>
           <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>boxFilter()}>Box</button>
           <button className="btn btn-light shadow btn-lg mx-4" onClick={()=>allFilter()}>All products</button>
       </div>
       <div className="container">
-        <div className="text-center mt-5 d-block d-sm-none">
-          <h2 className="alt-title-wood">WOOD STOVES</h2>
+        <div className="text-center d-block d-sm-none">
+          <h2 className="alt-title-wood mt-5">WOOD STOVES</h2>
           <hr className="hr-wood" />
         </div>
         
