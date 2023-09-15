@@ -4,10 +4,11 @@ function DescriptionsProduct({
   height,
   width,
   depth,
+  price,
   children,
 }) {
   return (
-    <div className="col-md-12 col-xxl-8 p-5">
+    <div className="col-md-12 col-lg-7 col-xl-8 p-5">
       <h3 className="mb-4">{name}</h3>
       <div className="d-flex mb-4 align-items-center">
         <p className="m-0 me-3 fw-semibold">Description</p>
@@ -35,7 +36,10 @@ function DescriptionsProduct({
       <div className="mb-4">
         <div className="line-description-product border-bottom w-100"></div>
       </div>
-      {children}
+      <div className="d-flex align-items-center">
+        <p className="m-0 fw-semibold m-4 fs-4">US$ {price}</p>
+        {children}
+      </div>
     </div>
   );
 }
