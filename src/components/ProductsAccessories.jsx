@@ -65,22 +65,22 @@ function ProductsList() {
       </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
-          <h2 className="alt-title-wood">ACCESSORIES</h2>
+          <h2 className="alt-title-accessories" >ACCESSORIES</h2>
           <hr className="hr-wood" />
         </div>
         <div className="row mb-5">
           {firstCategory.map((product, id = product.id) => (
             <div
-              className="col-lg-3 product-wood col-md-4 col-sm-6 col-12 g-5"
+              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5"
               key={id}
             >
               <div className="mt-sm-4  mx-3  bg-white">
                 <Link
-                  className=" image-product-wood d-flex justify-content-center"
+                  className=" image-product-pellet d-flex justify-content-center"
                   to={`/products/${product.id}`}
                 >
                   <img
-                    className="image-product-wood text-center"
+                    className=" text-center"
                     src={product.image}
                     alt={product.name}
                   />
@@ -101,7 +101,7 @@ function ProductsList() {
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light btn-sm shadow"
+                      className="btn btn-light shadow"
                       style={{
                         backgroundColor: "#f9b468",
                         color: "white",

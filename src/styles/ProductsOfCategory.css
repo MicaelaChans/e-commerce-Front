@@ -151,10 +151,13 @@
 }
 
 .alt-title-wood {
-  font-size: 3rem;
-  
+  font-size: 3rem; 
 }
+.alt-title-accessories {
+  font-size: 3rem; 
+  margin-top: 140px;
 
+}
 .link-product-wood {
   text-decoration: none;
   color: orangered;
