@@ -59,7 +59,6 @@ function ProductsList() {
     setFirstCategory(products.filter(
       (product) => product.category.name == "wood"
     ));
-   
   }
 
   return (
@@ -85,9 +84,9 @@ function ProductsList() {
       <div className="d-flex filter-section justify-content-center align-items-center py-4">
           <h4 className="mx-4">Filter by model:</h4>  
           <div className="mt-2 mt-sm-0"> 
-          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>harmonyFilter()}>Harmony</button>
-          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>boxFilter()}>Box</button>
-          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>allFilter()}>All products</button>
+          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>harmonyFilter()}>Harmony</button>
+          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>boxFilter()}>Box</button>
+          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>allFilter()}>All</button>
           </div>
       </div>
       <div className="container">

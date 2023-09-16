@@ -14,6 +14,7 @@ function ProductsList() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
+  const [firstCategory, setFirstCategory] = useState([]);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -24,10 +25,11 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
+    setFirstCategory(products.filter(
+      (product) => product.category.name == "pellet"
+    ));
   }, []);
-  const firstCategory = products.filter(
-    (product) => product.category.name == "pellet"
-  );
+  
   useEffect(() => {
     setAnimate(true);
   }, []);
@@ -42,10 +44,26 @@ function ProductsList() {
       })
     );
   };
+ 
+  function decoFilter(){    
+    const firstFilter = (products.filter(
+      (product) => product.category.name == "pellet"))
+      setFirstCategory(firstFilter.filter((item)=>item.name.includes("Deco")));   
+  }
+  function aduroFilter(){
+    const firstFilter = (products.filter(
+      (product) => product.category.name == "pellet"))
+      setFirstCategory(firstFilter.filter((item)=>item.name.includes("Aduro")));
+   }
+  function allFilter(){
+    setFirstCategory(products.filter(
+      (product) => product.category.name == "pellet"
+    ));
+  }
 
   return (
     <div>
-      <div className="banner-pellet-stoves mb-5 d-none d-sm-flex align-items-center">
+      <div className="banner-pellet-stoves d-none d-sm-flex align-items-center">
         <h1
           className={`banner-wood-text-title mb-3 me-2 ${
             animate ? "animate-from-left" : ""
@@ -63,6 +81,14 @@ function ProductsList() {
           a modern lifestyle.
         </p>
       </div>
+      <div className="d-flex filter-section justify-content-center align-items-center py-4">
+          <h4 className="mx-4">Filter by model:</h4>  
+          <div className="mt-2 mt-sm-0"> 
+          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>decoFilter()}>Deco</button>
+          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>aduroFilter()}>Aduro</button>
+          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>allFilter()}>All</button>
+      </div>
+      </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
           <h2 className="alt-title-wood">PELLET STOVES</h2>
@@ -71,7 +97,7 @@ function ProductsList() {
         <div className="row">
           {firstCategory.map((product, id = product.id) => (
             <div
-              className="col-lg-3 product-wood col-md-4 col-sm-6 col-12 g-5"
+              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5"
               key={id}
             >
               <div className="mt-sm-4  mx-3  bg-white">
@@ -80,7 +106,7 @@ function ProductsList() {
                   to={`/products/${product.id}`}
                 >
                   <img
-                    className="image-product-wood text-center"
+                    className="text-center"
                     src={product.image}
                     alt={product.name}
                   />
@@ -118,7 +144,7 @@ function ProductsList() {
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light btn-sm shadow "
+                      className="btn btn-light shadow "
                       style={{
                         backgroundColor: "#f9b468",
                         color: "white",

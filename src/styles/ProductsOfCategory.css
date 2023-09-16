@@ -124,8 +124,9 @@
 }
 .filter-section {
   color:white;
-  background-color: rgba(0, 0, 0, 0.575);
+  background-color: rgba(0, 0, 0, 0.363);
 }
+
 
 @media (min-width: 0px) and (max-width: 576px) {
   .image-product-wood {
@@ -137,7 +138,6 @@
   }
   .filter-section {
     margin-top: 120px;
-    background-color: black;
     flex-direction: column;
     justify-content: space-around;
     
