@@ -4,8 +4,8 @@ import "../../styles/CategorySection.css";
 
 function CategoryProducts() {
   return (
-    <section className="  categories-section m-0">
-      <Row className="row-category">
+    <section className="categories-section m-0">
+      <div className="row-category d-flex">
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
             className="categories-section-img1 img-fluid"
@@ -32,9 +32,9 @@ function CategoryProducts() {
             </Button>
           </Link>
         </Col>
-      </Row>
+      </div>
 
-      <Row className="row-category w-100 m-0">
+      <div className="row-category d-flex w-100 m-0">
         <Col xs={12} lg={4} className="categories-second-div px-5">
           <h2 className="section-second-title fs-3 mt-3">Wood Stoves</h2>
           <div className="divider-home"></div>
@@ -61,9 +61,9 @@ function CategoryProducts() {
             alt="Wood Stove"
           />
         </Col>
-      </Row>
+      </div>
 
-      <Row className="row-category">
+      <div className="d-flex row-category">
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
             className="categories-section-img img-fluid"
@@ -90,7 +90,7 @@ function CategoryProducts() {
             </Button>
           </Link>
         </Col>
-      </Row>
+      </div>
     </section>
   );
 }
