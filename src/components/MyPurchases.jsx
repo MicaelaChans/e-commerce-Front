@@ -79,7 +79,7 @@ return orders[0] && ( (
       ))}
     </div>
    </div>
-   <h2 className="my-5 title">Other products that you might like</h2>
+   <h2 className="my-5 title">Products you also might like</h2>
    <div className="mt-5 d-flex flex-column flex-sm-row justify-content-around ">
   
    <div className="col-12 col-sm-3 p-lg-3 p-2  text-center border rounded-3 shadow mb-4 mb-sm-0">
