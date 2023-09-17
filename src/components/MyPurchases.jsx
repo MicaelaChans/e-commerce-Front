@@ -50,7 +50,7 @@ return orders[0] && ( (
       <div className="mt-5  border rounded-3 shadow d-flex align-items-center justify-content-between p-3">
         
         <i className="bi bi-star-fill star-icon "></i>
-        <h5 className="mb-0 mx-3">You have purchased {productsOfUser.length} products</h5>
+        <h4 className="mb-0 mx-3">You have purchased {productsOfUser.length} products</h4>
         <i className="bi bi-star-fill star-icon "></i>
         </div>
      
@@ -64,17 +64,14 @@ return orders[0] && ( (
         <div className="d-flex align-items-center justify-content-between">         
           <div className="d-flex align-items-center" >
           <img className="product-image" src={product.image} alt={product.name} />
-            <div className="d-flex flex-column">
-              <p className="mb-2 mx-2">{product.state}</p>
+            <div className="mx-2 d-flex flex-column">
+              <p className="mb-3 mx-2">{product.state}</p>
               <p className="mb-0 mx-2 product-name">{product.name}</p>
+              <p className="mb-0 mx-2">Price: <span className="product-name">USD {product.price}</span></p>
             </div>
           </div>
-          <div>
-          <p className="mb-0">Price:</p>
-          <p className="mb-0 product-name">USD {product.price}</p>
-          </div>
-          <div className="d-flex flex-column justify-content-center">
-            <button className="btn buy-button mb-1">Buy again</button> 
+          <div className="d-flex justify-content-center">
+            <button className="btn btn-lg buy-button mx-2">Buy again</button> 
             <button className="btn rate-button">Rate</button> 
           </div>
         </div>      
