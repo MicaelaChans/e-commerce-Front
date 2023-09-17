@@ -33,14 +33,20 @@ if(orders.length > 0){
   for(let i=0; i<orders.length; i++){   
     if(orders[i].user.id == user.id){ 
       for(let j=0; j<orders[i].products.length; j++){
-        productsOfUser.push({orderId: orders[i].id, date: orders[i].createdAt, state: orders[i].state, id: orders[i].products[j].id, name: orders[i].products[j].name, image: orders[i].products[j].image, price: orders[i].products[j].price })
+        productsOfUser.push({
+          orderId: orders[i].id, 
+          date: orders[i].createdAt, 
+          state: orders[i].state, 
+          id: orders[i].products[j].id, 
+          name: orders[i].products[j].name, 
+          image: orders[i].products[j].image, 
+          price: orders[i].products[j].price 
+        });
       }      
     }
   }
 }
 
-
-console.log(products)
 return orders[0] && ( (
   <div>
   <div className="container mb-5" style={{marginTop:"160px"}}>

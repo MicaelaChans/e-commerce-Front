@@ -9,11 +9,15 @@ import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
 import "../styles/ProductsOfCategory.css";
 import "../styles/Products.css";
+import { useLocation } from "react-router-dom";
 
 function ProductsList() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
+  const [firstCategory, setFirstCategory] = useState([]);
+  const location = useLocation();
+  const [aux, setAux] = useState(true);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -24,13 +28,16 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
-  });
-  const firstCategory = products.filter(
-    (product) => product.category.name == "accessories"
-  );
+    products.length == 0 && setAux(!aux);
+    setFirstCategory(products.filter(
+      (product) => product.category.name == "accessories"
+    ));
+  },[aux]);
+ 
+  
   useEffect(() => {
     setAnimate(true);
-  }, []);
+  }, [aux]);
 
   const handleAddItem = (item) => {
     dispatch(

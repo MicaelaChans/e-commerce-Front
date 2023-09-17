@@ -15,6 +15,7 @@ function ProductsList() {
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
   const [firstCategory, setFirstCategory] = useState([]);
+  const [aux, setAux] = useState(true)
 
   useEffect(() => {
     const listProducts = async () => {
@@ -25,10 +26,11 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
+    products.length == 0 && setAux(!aux);
     setFirstCategory(products.filter(
       (product) => product.category.name == "pellet"
     ));
-  });
+  },[aux]);
   
   useEffect(() => {
     setAnimate(true);
