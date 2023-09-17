@@ -45,6 +45,24 @@
     color:  rgb(248, 184, 7);
     font-size: 1.5rem;
   }
-  p{
-    font-size: 1.1rem;
+  .other-images{
+    width: 60%;
   }
+  @media (min-width: 0px) and (max-width: 576px) {
+    .other-images{
+        width: 20%;
+      }
+    .title{
+        text-align: center;
+    }
+  }
+  @media (min-width: 577px) and (max-width: 991px) {
+    .other-images{
+        width: 80%;
+      }
+     .other-products-name{
+      font-size: 1.2rem;
+     } 
+    
+  }
+  
