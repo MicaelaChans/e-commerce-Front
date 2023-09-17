@@ -82,7 +82,7 @@ return orders[0] && ( (
    <h2 className="my-5 title">Other products that you might like</h2>
    <div className="mt-5 d-flex flex-column flex-sm-row justify-content-around ">
   
-   <div className="col-12 col-sm-3 p-lg-3 p-2  text-center border rounded-3 shadow my-3 my-sm-0">
+   <div className="col-12 col-sm-3 p-lg-3 p-2  text-center border rounded-3 shadow mb-4 mb-sm-0">
     <h4 className="mb-3 other-products-name">Aduro P1</h4>
     <img className="other-images " src="https://www.adurofire.com/typo3temp/assets/_processed_/8/f/csm_aduro-p1-round-pellet-stove-withmatt-surface_01_a7c9377bf6.png" alt="aduroP1" />
     <div className="d-flex flex-column mt-3">
@@ -90,14 +90,14 @@ return orders[0] && ( (
     </div>
     
    </div>
-   <div className="col-12 col-sm-3 p-lg-3 p-2  text-center border rounded-3 shadow my-3 my-sm-0">
+   <div className="col-12 col-sm-3 p-lg-3 p-2  text-center border rounded-3 shadow my-4 my-sm-0">
    <h4 className="mb-3 other-products-name">Aduro P1.3</h4>
     <img className="other-images" src="https://www.adurofire.com/typo3temp/assets/_processed_/4/9/csm_aduro-p1-3-round-pellet-stove-with-black-glass-sides_01_0545dab144.png" alt="aduroP1.3" />
     <div className="d-flex flex-column mt-3">
     <button className="btn buy-button ">Add to cart</button> 
     </div>
    </div>
-   <div className="col-12 col-sm-3  p-lg-3 p-2 text-center border rounded-3 shadow my-3 my-sm-0">
+   <div className="col-12 col-sm-3  p-lg-3 p-2 text-center border rounded-3 shadow my-4 my-sm-0">
     <h4 className="mb-3 other-products-name">Aduro P1.4</h4>
     <img className="other-images" src="https://www.adurofire.com/typo3temp/assets/_processed_/f/9/csm_aduro-p1-4-round-pellet-stove-with-white-glass-sides_01_80b032ab41.png" alt="aduroP1.4" />
     <div className="d-flex flex-column mt-3">
