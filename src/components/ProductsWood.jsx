@@ -28,7 +28,7 @@ function ProductsList() {
      setFirstCategory(products.filter(
       (product) => product.category.name == "wood"
     ));
-  }, []);
+  });
   
   useEffect(() => {
     setAnimate(true);
@@ -54,14 +54,13 @@ function ProductsList() {
       (product) => product.category.name == "wood"))
       setFirstCategory(firstFilter.filter((item)=>item.name.includes("Box")));
   }
-  function allFilter(){
-   
+  function allFilter(){ 
     setFirstCategory(products.filter(
       (product) => product.category.name == "wood"
     ));
   }
-
-  return (
+ 
+  return  ((
     <div>
       <div className="banner-wood-stoves d-none d-sm-flex align-items-center">
         <h1
@@ -164,6 +163,6 @@ function ProductsList() {
       </div>
       <Footer />
     </div>
-  );
+  ));
 }
 export default ProductsList;

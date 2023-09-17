@@ -69,8 +69,8 @@ function NavBar() {
               <NavDropdown.Item as={Link} to={"/register"}>
                 Sign up
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/my-orders/id"}>
-                My orders
+              <NavDropdown.Item as={Link} to={"/my-purchases"}>
+                My purchases
               </NavDropdown.Item>
               <NavDropdown.Item>Log out</NavDropdown.Item>
             </NavDropdown>

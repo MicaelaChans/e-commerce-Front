@@ -24,7 +24,7 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
-  }, []);
+  });
   const firstCategory = products.filter(
     (product) => product.category.name == "accessories"
   );

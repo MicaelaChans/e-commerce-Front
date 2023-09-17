@@ -7,6 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "../styles/RegisterLogin.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import jwt from "jwt-decode";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -24,8 +25,14 @@ function Login() {
         data: { email, password },
       });
 
-      if (response.data.token) {
-        dispatch(login(response.data));
+      if (response.data.token) {  
+        const id = jwt(response.data.token).sub;
+        const email =  jwt(response.data.token).email;  
+        dispatch(login({
+          token: response.data.token,
+          id,
+          email
+        }));
         localStorage.setItem("showSuccessToast", "true");
         navigate("/");
       } else {

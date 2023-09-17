@@ -28,7 +28,7 @@ function ProductsList() {
     setFirstCategory(products.filter(
       (product) => product.category.name == "pellet"
     ));
-  }, []);
+  });
   
   useEffect(() => {
     setAnimate(true);

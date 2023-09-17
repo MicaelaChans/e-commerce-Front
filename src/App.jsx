@@ -16,7 +16,7 @@ import AboutThisProject from "./components/AboutThisProject";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollingSection from "./components/partials/ScrollingSection";
 import CategoryProducts from "./components/partials/Categories";
-import MyOrders from "./components/MyOrders"
+import MyPurchases from "./components/MyPurchases"
 function App() {
   return (
     <div>
@@ -53,7 +53,7 @@ function App() {
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/scrolling" element={<CategoryProducts />} />
-        <Route path="/my-orders/:id" element={<MyOrders/>} />
+        <Route path="/my-purchases" element={<MyPurchases/>} />
       </Routes>
     </div>
   );
