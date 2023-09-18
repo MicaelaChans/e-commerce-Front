@@ -14,7 +14,7 @@ function Cart() {
 
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-
+  let totalPrice = 0;
   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
   };
@@ -23,7 +23,7 @@ function Cart() {
     <>
       <NavLink onClick={handleShow}>
         <div className="">
-        <i className="bi bi-cart3 mt-2" style={{ fontSize: "1.5rem" }}></i>
+          <i className="bi bi-cart3 mt-2" style={{ fontSize: "1.5rem" }}></i>
         </div>
       </NavLink>
       <Offcanvas
@@ -59,10 +59,13 @@ function Cart() {
                 </div>
               </div>
             ))}
+            {cart.map((item) => {
+              totalPrice = totalPrice + item.price;
+            })}
           </div>
           <div className="flex-column">
             <hr />
-            <h3>Total Price:</h3>
+            <h3>Total Price: {totalPrice}</h3>
             <div>
               <button className="btn btn-dark mt-3 shadow" id="checkOut">
                 Check Out
