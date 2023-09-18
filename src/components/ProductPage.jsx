@@ -37,6 +37,10 @@ function ProductPage() {
       })
     );
   };
+  for (const otProps in product.otherProperties) {
+    console.log(otProps);
+  }
+  console.log(product.category.name);
 
   return (
     <>
@@ -71,20 +75,22 @@ function ProductPage() {
                 </button>
               </DescriptionsProduct>
             </div>
-            <div className="pb-5">
-              <div className="d-flex mb-4 align-items-center">
-                <p className="m-0 fw-semibold">TECHNICAL SPECIFICATIONS</p>
-                <div className="line-description-product border-bottom w-100"></div>
+            {product.category.name !== "accessories" && (
+              <div className="pb-5">
+                <div className="d-flex mb-4 align-items-center">
+                  <p className="m-0 fw-semibold">TECHNICAL SPECIFICATIONS</p>
+                  <div className="line-description-product border-bottom w-100"></div>
+                </div>
+                <SpecificationsProduct
+                  height={product.otherProperties.height}
+                  width={product.otherProperties.width}
+                  depth={product.otherProperties.depth}
+                  consumption={product.otherProperties.consumption}
+                  efficiency={product.otherProperties.eficiency}
+                  nominal={product.otherProperties.nominalPower}
+                />
               </div>
-              <SpecificationsProduct
-                height={product.otherProperties.height}
-                width={product.otherProperties.width}
-                depth={product.otherProperties.depth}
-                consumption={product.otherProperties.consumption}
-                efficiency={product.otherProperties.eficiency}
-                nominal={product.otherProperties.nominalPower}
-              />
-            </div>
+            )}
           </div>
         </div>
       </div>
