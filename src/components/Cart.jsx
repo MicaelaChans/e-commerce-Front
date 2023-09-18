@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Cart.css";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
@@ -8,28 +7,26 @@ import { removeItem } from "../redux/cartSlice";
 import axios from "axios";
 
 function Cart() {
+  const user = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
-  console.log(user);
-  let totalPrice = 0;
-  const handleCheckOut = async () => {
-   // if (user) {
-      try {
-        await axios({
-          url: "https://localhost:8000/orders",
-          method: "POST",
-          //data: { cart, user },
-        });
-      } catch (error) {
-        console.log(error);
-      }
-    //}
+
+  const handleRemoveItem = (itemId) => {
+    dispatch(removeItem(itemId));
   };
+
+  async function handleCheckOut() {
+    if (user) {
+      await axios({
+        url: "http://localhost:8000/orders",
+        method: "POST",
+        data: { user, cart },
+      });
+    }
+  }
 
   return (
     <>
@@ -72,16 +69,13 @@ function Cart() {
                 </div>
               </div>
             ))}
-            {cart.map((item) => {
-              totalPrice = totalPrice + item.price;
-            })}
           </div>
           <div className="total-price-section flex-column mx-3 pb-3">
             <div className="total-price-line border-top mb-3" />
-            <h3>Total Price: {totalPrice}</h3>
+            <h3>Total Price:</h3>
             <div>
               <button
-                onClick={handleCheckOut}
+                onClick={() => handleCheckOut()}
                 className="btn btn-dark mt-3 shadow"
                 id="checkOut"
               >
