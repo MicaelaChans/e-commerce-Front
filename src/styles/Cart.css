@@ -7,8 +7,18 @@
 }
 
 .productImg {
-  width: 170px;
   height: 150px;
+}
+
+.total-price-section {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+}
+
+.total-price-line {
+  width: 100%;
+  height: 1px;
 }
 
 #purchase {

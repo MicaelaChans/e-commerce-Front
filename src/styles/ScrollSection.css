@@ -1,30 +1,38 @@
-/* ScrollSection CSS */
-
 .scroll-section-outer {
   overflow: hidden;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-
 .scroll-section-inner {
   height: 100vh;
-  width: 400%;
+  width: 400vw;
   display: flex;
   flex-direction: row;
   position: relative;
-  transition: transform 0.3s ease;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-
 .scroll-section {
-  flex-direction: row;
-  width: 100%;
-  flex: 1;
+  width: 100vw;
+  height: 100vh;
 }
-
 .scroll-img {
-  width: 100%;
-  height: auto;
+  height: 100% !important;
+  width: 100% !important;
   object-fit: cover;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.hide-on-desktop {
+  display: none;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
 }
 
-.bk {
-  background-color: #efe9e4;
+.hide-on-mobile {
+  display: none;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
 }

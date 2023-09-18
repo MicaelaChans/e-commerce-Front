@@ -14,7 +14,7 @@
   color: white;
   border: 0;
   font-size: large;
-  z-index: 5;
+  z-index: 100;
   transition: 1s;
 }
 

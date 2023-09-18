@@ -10,13 +10,12 @@ import { addItem } from "../redux/cartSlice";
 import "../styles/ProductsOfCategory.css";
 import "../styles/Products.css";
 
-
 function ProductsList() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
   const [firstCategory, setFirstCategory] = useState([]);
-  const [aux, setAux] = useState(true)
+  const [aux, setAux] = useState(true);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -27,14 +26,13 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
-    console.log(products)
+    console.log(products);
     products.length == 0 && setAux(!aux);
-    setFirstCategory(products.filter(
-      (product) => product.category.name == "wood"
-    ));
-  },[aux]);
-  
-  
+    setFirstCategory(
+      products.filter((product) => product.category.name == "wood")
+    );
+  }, [aux]);
+
   useEffect(() => {
     setAnimate(true);
   }, []);
@@ -49,6 +47,10 @@ function ProductsList() {
       })
     );
   };
+<<<<<<< Updated upstream
+  function harmonyFilter() {
+    const firstFilter = products.filter(
+=======
   function harmonyFilter(){    
       const firstFilter = (products.filter(
         (product) => product.category.name == "wood"))
@@ -59,13 +61,29 @@ function ProductsList() {
       (product) => product.category.name == "wood"))
       setFirstCategory(firstFilter.filter((item)=>item.name.includes("Box")));
   }
-  function allFilter(){ 
+  function allFilter(){
+  
     setFirstCategory(products.filter(
+>>>>>>> Stashed changes
       (product) => product.category.name == "wood"
-    ));
+    );
+    setFirstCategory(
+      firstFilter.filter((item) => item.name.includes("Harmony"))
+    );
   }
- 
-  return  ((
+  function boxFilter() {
+    const firstFilter = products.filter(
+      (product) => product.category.name == "wood"
+    );
+    setFirstCategory(firstFilter.filter((item) => item.name.includes("Box")));
+  }
+  function allFilter() {
+    setFirstCategory(
+      products.filter((product) => product.category.name == "wood")
+    );
+  }
+
+  return (
     <div>
       <div className="banner-wood-stoves d-none d-sm-flex align-items-center">
         <h1
@@ -86,19 +104,34 @@ function ProductsList() {
         </p>
       </div>
       <div className="d-flex filter-section justify-content-center align-items-center py-4">
-          <h4 className="mx-4">Filter by model:</h4>  
-          <div className="mt-2 mt-sm-0"> 
-          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>harmonyFilter()}>Harmony</button>
-          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>boxFilter()}>Box</button>
-          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>allFilter()}>All</button>
-          </div>
+        <h4 className="mx-4">Filter by model:</h4>
+        <div className="mt-2 mt-sm-0">
+          <button
+            className="btn btn-light shadow btn-lg mx-3 filter-button"
+            onClick={() => harmonyFilter()}
+          >
+            Harmony
+          </button>
+          <button
+            className="btn btn-light shadow btn-lg mx-3 filter-button"
+            onClick={() => boxFilter()}
+          >
+            Box
+          </button>
+          <button
+            className="btn btn-light shadow btn-lg mx-3 filter-button"
+            onClick={() => allFilter()}
+          >
+            All
+          </button>
+        </div>
       </div>
       <div className="container">
         <div className="text-center d-block d-sm-none">
           <h2 className="alt-title-wood mt-5">WOOD STOVES</h2>
           <hr className="hr-wood" />
         </div>
-        
+
         <div className="row mb-5">
           {firstCategory.map((product, id = product.id) => (
             <div
@@ -128,7 +161,7 @@ function ProductsList() {
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <hr className="hr-product-wood-top"/>
+                  <hr className="hr-product-wood-top" />
                   <div className=" justify-content-center align-items-center p-sizes-product">
                     <p className="text-center mx-2">
                       H: {product.otherProperties.height}
@@ -168,6 +201,6 @@ function ProductsList() {
       </div>
       <Footer />
     </div>
-  ));
+  );
 }
 export default ProductsList;
