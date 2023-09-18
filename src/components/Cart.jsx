@@ -10,21 +10,26 @@ function Cart() {
   const [show, setShow] = useState(false);
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
+  const userId = user.id;
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const cartItems = useSelector((state) => state.cart.cartItems);
-  const counter = useSelector((state) => state.cart.counter);
   const dispatch = useDispatch();
   console.log(user);
   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
   };
-  console.log(cartItems);
+  console.log(cart);
   const handleCheckOut = async () => {
     if (user) {
-      console.log("esta log.");
-      const newOrder = {cartItems.}
+      try {
+        const response = await axios({
+          url: "https://localhost:8000/orders",
+          method: "POST",
+          data: { cart, userId },
+        });
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -32,7 +37,7 @@ function Cart() {
     <>
       <NavLink onClick={handleShow}>
         <i className="bi bi-cart3 mt-2" style={{ fontSize: "1.5rem" }}>
-          <sup>{counter}</sup>
+          <sup>1</sup>
         </i>
       </NavLink>
       <Offcanvas
@@ -62,10 +67,7 @@ function Cart() {
                     <option value="1">1</option>
                   </select>
                   <p className="fs-6">US$ {item.price}</p>
-                  <i
-                    className="bi bi-trash-5 d-flex justify-content-end flex-end"
-                    onClick={() => handleRemoveItem(item.id)}
-                  ></i>
+                  <i className="bi bi-trash-5 d-flex justify-content-end flex-end"></i>
                 </div>
                 <div>
                   <h3>Cantidad:{item.quantity}</h3>
@@ -78,7 +80,7 @@ function Cart() {
             <h3>Total Price:</h3>
             <div>
               <button
-                onClick={handleCheckOut}
+                onClick={() => handleCheckOut()}
                 className="btn btn-dark mt-3 shadow"
                 id="checkOut"
               >
