@@ -5,18 +5,27 @@ import { useState } from "react";
 import { NavLink } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem } from "../redux/cartSlice";
+import axios from "axios";
 
 function Cart() {
+  const user = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  
 
   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
+  };
+  console.log(cart)
+  async function handleCheckOut(){
+      await axios({
+      url: "http://localhost:8000/orders",
+      method: "POST",
+      data: {user,cart}
+    });
   };
 
   return (
@@ -64,7 +73,7 @@ function Cart() {
             <hr />
             <h3>Total Price:</h3>
             <div>
-              <button className="btn btn-dark mt-3 shadow" id="checkOut">
+              <button onClick={()=>handleCheckOut()} className="btn btn-dark mt-3 shadow" id="checkOut">
                 Check Out
               </button>
             </div>

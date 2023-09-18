@@ -26,7 +26,6 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
-    console.log(products);
     products.length == 0 && setAux(!aux);
     setFirstCategory(
       products.filter((product) => product.category.name == "wood")
