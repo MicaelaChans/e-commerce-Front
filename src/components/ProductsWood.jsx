@@ -61,21 +61,9 @@ function ProductsList() {
     setFirstCategory(firstFilter.filter((item) => item.name.includes("Box")));
   }
   function allFilter() {
-    //   setFirstCategory(products.filter(
-    //     (product) => product.category.name == "wood")
-    //   setFirstCategory(firstFilter.filter((item) => item.name.includes("Harmony"))
-    //   ))
-  }
-  function boxFilter() {
-    //   const firstFilter = products.filter(
-    //     (product) => product.category.name == "wood"
-    //   );
-    //   setFirstCategory(firstFilter.filter((item) => item.name.includes("Box")));
-    // }
-    // function allFilter() {
-    //   setFirstCategory(
-    //     products.filter((product) => product.category.name == "wood")
-    //   );
+    setFirstCategory(
+      products.filter((product) => product.category.name == "wood")
+    );
   }
 
   return (
