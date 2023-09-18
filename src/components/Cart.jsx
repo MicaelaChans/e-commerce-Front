@@ -74,10 +74,13 @@ function Cart() {
                 </div>
               </div>
             ))}
+            {cart.map((item) => {
+              totalPrice = totalPrice + item.price;
+            })}
           </div>
           <div className="total-price-section flex-column mx-3 pb-3">
             <div className="total-price-line border-top mb-3" />
-            <h3>Total Price:</h3>
+            <h3>Total Price: {totalPrice}</h3>
             <div>
               <button
                 onClick={() => handleCheckOut()}
