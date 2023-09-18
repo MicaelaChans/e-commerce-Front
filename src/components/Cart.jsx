@@ -5,18 +5,30 @@ import { useState } from "react";
 import { NavLink } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { removeItem } from "../redux/cartSlice";
+import axios from "axios";
 
 function Cart() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  console.log(user);
   let totalPrice = 0;
-  const handleRemoveItem = (itemId) => {
-    dispatch(removeItem(itemId));
+  const handleCheckOut = async () => {
+   // if (user) {
+      try {
+        await axios({
+          url: "https://localhost:8000/orders",
+          method: "POST",
+          //data: { cart, user },
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    //}
   };
 
   return (
@@ -68,7 +80,11 @@ function Cart() {
             <div className="total-price-line border-top mb-3" />
             <h3>Total Price: {totalPrice}</h3>
             <div>
-              <button className="btn btn-dark mt-3 shadow" id="checkOut">
+              <button
+                onClick={handleCheckOut}
+                className="btn btn-dark mt-3 shadow"
+                id="checkOut"
+              >
                 Check Out
               </button>
             </div>
