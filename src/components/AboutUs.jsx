@@ -26,7 +26,7 @@ function AboutUs() {
       </div>
       <div className="info-about py-5">
         <div className="container">
-          <h3 className="my-3 text-center">MISSION AND VISION</h3>
+          <h3 className="my-3">MISSION AND VISION</h3>
           <div className="text-about mt-5">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
