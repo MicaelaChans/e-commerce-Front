@@ -96,6 +96,7 @@ function ProductsList() {
           <h2 className="alt-title-wood">PELLET STOVES</h2>
           <hr className="hr-wood" />
         </div>
+
         <div className="row">
           {firstCategory.map((product, id = product.id) => (
             <div
