@@ -25,11 +25,11 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
-     setFirstCategory(products.filter(
-      (product) => product.category.name == "wood"
-    ));
+    setFirstCategory(
+      products.filter((product) => product.category.name == "wood")
+    );
   }, []);
-  
+
   useEffect(() => {
     setAnimate(true);
   }, []);
@@ -44,22 +44,24 @@ function ProductsList() {
       })
     );
   };
-  function harmonyFilter(){    
-      const firstFilter = (products.filter(
-        (product) => product.category.name == "wood"))
-        setFirstCategory(firstFilter.filter((item)=>item.name.includes("Harmony")));   
-  }
-  function boxFilter(){
-    const firstFilter = (products.filter(
-      (product) => product.category.name == "wood"))
-      setFirstCategory(firstFilter.filter((item)=>item.name.includes("Box")));
-  }
-  function allFilter(){
-   
-    setFirstCategory(products.filter(
+  function harmonyFilter() {
+    const firstFilter = products.filter(
       (product) => product.category.name == "wood"
-    ));
-   
+    );
+    setFirstCategory(
+      firstFilter.filter((item) => item.name.includes("Harmony"))
+    );
+  }
+  function boxFilter() {
+    const firstFilter = products.filter(
+      (product) => product.category.name == "wood"
+    );
+    setFirstCategory(firstFilter.filter((item) => item.name.includes("Box")));
+  }
+  function allFilter() {
+    setFirstCategory(
+      products.filter((product) => product.category.name == "wood")
+    );
   }
 
   return (
@@ -83,19 +85,34 @@ function ProductsList() {
         </p>
       </div>
       <div className="d-flex filter-section justify-content-center align-items-center py-4">
-          <h4 className="mx-4">Filter by model:</h4>  
-          <div className="mt-2 mt-sm-0"> 
-          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>harmonyFilter()}>Harmony</button>
-          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>boxFilter()}>Box</button>
-          <button className="btn btn-light shadow btn-lg mx-4 filter-button" onClick={()=>allFilter()}>All products</button>
-          </div>
+        <h4 className="mx-4">Filter by model:</h4>
+        <div className="mt-2 mt-sm-0">
+          <button
+            className="btn btn-light shadow btn-lg mx-4 filter-button"
+            onClick={() => harmonyFilter()}
+          >
+            Harmony
+          </button>
+          <button
+            className="btn btn-light shadow btn-lg mx-4 filter-button"
+            onClick={() => boxFilter()}
+          >
+            Box
+          </button>
+          <button
+            className="btn btn-light shadow btn-lg mx-4 filter-button"
+            onClick={() => allFilter()}
+          >
+            All products
+          </button>
+        </div>
       </div>
       <div className="container">
         <div className="text-center d-block d-sm-none">
           <h2 className="alt-title-wood mt-5">WOOD STOVES</h2>
           <hr className="hr-wood" />
         </div>
-        
+
         <div className="row mb-5">
           {firstCategory.map((product, id = product.id) => (
             <div
