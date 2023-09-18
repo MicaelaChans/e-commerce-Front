@@ -67,7 +67,10 @@ function Cart() {
                     <option value="1">1</option>
                   </select>
                   <p className="fs-6">US$ {item.price}</p>
-                  <i className="bi bi-trash-5 d-flex justify-content-end flex-end"></i>
+                  <i
+                    onClick={handleRemoveItem}
+                    className="bi bi-trash-5 d-flex justify-content-end flex-end"
+                  ></i>
                 </div>
                 <div>
                   <h3>Cantidad:{item.quantity}</h3>
