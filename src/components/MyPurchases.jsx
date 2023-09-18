@@ -30,7 +30,7 @@ useEffect(() => {
   getOrders(); 
 },[])
 
-if(orders.length > 0){
+if(orders.length > 0 && user){
   for(let i=0; i<orders.length; i++){   
     if(orders[i].user.id == user.id){ 
       for(let j=0; j<orders[i].products.length; j++){

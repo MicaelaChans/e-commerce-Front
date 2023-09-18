@@ -19,13 +19,15 @@ function Cart() {
   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
   };
-  console.log(cart)
+ 
   async function handleCheckOut(){
+    if(user){
       await axios({
-      url: "http://localhost:8000/orders",
-      method: "POST",
-      data: {user,cart}
-    });
+        url: "http://localhost:8000/orders",
+        method: "POST",
+        data: {user,cart}
+      });
+    }    
   };
 
   return (
@@ -69,9 +71,6 @@ function Cart() {
                 </div>
               </div>
             ))}
-            {cart.map((item) => {
-              totalPrice = totalPrice + item.price;
-            })}
           </div>
           <div className="total-price-section flex-column mx-3 pb-3">
             <div className="total-price-line border-top mb-3" />
