@@ -22,9 +22,9 @@ function Cart() {
   return (
     <>
       <NavLink onClick={handleShow}>
-        <i className="bi bi-cart3 mt-2" style={{ fontSize: "1.5rem" }}>
-          <sup>(1)</sup>
-        </i>
+        <div>
+        <i className="bi bi-cart3 mt-2" style={{ fontSize: "1.5rem" }}></i>
+        </div>
       </NavLink>
       <Offcanvas
         placement="end"

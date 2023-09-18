@@ -12,6 +12,7 @@ import Footer from "./partials/Footer";
 function Register() {
 const user = useSelector((state) => state.user);
 const products = useSelector((state) => state.products);
+console.log(user)
 
 const [orders, setOrders] = useState([]);
 const productsOfUser = [];
