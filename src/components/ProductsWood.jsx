@@ -47,24 +47,8 @@ function ProductsList() {
       })
     );
   };
-<<<<<<< Updated upstream
   function harmonyFilter() {
     const firstFilter = products.filter(
-=======
-  function harmonyFilter(){    
-      const firstFilter = (products.filter(
-        (product) => product.category.name == "wood"))
-        setFirstCategory(firstFilter.filter((item)=>item.name.includes("Harmony")));   
-  }
-  function boxFilter(){
-    const firstFilter = (products.filter(
-      (product) => product.category.name == "wood"))
-      setFirstCategory(firstFilter.filter((item)=>item.name.includes("Box")));
-  }
-  function allFilter(){
-  
-    setFirstCategory(products.filter(
->>>>>>> Stashed changes
       (product) => product.category.name == "wood"
     );
     setFirstCategory(
