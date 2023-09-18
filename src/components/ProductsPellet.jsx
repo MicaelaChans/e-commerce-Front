@@ -119,9 +119,9 @@ function ProductsList() {
                 style={{ color: "black" }}
                 to={`/products/${product.id}`}
               >
-                <h5 className="text-center mt-2">
+                <h6 className="text-center mt-2">
                   {product.name} - {product.otherProperties.nominalPower}KW
-                </h5>
+                </h6>
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
