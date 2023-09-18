@@ -9,11 +9,15 @@ import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
 import "../styles/ProductsOfCategory.css";
 import "../styles/Products.css";
+import { useLocation } from "react-router-dom";
 
 function ProductsList() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
+  const [firstCategory, setFirstCategory] = useState([]);
+  const location = useLocation();
+  const [aux, setAux] = useState(true);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -24,13 +28,16 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
-  }, []);
-  const firstCategory = products.filter(
-    (product) => product.category.name == "accessories"
-  );
+    products.length == 0 && setAux(!aux);
+    setFirstCategory(products.filter(
+      (product) => product.category.name == "accessories"
+    ));
+  },[aux]);
+ 
+  
   useEffect(() => {
     setAnimate(true);
-  }, []);
+  }, [aux]);
 
   const handleAddItem = (item) => {
     dispatch(
@@ -65,22 +72,22 @@ function ProductsList() {
       </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
-          <h2 className="alt-title-wood">ACCESSORIES</h2>
+          <h2 className="alt-title-accessories" >ACCESSORIES</h2>
           <hr className="hr-wood" />
         </div>
         <div className="row mb-5">
           {firstCategory.map((product, id = product.id) => (
             <div
-              className="col-lg-3 product-wood col-md-4 col-sm-6 col-12 g-5"
+              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5"
               key={id}
             >
               <div className="mt-sm-4  mx-3  bg-white">
                 <Link
-                  className=" image-product-wood d-flex justify-content-center"
+                  className=" image-product-pellet d-flex justify-content-center"
                   to={`/products/${product.id}`}
                 >
                   <img
-                    className="image-product-wood text-center"
+                    className=" text-center"
                     src={product.image}
                     alt={product.name}
                   />
@@ -91,7 +98,7 @@ function ProductsList() {
                 style={{ color: "black" }}
                 to={`/products/${product.id}`}
               >
-                <h5 className="text-center mt-2">{product.name}</h5>
+                <h6 className="text-center mt-2">{product.name}</h6>
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
@@ -101,7 +108,7 @@ function ProductsList() {
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light btn-sm shadow"
+                      className="btn btn-light shadow"
                       style={{
                         backgroundColor: "#f9b468",
                         color: "white",

@@ -44,23 +44,24 @@ function Cart() {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title className="fs-3">Cart</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body className="d-flex flex-column h-100 justify-content-between">
-          <div className="row">
-            {cartItems.map((item) => (
+        <Offcanvas.Body className="d-flex flex-column h-100 justify-content-between p-0">
+          <div className="row mx-3 d-flex justify-content-center">
+            {cart.map((item) => (
               <div key={item.id} className="row">
-                <div className="col-6 mt-3 p-3">
+                <div className="total-price-line border-top" />
+                <div className="col-6 p-3 d-flex justify-content-center">
                   <img
                     className="productImg"
                     src={item.image}
                     alt="productImg"
                   />
                 </div>
-                <div className="col-6 mt-3 p-3 ">
+                <div className="col-6 p-3 ">
                   <h2 className="d-flex fs-4">{item.name}</h2>
                   <select name="number" id="number">
                     <option value="1">1</option>
                   </select>
-                  <p className="fs-6">USD {item.price}</p>
+                  <p className="fs-6">US$ {item.price}</p>
                   <i
                     className="bi bi-trash-5 d-flex justify-content-end flex-end"
                     onClick={() => handleRemoveItem(item.id)}
@@ -72,8 +73,8 @@ function Cart() {
               </div>
             ))}
           </div>
-          <div className="flex-column">
-            <hr />
+          <div className="total-price-section flex-column mx-3 pb-3">
+            <div className="total-price-line border-top mb-3" />
             <h3>Total Price:</h3>
             <div>
               <button

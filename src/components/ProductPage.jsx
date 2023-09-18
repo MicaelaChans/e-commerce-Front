@@ -40,11 +40,11 @@ function ProductPage() {
 
   return (
     <>
-      <div className="container-product-page">
+      <div className="container container-product-page">
         <div className="d-flex justify-content-center">
           <div className="container-left-product-page">
             <div className="row mb-5">
-              <div className="col-md-12 col-xxl-4">
+              <div className="col-md-12 col-lg-5 col-xl-4">
                 <div className="left-column-product pt-5 d-flex flex-column justify-content-between">
                   <div>
                     <img
@@ -61,6 +61,7 @@ function ProductPage() {
                 height={product.otherProperties.height}
                 width={product.otherProperties.width}
                 depth={product.otherProperties.depth}
+                price={product.price}
               >
                 <button
                   className="btn-product-page fw-semibold p-2"
@@ -85,11 +86,6 @@ function ProductPage() {
               />
             </div>
           </div>
-          <SidebarProduct
-            name={product.name}
-            price={product.price}
-            image={product.image}
-          />
         </div>
       </div>
       <Footer />

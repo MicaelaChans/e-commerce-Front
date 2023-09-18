@@ -15,6 +15,7 @@ function ProductsList() {
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
   const [firstCategory, setFirstCategory] = useState([]);
+  const [aux, setAux] = useState(true);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -25,10 +26,12 @@ function ProductsList() {
       dispatch(getProducts(response.data));
     };
     listProducts();
+    console.log(products);
+    products.length == 0 && setAux(!aux);
     setFirstCategory(
       products.filter((product) => product.category.name == "wood")
     );
-  }, []);
+  }, [aux]);
 
   useEffect(() => {
     setAnimate(true);
@@ -88,22 +91,22 @@ function ProductsList() {
         <h4 className="mx-4">Filter by model:</h4>
         <div className="mt-2 mt-sm-0">
           <button
-            className="btn btn-light shadow btn-lg mx-4 filter-button"
+            className="btn btn-light shadow btn-lg mx-3 filter-button"
             onClick={() => harmonyFilter()}
           >
             Harmony
           </button>
           <button
-            className="btn btn-light shadow btn-lg mx-4 filter-button"
+            className="btn btn-light shadow btn-lg mx-3 filter-button"
             onClick={() => boxFilter()}
           >
             Box
           </button>
           <button
-            className="btn btn-light shadow btn-lg mx-4 filter-button"
+            className="btn btn-light shadow btn-lg mx-3 filter-button"
             onClick={() => allFilter()}
           >
-            All products
+            All
           </button>
         </div>
       </div>
@@ -136,13 +139,13 @@ function ProductsList() {
                 style={{ color: "black" }}
                 to={`/products/${product.id}`}
               >
-                <h5 className="text-center mt-2">
+                <h6 className="text-center mt-2">
                   {product.name} - {product.otherProperties.nominalPower}KW
-                </h5>
+                </h6>
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <hr className="hr-product-wood-top" style={{}} />
+                  <hr className="hr-product-wood-top" />
                   <div className=" justify-content-center align-items-center p-sizes-product">
                     <p className="text-center mx-2">
                       H: {product.otherProperties.height}

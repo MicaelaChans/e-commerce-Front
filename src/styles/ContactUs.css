@@ -35,8 +35,14 @@
 
 .formControl {
   background-color: rgba(100, 100, 100, 0);
+  color: white;
+}
+
+.formControl:focus {
+  background-color: transparent;
+  color: white;
 }
 
 .btnSend {
-  width: 100px;
+  width: 125px;
 }
