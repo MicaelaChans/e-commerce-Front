@@ -70,7 +70,8 @@ function Cart() {
   
 
   async function handleCheckOut() {
-    if (user) {
+    if (user && cart.length > 0) {
+      console.log("entro")
       await axios({
         url: "http://localhost:8000/orders",
         method: "POST",

@@ -28,10 +28,8 @@ useEffect(() => {
   };
   getOrders(); 
 },[])
-console.log(user.id)
-console.log(orders)
 
-/*if(orders.length > 0 && user != null){
+if(orders.length > 0 && user != null){
   for(let i=0; i<orders.length; i++){   
     if(orders[i].user.id == user.id){ 
       for(let j=0; j<orders[i].products.length; j++){
@@ -47,7 +45,7 @@ console.log(orders)
       }       
     }
   }
-}*/
+}
 
 return orders[0] && ( (
   <div>
@@ -79,7 +77,7 @@ return orders[0] && ( (
             </div>
           </div>
           <div className="d-flex justify-content-center flex-column flex-sm-row">
-            <button className="btn buy-button mb-2 mb-sm-0 mx-0 mx-sm-2">Buy again</button> 
+            <Link  to={`/products/${product.id}`}><button className="btn buy-button mb-2 mb-sm-0 mx-0 mx-sm-2">Buy again</button></Link>
             <button className="btn rate-button">Rate</button> 
           </div>
         </div>      

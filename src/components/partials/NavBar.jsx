@@ -4,13 +4,16 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useState } from "react";
+import { logout } from "../../redux/userSlice";
+
 
 
 function NavBar() { 
   const user = useSelector((state) => state.user);
   const [aux, setAux] = useState(true);
+  const dispatch = useDispatch();
   
   let displayLogin = "block";
   let displaySignUp ="block";
@@ -94,7 +97,7 @@ function NavBar() {
               <NavDropdown.Item as={Link} to={"/my-purchases"} style={{display:`${displayPurchases}`}}>
                 My purchases
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/"} style={{display:`${displayLogout}`}}>Log out</NavDropdown.Item >
+              <NavDropdown.Item as={Link} to={"/"} style={{display:`${displayLogout}`}} onClick={()=>dispatch(logout())}>Log out</NavDropdown.Item >
             </NavDropdown>
             <Cart />
           </Nav>
