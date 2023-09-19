@@ -5,7 +5,10 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
 
+
 function NavBar() {
+ 
+  
   return (
     <Navbar
       fixed="top"

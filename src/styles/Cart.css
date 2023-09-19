@@ -33,3 +33,22 @@
 #checkOut {
   width: 100%;
 }
+
+.cart-container{
+  position: relative;
+}
+
+.cart-number{
+  position:absolute;
+  top: 0%;
+  left: 3%;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.cart-icon{
+  font-size: 1.5rem;
+}

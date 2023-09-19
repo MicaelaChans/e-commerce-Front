@@ -13,6 +13,7 @@ function Cart() {
   const handleShow = () => setShow(true);
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
+  let cartNumber = cart.length;
 
   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
@@ -31,8 +32,9 @@ function Cart() {
   return (
     <>
       <NavLink onClick={handleShow}>
-        <div className="">
-          <i className="bi bi-cart3 mt-2" style={{ fontSize: "1.5rem" }}></i>
+        <div className="cart-container">
+          <p className="m-0 px-1 cart-number" >{cartNumber}</p>
+          <i className="bi bi-cart3 cart-icon mt-2" ></i>
         </div>
       </NavLink>
       <Offcanvas
