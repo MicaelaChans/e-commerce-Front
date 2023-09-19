@@ -43,7 +43,6 @@ function Cart() {
   } 
  
   function handlePlus(id){
-    console.log(id)
    for(let i=0; i<cartShow.length; i++){
     if(cartShow[i].id == id){
       cartShow[i].quantity++;
@@ -61,7 +60,6 @@ function Cart() {
   };
 
   function handleMinus(id){
-    console.log(id)
     for(let i=0; i<cartShow.length; i++){
       if(cartShow[i].id == id){
         cartShow[i].quantity--; 
@@ -69,6 +67,7 @@ function Cart() {
       }
     }
   }
+  
 
   async function handleCheckOut() {
     if (user) {

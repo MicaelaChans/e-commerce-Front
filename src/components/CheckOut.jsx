@@ -18,7 +18,7 @@ function CheckOut() {
     };
     getOrders();
   }, []);
- 
+  console.log(orders)
    const unpaidOrders = orders.length > 0 && orders.filter(
     (order) => order.state === "Not Payed" && order.user.id === user.id
   );
