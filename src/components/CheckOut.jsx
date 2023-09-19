@@ -29,7 +29,7 @@ function CheckOut() {
       try {
         await axios({
           method: "PATCH",
-          url: `http://localhost:8000/orders/${(unpaidOrders.id}`,
+          url: `http://localhost:8000/orders/${unpaidOrders.id}`,
         });
       } catch (error) {
         console.error(error);

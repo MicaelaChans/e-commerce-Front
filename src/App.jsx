@@ -14,13 +14,12 @@ import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
 import AboutThisProject from "./components/AboutThisProject";
 import { Link, useNavigate } from "react-router-dom";
-import ScrollingSection from "./components/partials/ScrollingSection";
-import CategoryProducts from "./components/partials/Categories";
-import MyPurchases from "./components/MyPurchases"
+import MyPurchases from "./components/MyPurchases";
 import Profile from "./components/Profile";
 import ScrollToTop from "./components/ScrollToTop";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
+import CheckOut from "./components/CheckOut";
 
 function App() {
   return (
@@ -60,7 +59,6 @@ function App() {
         <Route path="/productsPellet" element={<ProductsPellet />} />
         <Route path="/productsAccessories" element={<ProductsAccessories />} />
         <Route path="/products/:id" element={<ProductPage />} />
-        <Route path="/scrolling" element={<CategoryProducts />} />
         <Route path="/my-purchases" element={<MyPurchases />} />
         <Route path="/checkOut" element={<CheckOut />} />
         <Route path="*" element={<NotFound />} />
