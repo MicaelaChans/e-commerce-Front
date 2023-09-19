@@ -1,0 +1,77 @@
+.profile-section {
+    padding: 80px 20px;
+    margin-top: 120px;
+    background-color: #282624;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.profile-section .header-profile {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 2px solid #FDB467;
+    margin-bottom: 40px;
+}
+.profile-section .header-profile small {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.profile-section h3 {
+    color: #282624;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section-content {
+    background-color: #EFE9E4;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.orders-section ul.list-group-item {
+    background-color: transparent;
+    border-bottom: 1px solid #e6e9ed;
+    padding: 15px 0;
+    font-size: 15px;
+    color: #282624;
+}
+.orders-section li {
+    border: 1px solid #282624;
+}
+.orders-section h3 {
+    border-bottom: 2px solid #FDB467;
+    width: 15rem;
+}
+
+.change-password-section .form-label {
+    color: #282624;
+    font-weight: 500;
+}
+
+.change-password-section button {
+    background-color: #f9b468; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    transition: background-color 0.35s ease;
+    font-weight: 600;
+}
+
+.change-password-section button:hover {
+    background-color: #ba8347;
+}
+
+.change-password-section h3 {
+    border-bottom: 2px solid #FDB467;
+    width: 15rem;
+}
+
+input.form-control {
+    border: 1px solid #282624;
+    border-radius: 5px;
+}
