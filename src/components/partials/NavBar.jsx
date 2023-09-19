@@ -4,11 +4,31 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
+import { useSelector } from "react-redux";
+import { useState } from "react";
 
 
-function NavBar() {
- 
-  
+function NavBar() { 
+  const user = useSelector((state) => state.user);
+  /*let displayLogin = "block";
+  let displayLogout 
+  const [displayLogout, setDisplayLogout] = useState("none");
+  const [displaySignUp, setDisplaySignup] = useState("block");
+  const [displayPurchases, setDisplayPurchases] = useState("none");
+  const [displayCheckOut, setDisplayCheckOut] = useState("none");
+  if(user){
+    setDisplayLogin("none");
+    setDisplayLogout("block");
+    setDisplaySignup("none");
+    setDisplayPurchases("block");
+    setDisplayCheckOut("block");
+  }else{
+    setDisplayLogin("block");
+    setDisplayLogout("none");
+    setDisplaySignup("block");
+    setDisplayPurchases("none");
+    setDisplayCheckOut("none");
+  }*/
   return (
     <Navbar
       fixed="top"
@@ -71,6 +91,9 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/register"}>
                 Sign up
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"/profile"}>
+                Profile
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/my-purchases"}>
                 My purchases

@@ -16,8 +16,12 @@ import AboutThisProject from "./components/AboutThisProject";
 import { Link, useNavigate } from "react-router-dom";
 import ScrollingSection from "./components/partials/ScrollingSection";
 import CategoryProducts from "./components/partials/Categories";
-import MyPurchases from "./components/MyPurchases";
-import CheckOut from "./components/CheckOut";
+import MyPurchases from "./components/MyPurchases"
+import Profile from "./components/Profile";
+import ScrollToTop from "./components/ScrollToTop";
+import ForgotPassword from "./components/ForgotPassword";
+import ResetPassword from "./components/ResetPassword";
+
 function App() {
   return (
     <div>
@@ -27,6 +31,7 @@ function App() {
         </button>
       </Link>
       <NavBar />
+      <ScrollToTop />
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/registro" element={<Navigate replace to="/register" />} />
@@ -35,6 +40,9 @@ function App() {
           path="/iniciar-sesion"
           element={<Navigate replace to="/login" />}
         />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password-page" element={<ResetPassword />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/contacto" element={<Navigate replace to="/contact" />} />
@@ -52,10 +60,10 @@ function App() {
         <Route path="/productsPellet" element={<ProductsPellet />} />
         <Route path="/productsAccessories" element={<ProductsAccessories />} />
         <Route path="/products/:id" element={<ProductPage />} />
-        <Route path="*" element={<NotFound />} />
         <Route path="/scrolling" element={<CategoryProducts />} />
         <Route path="/my-purchases" element={<MyPurchases />} />
         <Route path="/checkOut" element={<CheckOut />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );

@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
 import { useNavigate, Link } from "react-router-dom";
 import "../styles/RegisterLogin.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import jwt from "jwt-decode";
 
 function Login() {
@@ -25,18 +25,22 @@ function Login() {
         data: { email, password },
       });
 
-      if (response.data.token) {  
+      if (response.data.token) {
         const id = jwt(response.data.token).sub;
-        const email =  jwt(response.data.token).email;  
-        dispatch(login({
-          token: response.data.token,
-          id,
-          email
-        }));
+        const email = jwt(response.data.token).email;
+        dispatch(
+          login({
+            token: response.data.token,
+            id,
+            email,
+          })
+        );
         localStorage.setItem("showSuccessToast", "true");
         navigate("/");
       } else {
-        toast.error(response.data.error || "Error logging in. Please try again.");
+        toast.error(
+          response.data.error || "Error logging in. Please try again."
+        );
       }
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
@@ -51,10 +55,17 @@ function Login() {
     <>
       <ToastContainer position="top-right" />
       <div className="body-register m-5 d-flex align-items-center">
-        <div className="container d-flex justify-content-center">
+        <div
+          className="container d-flex justify-content-center"
+          style={{ marginTop: "250px" }}
+        >
           <div className="row rounded-3 shadow container-register">
             <div className="d-none col-md-7 flex-column border d-md-flex justify-content-center image-register-container align-items-center">
-              <img className="pt-5 image-register" src="/assets/drachen_logo_white.png" alt="drachen logo" />
+              <img
+                className="pt-5 image-register"
+                src="/assets/drachen_logo_white.png"
+                alt="drachen logo"
+              />
             </div>
             <div className="col bg-body-tertiary py-5 px-5 px-lg-5 px-md-3 col-md-5 d-flex justify-content-center flex-column">
               <h2 className="mb-3 pt-3">Login</h2>
@@ -83,15 +94,32 @@ function Login() {
                   />
                 </div>
                 <div className="d-grid gap-2 pb-3 mt-5">
-                  <button className="btn btn-light border border-black rounded-5" type="submit">
+                  <button
+                    className="btn btn-light border border-black rounded-5"
+                    type="submit"
+                  >
                     Login
                   </button>
                 </div>
               </form>
               <p className="text-center mt-1">
-                Don't have an account? 
-                <Link to="/register" className="link-register" style={{ color: "blue", textDecoration: "none" }}>
+                Don't have an account?
+                <Link
+                  to="/register"
+                  className="link-register"
+                  style={{ color: "blue", textDecoration: "none" }}
+                >
                   Sign Up
+                </Link>
+              </p>
+              <p className="text-center mt-1">
+                Forgot password?
+                <Link
+                  to="/forgot-password"
+                  className="link-register"
+                  style={{ color: "blue", textDecoration: "none" }}
+                >
+                  Recover password
                 </Link>
               </p>
             </div>
@@ -99,7 +127,6 @@ function Login() {
         </div>
       </div>
     </>
-    
   );
 }
 

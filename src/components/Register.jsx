@@ -20,7 +20,7 @@ function Register() {
       url: `http://localhost:8000/register`,
       data: { firstname, lastname, email, phone, adress, password },
     });
-    console.log(response.data);
+
     if (response.data == "existent email already") {
       setWarningMsg("There's an existing account with this email");
     } else if (response.data == "existent phone already") {
