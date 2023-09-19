@@ -52,7 +52,8 @@ function Cart() {
           image: cartShow[i].image,
           name: cartShow[i].name,
           price: cartShow[i].price,
-          quantity: 1
+          quantity: 1,
+          rating:[0]
         })
       );    
     }
@@ -81,7 +82,7 @@ function Cart() {
       navigate("/checkOut");
     }
   }
- 
+ console.log(cart)
   return (
     <>
       <NavLink onClick={handleShow}>
