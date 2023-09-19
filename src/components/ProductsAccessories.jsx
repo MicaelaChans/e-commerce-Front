@@ -109,7 +109,7 @@ function ProductsList() {
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light shadow"
+                      className="btn btn-light shadow mt-4"
                       style={{
                         backgroundColor: "#f9b468",
                         color: "white",

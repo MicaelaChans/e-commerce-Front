@@ -161,8 +161,8 @@ function ProductsList() {
                     </div>
                     <hr className="hr-product-wood-top mb-1" />
                   </div>
-                  <hr className="d-block d-lg-none" />
-                  <div className="d-flex justify-content-center">
+                  
+                  <div className="d-flex justify-content-center mt-4 mt-lg-0">
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
