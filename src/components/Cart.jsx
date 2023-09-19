@@ -16,6 +16,10 @@ function Cart() {
   let cartNumber = cart.length;
   let totalPrice = 0;
 
+  for(let i=0; i<cart.length; i++){
+    totalPrice += cart[i].price 
+  }
+  
   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
   };
@@ -29,6 +33,8 @@ function Cart() {
       });
     }
   }
+
+  
 
   return (
     <>
@@ -75,7 +81,7 @@ function Cart() {
           </div>
           <div className="total-price-section flex-column mx-3 pb-3">
             <div className="total-price-line border-top mb-3" />
-            <h3>Total Price:</h3>
+            <h3>Total Price: US$ {totalPrice}</h3>
             <div>
               <button
                 onClick={() => handleCheckOut()}
