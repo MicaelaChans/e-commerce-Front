@@ -36,6 +36,7 @@
 
 .cart-container{
   position: relative;
+  width: 25px;
 }
 
 .cart-number{

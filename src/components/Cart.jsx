@@ -14,6 +14,7 @@ function Cart() {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   let cartNumber = cart.length;
+  let totalPrice = 0;
 
   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
