@@ -78,7 +78,7 @@ function Cart() {
         data: { user, cart },
       });
       dispatch(removeAll());
-      navigate("/");
+      navigate("/checkOut");
     }
   }
  
