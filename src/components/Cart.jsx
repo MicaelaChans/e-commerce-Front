@@ -14,13 +14,28 @@ function Cart() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const cart = useSelector((state) => state.cart);
+  const cartShow = [];
   const dispatch = useDispatch();
   let cartNumber = cart.length;
   let totalPrice = 0;
-
+  console.log(cart)
   for(let i=0; i<cart.length; i++){
-    totalPrice += cart[i].price 
+    totalPrice += cart[i].price;
   }
+  
+
+ /* for(let i=0; i<cart.length; i++){
+     for(let j=0; j<cartShow.length; j++){
+      if(cartShow[j]){
+        if(cartShow[j].id == cart[i].id){
+
+        }
+
+      }else{
+        cartShow.push(cart[i]);
+      }
+     }
+  } */
   
   const handleRemoveItem = (itemId) => {
     dispatch(removeItem(itemId));
