@@ -63,7 +63,6 @@ function ForgotPassword() {
             <Link
               to={"/login"}
               className="link-register"
-              style={{ color: "blue", textDecoration: "none" }}
             >
              Back to Login
             </Link>
