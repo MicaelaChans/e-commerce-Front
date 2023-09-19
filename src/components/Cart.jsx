@@ -3,7 +3,12 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { NavLink } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItem, removeAll, addItem, removeOneItem } from "../redux/cartSlice";
+import {
+  removeItem,
+  removeAll,
+  addItem,
+  removeOneItem,
+} from "../redux/cartSlice";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -19,52 +24,52 @@ function Cart() {
   let cartNumber = cart.length;
   let totalPrice = 0;
   let isProduct = false;
-  
-  for(let i=0; i<cart.length; i++){
+
+  for (let i = 0; i < cart.length; i++) {
     totalPrice += cart[i].price;
   }
   //El chiste es crear un carrito para mostrar y el otro para la store
-  for(let i=0; i<cart.length; i++){
-     for(let j=0; j<cartShow.length; j++){
-      if(cartShow[j]){
-        if(cartShow[j].id == cart[i].id){
-            cartShow[j].quantity++;
-            isProduct = true;
+  for (let i = 0; i < cart.length; i++) {
+    for (let j = 0; j < cartShow.length; j++) {
+      if (cartShow[j]) {
+        if (cartShow[j].id == cart[i].id) {
+          cartShow[j].quantity++;
+          isProduct = true;
         }
-      }else{
-        cartShow.push({...cart[i]});
-        isProduct = true; 
+      } else {
+        cartShow.push({ ...cart[i] });
+        isProduct = true;
       }
     }
-    if(!isProduct){
-      cartShow.push({...cart[i]})
+    if (!isProduct) {
+      cartShow.push({ ...cart[i] });
     }
     isProduct = false;
-  } 
- 
-  function handlePlus(id){
-    console.log(id)
-   for(let i=0; i<cartShow.length; i++){
-    if(cartShow[i].id == id){
-      cartShow[i].quantity++;
-      dispatch(
-        addItem({
-          id: id,
-          image: cartShow[i].image,
-          name: cartShow[i].name,
-          price: cartShow[i].price,
-          quantity: 1
-        })
-      );    
-    }
-   }
-  };
+  }
 
-  function handleMinus(id){
-    console.log(id)
-    for(let i=0; i<cartShow.length; i++){
-      if(cartShow[i].id == id){
-        cartShow[i].quantity--; 
+  function handlePlus(id) {
+    console.log(id);
+    for (let i = 0; i < cartShow.length; i++) {
+      if (cartShow[i].id == id) {
+        cartShow[i].quantity++;
+        dispatch(
+          addItem({
+            id: id,
+            image: cartShow[i].image,
+            name: cartShow[i].name,
+            price: cartShow[i].price,
+            quantity: 1,
+          })
+        );
+      }
+    }
+  }
+
+  function handleMinus(id) {
+    console.log(id);
+    for (let i = 0; i < cartShow.length; i++) {
+      if (cartShow[i].id == id) {
+        cartShow[i].quantity--;
         dispatch(removeOneItem(id));
       }
     }
@@ -81,13 +86,13 @@ function Cart() {
       navigate("/checkOut");
     }
   }
- 
+
   return (
     <>
       <NavLink onClick={handleShow}>
         <div className="cart-container">
-          <p className="m-0 px-1 cart-number" >{cartNumber}</p>
-          <i className="bi bi-cart3 cart-icon mt-2" ></i>
+          <p className="m-0 px-1 cart-number">{cartNumber}</p>
+          <i className="bi bi-cart3 cart-icon mt-2"></i>
         </div>
       </NavLink>
       <Offcanvas
@@ -114,10 +119,22 @@ function Cart() {
                 <div className="col-6 p-3">
                   <h2 className="d-flex fs-4">{item.name}</h2>
                   <div className="d-flex align-items-center">
-                    <p className="item-number mb-0 text-center rounded px-2">{item.quantity}</p>
+                    <p className="item-number mb-0 text-center rounded px-2">
+                      {item.quantity}
+                    </p>
                     <div className="mx-2">
-                    <button onClick={()=>handlePlus(item.id)} style={{backgroundColor:"white", border:"none"}}><i className="bi bi-plus-circle-fill mx-2 plus-icon"></i></button>
-                    <button onClick={()=>handleMinus(item.id)} style={{backgroundColor:"white", border:"none"}}><i className="bi bi-dash-circle-fill minus-icon"></i></button>
+                      <button
+                        onClick={() => handlePlus(item.id)}
+                        style={{ backgroundColor: "white", border: "none" }}
+                      >
+                        <i className="bi bi-plus-circle-fill mx-2 plus-icon"></i>
+                      </button>
+                      <button
+                        onClick={() => handleMinus(item.id)}
+                        style={{ backgroundColor: "white", border: "none" }}
+                      >
+                        <i className="bi bi-dash-circle-fill minus-icon"></i>
+                      </button>
                     </div>
                   </div>
                   <p className="fs-6">US$ {item.price}</p>

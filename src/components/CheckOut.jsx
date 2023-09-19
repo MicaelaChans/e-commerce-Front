@@ -51,13 +51,14 @@ function CheckOut() {
               {unpaidOrders.map((order) => (
                 <div key={order._id}>
                   <h4>{order._id}</h4>
+                  <button onClick={() => handlePay(order._id)}>paagr ordenes</button>
                 </div>
               ))}
             </ul>
           </div>
           <div className="col-6">
             <h3>medios de pago</h3>
-            <button onClick={handlePay}>paagr ordenes</button>
+            
           </div>
         </div>
       </div>
