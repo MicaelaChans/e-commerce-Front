@@ -3,10 +3,12 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { NavLink } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import { removeItem } from "../redux/cartSlice";
+import { removeItem, removeAll } from "../redux/cartSlice";
 import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 
 function Cart() {
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -31,9 +33,11 @@ function Cart() {
         method: "POST",
         data: { user, cart },
       });
+      dispatch(removeAll());
+      navigate("/");
     }
   }
-
+ console.log(cart)
   
 
   return (
