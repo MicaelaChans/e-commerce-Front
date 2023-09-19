@@ -15,7 +15,7 @@ function ProductsList() {
   const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
   const [firstCategory, setFirstCategory] = useState([]);
-  const [aux, setAux] = useState(true)
+  const [aux, setAux] = useState(true);
 
   useEffect(() => {
     const listProducts = async () => {
@@ -27,11 +27,11 @@ function ProductsList() {
     };
     listProducts();
     products.length == 0 && setAux(!aux);
-    setFirstCategory(products.filter(
-      (product) => product.category.name == "pellet"
-    ));
-  },[aux]);
-  
+    setFirstCategory(
+      products.filter((product) => product.category.name == "pellet")
+    );
+  }, [aux]);
+
   useEffect(() => {
     setAnimate(true);
   }, []);
@@ -46,21 +46,23 @@ function ProductsList() {
       })
     );
   };
- 
-  function decoFilter(){    
-    const firstFilter = (products.filter(
-      (product) => product.category.name == "pellet"))
-      setFirstCategory(firstFilter.filter((item)=>item.name.includes("Deco")));   
-  }
-  function aduroFilter(){
-    const firstFilter = (products.filter(
-      (product) => product.category.name == "pellet"))
-      setFirstCategory(firstFilter.filter((item)=>item.name.includes("Aduro")));
-   }
-  function allFilter(){
-    setFirstCategory(products.filter(
+
+  function decoFilter() {
+    const firstFilter = products.filter(
       (product) => product.category.name == "pellet"
-    ));
+    );
+    setFirstCategory(firstFilter.filter((item) => item.name.includes("Deco")));
+  }
+  function aduroFilter() {
+    const firstFilter = products.filter(
+      (product) => product.category.name == "pellet"
+    );
+    setFirstCategory(firstFilter.filter((item) => item.name.includes("Aduro")));
+  }
+  function allFilter() {
+    setFirstCategory(
+      products.filter((product) => product.category.name == "pellet")
+    );
   }
 
   return (
@@ -84,12 +86,27 @@ function ProductsList() {
         </p>
       </div>
       <div className="d-flex filter-section justify-content-center align-items-center py-4">
-          <h4 className="mx-4">Filter by model:</h4>  
-          <div className="mt-2 mt-sm-0"> 
-          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>decoFilter()}>Deco</button>
-          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>aduroFilter()}>Aduro</button>
-          <button className="btn btn-light shadow btn-lg mx-3 filter-button" onClick={()=>allFilter()}>All</button>
-      </div>
+        <h4 className="mx-4">Filter by model:</h4>
+        <div className="mt-2 mt-sm-0">
+          <button
+            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
+            onClick={() => decoFilter()}
+          >
+            Deco
+          </button>
+          <button
+            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
+            onClick={() => aduroFilter()}
+          >
+            Aduro
+          </button>
+          <button
+            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
+            onClick={() => allFilter()}
+          >
+            All
+          </button>
+        </div>
       </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
@@ -126,28 +143,31 @@ function ProductsList() {
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <hr className="hr-product-wood-top" />
-                  <div className=" justify-content-center align-items-center p-sizes-product">
-                    <p className="text-center mx-2">
-                      H: {product.otherProperties.height}
-                    </p>
-                    <p className="text-center mx-2 ">
-                      {" "}
-                      W: {product.otherProperties.width}
-                    </p>
-                    <p className="text-center mx-2">
-                      {" "}
-                      D: {product.otherProperties.depth}
-                    </p>
+                  <div className="d-none d-lg-block">
+                    <hr className="hr-product-wood-top" />
+                    <div className=" justify-content-center align-items-center p-sizes-product">
+                      <p className="text-center mx-2">
+                        H: {product.otherProperties.height}
+                      </p>
+                      <p className="text-center mx-2 ">
+                        {" "}
+                        W: {product.otherProperties.width}
+                      </p>
+                      <p className="text-center mx-2">
+                        {" "}
+                        D: {product.otherProperties.depth}
+                      </p>
+                    </div>
+                    <hr className="hr-product-wood-top mb-1" />
                   </div>
-                  <hr className="hr-product-wood-top mb-1" />
+                  <hr className="d-block d-lg-none" />
                   <div className="d-flex justify-content-center">
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light shadow "
+                      className="btn btn-light shadow border-0"
                       style={{
                         backgroundColor: "#f9b468",
                         color: "white",
