@@ -82,7 +82,6 @@ function Profile() {
       <strong>Date:</strong> {new Date(order.createdAt).toLocaleString()}<br />
       <strong>Status:</strong> {order.state}<br />
       <strong>Number of Products:</strong> {order.products.length}<br />
-      {/* Aquí puedes expandir para mostrar detalles de los productos si los tienes */}
     </li>
   ))}
 </ul>
