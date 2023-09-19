@@ -69,10 +69,6 @@ function Cart() {
       }
     }
   }
-  
-  const handleRemoveItem = (itemId) => {
-    dispatch(removeItem(itemId));
-  };
 
   async function handleCheckOut() {
     if (user) {
@@ -125,10 +121,6 @@ function Cart() {
                     </div>
                   </div>
                   <p className="fs-6">US$ {item.price}</p>
-                  <i
-                    className="bi bi-trash3 fs-5 d-flex justify-content-end flex-end"
-                    onClick={() => handleRemoveItem(item.id)}
-                  ></i>
                 </div>
               </div>
             ))}
