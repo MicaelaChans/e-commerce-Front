@@ -25,11 +25,11 @@ function CheckOut() {
   const handlePay = async () => {
     console.log(unpaidOrders);
     if (user && user.id) {
-      console.log(unpaidOrders.id);
+      console.log(orders);
       try {
         await axios({
           method: "PATCH",
-          url: `http://localhost:8000/orders/${unpaidOrders.id}`,
+          url: `http://localhost:8000/orders/${orders._id}`,
         });
       } catch (error) {
         console.error(error);
@@ -40,7 +40,7 @@ function CheckOut() {
   };
   return (
     <div>
-      <div className="container">
+      <div className="container checkOut">
         <div className="row">
           <div className="col-6">
             <h1>check out</h1>
