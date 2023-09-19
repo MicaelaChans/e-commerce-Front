@@ -1,5 +1,8 @@
 import Footer from "./partials/Footer";
 import "../styles/AboutThisProyect.css";
+import OurTeam from "./partials/OurTeam";
+import TechAndTools from "./partials/TechAndTools";
+import AdminInfo from "./partials/AdminInfo";
 
 function AboutThisProject() {
   return (
@@ -26,181 +29,13 @@ function AboutThisProject() {
         </div>
       </div>
       <div className="info-about py-5">
-        <div className="container">
-          <h3 className="my-3 text-center">TECHNOLOGIES & TOOLS</h3>
-          <div className="text-about mt-5">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur
-              beatae eaque quo quam, sapiente aperiam quidem nostrum laborum
-              nobis vel sunt iure tempora aut dolorem repellat! Natus facere et
-              quae! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Incidunt maxime, eos a fugit ad sunt. Minus saepe debitis modi
-              perferendis, a, tenetur cum iure recusandae nostrum atque, odio
-              optio laudantium.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
-              voluptatem fuga rerum cupiditate assumenda maiores provident
-              molestiae magni autem! Vel temporibus deserunt magni reiciendis
-              magnam, maiores recusandae perspiciatis ipsa culpa?
-            </p>
-          </div>
-
-          <div
-            id="staff-section"
-            className="d-flex justify-content-center m-auto text-center pt-5 gap-2 m-0 col-xl-6 col-md-8 col-sm-10 col-12 mb-5"
-          >
-            <div className="icon-tech">
-              <h6>
-                <i className="fa-brands fa-2x fa-bootstrap"></i>
-              </h6>
-              <small>Bootstrap</small>
-            </div>
-            <div className="icon-tech">
-              <h6>
-                <i className="fa-brands fa-2x fa-css3"></i>
-              </h6>
-              <small>CSS</small>
-            </div>
-            <div className="icon-tech">
-              <h6>
-                <i className="fa-brands fa-2x fa-figma"></i>
-              </h6>
-              <small>Figma</small>
-            </div>
-            <div className="icon-tech">
-              <h6>
-                <i className="fa-brands fa-2x fa-github"></i>
-              </h6>
-              <small>GitHub</small>
-            </div>
-            <div className="icon-tech">
-              <h6>
-                <i class="fa-brands fa-2x fa-js"></i>
-              </h6>
-              <small>JavaScript</small>
-            </div>
-            <div className="icon-tech">
-              <h6>
-                <i className="fa-brands fa-2x fa-envira"></i>
-              </h6>
-              <small>MongoDB</small>
-            </div>
-            <div className="icon-tech">
-              <h6>
-                <i class="fa-brands fa-2x fa-react"></i>
-              </h6>
-              <small>React</small>
-            </div>
-          </div>
-        </div>
+        <TechAndTools />
       </div>
+      <hr className="container" />
+      <AdminInfo />
       <div className="team-about d-flex flex-column align-items-center justify-content-center text-center p-5">
-        <h4 className="my-5">OUR TEAM</h4>
-        <div className="row mb-5">
-          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
-              alt="photoStaff"
-              className="photoStaff"
-            />
-            <div className="member-info">
-              <h5 className="mt-4">Agustín Martínez</h5>
-              <p>Full Stack Developer</p>
-            </div>
-            <div>
-              <h5 className="gap-2">
-                <i className="bi bi-linkedin"></i>{" "}
-                <i className="bi bi-github"></i>
-              </h5>
-            </div>
-          </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
-              alt="photoStaff"
-              className="photoStaff"
-            />
-            <div className="member-info">
-              <h5 className="mt-4">Facundo Centurión</h5>
-              <p>Full Stack Developer</p>
-            </div>
-            <div>
-              <h5 className="gap-2">
-                <i className="bi bi-linkedin"></i>{" "}
-                <i className="bi bi-github"></i>
-              </h5>
-            </div>
-          </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
-              alt="photoStaff"
-              className="photoStaff"
-            />
-            <div className="member-info">
-              <h5 className="mt-4">Federico Mier</h5>
-              <p>Full Stack Developer</p>
-            </div>
-            <div>
-              <h5 className="gap-2">
-                <i className="bi bi-linkedin"></i>{" "}
-                <i className="bi bi-github"></i>
-              </h5>
-            </div>
-          </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
-              alt="photoStaff"
-              className="photoStaff"
-            />
-            <div className="member-info">
-              <h5 className="mt-4">Martín Gestido</h5>
-              <p>Full Stack Developer</p>
-            </div>
-            <div>
-              <h5 className="gap-2">
-                <i className="bi bi-linkedin"></i>{" "}
-                <i className="bi bi-github"></i>
-              </h5>
-            </div>
-          </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
-              alt="photoStaff"
-              className="photoStaff "
-            />
-            <div className="member-info">
-              <h5 className="mt-4">Mauro de Nava</h5>
-              <p>Full Stack Developer</p>
-            </div>
-            <div>
-              <h5 className="gap-2">
-                <i className="bi bi-linkedin"></i>{" "}
-                <i className="bi bi-github"></i>
-              </h5>
-            </div>
-          </div>
-          <div className="col-6 col-md-4 col-lg-2 my-4 hop">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
-              alt="photoStaff"
-              className="photoStaff"
-            />
-            <div className="member-info">
-              <h5 className="mt-4">Micaela Chans</h5>
-              <p>Full Stack Developer</p>
-            </div>
-            <div>
-              <h5 className="gap-2">
-                <i className="bi bi-linkedin"></i>
-                <i className="bi bi-github"></i>
-              </h5>
-            </div>
-          </div>
-        </div>
+        <h3 className="my-3">OUR TEAM</h3>
+        <OurTeam />
       </div>
       <Footer />
     </>
