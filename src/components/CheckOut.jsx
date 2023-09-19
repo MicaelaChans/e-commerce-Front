@@ -7,6 +7,7 @@ function CheckOut() {
   const [orders, setOrders] = useState([]);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
@@ -17,28 +18,21 @@ function CheckOut() {
     };
     getOrders();
   }, []);
-  console.log(orders);
-
-  const unpaidOrders = orders.filter(
+ 
+   const unpaidOrders = orders.length > 0 && orders.filter(
     (order) => order.state === "Not Payed" && order.user.id === user.id
   );
-  const handlePay = async () => {
-    console.log(unpaidOrders);
-    if (user && user.id) {
-      console.log(orders);
-      try {
+
+  async function handlePay (id)  {
+    if (user) { 
         await axios({
           method: "PATCH",
-          url: `http://localhost:8000/orders/${orders._id}`,
+          url: `http://localhost:8000/orders/${id}`,
         });
-      } catch (error) {
-        console.error(error);
-      }
-    } else {
-      console.error("El usuario no está autenticado o no tiene un ID válido.");
-    }
+      }     
   };
-  return (
+ 
+  return unpaidOrders && ((
     <div>
       <div className="container checkOut">
         <div className="row">
@@ -49,20 +43,22 @@ function CheckOut() {
           <div>
             <ul>
               {unpaidOrders.map((order) => (
-                <div key={order._id}>
-                  <h4>{order._id}</h4>
+                <div key={order.id}>
+                  <h4>{order.id}</h4>
+                
+                <h3>medios de pago</h3>
+                <button onClick={()=>handlePay(order.id)}>paagr ordenes</button> 
                 </div>
               ))}
             </ul>
           </div>
           <div className="col-6">
-            <h3>medios de pago</h3>
-            <button onClick={handlePay}>paagr ordenes</button>
+            
           </div>
         </div>
       </div>
     </div>
-  );
+  ));
 }
 
 export default CheckOut;
