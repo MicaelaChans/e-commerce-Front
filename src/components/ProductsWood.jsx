@@ -91,19 +91,19 @@ function ProductsList() {
         <h4 className="mx-4">Filter by model:</h4>
         <div className="mt-2 mt-sm-0">
           <button
-            className="btn btn-light shadow btn-lg mx-3 filter-button"
+            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
             onClick={() => harmonyFilter()}
           >
             Harmony
           </button>
           <button
-            className="btn btn-light shadow btn-lg mx-3 filter-button"
+            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
             onClick={() => boxFilter()}
           >
             Box
           </button>
           <button
-            className="btn btn-light shadow btn-lg mx-3 filter-button"
+            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
             onClick={() => allFilter()}
           >
             All
@@ -119,7 +119,7 @@ function ProductsList() {
         <div className="row mb-5">
           {firstCategory.map((product, id = product.id) => (
             <div
-              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5"
+              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-3"
               key={id}
             >
               <div className="mt-sm-4  mx-3  bg-white">
@@ -145,28 +145,31 @@ function ProductsList() {
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <hr className="hr-product-wood-top" />
-                  <div className=" justify-content-center align-items-center p-sizes-product">
-                    <p className="text-center mx-2">
-                      H: {product.otherProperties.height}
-                    </p>
-                    <p className="text-center mx-2 ">
-                      {" "}
-                      W: {product.otherProperties.width}
-                    </p>
-                    <p className="text-center mx-2">
-                      {" "}
-                      D: {product.otherProperties.depth}
-                    </p>
+                  <div className="d-none d-lg-block">
+                    <hr className="hr-product-wood-top" />
+                    <div className="justify-content-center align-items-center p-sizes-product">
+                      <p className="text-center mx-2">
+                        H: {product.otherProperties.height}
+                      </p>
+                      <p className="text-center mx-2 ">
+                        {" "}
+                        W: {product.otherProperties.width}
+                      </p>
+                      <p className="text-center mx-2">
+                        {" "}
+                        D: {product.otherProperties.depth}
+                      </p>
+                    </div>
+                    <hr className="hr-product-wood-top mb-1" />
                   </div>
-                  <hr className="hr-product-wood-top mb-1" />
+                  <hr className="d-block d-lg-none" />
                   <div className="d-flex justify-content-center">
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn shadow"
+                      className="btn shadow border-0"
                       style={{
                         backgroundColor: "#f9b468",
                         color: "white",
