@@ -100,9 +100,20 @@
     padding: 10px 20px;
     border-radius: 8px;
     color: #fff;
-    transition: background-color 0.35s ease;
+    border: solid;
+    
     font-weight: 600;
     margin-right: 10px;
+}
+.delete-account:hover {
+    background-color: #f8f6f6; 
+    border: solid;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #ff0000bd;
+    font-weight: 600;
+    margin-right: 10px;
+    border-color: #ff000071;
 }
 
 .danger-zone-hr {
