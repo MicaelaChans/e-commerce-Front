@@ -198,7 +198,7 @@ function Profile() {
                 onChange={handleInputChange}
               />
             </div>
-            <div className="d-flex justify-content-end mt-4 ">
+            <div className="d-flex justify-content-start mt-5 ">
               <button onClick={handleUpdateProfile} className="btn btn-primary">
                 Update Profile
               </button>
@@ -238,7 +238,7 @@ function Profile() {
                   required
                 />
               </div>
-              <div className="d-flex justify-content-end mt-4">
+              <div className="d-flex justify-content-start mt-5">
                 <button type="submit" className="btn btn-primary">
                   Update Password
                 </button>
@@ -247,12 +247,12 @@ function Profile() {
           </div>
           <ToastContainer position="top-right" />
 
-          <div className="justify-content-start mt-5">
+          <div className=" justify-content-start mt-5">
           <h3 className="mb-0">Danger zone</h3>  
           <hr className="danger-zone-hr mb-0" />     
             <button
               onClick={() => setShowDeleteModal(true)}
-              className="btn  delete-account ml-2 mt-3"
+              className="btn  delete-account ml-2 mt-4"
             >
               Delete Account
             </button>
