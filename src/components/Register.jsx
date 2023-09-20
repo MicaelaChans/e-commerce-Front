@@ -127,7 +127,7 @@ function Register() {
               I'm already signed up. Go to{" "}
               <Link
                 to={"/login"}
-                className="link-register"
+                
                 style={{ color: "blue", textDecoration: "none" }}
               >
                 Login
