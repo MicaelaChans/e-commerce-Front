@@ -4,31 +4,30 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
 import Cart from "../Cart";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useState } from "react";
+import { logout } from "../../redux/userSlice";
+
 
 
 function NavBar() { 
   const user = useSelector((state) => state.user);
-  /*let displayLogin = "block";
-  let displayLogout 
-  const [displayLogout, setDisplayLogout] = useState("none");
-  const [displaySignUp, setDisplaySignup] = useState("block");
-  const [displayPurchases, setDisplayPurchases] = useState("none");
-  const [displayCheckOut, setDisplayCheckOut] = useState("none");
+  const [aux, setAux] = useState(true);
+  const dispatch = useDispatch();
+  
+  let displayLogin = "block";
+  let displaySignUp ="block";
+  let displayProfile = "none";
+  let displayLogout = "none";
+  let displayPurchases = "none";
   if(user){
-    setDisplayLogin("none");
-    setDisplayLogout("block");
-    setDisplaySignup("none");
-    setDisplayPurchases("block");
-    setDisplayCheckOut("block");
-  }else{
-    setDisplayLogin("block");
-    setDisplayLogout("none");
-    setDisplaySignup("block");
-    setDisplayPurchases("none");
-    setDisplayCheckOut("none");
-  }*/
+    displayLogin = "none";
+    displaySignUp ="none";
+    displayProfile = "block";
+    displayLogout = "block";
+    displayPurchases = "block";
+  } 
+
   return (
     <Navbar
       fixed="top"
@@ -86,19 +85,19 @@ function NavBar() {
               }
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item as={Link} to={"/login"}>
+              <NavDropdown.Item as={Link} to={"/login"} style={{display:`${displayLogin}`}}>
                 Login
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/register"}>
+              <NavDropdown.Item as={Link} to={"/register"} style={{display:`${displaySignUp}`}}>
                 Sign up
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/profile"}>
+              <NavDropdown.Item as={Link} to={"/profile"} style={{display:`${displayProfile}`}}>
                 Profile
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/my-purchases"}>
+              <NavDropdown.Item as={Link} to={"/my-purchases"} style={{display:`${displayPurchases}`}}>
                 My purchases
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/"}>Log out</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"/"} style={{display:`${displayLogout}`}} onClick={()=>dispatch(logout())}>Log out</NavDropdown.Item >
             </NavDropdown>
             <Cart />
           </Nav>

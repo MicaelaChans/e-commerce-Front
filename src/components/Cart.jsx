@@ -44,38 +44,39 @@ function Cart() {
       cartShow.push({ ...cart[i] });
     }
     isProduct = false;
-  }
-
-  function handlePlus(id) {
-    console.log(id);
-    for (let i = 0; i < cartShow.length; i++) {
-      if (cartShow[i].id == id) {
-        cartShow[i].quantity++;
-        dispatch(
-          addItem({
-            id: id,
-            image: cartShow[i].image,
-            name: cartShow[i].name,
-            price: cartShow[i].price,
-            quantity: 1,
-          })
-        );
-      }
+  } 
+ 
+  function handlePlus(id){
+   for(let i=0; i<cartShow.length; i++){
+    if(cartShow[i].id == id){
+      cartShow[i].quantity++;
+      dispatch(
+        addItem({
+          id: id,
+          image: cartShow[i].image,
+          name: cartShow[i].name,
+          price: cartShow[i].price,
+          quantity: 1,
+          rating:[0]
+        })
+      );    
     }
-  }
+   }
+  };
 
-  function handleMinus(id) {
-    console.log(id);
-    for (let i = 0; i < cartShow.length; i++) {
-      if (cartShow[i].id == id) {
-        cartShow[i].quantity--;
+  function handleMinus(id){
+    for(let i=0; i<cartShow.length; i++){
+      if(cartShow[i].id == id){
+        cartShow[i].quantity--; 
         dispatch(removeOneItem(id));
       }
     }
   }
+  
 
   async function handleCheckOut() {
-    if (user) {
+    if (user && cart.length > 0) {
+      console.log("entro")
       await axios({
         url: "http://localhost:8000/orders",
         method: "POST",
@@ -85,7 +86,7 @@ function Cart() {
       navigate("/checkOut");
     }
   }
-
+ console.log(cart)
   return (
     <>
       <NavLink onClick={handleShow}>

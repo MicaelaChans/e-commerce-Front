@@ -9,6 +9,7 @@ import { format, formatDistanceToNow } from "date-fns";
 import Footer from "./partials/Footer";
 
 
+
 function Register() {
 const user = useSelector((state) => state.user);
 const products = useSelector((state) => state.products);
@@ -28,7 +29,7 @@ useEffect(() => {
   getOrders(); 
 },[])
 
-if(orders.length > 0 && user){
+if(orders.length > 0 && user != null){
   for(let i=0; i<orders.length; i++){   
     if(orders[i].user.id == user.id){ 
       for(let j=0; j<orders[i].products.length; j++){
@@ -41,7 +42,7 @@ if(orders.length > 0 && user){
           image: orders[i].products[j].image, 
           price: orders[i].products[j].price 
         });
-      }      
+      }       
     }
   }
 }
@@ -76,7 +77,7 @@ return orders[0] && ( (
             </div>
           </div>
           <div className="d-flex justify-content-center flex-column flex-sm-row">
-            <button className="btn buy-button mb-2 mb-sm-0 mx-0 mx-sm-2">Buy again</button> 
+            <Link  to={`/products/${product.id}`}><button className="btn buy-button mb-2 mb-sm-0 mx-0 mx-sm-2">Buy again</button></Link>
             <button className="btn rate-button">Rate</button> 
           </div>
         </div>      
@@ -91,7 +92,7 @@ return orders[0] && ( (
     <h4 className="mb-3 other-products-name">Aduro P1</h4>
     <img className="other-images " src="https://www.adurofire.com/typo3temp/assets/_processed_/8/f/csm_aduro-p1-round-pellet-stove-withmatt-surface_01_a7c9377bf6.png" alt="aduroP1" />
     <div className="d-flex flex-column mt-3">
-    <button className="btn buy-button ">Add to cart</button> 
+    <Link ><button className="btn buy-button ">Add to cart</button></Link>
     </div>
     
    </div>
@@ -99,14 +100,14 @@ return orders[0] && ( (
    <h4 className="mb-3 other-products-name">Aduro P1.3</h4>
     <img className="other-images" src="https://www.adurofire.com/typo3temp/assets/_processed_/4/9/csm_aduro-p1-3-round-pellet-stove-with-black-glass-sides_01_0545dab144.png" alt="aduroP1.3" />
     <div className="d-flex flex-column mt-3">
-    <button className="btn buy-button ">Add to cart</button> 
+    <Link ><button className="btn buy-button">Add to cart</button></Link>
     </div>
    </div>
    <div className="col-12 col-sm-3  p-lg-3 p-2 text-center border rounded-3 shadow my-4 my-sm-0">
     <h4 className="mb-3 other-products-name">Aduro P1.4</h4>
     <img className="other-images" src="https://www.adurofire.com/typo3temp/assets/_processed_/f/9/csm_aduro-p1-4-round-pellet-stove-with-white-glass-sides_01_80b032ab41.png" alt="aduroP1.4" />
     <div className="d-flex flex-column mt-3">
-    <button className="btn buy-button ">Add to cart</button> 
+    <Link ><button className="btn buy-button ">Add to cart</button></Link>
     </div>
    </div>
    </div>
