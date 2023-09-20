@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import "../styles/CheckOut.css";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
@@ -8,6 +8,7 @@ function CheckOut() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const [paid, setPaid] = useState(false);
+
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
@@ -41,28 +42,43 @@ function CheckOut() {
 
   return (
     unpaidOrders && (
-      <div>
+      <div className="checkout-container">
         <div className="container checkOut">
-          <div className="row">
-            <div className="col-6">
-              <h1>check out</h1>
-              <h2>unpaid Orders</h2>
-            </div>
-            <div>
+          <div className="row check-row">
+            <div className="col-8">
               <ul>
                 {unpaidOrders.map((order) => (
-                  <div key={order.id}>
-                    <h4>{order.name}</h4>
-
-                    <h3>{order.id}</h3>
+                  <div className="order-item" key={order.id}>
+                    {order.products.map((product) => (
+                      <div className="product-item" key={product.id}>
+                        <img src={product.image} alt={product.name} />
+                        <div className="product-details">
+                          <h3>{product.name}</h3>
+                          <p>Price: ${product.price}</p>
+                          <p>Quantity: {product.length}</p>
+                        </div>
+                      </div>
+                    ))}
                     <button onClick={() => handlePay(order.id)}>
-                      pagar ordenes
+                      Pay Order
                     </button>
                   </div>
                 ))}
               </ul>
             </div>
-            <div className="col-6"></div>
+            <div className="col-4">
+              <div className="payment-info">
+                <h2>Payment Info</h2>
+                <p>Payment Method</p>
+                <label>
+                  <input type="checkbox" className="circular-checkbox" /> Credit
+                  card
+                </label>
+                <label>
+                  <input type="checkbox" className="circular-checkbox" /> Paypal
+                </label>
+              </div>
+            </div>
           </div>
         </div>
       </div>

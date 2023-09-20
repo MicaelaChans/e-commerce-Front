@@ -1,3 +1,128 @@
-.checkOut{
-    margin-top: 100px;
+.checkOut {
+  margin-top: 150px;
+}
+.right {
+  background-color: black;
+  color: aliceblue;
+}
+img {
+  max-height: 100px;
+  max-width: 100px;
+}
+/* styles/CheckOut.css */
+
+.checkout-container {
+  background-color: #f5f5f5; /* Color de fondo más claro */
+  border-radius: 10px; /* Radio de borde */
+  padding: 20px;
+  margin: 20px auto;
+}
+
+.check-row {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.order-item {
+  background-color: #fff; /* Color de fondo de cada orden */
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.product-item img {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.product-details h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.product-details p {
+  font-size: 14px;
+  margin: 0;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+.circular-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333; /* Color del borde */
+  border-radius: 50%; /* Hace que el checkbox sea circular */
+  outline: none;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: 5px; /* Espacio entre el checkbox y la etiqueta */
+}
+
+.circular-checkbox:checked {
+  background-color: #333; /* Color de fondo cuando está marcado */
+}
+
+/* Estilo para el contenedor del formulario de pago */
+.checkout-container {
+  background-color: #f0f0f0; /* Color de fondo claro */
+  border-radius: 10px; /* Borde redondeado */
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  display: flex; /* Utiliza flexbox para igualar las alturas */
+  flex-direction: column; /* Alinea los elementos verticalmente */
+}
+
+.payment-info {
+  border: 1px solid #ccc; /* Borde para el formulario de pago */
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.payment-info h2 {
+  margin-bottom: 10px;
+  height: 100%;
+}
+
+
+.product-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-item img {
+  max-width: 100px;
+  margin-right: 10px;
+}
+
+.product-details {
+  flex-grow: 1;
 }
