@@ -8,7 +8,7 @@ function Register() {
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [warningMsg, setWarningMsg] = useState("");
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ function Register() {
     const response = await axios({
       method: "POST",
       url: `http://localhost:8000/register`,
-      data: { firstname, lastname, email, phone, adress, password },
+      data: { firstname, lastname, email, phone, address, password },
     });
 
     if (response.data == "existent email already") {
@@ -95,11 +95,11 @@ function Register() {
               <div className="mb-3">
                 <input
                   type="text"
-                  name="adress"
+                  name="address"
                   className="form-control"
-                  placeholder="adress"
-                  value={adress}
-                  onChange={(e) => setAdress(e.target.value)}
+                  placeholder="address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
                   required
                 />
               </div>
