@@ -136,8 +136,9 @@ function Profile() {
             <small className="fs-6">{user ? user.email : ""}</small>
           </div>
 
-          <div className="orders-section section-content mb-5">
-            <h3>Your Orders</h3>
+          <div className="orders-section section-content mb-5 shadow border  rounded-3">
+            <h3 className="mb-0">Your Orders</h3>
+            <div className="divider-profile"></div>
             <ul className="list-group">
               {orders.map((order) => (
                 <li key={order._id} className="list-group-item">
@@ -154,8 +155,9 @@ function Profile() {
               ))}
             </ul>
           </div>
-          <div className="edit-profile-section my-5 section-content">
-            <h3>Edit Profile</h3>
+          <div className="edit-profile-section my-5 section-content shadow border  rounded-3">
+            <h3 className="mb-0">Edit Profile</h3>
+            <div className="divider-profile"></div>
             <div className="mb-3">
               <label className="form-label">First Name</label>
               <input
@@ -196,14 +198,15 @@ function Profile() {
                 onChange={handleInputChange}
               />
             </div>
-            <div className="d-flex justify-content-end mt-4">
+            <div className="d-flex justify-content-end mt-4 ">
               <button onClick={handleUpdateProfile} className="btn btn-primary">
                 Update Profile
               </button>
             </div>
           </div>
-          <div className="change-password-section section-content">
-            <h3>Change Password</h3>
+          <div className="change-password-section section-content shadow border  rounded-3">
+            <h3 className="mb-0">Change Password</h3>
+            <div className="divider-profile"></div>
             <form onSubmit={handleChangePassword}>
               <div className="mb-3">
                 <label className="form-label">Old Password</label>
@@ -244,10 +247,12 @@ function Profile() {
           </div>
           <ToastContainer position="top-right" />
 
-          <div className="d-flex justify-content-end mt-5">
+          <div className="justify-content-start mt-5">
+          <h3 className="mb-0">Danger zone</h3>  
+          <hr className="danger-zone-hr mb-0" />     
             <button
               onClick={() => setShowDeleteModal(true)}
-              className="btn btn-danger ml-2 mt-4"
+              className="btn  delete-account ml-2 mt-3"
             >
               Delete Account
             </button>
