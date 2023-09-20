@@ -28,7 +28,6 @@ function Cart() {
   for (let i = 0; i < cart.length; i++) {
     totalPrice += cart[i].price;
   }
-  //El chiste es crear un carrito para mostrar y el otro para la store
   for (let i = 0; i < cart.length; i++) {
     for (let j = 0; j < cartShow.length; j++) {
       if (cartShow[j]) {
