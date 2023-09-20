@@ -12,14 +12,13 @@ const cartSlice = createSlice({
       return [];
     },
     removeOneItem(state,action){
-      console.log(action.payload)
+      let index = 0;
       for(let i=0; i<state.length; i++){
         if(state[i].id == action.payload){
-          state.splice(i,1);
-          i = state.length;
+          index = i;         
         }
       }
-
+      state.splice(index,1);
     }
   },
 });

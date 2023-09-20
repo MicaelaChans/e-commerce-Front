@@ -35,7 +35,7 @@ function ProductPage() {
         name: item.name,
         price: item.price,
         quantity: 1,
-        rating:[0]
+        rating: [0],
       })
     );
   };
@@ -70,7 +70,7 @@ function ProductPage() {
                 price={product.price}
               >
                 <button
-                  className="btn-product-page fw-semibold p-2"
+                  className="btn btn-light btn-product-page p-2"
                   onClick={() => handleAddItem(product)}
                 >
                   Add to Cart

@@ -7,8 +7,8 @@ import "react-multi-carousel/lib/styles.css";
 import "../App.css";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/ProductsOfCategory.css";
 import "../styles/Products.css";
 
@@ -46,7 +46,7 @@ function ProductsList() {
         name: item.name,
         price: item.price,
         quantity: 1,
-        rating:[0]
+        rating: [0],
       })
     );
     toast.success(`${item.name} successfully added to cart.`);
@@ -91,24 +91,15 @@ function ProductsList() {
         </p>
       </div>
       <div className="d-flex filter-section justify-content-center align-items-center py-4">
-        <h4 className="mx-4">Filter by model:</h4>
+        <h4 className="mx-4 mb-0">Filter by model:</h4>
         <div className="mt-2 mt-sm-0">
-          <button
-            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
-            onClick={() => decoFilter()}
-          >
+          <button className="btn btn-primary" onClick={() => decoFilter()}>
             Deco
           </button>
-          <button
-            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
-            onClick={() => aduroFilter()}
-          >
+          <button className="btn btn-primary" onClick={() => aduroFilter()}>
             Aduro
           </button>
-          <button
-            className="btn btn-light shadow btn-lg mx-3 filter-button border-0"
-            onClick={() => allFilter()}
-          >
+          <button className="btn btn-primary" onClick={() => allFilter()}>
             All
           </button>
         </div>
@@ -165,19 +156,14 @@ function ProductsList() {
                     </div>
                     <hr className="hr-product-wood-top mb-1" />
                   </div>
-                  
+
                   <div className="d-flex justify-content-center mt-4 mt-lg-0">
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light shadow border-0"
-                      style={{
-                        backgroundColor: "#f9b468",
-                        color: "white",
-                        fontWeight: "600",
-                      }}
+                      className="btn btn-light btn-addcart-products"
                       onClick={() => handleAddItem(product)}
                     >
                       Add to cart

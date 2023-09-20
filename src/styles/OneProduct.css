@@ -16,14 +16,20 @@
 }
 
 .btn-product-page {
-  background-color: #f9b468;
+  background-color: #eca354;
   color: white;
-  border: 0;
+  font-weight: 600;
+  border: solid;
+  border-color: #eca354;
   height: 50px;
   width: 150px;
 }
 .btn-product-page:hover {
-  background-color: #ff901a;
+  background-color: white;
+  color: #f09535;
+  font-weight: 600;
+  border: solid;
+  border-color: #eca354;
 }
 
 .line-description-product {
