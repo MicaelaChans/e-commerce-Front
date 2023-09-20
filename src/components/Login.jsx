@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { login } from "../redux/userSlice";
@@ -14,6 +14,13 @@ function Login() {
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem('showDeletionToast') === 'true') {
+        toast.success("Account deleted successfully.");
+        localStorage.removeItem('showDeletionToast');
+    }
+}, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

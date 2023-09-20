@@ -75,3 +75,27 @@ input.form-control {
     border: 1px solid #282624;
     border-radius: 5px;
 }
+.edit-profile-section .form-label {
+    color: #282624;
+    font-weight: 500;
+}
+
+.edit-profile-section button {
+    background-color: #f9b468; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    transition: background-color 0.35s ease;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.edit-profile-section button:hover {
+    background-color: #ba8347;
+}
+
+.edit-profile-section h3 {
+    border-bottom: 2px solid #FDB467;
+    width: 15rem;
+}
