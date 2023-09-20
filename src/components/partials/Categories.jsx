@@ -5,7 +5,7 @@ import "../../styles/CategorySection.css";
 function CategoryProducts() {
   return (
     <section className="categories-section m-0">
-      <div className="row-category d-flex">
+      <div className="row-category d-flex flex-column flex-lg-row">
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
             className="categories-section-img1 img-fluid"
@@ -34,7 +34,7 @@ function CategoryProducts() {
         </Col>
       </div>
 
-      <div className="row-category d-flex w-100 m-0">
+      <div className="row-category d-flex w-100 m-0 flex-column flex-lg-row">
         <Col xs={12} lg={4} className="categories-second-div px-5">
           <h2 className="section-second-title fs-3 mt-3">Wood Stoves</h2>
           <div className="divider-home"></div>
@@ -63,7 +63,7 @@ function CategoryProducts() {
         </Col>
       </div>
 
-      <div className="d-flex row-category">
+      <div className="d-flex row-category flex-column flex-lg-row">
         <Col xs={12} lg={8} className="categories-image-container p-0">
           <img
             className="categories-section-img img-fluid"

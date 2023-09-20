@@ -53,7 +53,7 @@ function TechAndTools() {
         </div>
         <div className="icon-tech">
           <h6>
-            <i class="fa-brands fa-3x fa-node-js"></i>
+            <i className="fa-brands fa-3x fa-node-js"></i>
           </h6>
           <small>Node.Js</small>
         </div>

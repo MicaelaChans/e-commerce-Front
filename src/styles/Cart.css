@@ -62,11 +62,11 @@
 }
 
 .plus-icon{
-  color:rgb(0, 138, 0);
+  color:rgba(49, 211, 49, 0.76);
   font-size: 1.2rem;
 }
 
 .minus-icon{
-  color:red;
+  color:rgba(236, 67, 67, 0.719);
   font-size: 1.2rem;
 }

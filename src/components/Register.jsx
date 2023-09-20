@@ -1,33 +1,48 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import { login } from "../redux/userSlice";
+import jwt from "jwt-decode";
 import "../styles/RegisterLogin.css";
+import { toast } from "react-toastify";
 
 function Register() {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [adress, setAdress] = useState("");
+  const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [warningMsg, setWarningMsg] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios({
       method: "POST",
       url: `http://localhost:8000/register`,
-      data: { firstname, lastname, email, phone, adress, password },
+      data: { firstname, lastname, email, phone, address, password },
     });
 
-    if (response.data == "existent email already") {
+    if (response.data === "existent email already") {
       setWarningMsg("There's an existing account with this email");
-    } else if (response.data == "existent phone already") {
+    } else if (response.data === "existent phone already") {
       setWarningMsg("There's an existing account with this phone");
+    } else if (response.data.token) {
+      const id = jwt(response.data.token).sub;
+      dispatch(
+        login({
+          token: response.data.token,
+          id,
+          email,
+        })
+      );
+      toast.success("Usuario creado exitosamente.");
+      navigate("/");
     } else {
-      setWarningMsg("");
-      navigate("/login");
+      setWarningMsg("Error registrando. Por favor intenta de nuevo.");
     }
   };
 
@@ -95,11 +110,11 @@ function Register() {
               <div className="mb-3">
                 <input
                   type="text"
-                  name="adress"
+                  name="address"
                   className="form-control"
-                  placeholder="adress"
-                  value={adress}
-                  onChange={(e) => setAdress(e.target.value)}
+                  placeholder="address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
                   required
                 />
               </div>

@@ -3,18 +3,54 @@ import axios from "axios";
 import Footer from "./partials/Footer";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
+import { Modal, Button } from "react-bootstrap";
 import "../styles/Profile.css";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
+  const navigate = useNavigate();
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [orders, setOrders] = useState([]);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [editedUser, setEditedUser] = useState({
+    firstname: "",
+    lastname: "",
+    address: "",
+    email: "",
+  });
 
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
+    const fetchUserDetails = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8000/users/${user.id}`
+        );
+        const detailedUser = response.data;
+        if (detailedUser) {
+          const {
+            firstname = "",
+            lastname = "",
+            address = "",
+            email = user.email,
+          } = detailedUser;
+          setEditedUser({ firstname, lastname, address, email });
+        } else {
+          toast.error(
+            "Failed to load user details. Response data is missing or undefined."
+          );
+        }
+      } catch (error) {
+        toast.error("Error fetching user details. Please try again.");
+      }
+    };
+
     if (user) {
+      fetchUserDetails();
+
       axios
         .get(`http://localhost:8000/users/${user.id}/orders`)
         .then((response) => {
@@ -64,31 +100,113 @@ function Profile() {
     }
   };
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEditedUser((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleUpdateProfile = async () => {
+    try {
+      await axios.patch(`http://localhost:8000/users/${user.id}`, editedUser);
+      toast.success("Profile updated successfully.");
+    } catch (error) {
+      toast.error("Error updating profile. Please try again.");
+    }
+  };
+
+  const handleDeleteAccount = async () => {
+    try {
+      await axios.delete(`http://localhost:8000/users/${user.id}`);
+      localStorage.setItem("showDeletionToast", "true");
+      navigate("/login");
+    } catch (error) {
+      toast.error("Error deleting account. Please try again.");
+    }
+  };
+
   return (
     <>
       <div className="profile-section">
         <div className="container">
           <div className="header-profile d-flex justify-content-between align-items-center">
             <h2>Profile</h2>
-            <small>{user ? user.email : ""}</small>
+            <small className="fs-6">{user ? user.email : ""}</small>
           </div>
 
-          <div className="orders-section section-content mb-5">
-            <h3>Your Orders</h3>
+          <div className="orders-section section-content mb-5 shadow border  rounded-3">
+            <h3 className="mb-0">Your Orders</h3>
+            <div className="divider-profile"></div>
             <ul className="list-group">
-  {orders.map(order => (
-    <li key={order._id} className="list-group-item">
-      <strong>Order ID:</strong> {order._id}<br />
-      <strong>Date:</strong> {new Date(order.createdAt).toLocaleString()}<br />
-      <strong>Status:</strong> {order.state}<br />
-      <strong>Number of Products:</strong> {order.products.length}<br />
-    </li>
-  ))}
-</ul>
+              {orders.map((order) => (
+                <li key={order._id} className="list-group-item">
+                  <strong>Order ID:</strong> {order._id}
+                  <br />
+                  <strong>Date:</strong>{" "}
+                  {new Date(order.createdAt).toLocaleString()}
+                  <br />
+                  <strong>Status:</strong> {order.state}
+                  <br />
+                  <strong>Number of Products:</strong> {order.products.length}
+                  <br />
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <div className="change-password-section section-content">
-            <h3>Change Password</h3>
+          <div className="edit-profile-section my-5 section-content shadow border  rounded-3">
+            <h3 className="mb-0">Edit Profile</h3>
+            <div className="divider-profile"></div>
+            <div className="mb-3">
+              <label className="form-label">First Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="firstname"
+                value={editedUser.firstname}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Last Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="lastname"
+                value={editedUser.lastname}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Address</label>
+              <input
+                type="text"
+                className="form-control"
+                name="address"
+                value={editedUser.address}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                value={editedUser.email}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="d-flex justify-content-start mt-5 ">
+              <button onClick={handleUpdateProfile} className="btn btn-primary">
+                Update Profile
+              </button>
+            </div>
+          </div>
+          <div className="change-password-section section-content shadow border  rounded-3">
+            <h3 className="mb-0">Change Password</h3>
+            <div className="divider-profile"></div>
             <form onSubmit={handleChangePassword}>
               <div className="mb-3">
                 <label className="form-label">Old Password</label>
@@ -120,7 +238,7 @@ function Profile() {
                   required
                 />
               </div>
-              <div className="d-flex justify-content-end mt-4">
+              <div className="d-flex justify-content-start mt-5">
                 <button type="submit" className="btn btn-primary">
                   Update Password
                 </button>
@@ -128,7 +246,43 @@ function Profile() {
             </form>
           </div>
           <ToastContainer position="top-right" />
+
+          <div className=" justify-content-start mt-5">
+          <h3 className="mb-0">Danger zone</h3>  
+          <hr className="danger-zone-hr mb-0" />     
+            <button
+              onClick={() => setShowDeleteModal(true)}
+              className="btn  delete-account ml-2 mt-4"
+            >
+              Delete Account
+            </button>
+          </div>
         </div>
+
+        <Modal
+          className="d-flex justify-content-center align-items-center"
+          show={showDeleteModal}
+          onHide={() => setShowDeleteModal(false)}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Confirm Account Deletion</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Are you sure you want to delete your account? This action cannot be
+            undone.
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              variant="secondary"
+              onClick={() => setShowDeleteModal(false)}
+            >
+              Close
+            </Button>
+            <Button variant="danger" onClick={handleDeleteAccount}>
+              Delete Account
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
       <Footer />
     </>

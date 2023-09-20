@@ -7,6 +7,8 @@ import "react-multi-carousel/lib/styles.css";
 import "../App.css";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../styles/ProductsOfCategory.css";
 import "../styles/Products.css";
 
@@ -47,6 +49,7 @@ function ProductsList() {
         rating:[0]
       })
     );
+    toast.success(`${item.name} successfully added to cart.`);
   };
   function harmonyFilter() {
     const firstFilter = products.filter(
@@ -125,11 +128,11 @@ function ProductsList() {
             >
               <div className="mt-sm-4  mx-3  bg-white">
                 <Link
-                  className=" image-product-wood d-flex justify-content-center"
+                  className=" image-product-pellet d-flex justify-content-center"
                   to={`/products/${product.id}`}
                 >
                   <img
-                    className="image-product-wood text-center"
+                    className=" text-center"
                     src={product.image}
                     alt={product.name}
                   />
@@ -188,6 +191,7 @@ function ProductsList() {
         </div>
       </div>
       <Footer />
+      <ToastContainer position="top-right" />
     </div>
   );
 }
