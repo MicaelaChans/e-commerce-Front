@@ -7,6 +7,8 @@
     background-color: #eca354;
     color: white;
     font-weight: 600;
+    border: solid;
+    border-color: #eca354
   }
   .buy-button:hover{
     background-color: white;
