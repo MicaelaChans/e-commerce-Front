@@ -42,7 +42,7 @@ function Login() {
             email,
           })
         );
-        localStorage.setItem("showSuccessToast", "true");
+        localStorage.setItem("showLoginToast", "true");
         navigate("/");
       } else {
         toast.error(

@@ -11,10 +11,13 @@ import 'react-toastify/dist/ReactToastify.css';
 function Home() {
   useEffect(() => {
     if (localStorage.getItem("showSuccessToast") === "true") {
-        toast.success("Successful login!");
+        toast.success("User successfully created!");
         localStorage.removeItem("showSuccessToast");
+    } else if (localStorage.getItem("showLoginToast") === "true") {
+        toast.success("Successful login!");
+        localStorage.removeItem("showLoginToast");
     }
-}, []);
+  }, []);
 
   return (
     <>      

@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import { login } from "../redux/userSlice";
+import jwt from "jwt-decode";
 import "../styles/RegisterLogin.css";
+import { toast } from "react-toastify";
 
 function Register() {
   const [firstname, setFirstname] = useState("");
@@ -12,6 +16,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const [warningMsg, setWarningMsg] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,13 +26,23 @@ function Register() {
       data: { firstname, lastname, email, phone, address, password },
     });
 
-    if (response.data == "existent email already") {
+    if (response.data === "existent email already") {
       setWarningMsg("There's an existing account with this email");
-    } else if (response.data == "existent phone already") {
+    } else if (response.data === "existent phone already") {
       setWarningMsg("There's an existing account with this phone");
+    } else if (response.data.token) {
+      const id = jwt(response.data.token).sub;
+      dispatch(
+        login({
+          token: response.data.token,
+          id,
+          email,
+        })
+      );
+      toast.success("Usuario creado exitosamente.");
+      navigate("/");
     } else {
-      setWarningMsg("");
-      navigate("/login");
+      setWarningMsg("Error registrando. Por favor intenta de nuevo.");
     }
   };
 
