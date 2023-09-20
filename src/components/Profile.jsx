@@ -137,7 +137,7 @@ function Profile() {
           </div>
 
           <div className="orders-section section-content mb-5 shadow border  rounded-3">
-            <h3 className="mb-0">Your Orders</h3>
+            <h3 className="mb-0">My Orders</h3>
             <div className="divider-profile"></div>
             <ul className="list-group">
               {orders.map((order) => (
