@@ -7,6 +7,8 @@ import "react-multi-carousel/lib/styles.css";
 import "../App.css";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../styles/ProductsOfCategory.css";
 import "../styles/Products.css";
 
@@ -47,6 +49,7 @@ function ProductsList() {
         rating:[0]
       })
     );
+    toast.success(`${item.name} successfully added to cart.`);
   };
 
   function decoFilter() {
@@ -189,6 +192,7 @@ function ProductsList() {
       <div className="mt-5">
         <Footer />
       </div>
+      <ToastContainer position="top-right" />
     </div>
   );
 }
