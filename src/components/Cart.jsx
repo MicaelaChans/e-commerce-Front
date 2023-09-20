@@ -72,7 +72,6 @@ function Cart() {
       }
     }
   }
-  
 
   async function handleCheckOut() {
     if (user && cart.length > 0) {

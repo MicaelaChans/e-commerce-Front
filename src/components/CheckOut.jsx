@@ -17,7 +17,7 @@ function CheckOut() {
       setOrders(response.data);
     };
     getOrders();
-  }, []);
+  }, [paid]);
   console.log(orders);
   const unpaidOrders =
     orders.length > 0 &&
