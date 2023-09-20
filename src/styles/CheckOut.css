@@ -22,11 +22,13 @@
   border-radius: 5px;
 }
 
-.product-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  width: 100%;
+.product-item div h4 {
+  min-height: 50px; /* Establece la altura mínima que desees */
+  /* Opcionalmente, puedes usar max-height para limitar la altura máxima */
+  /* max-height: 50px; */
+  margin: 0; /* Elimina cualquier margen predeterminado que pueda afectar la altura */
+  display: flex; /* Alinea verticalmente el contenido en los elementos h4 */
+  align-items: center; /* Alinea verticalmente el contenido en el centro */
 }
 
 .product-item img {
@@ -52,7 +54,9 @@
 .circular-checkbox:checked {
   background-color: #333; 
 }
-
+.payment-title-container {
+  width: 50px;
+}
 
 .checkout-container {
   background-color: #ffffff;

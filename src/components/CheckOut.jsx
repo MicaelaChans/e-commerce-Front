@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { format } from "date-fns";
+
 function CheckOut() {
   const [orders, setOrders] = useState([]);
   const dispatch = useDispatch();
@@ -39,7 +40,22 @@ function CheckOut() {
       }
     }
   }
-  console.log(unpaidOrders);
+
+  async function handleDelete(id) {
+    if (user) {
+      setPaid(!paid);
+      try {
+        await axios({
+          method: "DELETE",
+          url: `http://localhost:8000/orders/${id}`,
+          data: { orderId: id },
+        });
+      } catch (error) {
+        console.error("Error at delete order:", error);
+      }
+    }
+  }
+
   return (
     unpaidOrders && (
       <div className="checkout-container">
@@ -73,33 +89,29 @@ function CheckOut() {
                                 alt={product.name}
                               />
                             </div>
-                            <div className="product-details">
-                              <h3>{product.name}</h3>
+                            <div>
+                              <h4>Product name:</h4>
+                              <h4>{product.name}</h4>
                             </div>
-
                             <div>
                               <h4>Unit price:</h4>
                               <p>US${product.price}</p>
-                              <p>Quantity: 1</p>
                             </div>
                             <div>
-                              <h6>Total Price:</h6>
-                              <p>Q x P</p>
+                              <h4 className="my-0">Total Price:</h4>
+                              <p className="my-0">Q x P</p>
                             </div>
                           </div>
                         </div>
                       ))}
                     </div>
                     <div>
-                      <div className="payment-info d-flex justify-content-between">
-                        <div>
-                          <h4 className="mx-3">Payment & delivery Info:</h4>
+                      <div className="payment-info d-flex justify-content-around">
+                        <div className="payment-title-container">
+                          <h4 className="mx-3">Payment & delivery Info</h4>
                         </div>
                         <div>
-                          <h6>Total price:</h6>
-                        </div>
-                        <div>
-                          <p>Payment Method</p>
+                          <h6>Payment Method</h6>
                           <label style={{ display: "block" }}>
                             <input
                               type="radio"
@@ -115,24 +127,28 @@ function CheckOut() {
                               className="circular-radio"
                               name="paymentMethod"
                               value="paypal"
-                            />
+                            />{" "}
                             Paypal
                           </label>
                         </div>
                         <div>
-                          <h4>Total order price:</h4>
-                          <h6>US$ tanto</h6>
+                          <h6>Total order price:</h6>
+                          <p>US$ tanto</p>
                         </div>
                       </div>
-
-                      <div className=" d-flex justify-content-end mt-2">
-                        <button
-                          className="btn btn-lg buy-button justify-content-end w-30"
-                          onClick={() => handlePay(order.id)}
-                        >
-                          Pay Order
-                        </button>
-                      </div>
+                    </div>
+                    <div className="mt-2 d-flex justify-content-between align-items-center">
+                      <i
+                        className="bi bi-trash3"
+                        onClick={() => handleDelete(order.id)}
+                        style={{ cursor: "pointer" }}
+                      ></i>
+                      <button
+                        className="btn btn-lg buy-button ml-auto"
+                        onClick={() => handlePay(order.id)}
+                      >
+                        Pay Order
+                      </button>
                     </div>
                   </div>
                 ))}
