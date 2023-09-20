@@ -252,7 +252,7 @@ function Profile() {
           <hr className="danger-zone-hr mb-0" />     
             <button
               onClick={() => setShowDeleteModal(true)}
-              className="btn  delete-account ml-2 mt-4"
+              className="btn  delete-account  btn-primary mt-4"
             >
               Delete Account
             </button>

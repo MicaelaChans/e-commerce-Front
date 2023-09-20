@@ -96,12 +96,9 @@
 
 .delete-account {
     background-color: #ff000071; 
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: #fff;
     border: solid;
-    
+    padding: 10px 20px;
+    color: #fff;
     font-weight: 600;
     margin-right: 10px;
 }
