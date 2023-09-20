@@ -7,6 +7,8 @@ import "react-multi-carousel/lib/styles.css";
 import "../App.css";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../styles/ProductsOfCategory.css";
 import "../styles/Products.css";
 import { useLocation } from "react-router-dom";
@@ -50,6 +52,7 @@ function ProductsList() {
         rating:[0]
       })
     );
+    toast.success(`${item.name} successfully added to cart.`);
   };
 
   return (
@@ -128,6 +131,7 @@ function ProductsList() {
         </div>
       </div>
       <Footer />
+      <ToastContainer position="top-right" />
     </div>
   );
 }

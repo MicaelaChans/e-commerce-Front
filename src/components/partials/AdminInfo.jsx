@@ -29,12 +29,13 @@ function AdminInfo() {
           <li>
             <div className="d-flex">
               Use the email address "
-              <p className="fst-italic m-0">test@test.com</p>" as your username.
+              <p className="fst-italic m-0">admin@gmail.com</p>" as your
+              username.
             </div>
           </li>
           <li>
             <div className="d-flex">
-              Input "<p className="fst-italic m-0">1234</p>" as the password.
+              Input "<p className="fst-italic m-0">admin</p>" as the password.
             </div>
           </li>
           <li>Click on the login button or submit the form.</li>
