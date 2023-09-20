@@ -25,7 +25,7 @@ function Register() {
       url: `http://localhost:8000/register`,
       data: { firstname, lastname, email, phone, address, password },
     });
-    console.log(response.data)
+    console.log(response.data);
 
     if (response.data === "existent email already") {
       setWarningMsg("There's an existing account with this email");
@@ -143,7 +143,6 @@ function Register() {
               I'm already signed up. Go to{" "}
               <Link
                 to={"/login"}
-                
                 style={{ color: "blue", textDecoration: "none" }}
               >
                 Login
