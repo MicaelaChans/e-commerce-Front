@@ -125,9 +125,7 @@ function Login() {
                 >
                   Recover password
                 </Link>
-              </p>
-              
-              
+              </p>       
             </div>
           </div>
         </div>
