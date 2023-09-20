@@ -31,6 +31,8 @@ function NavBar() {
   function handleLogout(){
     setExpanded(false);
     dispatch(logout());
+    localStorage.setItem("showLogoutToast", "true");
+    toast.success("Logged out successfully!");
   }
 
   return (

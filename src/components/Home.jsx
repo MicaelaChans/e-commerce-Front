@@ -17,6 +17,9 @@ function Home() {
     } else if (localStorage.getItem("showLoginToast") === "true") {
         toast.success("Successful login!");
         localStorage.removeItem("showLoginToast");
+    } else if (localStorage.getItem("showLogoutToast") === "true") {
+        toast.success("User logged out successfully!");
+        localStorage.removeItem("showLogoutToast");
     }
   }, []);
 
