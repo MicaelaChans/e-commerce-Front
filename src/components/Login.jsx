@@ -106,12 +106,12 @@ function Login() {
                 </div>
                 </div>
               </form>
-              <p className="text-center mt-1">
+              <p className="text-center mt-3">
                 Don't have an account?
                 <Link
                   to="/register"
-                  className="mx-2"
-                  style={{ color: "blue", textDecoration: "none" }}
+                  
+                  style={{ color: "blue", textDecoration: "none", display:"block" }}
                 >
                   Sign Up
                 </Link>
@@ -120,8 +120,8 @@ function Login() {
                 Forgot password?
                 <Link
                   to="/forgot-password"
-                  className="mx-2"
-                  style={{ color: "blue", textDecoration: "none" }}
+                  
+                  style={{ color: "blue", textDecoration: "none",display:"block" }}
                 >
                   Recover password
                 </Link>
