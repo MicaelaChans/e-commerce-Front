@@ -14,6 +14,7 @@ function NavBar() {
   const user = useSelector((state) => state.user);
   const [aux, setAux] = useState(true);
   const dispatch = useDispatch();
+  const [expanded, setExpanded] = useState(false);
   
   let displayLogin = "block";
   let displaySignUp ="block";
@@ -27,6 +28,10 @@ function NavBar() {
     displayLogout = "block";
     displayPurchases = "block";
   } 
+  function handleLogout(){
+    setExpanded(false);
+    dispatch(logout());
+  }
 
   return (
     <Navbar
@@ -34,6 +39,8 @@ function NavBar() {
       collapseOnSelect
       expand="lg"
       className="bg-body-tertiary"
+      expanded={expanded}
+      style={{width:"100vw"}}
     >
       <Container>
         <Navbar.Brand as={Link} to="/">
@@ -43,7 +50,7 @@ function NavBar() {
             alt="drachen logo"
           />{" "}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={()=>setExpanded(!expanded)} />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
             <NavDropdown
@@ -51,26 +58,27 @@ function NavBar() {
               className="mx-2"
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item as={Link} to="/productsWood">
+              <NavDropdown.Item as={Link} to="/productsWood" onClick={()=>setExpanded(false)}>
                 Wood Stoves
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="productsPellet">
+              <NavDropdown.Item as={Link} to="productsPellet" onClick={()=>setExpanded(false)}>
                 Pellet Stoves
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="productsAccessories">
+              <NavDropdown.Item as={Link} to="productsAccessories" onClick={()=>setExpanded(false)}>
                 Accessories
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} className="mx-2" to="/contact">
+            <Nav.Link as={Link} className="mx-2" to="/contact" onClick={()=>setExpanded(false)}>
               Contact
             </Nav.Link>
-            <Nav.Link as={Link} className="mx-2" to="/aboutUs">
+            <Nav.Link as={Link} className="mx-2" to="/aboutUs" onClick={()=>setExpanded(false)}>
               About us
             </Nav.Link>
             <Nav.Link
               className="about-this-project mx-2"
               to="/aboutThisProject"
               as={Link}
+              onClick={()=>setExpanded(false)}
             >
               About This Project
             </Nav.Link>
@@ -85,19 +93,19 @@ function NavBar() {
               }
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item as={Link} to={"/login"} style={{display:`${displayLogin}`}}>
+              <NavDropdown.Item as={Link} to={"/login"} style={{display:`${displayLogin}`}} onClick={()=>setExpanded(false)}>
                 Login
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/register"} style={{display:`${displaySignUp}`}}>
+              <NavDropdown.Item as={Link} to={"/register"} style={{display:`${displaySignUp}`}} onClick={()=>setExpanded(false)}>
                 Sign up
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/profile"} style={{display:`${displayProfile}`}}>
                 Profile
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/my-purchases"} style={{display:`${displayPurchases}`}}>
+              <NavDropdown.Item as={Link} to={"/my-purchases"} style={{display:`${displayPurchases}`}} onClick={()=>setExpanded(false)}>
                 My purchases
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to={"/"} style={{display:`${displayLogout}`}} onClick={()=>dispatch(logout())}>Log out</NavDropdown.Item >
+              <NavDropdown.Item as={Link} to={"/"} style={{display:`${displayLogout}`}} onClick={()=>{handleLogout()}}>Log out</NavDropdown.Item >
             </NavDropdown>
             <Cart />
           </Nav>
