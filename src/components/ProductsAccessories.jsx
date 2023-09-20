@@ -7,8 +7,8 @@ import "react-multi-carousel/lib/styles.css";
 import "../App.css";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/ProductsOfCategory.css";
 import "../styles/Products.css";
 import { useLocation } from "react-router-dom";
@@ -31,12 +31,11 @@ function ProductsList() {
     };
     listProducts();
     products.length == 0 && setAux(!aux);
-    setFirstCategory(products.filter(
-      (product) => product.category.name == "accessories"
-    ));
-  },[aux]);
- 
-  
+    setFirstCategory(
+      products.filter((product) => product.category.name == "accessories")
+    );
+  }, [aux]);
+
   useEffect(() => {
     setAnimate(true);
   }, [aux]);
@@ -49,7 +48,7 @@ function ProductsList() {
         name: item.name,
         price: item.price,
         quantity: 1,
-        rating:[0]
+        rating: [0],
       })
     );
     toast.success(`${item.name} successfully added to cart.`);
@@ -77,7 +76,7 @@ function ProductsList() {
       </div>
       <div className="container">
         <div className="text-center mt-5 d-block d-sm-none">
-          <h2 className="alt-title-accessories" >ACCESSORIES</h2>
+          <h2 className="alt-title-accessories">ACCESSORIES</h2>
           <hr className="hr-wood" />
         </div>
         <div className="row mb-5">
@@ -113,12 +112,7 @@ function ProductsList() {
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light shadow mt-4"
-                      style={{
-                        backgroundColor: "#f9b468",
-                        color: "white",
-                        fontWeight: "600",
-                      }}
+                      className="btn btn-light btn-addcart-products mt-4"
                       onClick={() => handleAddItem(product)}
                     >
                       Add to cart
