@@ -125,11 +125,11 @@ function ProductsList() {
             >
               <div className="mt-sm-4  mx-3  bg-white">
                 <Link
-                  className=" image-product-wood d-flex justify-content-center"
+                  className=" image-product-pellet d-flex justify-content-center"
                   to={`/products/${product.id}`}
                 >
                   <img
-                    className="image-product-wood text-center"
+                    className=" text-center"
                     src={product.image}
                     alt={product.name}
                   />
