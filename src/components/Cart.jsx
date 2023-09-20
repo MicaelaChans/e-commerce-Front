@@ -63,12 +63,12 @@ function Cart() {
     }
    }
   };
-
+ console.log(cart);
   function handleMinus(id){
     for(let i=0; i<cartShow.length; i++){
       if(cartShow[i].id == id){
-        cartShow[i].quantity--; 
         dispatch(removeOneItem(id));
+        cartShow[i].quantity--;       
       }
     }
   }
