@@ -43,7 +43,7 @@ function NavBar() {
       style={{width:"100vw"}}
     >
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" onClick={()=>setExpanded(!expanded)}>
           <img
             className="mb-3 image-navbar"
             src="/assets/drachen_logo_black.png"
