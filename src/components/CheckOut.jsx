@@ -18,13 +18,13 @@ function CheckOut() {
     };
     getOrders();
   }, [paid]);
-  console.log(orders);
+
   const unpaidOrders =
     orders.length > 0 &&
     orders.filter(
       (order) => order.state === "Not Paid" && order.user.id === user.id
     );
-  console.log(unpaidOrders);
+
   async function handlePay(id) {
     if (user) {
       setPaid(!paid);
@@ -38,8 +38,7 @@ function CheckOut() {
       }
     }
   }
-  console.log("renderiza");
-  console.log(unpaidOrders);
+
   return (
     unpaidOrders && (
       <div>
