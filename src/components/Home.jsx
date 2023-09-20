@@ -9,6 +9,7 @@ import Header from "./partials/Header"
 import 'react-toastify/dist/ReactToastify.css';
 
 function Home() {
+  
   useEffect(() => {
     if (localStorage.getItem("showSuccessToast") === "true") {
         toast.success("User successfully created!");
