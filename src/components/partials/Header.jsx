@@ -6,7 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 function Footer() {
 
   return (
-    <Carousel>
+    <Carousel className="d-none d-lg-block">
       <Carousel.Item className="image-container1">
        <img  className="image-carousel" />
         <Carousel.Caption>
@@ -24,11 +24,7 @@ function Footer() {
       </Carousel.Item>
     </Carousel>
   );
-  /*  
-  return (
-    <div className="image-container">    
-    </div>
-  );*/
+  
 }
 
 export default Footer;

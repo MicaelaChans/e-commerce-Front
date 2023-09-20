@@ -22,5 +22,19 @@
     background-size: cover;
     background-position: 40%;
 }
+.carousel-control-next-icon{
+    border-radius: 50%;
+    background-color: rgb(51, 47, 47); 
+    width: 40px;
+    height: 40px;
+}
+
+.carousel-control-prev-icon{
+    border-radius: 50%;
+    background-color: rgb(65, 57, 57);
+    width: 40px;
+    height: 40px
+   
+}
 
 
