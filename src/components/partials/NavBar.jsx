@@ -107,7 +107,9 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/"} style={{display:`${displayLogout}`}} onClick={()=>{handleLogout()}}>Log out</NavDropdown.Item >
             </NavDropdown>
-            <Cart />
+            <div onClick={()=>setExpanded(false)}>
+            <Cart/>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
