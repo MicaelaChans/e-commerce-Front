@@ -74,8 +74,7 @@ function Cart() {
   }
 
   async function handleCheckOut() {
-    if (user && cart.length > 0) {
-      console.log("entro")
+    if (user && cart.length > 0) {     
       await axios({
         url: "http://localhost:8000/orders",
         method: "POST",
@@ -83,9 +82,13 @@ function Cart() {
       });
       dispatch(removeAll());
       navigate("/checkOut");
+      setShow(false);
+    }else if(!user){
+      navigate("login")
+      setShow(false);
     }
   }
- console.log(cart)
+ 
   return (
     <>
       <NavLink onClick={handleShow}>
