@@ -51,6 +51,12 @@
   transform: scale(1.05);
 }
 
+@media (min-width: 0px) and (max-width: 991px) {
+  .categories-section {
+   margin-top: 120px !important;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1224px) {
   .categories-button-show-products {
     width: 180px !important;
