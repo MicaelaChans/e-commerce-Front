@@ -1,4 +1,26 @@
-.img-header{
-    width: 100wh;
+.image-container1{
+    width: 100vw;
     height: 100vh;
+    background-image: url("https://www.contura.eu/images/18.3c96363e1671040fdb269b/1542619585651/contura-330g-wood-burning-stove-design-house.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
 }
+.image-container2{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://www.theheatingcentre.co.uk/wp-content/uploads/2022/03/Flavel-Arundel-multifuel-stove.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% ;
+}
+.image-container3{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://www.robeys.co.uk/wp-content/uploads/2022/07/rais-stoves.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 40%;
+}
+
+

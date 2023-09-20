@@ -1,12 +1,34 @@
 import React from "react";
 import "../../styles/Header.css";
+import Carousel from 'react-bootstrap/Carousel';
+
 
 function Footer() {
+
   return (
-    <div>
-        <img className="img-header" style={{width:"100vw", height:"100vh"}} src="https://hips.hearstapps.com/hmg-prod/images/salon-colorido-con-chimenea-exenta-bauhaus-1602585438.jpg" alt="stove-image" />
-    </div>
+    <Carousel>
+      <Carousel.Item className="image-container1">
+       <img  className="image-carousel" />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item className="image-container2">
+      <img className="image-carousel" />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item className="image-container3">
+      <img className="image-carousel"/>
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   );
+  /*  
+  return (
+    <div className="image-container">    
+    </div>
+  );*/
 }
 
 export default Footer;
