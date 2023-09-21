@@ -126,8 +126,8 @@ function Cart() {
                     alt="productImg"
                   />
                 </div>
-                <div className="col-6 p-3">
-                  <h2 className="d-flex fs-4 mt-3 ">{item.name}</h2>
+                <div className="col-6 p-3 mt-2">
+                  <h2 className="d-flex fs-5 ">{item.name}</h2>
                   <div className="d-flex align-items-center justify-content-between my-3">                 
                       <button
                         onClick={() => handleMinus(item.id)}
@@ -147,8 +147,9 @@ function Cart() {
                   </div>
                   <div className="d-flex align-items-center justify-content-between">
                   <p className="mb-0 item-price" >US$ {item.price}</p>
-                  <i className="bi bi-trash3 cart-icon" onClick={()=>handleDelete(item.id)}></i>
-
+                  <button style={{ backgroundColor: "white", border: "none" }}>
+                  <i className="bi bi-trash3 cart-icon"  onClick={()=>handleDelete(item.id)}></i>
+                  </button>
                   </div>
                 </div>
               </div>
