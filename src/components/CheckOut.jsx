@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 
 function CheckOut() {
   const [orders, setOrders] = useState([]);
@@ -64,10 +65,7 @@ function CheckOut() {
             <div className="col-12">
               <div>
                 {unpaidOrders.map((order) => (
-                  <div
-                    className="mt-3 border rounded-3 shadow p-3"
-                    key={order.id}
-                  >
+                  <div className="mt-3 rounded-3 shadow p-3" key={order.id}>
                     <div className="d-flex justify-content-between align-items-center ">
                       <p className="mb-0">
                         {format(new Date(order.createdAt), "MMMM dd yyyy")}
@@ -90,7 +88,6 @@ function CheckOut() {
                               />
                             </div>
                             <div>
-                              <h4>Product name:</h4>
                               <h4>{product.name}</h4>
                             </div>
                             <div>
@@ -143,12 +140,14 @@ function CheckOut() {
                         onClick={() => handleDelete(order.id)}
                         style={{ cursor: "pointer" }}
                       ></i>
-                      <button
-                        className="btn btn-lg buy-button ml-auto"
-                        onClick={() => handlePay(order.id)}
-                      >
-                        Pay Order
-                      </button>
+                      <Link to={"/thanks"}>
+                        <button
+                          className="btn btn-lg buy-button ml-auto"
+                          onClick={() => handlePay(order.id)}
+                        >
+                          Pay Order
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 ))}

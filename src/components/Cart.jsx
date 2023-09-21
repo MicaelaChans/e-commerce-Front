@@ -44,45 +44,45 @@ function Cart() {
       cartShow.push({ ...cart[i] });
     }
     isProduct = false;
-  } 
- 
-  function handlePlus(id){
-   for(let i=0; i<cartShow.length; i++){
-    if(cartShow[i].id == id){
-      cartShow[i].quantity++;
-      dispatch(
-        addItem({
-          id: id,
-          image: cartShow[i].image,
-          name: cartShow[i].name,
-          price: cartShow[i].price,
-          quantity: 1,
-          rating:[0]
-        })
-      );    
-    }
-   }
-  };
+  }
 
-  function handleMinus(id){
-    for(let i=0; i<cartShow.length; i++){
-      if(cartShow[i].id == id && cartShow[i].quantity > 1){
-        dispatch(removeOneItem(id));
-        cartShow[i].quantity--;       
+  function handlePlus(id) {
+    for (let i = 0; i < cartShow.length; i++) {
+      if (cartShow[i].id == id) {
+        cartShow[i].quantity++;
+        dispatch(
+          addItem({
+            id: id,
+            image: cartShow[i].image,
+            name: cartShow[i].name,
+            price: cartShow[i].price,
+            quantity: 1,
+            rating: [0],
+          })
+        );
       }
     }
   }
 
-  function handleDelete(id){
-    for(let i=0; i<cart.length; i++){
-      if(cart[i].id == id){
+  function handleMinus(id) {
+    for (let i = 0; i < cartShow.length; i++) {
+      if (cartShow[i].id == id && cartShow[i].quantity > 1) {
+        dispatch(removeOneItem(id));
+        cartShow[i].quantity--;
+      }
+    }
+  }
+
+  function handleDelete(id) {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id == id) {
         dispatch(removeOneItem(id));
       }
     }
   }
- console.log(cart)
+  console.log(cart);
   async function handleCheckOut() {
-    if (user && cart.length > 0) {     
+    if (user && cart.length > 0) {
       await axios({
         url: "http://localhost:8000/orders",
         method: "POST",
@@ -91,12 +91,12 @@ function Cart() {
       dispatch(removeAll());
       navigate("/checkOut");
       setShow(false);
-    }else if(!user){
-      navigate("login")
+    } else if (!user) {
+      navigate("login");
       setShow(false);
     }
   }
- 
+
   return (
     <>
       <NavLink onClick={handleShow}>
@@ -134,16 +134,20 @@ function Cart() {
                         style={{ backgroundColor: "white", border: "none" }}
                       >
                         <i className="bi bi-dash-circle change-icon"></i>
-                      </button>                
+                      </button>
+                     
+                      <div style={{ width: 24 }} />
+                    
+
                     <p className="item-number mb-0 text-center rounded px-3">
                       {item.quantity}
                     </p>
                     <button
-                        onClick={() => handlePlus(item.id)}
-                        style={{ backgroundColor: "white", border: "none" }}
-                      >
-                        <i className="bi bi-plus-circle-fill change-icon"></i>
-                      </button>   
+                      onClick={() => handlePlus(item.id)}
+                      style={{ backgroundColor: "white", border: "none" }}
+                    >
+                      <i className="bi bi-plus-circle-fill change-icon"></i>
+                    </button>
                   </div>
                   <div className="d-flex align-items-center justify-content-between">
                   <p className="mb-0 item-price" >US$ {item.price}</p>
