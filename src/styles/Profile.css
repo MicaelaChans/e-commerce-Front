@@ -45,21 +45,24 @@
 }
 
 .change-password-section button {
-    background-color: #eca354;
-    color: white;
+    background-color: white;
+    color: #f09535;
+    padding: 10px 15px;
     font-weight: 600;
+    border-radius: 3px;
     border: solid;
-    border-color: #eca354;  
-    padding: 10px 20px; 
-    margin-right: 10px;
+    border-color: #eca354;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .change-password-section button:hover {
-    background-color: white;
-    color: #f09535;
-    font-weight: 600; 
+    border-radius: 3px;
+    padding: 10px 15px;
+    background-color: #eca354;
+    color: white;
     border: solid;
-    border-color: #eca354
+    border-color: #eca354;
+    transform: scale(1.05);
 }
 
 
@@ -69,21 +72,24 @@
 }
 
 .edit-profile-section button {
-    background-color: #eca354;
-    color: white;
-    font-weight: 600;
-    border: solid;
-    border-color: #eca354;  
-    padding: 10px 20px; 
-    margin-right: 10px;
+  background-color: white;
+  color: #f09535;
+  padding: 10px 15px;
+  font-weight: 600;
+  border-radius: 3px;
+  border: solid;
+  border-color: #eca354;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .edit-profile-section button:hover {
-    background-color: white;
-    color: #f09535;
-    font-weight: 600; 
+    border-radius: 3px;
+    padding: 10px 15px;
+    background-color: #eca354;
+    color: white;
     border: solid;
-    border-color: #eca354
+    border-color: #eca354;
+    transform: scale(1.05);
 }
 
 .divider-profile {
@@ -120,3 +126,14 @@
     margin-bottom: 15px;
     margin-top: 15px;
 }
+
+.categories-button-show-products {
+    background-color: white;
+    color: #f09535;
+    padding: 10px 15px;
+    font-weight: 600;
+    border-radius: 3px;
+    border: solid;
+    border-color: #eca354;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  }

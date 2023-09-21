@@ -239,7 +239,7 @@ function Profile() {
                 />
               </div>
               <div className="d-flex justify-content-start mt-5">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit"  >
                   Update Password
                 </button>
               </div>

@@ -56,7 +56,7 @@ function App() {
         <Route path="/productsAccessories" element={<ProductsAccessories />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/my-purchases" element={<MyPurchases />} />
-        <Route path="/checkOut" element={<CheckOut />} />
+        <Route path="/check-out" element={<CheckOut />} />
         <Route path="/thanks" element={<ThanksForBuy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

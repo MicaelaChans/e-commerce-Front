@@ -89,7 +89,7 @@ function Cart() {
         data: { user, cart },
       });
       dispatch(removeAll());
-      navigate("/checkOut");
+      navigate("/check-out");
       setShow(false);
     } else if (!user) {
       navigate("login");

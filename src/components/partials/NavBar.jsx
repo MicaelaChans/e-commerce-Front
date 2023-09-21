@@ -101,6 +101,9 @@ function NavBar() {
               <NavDropdown.Item as={Link} to={"/profile"} style={{display:`${displayProfile}`}}>
                 Profile
               </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"/check-out"} style={{display:`${displayProfile}`}}>
+                Go to cart
+              </NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/my-purchases"} style={{display:`${displayPurchases}`}} onClick={()=>setExpanded(false)}>
                 My purchases
               </NavDropdown.Item>
