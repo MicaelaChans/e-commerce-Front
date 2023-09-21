@@ -15,12 +15,15 @@ function OurTeam() {
             <h5 className="gap-2">
               <a href={member.linkLi}>
                 <i
-                  className="fa-brands fa-linkedin"
+                  className="fa-brands fa-xl fa-linkedin"
                   style={{ color: "#ffffff" }}
                 ></i>
               </a>
               <a href={member.linkGi}>
-                <i class="fa-brands fa-github" style={{ color: "#ffffff" }}></i>
+                <i
+                  class="fa-brands fa-xl fa-github"
+                  style={{ color: "#ffffff" }}
+                ></i>
               </a>
             </h5>
           </div>
