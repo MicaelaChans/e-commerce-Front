@@ -136,7 +136,7 @@ function Cart() {
                         <i className="bi bi-dash-circle change-icon"></i>
                       </button>
                      
-                      <div style={{ width: 24 }} />
+                     
                     
 
                     <p className="item-number mb-0 text-center rounded px-3">
