@@ -115,10 +115,17 @@ return productsOfUser[0] ? ( (
 
   <Footer/>
   </div>
-  ) ) : (<div className="d-flex flex-column justify-content-center align-items-center" style={{height:"100vh"}}>
-           <h1 className="text-center">You haven't bought any product yet</h1> 
-           <h4 className="mt-3">Go <Link to={"/"}>home</Link></h4>   
-        </div>
+  ) ) : ( <div className="container mb-5" style={{marginTop:"160px"}}>
+  <h1 className="mx-3 title">My Purchases</h1>
+  <div className="row">
+   <div className="col">
+     <div className="mt-5  border rounded-3 shadow d-flex justify-content-center p-3">   
+       <h4 className="mb-0 mx-3 text-center">You purchased {productsOfUser.length} products</h4>
+       </div>
+       </div>
+       </div>
+     </div>
+
         );
 }
 
