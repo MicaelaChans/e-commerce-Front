@@ -90,22 +90,30 @@ function ProductsList() {
           a modern lifestyle.
         </p>
       </div>
-      <div className="d-flex filter-section justify-content-center align-items-center py-4">
+      <div className="d-flex filter-container justify-content-center align-items-center py-4">
         <h4 className="mx-4 mb-0">Filter by model:</h4>
-        <div className="mt-2 mt-sm-0">
-          <button className="btn btn-primary" onClick={() => decoFilter()}>
-            Deco
+        <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word" onClick={() => decoFilter()}>
+            Deco 
+          </h5>
           </button>
-          <button className="btn btn-primary" onClick={() => aduroFilter()}>
+          </div>
+          <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word"  onClick={() => aduroFilter()}>
             Aduro
+          </h5>
           </button>
-          <button className="btn btn-primary" onClick={() => allFilter()}>
-            All
+          </div>
+          <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word" onClick={() => allFilter()}>All</h5>
           </button>
-        </div>
+          </div>
       </div>
       <div className="container">
-        <div className="text-center mt-5 d-block d-sm-none">
+        <div className="text-center d-block d-sm-none">
           <h2 className="alt-title-wood">PELLET STOVES</h2>
           <hr className="hr-wood" />
         </div>
@@ -113,7 +121,7 @@ function ProductsList() {
         <div className="row">
           {firstCategory.map((product, id = product.id) => (
             <div
-              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5"
+              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5 mt-0"
               key={id}
             >
               <div className="mt-sm-4  mx-3  bg-white">

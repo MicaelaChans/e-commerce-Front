@@ -55,9 +55,12 @@
   transform: scale(1.05);
 }
 
-@media (min-width: 0px) and (max-width: 991px) {
+@media (min-width: 0px) and (max-width: 575px) {
   .categories-section {
     margin-top: 120px !important;
+  }
+  .filter-container{
+    margin-top: 128px;
   }
 }
 
@@ -65,6 +68,7 @@
   .categories-button-show-products {
     width: 180px !important;
   }
+  
 }
 
 @media (min-width: 400px) and (max-width: 992px) {
@@ -111,3 +115,22 @@
   margin-bottom: 15px;
   margin-top: 20px;
 }
+
+.filter-word{
+  text-decoration: underline;
+}
+
+.filter-hr{
+  height: 4px;
+  color:#f09535;
+  background-color: #ff8400;
+  width:400px;
+  margin: auto;
+}
+
+.filter-button{
+  background-color: white;
+  border: none;
+}
+
+

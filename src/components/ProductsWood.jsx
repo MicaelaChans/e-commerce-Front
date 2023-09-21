@@ -91,23 +91,34 @@ function ProductsList() {
           a modern lifestyle.
         </p>
       </div>
-      <div className="d-flex filter-section justify-content-center align-items-center py-4">
-        <h4 className="mx-4 mb-0">Filter by model:</h4>
-        <div className="mt-2 mt-sm-0">
-          <button className="btn btn-primary" onClick={() => harmonyFilter()}>
-            Harmony
+      <div className="d-flex filter-container justify-content-center  align-items-center py-4">
+        <h4 className="mx-3 mb-0">Filter by model:</h4>
+        <div className="mt-sm-0 d-flex justify-content-around">
+          <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word" onClick={() => harmonyFilter()}>
+            Harmony 
+          </h5>
           </button>
-          <button className="btn btn-primary" onClick={() => boxFilter()}>
+          </div>
+          <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word"  onClick={() => boxFilter()}>
             Box
+          </h5>
           </button>
-          <button className="btn btn-primary" onClick={() => allFilter()}>
-            All
+          </div>
+          <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word" onClick={() => allFilter()}>All</h5>
           </button>
+          </div>
         </div>
+        
       </div>
       <div className="container">
         <div className="text-center d-block d-sm-none">
-          <h2 className="alt-title-wood mt-5">WOOD STOVES</h2>
+          <h2 className="alt-title-wood ">WOOD STOVES</h2>
           <hr className="hr-wood" />
         </div>
 
