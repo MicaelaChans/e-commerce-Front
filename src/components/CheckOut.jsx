@@ -58,7 +58,7 @@ function CheckOut() {
   }
 
   return (
-    unpaidOrders && (
+    orders[0] && (
       <div className="checkout-container">
         <div className="container checkOut">
           <div className="row check-row">

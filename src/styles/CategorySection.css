@@ -57,7 +57,7 @@
   transform: scale(1.05);
 }
 
-@media (min-width: 0px) and (max-width: 575px) {
+@media (min-width: 0px) and (max-width: 991px) {
   .categories-section {
     margin-top: 120px !important;
   }

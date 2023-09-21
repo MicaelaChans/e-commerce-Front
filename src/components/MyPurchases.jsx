@@ -31,7 +31,7 @@ useEffect(() => {
 
 if(orders.length > 0 && user != null){
   for(let i=0; i<orders.length; i++){   
-    if(orders[i].user.id == user.id){ 
+    if(orders[i].user.id == user.id && orders[i].state != "Pending"){ 
       for(let j=0; j<orders[i].products.length; j++){
         productsOfUser.push({
           orderId: orders[i].id, 
@@ -47,7 +47,7 @@ if(orders.length > 0 && user != null){
   }
 }
 
-return orders[0] && ( (
+return productsOfUser[0] ? ( (
   <div>
   <div className="container mb-5" style={{marginTop:"160px"}}>
    <h1 className="mx-3 title">My Purchases</h1>
@@ -115,7 +115,11 @@ return orders[0] && ( (
 
   <Footer/>
   </div>
-  ));
+  ) ) : (<div className="d-flex flex-column justify-content-center align-items-center" style={{height:"100vh"}}>
+           <h1 className="text-center">You haven't bought any product yet</h1> 
+           <h4 className="mt-3">Go <Link to={"/"}>home</Link></h4>   
+        </div>
+        );
 }
 
 export default Register;
