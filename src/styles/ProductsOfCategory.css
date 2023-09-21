@@ -21,13 +21,6 @@
 .hr-product-wood-top {
   width: 80px;
   margin: auto;
-  margin-top: 3px;
-  margin-bottom: 3px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
-  display: flex;
 }
 
 .hr-wood {
@@ -38,14 +31,10 @@
   height: 1.8px;
 }
 
+
 .p-sizes-product {
   color: grey;
   font-size: 0.8rem;
-  margin-top: 20px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
   display: flex;
 }
 
@@ -122,10 +111,6 @@
     text-align: center;
   }
 }
-.filter-section {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.363);
-}
 
 .filter-section button {
   background-color: #eca354;
@@ -151,6 +136,7 @@
   font-weight: 600;
   border: solid;
   border-color: #eca354;
+  
 }
 
 .btn-addcart-products:hover {
@@ -168,11 +154,6 @@
   }
   .about-this-project-btn {
     display: none;
-  }
-  .filter-section {
-    margin-top: 120px;
-    flex-direction: column;
-    justify-content: space-around;
   }
 }
 
@@ -194,15 +175,6 @@
   color: orangered;
   font-weight: 500;
   font-size: 0.7rem;
-}
-
-.product-wood:hover .p-sizes-product {
-  opacity: 1;
-  max-height: 100px;
-}
-
-.product-wood:hover .hr-product-wood-top {
-  opacity: 0.3;
 }
 
 .product-wood {

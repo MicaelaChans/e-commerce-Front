@@ -90,7 +90,7 @@ function ProductsList() {
           a modern lifestyle.
         </p>
       </div>
-      <div className="d-flex filter-container justify-content-center align-items-center py-4">
+      <div className="d-flex filter-container justify-content-center align-items-center pt-5 pb-2">
         <h4 className="mx-4 mb-0">Filter by model:</h4>
         <div>
           <button className="filter-button">
@@ -121,10 +121,10 @@ function ProductsList() {
         <div className="row">
           {firstCategory.map((product, id = product.id) => (
             <div
-              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5 mt-0"
+              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-5 mt-5  "
               key={id}
             >
-              <div className="mt-sm-4  mx-3  bg-white">
+              <div className=" mx-3  bg-white">
                 <Link
                   className=" image-product-pellet d-flex justify-content-center"
                   to={`/products/${product.id}`}
@@ -141,23 +141,24 @@ function ProductsList() {
                 style={{ color: "black" }}
                 to={`/products/${product.id}`}
               >
-                <h6 className="text-center mt-2">
+                <h6 className="text-center">
                   {product.name} - {product.otherProperties.nominalPower}KW
                 </h6>
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <div className="d-none d-lg-block">
+
+                  <div className="d-flex flex-column justify-content-around align-items-center">
                     <hr className="hr-product-wood-top" />
-                    <div className=" justify-content-center align-items-center p-sizes-product">
-                      <p className="text-center mx-2">
+                    <div className="d-flex justify-content-center align-items-center my-3 p-sizes-product">
+                      <p className="text-center mx-2 mb-0">
                         H: {product.otherProperties.height}
                       </p>
-                      <p className="text-center mx-2 ">
+                      <p className="text-center mx-2 mb-0">
                         {" "}
                         W: {product.otherProperties.width}
                       </p>
-                      <p className="text-center mx-2">
+                      <p className="text-center mx-2 mb-0">
                         {" "}
                         D: {product.otherProperties.depth}
                       </p>
@@ -165,7 +166,7 @@ function ProductsList() {
                     <hr className="hr-product-wood-top mb-1" />
                   </div>
 
-                  <div className="d-flex justify-content-center mt-4 mt-lg-0">
+                  <div className="d-flex justify-content-center mt-2">
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
