@@ -66,13 +66,21 @@ function Cart() {
 
   function handleMinus(id){
     for(let i=0; i<cartShow.length; i++){
-      if(cartShow[i].id == id){
+      if(cartShow[i].id == id && cartShow[i].quantity > 1){
         dispatch(removeOneItem(id));
         cartShow[i].quantity--;       
       }
     }
   }
 
+  function handleDelete(id){
+    for(let i=0; i<cart.length; i++){
+      if(cart[i].id == id){
+        dispatch(removeOneItem(id));
+      }
+    }
+  }
+ console.log(cart)
   async function handleCheckOut() {
     if (user && cart.length > 0) {     
       await axios({
@@ -119,27 +127,29 @@ function Cart() {
                   />
                 </div>
                 <div className="col-6 p-3">
-                  <h2 className="d-flex fs-4">{item.name}</h2>
-                  <div className="d-flex align-items-center">
-                    <p className="item-number mb-0 text-center rounded px-2">
-                      {item.quantity}
-                    </p>
-                    <div className="mx-2">
-                      <button
-                        onClick={() => handlePlus(item.id)}
-                        style={{ backgroundColor: "white", border: "none" }}
-                      >
-                        <i className="bi bi-plus-circle-fill mx-2 plus-icon"></i>
-                      </button>
+                  <h2 className="d-flex fs-4 mt-3 ">{item.name}</h2>
+                  <div className="d-flex align-items-center justify-content-between my-3">                 
                       <button
                         onClick={() => handleMinus(item.id)}
                         style={{ backgroundColor: "white", border: "none" }}
                       >
-                        <i className="bi bi-dash-circle-fill minus-icon"></i>
-                      </button>
-                    </div>
+                        <i className="bi bi-dash-circle change-icon"></i>
+                      </button>                
+                    <p className="item-number mb-0 text-center rounded px-3">
+                      {item.quantity}
+                    </p>
+                    <button
+                        onClick={() => handlePlus(item.id)}
+                        style={{ backgroundColor: "white", border: "none" }}
+                      >
+                        <i className="bi bi-plus-circle-fill change-icon"></i>
+                      </button>   
                   </div>
-                  <p className="fs-6">US$ {item.price}</p>
+                  <div className="d-flex align-items-center justify-content-between">
+                  <p className="mb-0 item-price" >US$ {item.price}</p>
+                  <i className="bi bi-trash3 cart-icon" onClick={()=>handleDelete(item.id)}></i>
+
+                  </div>
                 </div>
               </div>
             ))}

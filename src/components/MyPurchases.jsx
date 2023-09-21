@@ -53,11 +53,11 @@ return orders[0] && ( (
    <h1 className="mx-3 title">My Purchases</h1>
    <div className="row">
     <div className="col">
-      <div className="mt-5  border rounded-3 shadow d-flex align-items-center justify-content-between p-3">
+      <div className="mt-5  border rounded-3 shadow d-flex justify-content-center p-3">
         
-        <i className="bi bi-star-fill star-icon "></i>
+        
         <h4 className="mb-0 mx-3 text-center">You purchased {productsOfUser.length} products</h4>
-        <i className="bi bi-star-fill star-icon "></i>
+        
         </div>
      
       {productsOfUser.map((product, id = product.id) => (

@@ -24,7 +24,7 @@ function CheckOut() {
   const unpaidOrders =
     orders.length > 0 &&
     orders.filter(
-      (order) => order.state === "Not Paid" && order.user.id === user.id
+      (order) => order.state === "Pending" && order.user.id === user.id
     );
 
   async function handlePay(id) {

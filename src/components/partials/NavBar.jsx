@@ -73,9 +73,6 @@ function NavBar() {
             <Nav.Link as={Link} className="mx-2" to="/contact" onClick={()=>setExpanded(false)}>
               Contact
             </Nav.Link>
-            <Nav.Link as={Link} className="mx-2" to="/aboutUs" onClick={()=>setExpanded(false)}>
-              About us
-            </Nav.Link>
             <Nav.Link
               className="about-this-project mx-2"
               to="/aboutThisProject"
