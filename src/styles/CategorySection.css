@@ -37,19 +37,21 @@
 }
 
 .categories-button-show-products {
-  border-radius: 3px;
+  background-color: white;
+  color: #f09535;
   padding: 10px 15px;
-  background-color: #eca354;
-  color: white;
+  font-weight: 600;
+  border-radius: 3px;
   border: solid;
   border-color: #eca354;
   transition: background-color 0.3s, color 0.3s, transform 0.3s;
 }
 
 .categories-button-show-products:hover {
-  background-color: white;
-  color: #f09535;
-  font-weight: 600;
+  border-radius: 3px;
+  padding: 10px 15px;
+  background-color: #eca354;
+  color: white;
   border: solid;
   border-color: #eca354;
   transform: scale(1.05);

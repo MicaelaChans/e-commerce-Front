@@ -112,24 +112,6 @@
   }
 }
 
-.filter-section button {
-  background-color: #eca354;
-  color: white;
-  font-weight: 600;
-  border: solid;
-  border-color: #eca354;
-  padding: 10px 20px;
-  margin-right: 10px;
-}
-
-.filter-section button:hover {
-  background-color: white;
-  color: #f09535;
-  font-weight: 600;
-  border: solid;
-  border-color: #eca354;
-}
-
 .btn-addcart-products {
   background-color: #eca354;
   color: white;
