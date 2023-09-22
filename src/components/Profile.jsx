@@ -53,26 +53,24 @@ function Profile() {
       }
     };
 
-    if (user) {
-      fetchUserDetails();
-       axios({
+    const fetchOrders = async () => {
+      const response = await axios({
         method: "GET",
         url: `http://localhost:8000/users/${user.id}/orders`,
         headers: {
           Authorization: "Bearer " + (user && user.token),
         },
-       }).then((response) => {
-          if (response.data) {
-            setOrders(response.data);
-          } else {
-            toast.error(
-              "Failed to load orders. Response data is missing or undefined."
-            );
-          }
-        })
-        .catch((error) => {
-          toast.error("Error fetching orders. Please try again.");
-        });
+      });
+  
+      if (response.data) {
+        setOrders(response.data);
+      } else {
+        toast.error("Failed to load orders. Response data is missing or undefined.");
+      }
+    };
+    if (user) {
+      fetchUserDetails();
+      fetchOrders();
     }
   }, [user]);
 
@@ -80,33 +78,42 @@ function Profile() {
     e.preventDefault();
 
     if (newPassword !== confirmPassword) {
-      toast.error("New password and confirmation don't match.");
-      return;
+        toast.error("New password and confirmation don't match.");
+        return;
     }
 
     try {
-      const response = await axios.post(
-        "http://localhost:8000/update-password",
-        {
-          userId: user.id,
-          oldPassword,
-          newPassword,
+        const response = await axios({
+            method: "POST",
+            url: "http://localhost:8000/update-password",
+            data: {
+                userId: user.id,
+                oldPassword,
+                newPassword,
+            },
+            headers: {
+                Authorization: "Bearer " + (user && user.token),
+            },
+        });
+
+        if (response.status === 200) {
+            toast.success(response.data.message);
+            setOldPassword("");
+            setNewPassword("");
+            setConfirmPassword("");
+        } else if (response.data && response.data.error) {
+            toast.error(response.data.error);
+        } else {
+            toast.error("Error updating password. Please try again.");
         }
-      );
-
-      toast.success(response.data.message);
-
-      setOldPassword("");
-      setNewPassword("");
-      setConfirmPassword("");
     } catch (error) {
-      toast.error(
-        error.response && error.response.data && error.response.data.error
-          ? error.response.data.error
-          : "Error updating password. Please try again."
-      );
-    }
-  };
+      if (error.response && error.response.data && error.response.data.error) {
+          toast.error(error.response.data.error);
+      } else {
+          toast.error("An error occurred while updating the password.");
+      }
+  }
+};
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -118,22 +125,49 @@ function Profile() {
 
   const handleUpdateProfile = async () => {
     try {
-      await axios.patch(`http://localhost:8000/users/${user.id}`, editedUser);
-      toast.success("Profile updated successfully.");
+        const response = await axios({
+            method: "PATCH",
+            url: `http://localhost:8000/users/${user.id}`,
+            data: editedUser,
+            headers: {
+                Authorization: "Bearer " + (user && user.token),
+            },
+        });
+
+        if (response.status === 200) {
+            toast.success("Profile updated successfully.");
+        } else if (response.data && response.data.error) {
+            toast.error(response.data.error);
+        } else {
+            toast.error("Error updating profile. Please try again.");
+        }
     } catch (error) {
-      toast.error("Error updating profile. Please try again.");
+        toast.error("An error occurred while updating the profile.");
     }
-  };
+};
 
   const handleDeleteAccount = async () => {
     try {
-      await axios.delete(`http://localhost:8000/users/${user.id}`);
-      localStorage.setItem("showDeletionToast", "true");
-      navigate("/login");
+        const response = await axios({
+            method: "DELETE",
+            url: `http://localhost:8000/users/${user.id}`,
+            headers: {
+                Authorization: "Bearer " + (user && user.token),
+            },
+        });
+
+        if (response.status === 200 || response.status === 204) {
+            localStorage.setItem("showDeletionToast", "true");
+            navigate("/login");
+        } else if (response.data && response.data.error) {
+            toast.error(response.data.error);
+        } else {
+            toast.error("Error deleting account. Please try again.");
+        }
     } catch (error) {
-      toast.error("Error deleting account. Please try again.");
+        toast.error("An error occurred while deleting the account.");
     }
-  };
+};
 
   return (
     <>

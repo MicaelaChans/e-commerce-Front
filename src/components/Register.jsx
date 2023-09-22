@@ -33,11 +33,13 @@ function Register() {
       setWarningMsg("There's an existing account with this phone");
     } else if (response.data.token) {
       const id = jwt(response.data.token).sub;
+      const role = jwt(response.data.token).role;
       dispatch(
         login({
           token: response.data.token,
           id,
           email,
+          role,
         })
       );
       toast.success("Usuario creado exitosamente.");

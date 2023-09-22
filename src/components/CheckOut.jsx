@@ -56,6 +56,9 @@ function CheckOut() {
           method: "DELETE",
           url: `http://localhost:8000/orders/${id}`,
           data: { orderId: id },
+          headers: {
+            Authorization: "Bearer " + (user && user.token),
+          },
         });
       } catch (error) {
         console.error("Error at delete order:", error);
