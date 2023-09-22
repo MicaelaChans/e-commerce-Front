@@ -21,7 +21,7 @@ function OurTeam() {
               </a>
               <a href={member.linkGi}>
                 <i
-                  class="fa-brands fa-xl fa-github"
+                  className="fa-brands fa-xl fa-github"
                   style={{ color: "#ffffff" }}
                 ></i>
               </a>
