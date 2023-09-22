@@ -20,7 +20,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import CheckOut from "./components/CheckOut";
-
+import CreditCard from "./components/partials/CreditCard";
 function App() {
   return (
     <div>
@@ -61,6 +61,7 @@ function App() {
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/my-purchases" element={<MyPurchases />} />
         <Route path="/checkOut" element={<CheckOut />} />
+        <Route path="/credit" element={<CreditCard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
