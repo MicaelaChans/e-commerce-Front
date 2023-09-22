@@ -43,6 +43,19 @@
   color: white;
 }
 
+.comment-label {
+  padding-bottom: 7px;
+}
+
 .btnSend {
-  width: 125px;
+  width: 150px;
+  color: black;
+  background-color: white;
+  border-color: white;
+  transition: 0.7s;
+}
+
+.btnSend:hover {
+  color: white;
+  background-color: #434241;
 }
