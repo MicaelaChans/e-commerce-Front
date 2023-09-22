@@ -5,10 +5,10 @@ function OurTeam() {
   return (
     <div className="row my-3 ">
       {teamMembers.map((member) => (
-        <div key={member.key} className="col-6 col-md-4 col-lg-2 my-2 hop">
-          <img src={member.profImg} alt="photoStaff" className="photoStaff" />
+        <div key={member.key} className="col-6 col-md-4 col-lg-2 my-2">
+          <img src={member.profImg} alt="photoStaff" className="photoStaff hop" />
           <div className="member-info">
-            <h5 className="mt-4">{member.name}</h5>
+            <h5 className="mt-3">{member.name}</h5>
             <p>Full Stack Developer</p>
           </div>
           <div>
