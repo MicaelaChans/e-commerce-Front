@@ -16,6 +16,9 @@ function CheckOut() {
       const response = await axios({
         method: "GET",
         url: `http://localhost:8000/orders`,
+        headers: {
+          Authorization: "Bearer " + (user && user.token),
+        },
       });
       setOrders(response.data);
     };
@@ -35,6 +38,9 @@ function CheckOut() {
         await axios({
           method: "PATCH",
           url: `http://localhost:8000/orders/${id}`,
+          headers: {
+            Authorization: "Bearer " + (user && user.token),
+          },
         });
       } catch (error) {
         console.error("Error al pagar la orden:", error);

@@ -26,8 +26,13 @@ function Profile() {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:8000/users/${user.id}`
+        const response = await axios({
+          method: "GET",
+          url: `http://localhost:8000/users/${user.id}`,
+          headers: {
+            Authorization: "Bearer " + (user && user.token),
+          },
+        }
         );
         const detailedUser = response.data;
         if (detailedUser) {
@@ -50,10 +55,13 @@ function Profile() {
 
     if (user) {
       fetchUserDetails();
-
-      axios
-        .get(`http://localhost:8000/users/${user.id}/orders`)
-        .then((response) => {
+       axios({
+        method: "GET",
+        url: `http://localhost:8000/users/${user.id}/orders`,
+        headers: {
+          Authorization: "Bearer " + (user && user.token),
+        },
+       }).then((response) => {
           if (response.data) {
             setOrders(response.data);
           } else {

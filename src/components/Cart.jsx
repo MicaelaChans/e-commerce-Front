@@ -80,13 +80,16 @@ function Cart() {
       }
     }
   }
-  console.log(cart);
   async function handleCheckOut() {
     if (user && cart.length > 0) {
       await axios({
         url: "http://localhost:8000/orders",
         method: "POST",
+        headers: {
+          Authorization: "Bearer " + (user && user.token),
+        },
         data: { user, cart },
+        
       });
       dispatch(removeAll());
       navigate("/check-out");

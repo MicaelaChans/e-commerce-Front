@@ -23,6 +23,9 @@ useEffect(() => {
     const response = await axios({
       method: "GET",
       url: `http://localhost:8000/orders`,
+      headers: {
+        Authorization: "Bearer " + (user && user.token),
+      },
     });
     setOrders(response.data);
   };
