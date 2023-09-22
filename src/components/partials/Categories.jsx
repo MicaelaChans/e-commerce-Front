@@ -26,7 +26,7 @@ function CategoryProducts() {
           <Link to={"/productsPellet"}>
             <Button
               variant="dark"
-              className="categories-button-show-products mb-4 mt-4 w-50"
+              className="categories-button-show-products mb-4 mt-4"
             >
               SHOW PRODUCTS
             </Button>
@@ -48,7 +48,7 @@ function CategoryProducts() {
           <Link to={"/productsWood"}>
             <Button
               variant="dark"
-              className="categories-button-show-products mb-4 mt-4 w-50"
+              className="categories-button-show-products mb-4 mt-4 "
             >
               SHOW PRODUCTS
             </Button>
@@ -84,7 +84,7 @@ function CategoryProducts() {
           <Link to={"/productsAccessories"}>
             <Button
               variant="dark"
-              className="categories-button-show-products mb-4 mt-4 w-50"
+              className="categories-button-show-products mb-4 mt-4"
             >
               SHOW PRODUCTS
             </Button>
