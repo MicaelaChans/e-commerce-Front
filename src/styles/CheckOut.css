@@ -1,5 +1,5 @@
-.navbar {
-  visibility: hidden;
+.container-checkout {
+  margin-top: 125px;
 }
 .paiment-container {
   width: 554px;
@@ -21,3 +21,5 @@
   width: 36px;
 }
 
+.check-out-items {
+}

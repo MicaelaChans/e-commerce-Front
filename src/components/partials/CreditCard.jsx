@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
 
@@ -11,8 +11,6 @@ const CreditCard = () => {
     focus: "",
   });
 
-  // Especifica las tarjetas aceptadas (en este caso, Visa y MasterCard)
-  const acceptedCards = ["visa", "mastercard"];
 
   const handleInputChange = (evt) => {
     const { name, value } = evt.target;
@@ -23,18 +21,16 @@ const CreditCard = () => {
     setState((prev) => ({ ...prev, focus: evt.target.name }));
   };
 
-
   return (
     <div className="credit-container">
-      {acceptedCards.includes(cardType()) && (
-        <Cards
-          number={state.number}
-          expiry={state.expiry}
-          cvc={state.cvc}
-          name={state.name}
-          focused={state.focus}
-        />
-      )}
+      <Cards
+        number={state.number}
+        expiry={state.expiry}
+        cvc={state.cvc}
+        name={state.name}
+        focused={state.focus}
+      />
+
       <form>
         <input
           type="number"
@@ -74,3 +70,48 @@ const CreditCard = () => {
 };
 
 export default CreditCard;
+
+
+/*
+<div className="mt-3 border rounded-3 shadow p-3"
+                    key={order.id}
+                  >
+                    <div className="d-flex justify-content-between align-items-center ">
+                      <p className="mb-0">
+                        {format(new Date(order.createdAt), "MMMM dd yyyy")}
+                      </p>
+                      <p className="mb-0 order-reference">
+                        Order:{" "}
+                        <span style={{ fontWeight: "600" }}>{order.id}</span>{" "}
+                      </p>
+                    </div>
+                    <hr />
+                    <div className="order-item">
+                      {order.products.map((product) => (
+                        <div key={product.id}>
+                          <div className="product-item d-flex justify-content-around">
+                            <div>
+                              <img
+                                className="img-check-out"
+                                src={product.image}
+                                alt={product.name}
+                              />
+                            </div>
+                            <div className="product-details">
+                              <h3>{product.name}</h3>
+                            </div>
+
+                            <div>
+                              <h4>Unit price:</h4>
+                              <p>US${product.price}</p>
+                              <p>Quantity: 1</p>
+                            </div>
+                            <div>
+                              <h6>Total Price:</h6>
+                              <p>Q x P</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+*/

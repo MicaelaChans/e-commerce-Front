@@ -60,7 +60,14 @@ function App() {
         <Route path="/productsAccessories" element={<ProductsAccessories />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/my-purchases" element={<MyPurchases />} />
-        <Route path="/checkOut" element={<CheckOut />} />
+        <Route
+          path="/checkOut"
+          element={
+            <CheckOut>
+              <CreditCard />
+            </CheckOut>
+          }
+        />
         <Route path="/credit" element={<CreditCard />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
