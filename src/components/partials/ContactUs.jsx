@@ -1,6 +1,7 @@
 import Form from "react-bootstrap/Form";
 import Footer from "./Footer";
 import "../../styles/ContactUs.css";
+
 function ContactUs() {
   return (
     <>
@@ -30,11 +31,11 @@ function ContactUs() {
           <div className="col-lg-6 col-md-6 col-sm-12">
             <Form className="fs-3 ">
               <Form.Group className="mb-3 border-bottom" controlId="example">
-                <Form.Label>Name</Form.Label>
+                <Form.Label>Name *</Form.Label>
                 <Form.Control className=" border-0 formControl" type="email" />
               </Form.Group>
               <Form.Group className="mb-3 border-bottom" controlId="example">
-                <Form.Label>Email </Form.Label>
+                <Form.Label>Email *</Form.Label>
                 <Form.Control className=" border-0 formControl" type="email" />
               </Form.Group>
               <Form.Group className="mb-3 border-bottom" controlId="example">
@@ -53,33 +54,36 @@ function ContactUs() {
                 />
               </Form.Group>
               <Form.Group className="mb-3 border-bottom" controlId="example">
-                <Form.Label>Comment</Form.Label>
+                <Form.Label className="comment-label">Comment</Form.Label>
                 <Form.Control
                   className=" border-0 formControl"
                   as="textarea"
                   rows={5}
                 />
               </Form.Group>
-              <div className="form-check fs-6">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefault"
-                />
-                <label className="form-check-label " htmlFor="flexCheckDefault">
-                  I consent to the terms of the privacy politic
-                </label>
-              </div>
-              <Form.Group className="d-flex justify-content-end">
-                <button
-                  className="btn btn-outline-light shadow btnSend"
-                  type="button"
-                >
-                  Send
-                </button>
-              </Form.Group>
             </Form>
+          </div>
+          <div className="col-0 col-md-6" />
+          <div className="col-12 col-md-6">
+            <div className="form-check fs-6">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+              <label className="form-check-label " htmlFor="flexCheckDefault">
+                I consent to the terms of the privacy politic.
+              </label>
+            </div>
+            <Form.Group className="d-flex justify-content-end">
+              <button
+                className="btn btn-outline-light shadow btnSend fw-semibold"
+                type="button"
+              >
+                Send
+              </button>
+            </Form.Group>
           </div>
         </div>
       </div>

@@ -91,30 +91,41 @@ function ProductsList() {
           a modern lifestyle.
         </p>
       </div>
-      <div className="d-flex filter-section justify-content-center align-items-center py-4">
-        <h4 className="mx-4 mb-0">Filter by model:</h4>
-        <div className="mt-2 mt-sm-0">
-          <button className="btn btn-primary" onClick={() => harmonyFilter()}>
-            Harmony
+      <div className="d-flex filter-container justify-content-center  align-items-center pt-5">
+        <h4 className="mx-3 mb-0">Filter by model:</h4>
+        <div className="mt-sm-0 d-flex justify-content-around">
+          <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word" onClick={() => harmonyFilter()}>
+            Harmony 
+          </h5>
           </button>
-          <button className="btn btn-primary" onClick={() => boxFilter()}>
+          </div>
+          <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word"  onClick={() => boxFilter()}>
             Box
+          </h5>
           </button>
-          <button className="btn btn-primary" onClick={() => allFilter()}>
-            All
+          </div>
+          <div>
+          <button className="filter-button">
+          <h5 className="mb-0 mx-3 filter-word" onClick={() => allFilter()}>All</h5>
           </button>
+          </div>
         </div>
+        
       </div>
       <div className="container">
         <div className="text-center d-block d-sm-none">
-          <h2 className="alt-title-wood mt-5">WOOD STOVES</h2>
+          <h2 className="alt-title-wood ">WOOD STOVES</h2>
           <hr className="hr-wood" />
         </div>
 
         <div className="row mb-5">
           {firstCategory.map((product, id = product.id) => (
             <div
-              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-3"
+              className="col-lg-4 product-wood col-md-4 col-sm-6 col-12 g-3 mt-5"
               key={id}
             >
               <div className="mt-sm-4  mx-3  bg-white">
@@ -140,17 +151,17 @@ function ProductsList() {
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <div className="d-none d-lg-block">
+                  <div >
                     <hr className="hr-product-wood-top" />
-                    <div className="justify-content-center align-items-center p-sizes-product">
-                      <p className="text-center mx-2">
+                    <div className="d-flex justify-content-center align-items-center my-3 p-sizes-product">
+                      <p className="text-center mx-2 mb-0">
                         H: {product.otherProperties.height}
                       </p>
-                      <p className="text-center mx-2 ">
+                      <p className="text-center mx-2 mb-0">
                         {" "}
                         W: {product.otherProperties.width}
                       </p>
-                      <p className="text-center mx-2">
+                      <p className="text-center mx-2 mb-0">
                         {" "}
                         D: {product.otherProperties.depth}
                       </p>
@@ -158,13 +169,13 @@ function ProductsList() {
                     <hr className="hr-product-wood-top mb-1" />
                   </div>
 
-                  <div className="d-flex justify-content-center mt-4 mt-lg-0">
+                  <div className="d-flex justify-content-center mt-2">
                     <Link
                       className="pt-2 link-product-wood "
                       to={`/products/${product.id}`}
                     ></Link>
                     <button
-                      className="btn btn-light btn-addcart-products"
+                      className="btn btn-light btn-addcart-products "
                       onClick={() => handleAddItem(product)}
                     >
                       Add to cart

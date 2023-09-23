@@ -73,9 +73,6 @@ function NavBar() {
             <Nav.Link as={Link} className="mx-2" to="/contact" onClick={()=>setExpanded(false)}>
               Contact
             </Nav.Link>
-            <Nav.Link as={Link} className="mx-2" to="/aboutUs" onClick={()=>setExpanded(false)}>
-              About us
-            </Nav.Link>
             <Nav.Link
               className="about-this-project mx-2"
               to="/aboutThisProject"
@@ -103,6 +100,9 @@ function NavBar() {
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/profile"} style={{display:`${displayProfile}`}}>
                 Profile
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to={"/check-out"} style={{display:`${displayProfile}`}}>
+                Go to cart
               </NavDropdown.Item>
               <NavDropdown.Item as={Link} to={"/my-purchases"} style={{display:`${displayPurchases}`}} onClick={()=>setExpanded(false)}>
                 My purchases

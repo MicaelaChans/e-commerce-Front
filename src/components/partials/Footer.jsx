@@ -4,20 +4,20 @@ import "../../styles/Footer.css";
 
 function Footer() {
   return (
-    <div className="bg-body-tertiary border-top">
-      <div className="container">
-        <div className="row py-lg-4 pb-1 pt-0">
-          <div className="col-12 col-lg-6 text-lg-start d-flex justify-content-center">
+    <div className=" border-top" style={{backgroundColor: "rgb(102, 102, 102)", color: "white"}}>
+      <div className="container p-4">
+        <div className="row py-lg-4 pb-1 pt-0 ">
+          <div className="col-12 col-lg-6 text-lg-start ">
             <div>
-              <div className="img-footer d-lg-block d-flex justify-content-center mx-0">
+              <div className=" mx-0 ">
                 <img
-                  className="mb-3"
-                  src="/assets/drachen_logo_black.png"
+                  className="mb-2"
+                  src="/assets/drachen_logo_white.png"
                   alt="drachen logo"
-                  style={{ width: "100px" }}
+                  style={{ width: "110px" }}
                 />
               </div>
-              <p>
+              <p className="p-0">
                 For Drachen, heating is more than just a practical or aesthetic
                 matter. We see our stoves as innovative pieces of forniture that
                 suit a modern lifestyle.
@@ -27,13 +27,13 @@ function Footer() {
           <div className="col-lg-3 col-6 pt-4 d-lg-flex d-block justify-content-center">
             <div>
               <h5 className="mb-3">PRODUCTS</h5>
-              <Link className="footer-link" to={"/productsWood"}>
+              <Link style={{color:"white"}} className="footer-link" to={"/productsWood"}>
                 <p className="mb-2">Wood stoves</p>
               </Link>
-              <Link className="footer-link" to={"/productsPellet"}>
+              <Link style={{color:"white"}} className="footer-link" to={"/productsPellet"}>
                 <p className="mb-2">Pellet stoves</p>
               </Link>
-              <Link className="footer-link" to={"/productsAccessories"}>
+              <Link style={{color:"white"}} className="footer-link" to={"/productsAccessories"}>
                 <p className="mb-1">Accesories</p>
               </Link>
             </div>
@@ -47,7 +47,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div style={{ backgroundColor: "#efe9e4" }}>
+      <div style={{backgroundColor:"rgb(70, 70, 70)"}}>
         <div
           className="col py-3 d-flex justify-content-center"
           style={{ fontSize: "1.5rem" }}

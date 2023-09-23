@@ -44,51 +44,62 @@ function Cart() {
       cartShow.push({ ...cart[i] });
     }
     isProduct = false;
-  } 
- 
-  function handlePlus(id){
-   for(let i=0; i<cartShow.length; i++){
-    if(cartShow[i].id == id){
-      cartShow[i].quantity++;
-      dispatch(
-        addItem({
-          id: id,
-          image: cartShow[i].image,
-          name: cartShow[i].name,
-          price: cartShow[i].price,
-          quantity: 1,
-          rating:[0]
-        })
-      );    
-    }
-   }
-  };
+  }
 
-  function handleMinus(id){
-    for(let i=0; i<cartShow.length; i++){
-      if(cartShow[i].id == id){
-        dispatch(removeOneItem(id));
-        cartShow[i].quantity--;       
+  function handlePlus(id) {
+    for (let i = 0; i < cartShow.length; i++) {
+      if (cartShow[i].id == id) {
+        cartShow[i].quantity++;
+        dispatch(
+          addItem({
+            id: id,
+            image: cartShow[i].image,
+            name: cartShow[i].name,
+            price: cartShow[i].price,
+            quantity: 1,
+            rating: [0],
+          })
+        );
       }
     }
   }
 
+  function handleMinus(id) {
+    for (let i = 0; i < cartShow.length; i++) {
+      if (cartShow[i].id == id && cartShow[i].quantity > 1) {
+        dispatch(removeOneItem(id));
+        cartShow[i].quantity--;
+      }
+    }
+  }
+
+  function handleDelete(id) {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].id == id) {
+        dispatch(removeOneItem(id));
+      }
+    }
+  }
   async function handleCheckOut() {
-    if (user && cart.length > 0) {     
+    if (user && cart.length > 0) {
       await axios({
         url: "http://localhost:8000/orders",
         method: "POST",
+        headers: {
+          Authorization: "Bearer " + (user && user.token),
+        },
         data: { user, cart },
+        
       });
       dispatch(removeAll());
-      navigate("/checkOut");
+      navigate("/check-out");
       setShow(false);
-    }else if(!user){
-      navigate("login")
+    } else if (!user) {
+      navigate("login");
       setShow(false);
     }
   }
- 
+
   return (
     <>
       <NavLink onClick={handleShow}>
@@ -118,28 +129,35 @@ function Cart() {
                     alt="productImg"
                   />
                 </div>
-                <div className="col-6 p-3">
-                  <h2 className="d-flex fs-4">{item.name}</h2>
-                  <div className="d-flex align-items-center">
-                    <p className="item-number mb-0 text-center rounded px-2">
-                      {item.quantity}
-                    </p>
-                    <div className="mx-2">
-                      <button
-                        onClick={() => handlePlus(item.id)}
-                        style={{ backgroundColor: "white", border: "none" }}
-                      >
-                        <i className="bi bi-plus-circle-fill mx-2 plus-icon"></i>
-                      </button>
+                <div className="col-6 p-3 mt-2">
+                  <h2 className="d-flex fs-5 ">{item.name}</h2>
+                  <div className="d-flex align-items-center justify-content-between my-3">                 
                       <button
                         onClick={() => handleMinus(item.id)}
                         style={{ backgroundColor: "white", border: "none" }}
                       >
-                        <i className="bi bi-dash-circle-fill minus-icon"></i>
+                        <i className="bi bi-dash-circle change-icon"></i>
                       </button>
-                    </div>
+                     
+                     
+                    
+
+                    <p className="item-number mb-0 text-center rounded px-3">
+                      {item.quantity}
+                    </p>
+                    <button
+                      onClick={() => handlePlus(item.id)}
+                      style={{ backgroundColor: "white", border: "none" }}
+                    >
+                      <i className="bi bi-plus-circle-fill change-icon"></i>
+                    </button>
                   </div>
-                  <p className="fs-6">US$ {item.price}</p>
+                  <div className="d-flex align-items-center justify-content-between">
+                  <p className="mb-0 item-price" >US$ {item.price}</p>
+                  <button style={{ backgroundColor: "white", border: "none" }}>
+                  <i className="bi bi-trash3 cart-icon"  onClick={()=>handleDelete(item.id)}></i>
+                  </button>
+                  </div>
                 </div>
               </div>
             ))}

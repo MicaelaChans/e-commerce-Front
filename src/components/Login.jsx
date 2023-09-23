@@ -35,11 +35,13 @@ function Login() {
       if (response.data.token) {
         const id = jwt(response.data.token).sub;
         const email = jwt(response.data.token).email;
+        const role = jwt(response.data.token).role;
         dispatch(
           login({
             token: response.data.token,
             id,
             email,
+            role,
           })
         );
         localStorage.setItem("showLoginToast", "true");

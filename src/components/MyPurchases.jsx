@@ -23,6 +23,9 @@ useEffect(() => {
     const response = await axios({
       method: "GET",
       url: `http://localhost:8000/orders`,
+      headers: {
+        Authorization: "Bearer " + (user && user.token),
+      },
     });
     setOrders(response.data);
   };
@@ -31,7 +34,7 @@ useEffect(() => {
 
 if(orders.length > 0 && user != null){
   for(let i=0; i<orders.length; i++){   
-    if(orders[i].user.id == user.id){ 
+    if(orders[i].user.id == user.id && orders[i].state != "Pending"){ 
       for(let j=0; j<orders[i].products.length; j++){
         productsOfUser.push({
           orderId: orders[i].id, 
@@ -47,17 +50,17 @@ if(orders.length > 0 && user != null){
   }
 }
 
-return orders[0] && ( (
+return productsOfUser[0] ? ( (
   <div>
   <div className="container mb-5" style={{marginTop:"160px"}}>
    <h1 className="mx-3 title">My Purchases</h1>
    <div className="row">
     <div className="col">
-      <div className="mt-5  border rounded-3 shadow d-flex align-items-center justify-content-between p-3">
+      <div className="mt-5  border rounded-3 shadow d-flex justify-content-center p-3">
         
-        <i className="bi bi-star-fill star-icon "></i>
+        
         <h4 className="mb-0 mx-3 text-center">You purchased {productsOfUser.length} products</h4>
-        <i className="bi bi-star-fill star-icon "></i>
+        
         </div>
      
       {productsOfUser.map((product, id = product.id) => (
@@ -115,7 +118,18 @@ return orders[0] && ( (
 
   <Footer/>
   </div>
-  ));
+  ) ) : ( <div className="container mb-5" style={{marginTop:"160px"}}>
+  <h1 className="mx-3 title">My Purchases</h1>
+  <div className="row">
+   <div className="col">
+     <div className="mt-5  border rounded-3 shadow d-flex justify-content-center p-3">   
+       <h4 className="mb-0 mx-3 text-center">You purchased {productsOfUser.length} products</h4>
+       </div>
+       </div>
+       </div>
+     </div>
+
+        );
 }
 
 export default Register;

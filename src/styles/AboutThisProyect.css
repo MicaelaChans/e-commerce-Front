@@ -42,13 +42,6 @@
   height: auto;
 }
 
-.hop {
-  transition: 0.7s;
-}
-.hop:hover {
-  transform: scale(1.1);
-}
-
 @media (max-width: 576px) {
   .background-aboutProject {
     text-align: center;
