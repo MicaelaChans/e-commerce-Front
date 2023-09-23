@@ -80,6 +80,7 @@ function Cart() {
       }
     }
   }
+  
   async function handleCheckOut() {
     if (user && cart.length > 0) {
       await axios({
@@ -89,7 +90,6 @@ function Cart() {
           Authorization: "Bearer " + (user && user.token),
         },
         data: { user, cart },
-        
       });
       dispatch(removeAll());
       navigate("/check-out");
@@ -131,16 +131,13 @@ function Cart() {
                 </div>
                 <div className="col-6 p-3 mt-2">
                   <h2 className="d-flex fs-5 ">{item.name}</h2>
-                  <div className="d-flex align-items-center justify-content-between my-3">                 
-                      <button
-                        onClick={() => handleMinus(item.id)}
-                        style={{ backgroundColor: "white", border: "none" }}
-                      >
-                        <i className="bi bi-dash-circle change-icon"></i>
-                      </button>
-                     
-                     
-                    
+                  <div className="d-flex align-items-center justify-content-between my-3">
+                    <button
+                      onClick={() => handleMinus(item.id)}
+                      style={{ backgroundColor: "white", border: "none" }}
+                    >
+                      <i className="bi bi-dash-circle change-icon"></i>
+                    </button>
 
                     <p className="item-number mb-0 text-center rounded px-3">
                       {item.quantity}
@@ -153,10 +150,15 @@ function Cart() {
                     </button>
                   </div>
                   <div className="d-flex align-items-center justify-content-between">
-                  <p className="mb-0 item-price" >US$ {item.price}</p>
-                  <button style={{ backgroundColor: "white", border: "none" }}>
-                  <i className="bi bi-trash3 cart-icon"  onClick={()=>handleDelete(item.id)}></i>
-                  </button>
+                    <p className="mb-0 item-price">US$ {item.price}</p>
+                    <button
+                      style={{ backgroundColor: "white", border: "none" }}
+                    >
+                      <i
+                        className="bi bi-trash3 cart-icon"
+                        onClick={() => handleDelete(item.id)}
+                      ></i>
+                    </button>
                   </div>
                 </div>
               </div>

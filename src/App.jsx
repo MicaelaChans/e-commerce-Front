@@ -24,11 +24,11 @@ import CreditCard from "./components/partials/CreditCard";
 function App() {
   return (
     <div>
-      <Link to={"/aboutThisProject"}>
+      {/* <Link to={"/aboutThisProject"}>
         <button className="rounded-top about-this-project-btn">
           About this project
         </button>
-      </Link>
+      </Link> */}
       <NavBar />
       <ScrollToTop />
       <Routes>
@@ -56,7 +56,7 @@ function App() {
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/my-purchases" element={<MyPurchases />} />
         <Route
-          path="/checkOut"
+          path="/check-Out"
           element={
             <CheckOut>
               <CreditCard />
