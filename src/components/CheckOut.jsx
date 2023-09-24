@@ -4,12 +4,46 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { format } from "date-fns";
 import { Link, useNavigate } from "react-router-dom";
+
 function CheckOut(props) {
   const [orders, setOrders] = useState([]);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const [paid, setPaid] = useState(false);
   const navigate = useNavigate();
+  const [showAddressForm, setShowAddressForm] = useState("");
+  const [showCreditCard, setShowCreditCard] = useState("");
+  const [city, setCity] = useState("");
+  const [address, setAddress] = useState("");
+  const [doorNumber, setDoorNumber] = useState("");
+  const [apartment, setApartment] = useState("");
+  const cartShow = [];
+  const cart = useSelector((state) => state.cart);
+  let totalPrice = 0;
+  let isProduct = false;
+  let cartNumber = cart.length;
+
+  for (let i = 0; i < cart.length; i++) {
+    totalPrice += cart[i].price;
+  }
+  for (let i = 0; i < cart.length; i++) {
+    for (let j = 0; j < cartShow.length; j++) {
+      if (cartShow[j]) {
+        if (cartShow[j].id == cart[i].id) {
+          cartShow[j].quantity++;
+          isProduct = true;
+        }
+      } else {
+        cartShow.push({ ...cart[i] });
+        isProduct = true;
+      }
+    }
+    if (!isProduct) {
+      cartShow.push({ ...cart[i] });
+    }
+    isProduct = false;
+  }
+
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
@@ -46,6 +80,9 @@ function CheckOut(props) {
       }
     }
   }
+  function handleAddress() {
+    setShowAddressForm(!showAddressForm);
+  }
 
   async function handleDelete(id) {
     if (user) {
@@ -65,11 +102,23 @@ function CheckOut(props) {
     }
   }
 
+  async function handleNewAddress(e) {
+    e.preventDefault();
+    const response = await axios({
+      method: "PATCH",
+      url: `http://localhost:8000/users/${user.id}`,
+      data: { city, address, doorNumber, apartment },
+    });
+  }
+
+  function handleCreditCard() {
+    setShowCreditCard(!showCreditCard);
+  }
   return (
     unpaidOrders && (
       <div className="container container-checkOut">
         <div className="title-check-out">
-          <h1>Paiment and delivery</h1>
+          <h1>Payment and delivery</h1>
         </div>
         <div className="row check-row">
           <div className="col-6 col-check-out-cart">
@@ -97,7 +146,6 @@ function CheckOut(props) {
                         </div>
                         <div>
                           <h4>{product.name}</h4>
-
                           <p className="fs-5">US${product.price}</p>
                         </div>
                       </div>
@@ -109,7 +157,7 @@ function CheckOut(props) {
                   <div className="payment-info d-flex justify-content-around">
                     <div className="d-flex">
                       <h6 className="mx-3">Total order price:</h6>
-                      <p>US$ tanto</p>
+                      <p>{totalPrice}</p>
                     </div>
                   </div>
                 </div>
@@ -128,39 +176,75 @@ function CheckOut(props) {
             <div className="">
               <div className="rounded-3 shadow p-3">
                 <h4>Delivery address</h4>
-
-                <form className="form-check-out" action="">
-                  <div className="d-flex justify-content-between">
-                    <label htmlFor="">
-                      {" "}
-                      City{" "}
-                      <input className="border-0 border-bottom" type="text" />
-                    </label>
-                    <label htmlFor="">
-                      {" "}
-                      Adress{" "}
-                      <input className="border-0 border-bottom" type="text" />
-                    </label>
+                <div>
+                  <h6>Your address:</h6>
+                  <p>{user.address}</p>
+                </div>
+                <div>
+                  {showAddressForm ? (
+                    <button onClick={handleAddress} className="btn btn-info">
+                      Another directiopn?
+                    </button>
+                  ) : (
+                    <button onClick={handleAddress} className="btn btn-info">
+                      Another directiopn?
+                    </button>
+                  )}
+                </div>
+                {showAddressForm && (
+                  <div>
+                    <h6>Delivery address:</h6>
+                    <form className="form-check-out" action="">
+                      <div className="d-flex justify-content-between">
+                        <label htmlFor="city">
+                          City
+                          <input
+                            className="border-0 border-bottom"
+                            type="text"
+                            id="city"
+                            value={setCity}
+                          />
+                        </label>
+                        <label htmlFor="address">
+                          Address
+                          <input
+                            className="border-0 border-bottom"
+                            type="text"
+                            id="address"
+                            value={setAddress}
+                          />
+                        </label>
+                      </div>
+                      <div className="d-flex">
+                        <label className="mt-3" htmlFor="doorNumber">
+                          Door Number
+                          <input
+                            className="w-100 d-block border-0 border-bottom"
+                            type="number"
+                            id="doorNumber"
+                            maxLength="16"
+                            value={setDoorNumber}
+                          />
+                        </label>
+                        <label className="mt-3" htmlFor="apartment">
+                          Apartment
+                          <input
+                            className="w-100 d-block border-0 border-bottom"
+                            type="number"
+                            id="apartment"
+                            value={setApartment}
+                          />
+                        </label>
+                      </div>
+                      <button
+                        onClick={(e) => handleNewAddress(e)}
+                        className="btn btn-danger"
+                      >
+                        set your new delivery addres
+                      </button>
+                    </form>
                   </div>
-                  <div className="d-flex">
-                    <label className="mt-3" htmlFor="">
-                      {" "}
-                      Door Number{" "}
-                      <input
-                        className="w-100 d-block border-0 border-bottom"
-                        type="number"
-                      />
-                    </label>
-                    <label className="mt-3" htmlFor="">
-                      {" "}
-                      Apartment{" "}
-                      <input
-                        className="w-100 d-block border-0 border-bottom"
-                        type="number"
-                      />
-                    </label>
-                  </div>
-                </form>
+                )}
               </div>
               <div className="rounded-3 shadow p-3 mt-4">
                 <div>
@@ -168,11 +252,13 @@ function CheckOut(props) {
                 </div>
                 <div className="d-flex justify-content-around payment-container my-3">
                   <img
+                    onClick={handleCreditCard}
                     src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
                     alt=""
                     className="payment-method-img"
                   />
                   <img
+                    onClick={handleCreditCard}
                     className="payment-method-img"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQORaeUdkq1oMG93bqTBXI1elJPOxG4bB40WixXXAmsOhJONUR-nGv1eqORZZZhiCjuBzA&usqp=CAU"
                     alt=""
@@ -188,7 +274,7 @@ function CheckOut(props) {
                     className="payment-method-img-mp"
                   />
                 </div>
-                {props.children}
+                {showCreditCard ? <div></div> : <div>{props.children}</div>}
               </div>
             </div>
           </div>

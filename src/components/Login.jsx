@@ -16,11 +16,11 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (localStorage.getItem('showDeletionToast') === 'true') {
-        toast.success("Account deleted successfully.");
-        localStorage.removeItem('showDeletionToast');
+    if (localStorage.getItem("showDeletionToast") === "true") {
+      toast.success("Account deleted successfully.");
+      localStorage.removeItem("showDeletionToast");
     }
-}, []);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,12 +36,14 @@ function Login() {
         const id = jwt(response.data.token).sub;
         const email = jwt(response.data.token).email;
         const role = jwt(response.data.token).role;
+        const address = jwt(response.data.token).address;
         dispatch(
           login({
             token: response.data.token,
             id,
             email,
             role,
+            address,
           })
         );
         localStorage.setItem("showLoginToast", "true");
@@ -77,9 +79,8 @@ function Login() {
               />
             </div>
             <div className="col bg-body-tertiary py-5 px-5 px-lg-5 px-md-3 col-md-5 d-flex justify-content-center flex-column">
-              
               <h2 className="mb-5 pt-3">Login</h2>
-              <form  onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                   <input
                     type="email"
@@ -103,24 +104,27 @@ function Login() {
                     required
                   />
                 </div>
-                
+
                 <div>
-                <div className="d-grid gap-2 pb-3 mt-5">
-                  <button
-                    className="btn btn-light border border-black rounded-5"
-                    type="submit"
-                  >
-                    Login
-                  </button>
-                </div>
+                  <div className="d-grid gap-2 pb-3 mt-5">
+                    <button
+                      className="btn btn-light border border-black rounded-5"
+                      type="submit"
+                    >
+                      Login
+                    </button>
+                  </div>
                 </div>
               </form>
               <p className="text-center mt-3">
                 Don't have an account?
                 <Link
                   to="/register"
-                  
-                  style={{ color: "blue", textDecoration: "none", display:"block" }}
+                  style={{
+                    color: "blue",
+                    textDecoration: "none",
+                    display: "block",
+                  }}
                 >
                   Sign Up
                 </Link>
@@ -129,12 +133,15 @@ function Login() {
                 Forgot password?
                 <Link
                   to="/forgot-password"
-                  
-                  style={{ color: "blue", textDecoration: "none",display:"block" }}
+                  style={{
+                    color: "blue",
+                    textDecoration: "none",
+                    display: "block",
+                  }}
                 >
                   Recover password
                 </Link>
-              </p>       
+              </p>
             </div>
           </div>
         </div>

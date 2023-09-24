@@ -10,7 +10,7 @@ import {
   removeOneItem,
 } from "../redux/cartSlice";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const navigate = useNavigate();
@@ -80,7 +80,7 @@ function Cart() {
       }
     }
   }
-  
+
   async function handleCheckOut() {
     if (user && cart.length > 0) {
       await axios({

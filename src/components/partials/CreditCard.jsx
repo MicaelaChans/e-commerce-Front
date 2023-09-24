@@ -23,59 +23,55 @@ const CreditCard = () => {
   return (
     <>
       <form>
-        <div className="d-flex justify-content-between">
+        <div className="d-flex">
           <div>
-            <label htmlFor="">
-              Card Number{" "}
-              <input
-                className="border-0 border-bottom"
-                type="number"
-                name="number"
-                value={state.number}
-                onChange={handleInputChange}
-                onFocus={handleInputFocus}
-              />
-            </label>
-            <label className="mt-3" htmlFor="">
-              Cardholder Name
-              <input
-                className="border-0 border-bottom"
-                type="text"
-                name="name"
-                value={state.name}
-                onChange={handleInputChange}
-                onFocus={handleInputFocus}
-              />
-            </label>
+            <label htmlFor="number">Card Number</label>
+            <input
+             className="d-block"
+              type="number"
+              name="number"
+              id="number"
+              value={state.number}
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+              maxLength="16"
+            />
+            <label htmlFor="name">Cardholder Name</label>
+            <input
+             className="d-block"
+              type="text"
+              name="name"
+              id="name"
+              value={state.name}
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+            />
           </div>
           <div>
-            <label htmlFor="">
-              {" "}
-              MM/YY Expiry
-              <input
-                className="border-0 border-bottom"
-                type="number"
-                name="expiry"
-                value={state.expiry}
-                onChange={handleInputChange}
-                onFocus={handleInputFocus}
-              />
-            </label>
-            <label className="mt-3" htmlFor="">
-              {" "}
-              CVC{" "}
-              <input
-                className="border-0 border-bottom"
-                type="number"
-                value={state.cvc}
-                onChange={handleInputChange}
-                onFocus={handleInputFocus}
-              />
-            </label>
+            <label htmlFor="expiry">MM/YY Expiry</label>
+            <input
+             className="d-block"
+              type="number"
+              name="expiry"
+              id="expiry"
+              value={state.expiry}
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+            />
+            <label htmlFor="cvc">CVC{"             "}</label>
+            <input
+              className="d-block"
+              type="number"
+              name="cvc"
+              id="cvc"
+              value={state.cvc}
+              onChange={handleInputChange}
+              onFocus={handleInputFocus}
+            />
           </div>
         </div>
       </form>
-      <div className="credit-container m-4">
+      <div className="credit-container mt-3">
         <Cards
           number={state.number}
           expiry={state.expiry}
@@ -89,47 +85,3 @@ const CreditCard = () => {
 };
 
 export default CreditCard;
-
-/*
-<div className="mt-3 border rounded-3 shadow p-3"
-                    key={order.id}
-                  >
-                    <div className="d-flex justify-content-between align-items-center ">
-                      <p className="mb-0">
-                        {format(new Date(order.createdAt), "MMMM dd yyyy")}
-                      </p>
-                      <p className="mb-0 order-reference">
-                        Order:{" "}
-                        <span style={{ fontWeight: "600" }}>{order.id}</span>{" "}
-                      </p>
-                    </div>
-                    <hr />
-                    <div className="order-item">
-                      {order.products.map((product) => (
-                        <div key={product.id}>
-                          <div className="product-item d-flex justify-content-around">
-                            <div>
-                              <img
-                                className="img-check-out"
-                                src={product.image}
-                                alt={product.name}
-                              />
-                            </div>
-                            <div className="product-details">
-                              <h3>{product.name}</h3>
-                            </div>
-
-                            <div>
-                              <h4>Unit price:</h4>
-                              <p>US${product.price}</p>
-                              <p>Quantity: 1</p>
-                            </div>
-                            <div>
-                              <h6>Total Price:</h6>
-                              <p>Q x P</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-*/
