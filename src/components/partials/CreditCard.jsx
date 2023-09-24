@@ -27,7 +27,7 @@ const CreditCard = () => {
           <div>
             <label htmlFor="number">Card Number</label>
             <input
-             className="d-block"
+              className="d-block responsive-input" 
               type="number"
               name="number"
               id="number"
@@ -38,7 +38,7 @@ const CreditCard = () => {
             />
             <label htmlFor="name">Cardholder Name</label>
             <input
-             className="d-block"
+              className="d-block responsive-input" 
               type="text"
               name="name"
               id="name"
@@ -50,7 +50,7 @@ const CreditCard = () => {
           <div>
             <label htmlFor="expiry">MM/YY Expiry</label>
             <input
-             className="d-block"
+              className="d-block responsive-input"
               type="number"
               name="expiry"
               id="expiry"
@@ -58,9 +58,9 @@ const CreditCard = () => {
               onChange={handleInputChange}
               onFocus={handleInputFocus}
             />
-            <label htmlFor="cvc">CVC{"             "}</label>
+            <label htmlFor="cvc">CVC</label>
             <input
-              className="d-block"
+              className="d-block responsive-input" 
               type="number"
               name="cvc"
               id="cvc"

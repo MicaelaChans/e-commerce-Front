@@ -117,11 +117,11 @@ function CheckOut(props) {
   return (
     unpaidOrders && (
       <div className="container container-checkOut">
-        <div className="title-check-out">
+        <div className="text-center">
           <h1>Payment and delivery</h1>
         </div>
         <div className="row check-row">
-          <div className="col-6 col-check-out-cart">
+          <div className="col-lg-6 col-12 col-check-out-cart">
             {unpaidOrders.map((order) => (
               <div className="mt-3 border rounded-3 shadow p-3" key={order.id}>
                 <div className="d-flex justify-content-between align-items-center ">
@@ -172,7 +172,7 @@ function CheckOut(props) {
               </div>
             ))}
           </div>
-          <div className="col-6 col-of-action">
+          <div className="col-lg-6 col-12col-of-action">
             <div className="">
               <div className="rounded-3 shadow p-3">
                 <h4>Delivery address</h4>
@@ -192,10 +192,10 @@ function CheckOut(props) {
                   )}
                 </div>
                 {showAddressForm && (
-                  <div>
+                  <div className="form-check-out">
                     <h6>Delivery address:</h6>
                     <form className="form-check-out" action="">
-                      <div className="d-flex justify-content-between">
+                      <div className="d-flex justify-content-center form-container-check-out">
                         <label htmlFor="city">
                           City
                           <input

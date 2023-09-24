@@ -40,6 +40,7 @@ function ProductsList() {
 
   const handleAddItem = (item) => {
     dispatch(
+      
       addItem({
         id: item.id,
         image: item.image,
@@ -69,7 +70,7 @@ function ProductsList() {
       products.filter((product) => product.category.name == "pellet")
     );
   }
-
+  console.log(products);
   return (
     <div>
       <div className="banner-pellet-stoves d-none d-sm-flex align-items-center">
@@ -94,23 +95,25 @@ function ProductsList() {
         <h4 className="mx-4 mb-0">Filter by model:</h4>
         <div>
           <button className="filter-button">
-          <h5 className="mb-0 mx-3 filter-word" onClick={() => decoFilter()}>
-            Deco 
-          </h5>
+            <h5 className="mb-0 mx-3 filter-word" onClick={() => decoFilter()}>
+              Deco
+            </h5>
           </button>
-          </div>
-          <div>
+        </div>
+        <div>
           <button className="filter-button">
-          <h5 className="mb-0 mx-3 filter-word"  onClick={() => aduroFilter()}>
-            Aduro
-          </h5>
+            <h5 className="mb-0 mx-3 filter-word" onClick={() => aduroFilter()}>
+              Aduro
+            </h5>
           </button>
-          </div>
-          <div>
+        </div>
+        <div>
           <button className="filter-button">
-          <h5 className="mb-0 mx-3 filter-word" onClick={() => allFilter()}>All</h5>
+            <h5 className="mb-0 mx-3 filter-word" onClick={() => allFilter()}>
+              All
+            </h5>
           </button>
-          </div>
+        </div>
       </div>
       <div className="container">
         <div className="text-center d-block d-sm-none">
@@ -147,7 +150,6 @@ function ProductsList() {
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-
                   <div className="d-flex flex-column justify-content-around align-items-center">
                     <hr className="hr-product-wood-top" />
                     <div className="d-flex justify-content-center align-items-center my-3 p-sizes-product">
