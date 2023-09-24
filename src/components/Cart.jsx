@@ -171,7 +171,7 @@ function Cart() {
                 </div>
                
                 <div style={{color: "red", display: `${item.addMessage}`}} className="mx-4 mb-2">
-                  <p>Atention! This product has reached the limit of devices available in stock. You can not add any other product of this kind to the cart.</p>
+                  <p>Atention! This product has reached the limit of items availables in stock. You can not add any other item of this kind to the cart.</p>
                 </div>
               </div>
               
