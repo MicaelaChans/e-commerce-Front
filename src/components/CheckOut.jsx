@@ -17,32 +17,10 @@ function CheckOut(props) {
   const [address, setAddress] = useState("");
   const [doorNumber, setDoorNumber] = useState("");
   const [apartment, setApartment] = useState("");
+  const cart = [];
   const cartShow = [];
-  const cart = useSelector((state) => state.cart);
+  let isProd = false;
   let totalPrice = 0;
-  let isProduct = false;
-  let cartNumber = cart.length;
-
-  for (let i = 0; i < cart.length; i++) {
-    totalPrice += cart[i].price;
-  }
-  for (let i = 0; i < cart.length; i++) {
-    for (let j = 0; j < cartShow.length; j++) {
-      if (cartShow[j]) {
-        if (cartShow[j].id == cart[i].id) {
-          cartShow[j].quantity++;
-          isProduct = true;
-        }
-      } else {
-        cartShow.push({ ...cart[i] });
-        isProduct = true;
-      }
-    }
-    if (!isProduct) {
-      cartShow.push({ ...cart[i] });
-    }
-    isProduct = false;
-  }
 
   useEffect(() => {
     const getOrders = async () => {
@@ -57,11 +35,38 @@ function CheckOut(props) {
     };
     getOrders();
   }, [paid]);
-  const unpaidOrders =
+
+  let unpaidOrders =
     orders.length > 0 &&
     orders.filter(
       (order) => order.state === "Pending" && order.user.id === user.id
     );
+  for (let i = 0; i < unpaidOrders.length; i++) {
+    for (let j = 0; j < unpaidOrders[i].products.length; j++) {
+      const prod = { ...unpaidOrders[i].products[j] };
+      prod.quantity = 1;
+      prod.createdAt = unpaidOrders[i].createdAt;
+      cart.push(prod);
+    }
+  }
+  for (let i = 0; i < cart.length; i++) {
+    if (cartShow.length > 0) {
+      for (let j = 0; j < cartShow.length; j++) {
+        if (cart[i].id == cartShow[j].id) {
+          cartShow[j].quantity++;
+          isProd = true;
+        }
+      }
+      if (!isProd) {
+        cartShow.push(cart[i]);
+      }
+    } else {
+      cartShow.push(cart[i]);
+    }
+    isProd = false;
+  }
+
+  unpaidOrders.length > 0 && console.log(cartShow);
 
   async function handlePay(id) {
     if (user) {
@@ -74,12 +79,12 @@ function CheckOut(props) {
           },
         });
         setPaid(!paid);
-        navigate("/check-out");
       } catch (error) {
         console.error("Error al pagar la orden:", error);
       }
     }
   }
+
   function handleAddress() {
     setShowAddressForm(!showAddressForm);
   }
@@ -134,7 +139,7 @@ function CheckOut(props) {
                 </div>
                 <hr />
                 <div className="order-item">
-                  {order.products.map((product) => (
+                  {cartShow.map((product) => (
                     <div key={product.id}>
                       <div className="product-item d-flex justify-content-around">
                         <div>
