@@ -47,6 +47,7 @@ function ProductsList() {
         price: item.price,
         quantity: 1,
         rating: [0],
+        stock: item.stock
       })
     );
     toast.success(`${item.name} successfully added to cart.`);

@@ -80,7 +80,7 @@ function Cart() {
       }
     }
   }
-
+  console.log(cart) 
   async function handleCheckOut() {
     if (user && cart.length > 0) {
       await axios({

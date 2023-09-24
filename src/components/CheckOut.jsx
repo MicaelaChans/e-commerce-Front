@@ -68,7 +68,6 @@ function CheckOut(props) {
     isProd = false;
   }
 
-  unpaidOrders.length > 0 && console.log(cartShow);
 
   async function handlePay(id) {
     if (user) {

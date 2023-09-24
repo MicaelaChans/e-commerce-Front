@@ -48,6 +48,7 @@ function ProductsList() {
         price: item.price,
         quantity: 1,
         rating: [0],
+        stock: item.stock
       })
     );
     toast.success(`${item.name} successfully added to cart.`);
@@ -70,7 +71,6 @@ function ProductsList() {
       products.filter((product) => product.category.name == "pellet")
     );
   }
-  console.log(products);
   return (
     <div>
       <div className="banner-pellet-stoves d-none d-sm-flex align-items-center">
