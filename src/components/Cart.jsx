@@ -83,7 +83,6 @@ function Cart() {
 
   async function handleCheckOut() {
     if (user && cart.length > 0) {
-      console.log("entramos en llamada");
       await axios({
         url: "http://localhost:8000/orders",
         method: "POST",
@@ -92,7 +91,6 @@ function Cart() {
         },
         data: { user, cart },
       });
-      console.log("entramos en llamada");
       dispatch(removeAll());
       navigate("/check-out");
       setShow(false);
