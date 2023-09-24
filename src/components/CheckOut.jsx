@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { format } from "date-fns";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function CheckOut(props) {
   const [orders, setOrders] = useState([]);
@@ -11,8 +11,8 @@ function CheckOut(props) {
   const user = useSelector((state) => state.user);
   const [paid, setPaid] = useState(false);
   const navigate = useNavigate();
-  const [showAddressForm, setShowAddressForm] = useState("");
-  const [showCreditCard, setShowCreditCard] = useState("");
+  const [showAddressForm, setShowAddressForm] = useState(false);
+  const [showCreditCard, setShowCreditCard] = useState(false);
   const [city, setCity] = useState("");
   const [address, setAddress] = useState("");
   const [doorNumber, setDoorNumber] = useState("");
@@ -21,6 +21,7 @@ function CheckOut(props) {
   const cartShow = [];
   let isProd = false;
   let totalPrice = 0;
+  let unpaidOrders = [];
 
   useEffect(() => {
     const getOrders = async () => {
@@ -35,12 +36,12 @@ function CheckOut(props) {
     };
     getOrders();
   }, [paid]);
+  if (orders.length > 0) {
+    console.log(orders);
+    console.log(user.id);
+   unpaidOrders = orders.filter((order) => order.state === "Pending" && order.user.id == user.id);
+  }
 
-  let unpaidOrders =
-    orders.length > 0 &&
-    orders.filter(
-      (order) => order.state === "Pending" && order.user.id === user.id
-    );
   for (let i = 0; i < unpaidOrders.length; i++) {
     for (let j = 0; j < unpaidOrders[i].products.length; j++) {
       const prod = { ...unpaidOrders[i].products[j] };
@@ -48,6 +49,9 @@ function CheckOut(props) {
       prod.createdAt = unpaidOrders[i].createdAt;
       cart.push(prod);
     }
+  }
+  for (let i = 0; i < cart.length; i++) {
+    totalPrice += cart[i].price;
   }
   for (let i = 0; i < cart.length; i++) {
     if (cartShow.length > 0) {
@@ -82,6 +86,7 @@ function CheckOut(props) {
       } catch (error) {
         console.error("Error al pagar la orden:", error);
       }
+      navigate("/");
     }
   }
 
@@ -151,7 +156,10 @@ function CheckOut(props) {
                         </div>
                         <div>
                           <h4>{product.name}</h4>
-                          <p className="fs-5">US${product.price}</p>
+                          <p>Quantity x {product.quantity}</p>
+                          <p className="fs-5">
+                            US${product.price * product.quantity}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -161,8 +169,7 @@ function CheckOut(props) {
                 <div>
                   <div className="payment-info d-flex justify-content-around">
                     <div className="d-flex">
-                      <h6 className="mx-3">Total order price:</h6>
-                      <p>{totalPrice}</p>
+                      <h5 className="mx-3">Total order price: {totalPrice}</h5>
                     </div>
                   </div>
                 </div>
@@ -177,7 +184,7 @@ function CheckOut(props) {
               </div>
             ))}
           </div>
-          <div className="col-lg-6 col-12col-of-action">
+          <div className="col-lg-6 col-12 col-of-action">
             <div className="">
               <div className="rounded-3 shadow p-3">
                 <h4>Delivery address</h4>
@@ -187,12 +194,18 @@ function CheckOut(props) {
                 </div>
                 <div>
                   {showAddressForm ? (
-                    <button onClick={handleAddress} className="btn btn-info">
-                      Another directiopn?
+                    <button
+                      onClick={handleAddress}
+                      className=" button-check-out-address"
+                    >
+                      Another direction?
                     </button>
                   ) : (
-                    <button onClick={handleAddress} className="btn btn-info">
-                      Another directiopn?
+                    <button
+                      onClick={handleAddress}
+                      className=" button-check-out-address"
+                    >
+                      Another direction?
                     </button>
                   )}
                 </div>
@@ -208,6 +221,7 @@ function CheckOut(props) {
                             type="text"
                             id="city"
                             value={setCity}
+                            onChange={setCity}
                           />
                         </label>
                         <label htmlFor="address">
@@ -228,6 +242,7 @@ function CheckOut(props) {
                             type="number"
                             id="doorNumber"
                             maxLength="16"
+                            onChange={setDoorNumber}
                             value={setDoorNumber}
                           />
                         </label>
@@ -238,12 +253,13 @@ function CheckOut(props) {
                             type="number"
                             id="apartment"
                             value={setApartment}
+                            onChange={setApartment}
                           />
                         </label>
                       </div>
                       <button
                         onClick={(e) => handleNewAddress(e)}
-                        className="btn btn-danger"
+                        className="btn btn-danger mt-2"
                       >
                         set your new delivery addres
                       </button>

@@ -50,7 +50,7 @@ const CreditCard = () => {
           <div>
             <label htmlFor="expiry">MM/YY Expiry</label>
             <input
-              className="d-block responsive-input"
+              className="d-block responsive-input border-bottom border-0"
               type="number"
               name="expiry"
               id="expiry"
