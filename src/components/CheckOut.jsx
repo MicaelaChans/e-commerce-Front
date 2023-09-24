@@ -21,7 +21,6 @@ function CheckOut(props) {
   const cartShow = [];
   let isProd = false;
   let totalPrice = 0;
-  let unpaidOrders = [];
 
   useEffect(() => {
     const getOrders = async () => {
@@ -36,16 +35,12 @@ function CheckOut(props) {
     };
     getOrders();
   }, [paid]);
-  if(orders.length > 0){
-    console.log(orders[0].user.id) 
-    console.log(user.id) 
+
+  let unpaidOrders =
+    orders.length > 0 &&
     orders.filter(
-      (order) => order.user.id == user.id 
+      (order) => order.state === "Pending" && order.user.id === user.id
     );
-  }
-  
-    
-   
   for (let i = 0; i < unpaidOrders.length; i++) {
     for (let j = 0; j < unpaidOrders[i].products.length; j++) {
       const prod = { ...unpaidOrders[i].products[j] };
