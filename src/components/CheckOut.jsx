@@ -37,8 +37,6 @@ function CheckOut(props) {
     getOrders();
   }, [paid]);
   if (orders.length > 0) {
-    console.log(orders);
-    console.log(user.id);
    unpaidOrders = orders.filter((order) => order.state === "Pending" && order.user.id == user.id);
   }
 
