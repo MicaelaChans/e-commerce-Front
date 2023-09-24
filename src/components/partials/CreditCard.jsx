@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
+import "../../styles/CreditCard.css";
 
 const CreditCard = () => {
   const [state, setState] = useState({
@@ -27,7 +28,7 @@ const CreditCard = () => {
           <div>
             <label htmlFor="number">Card Number</label>
             <input
-              className="d-block responsive-input" 
+              className="d-block responsive-input"
               type="number"
               name="number"
               id="number"
@@ -38,7 +39,7 @@ const CreditCard = () => {
             />
             <label htmlFor="name">Cardholder Name</label>
             <input
-              className="d-block responsive-input" 
+              className="d-block responsive-input"
               type="text"
               name="name"
               id="name"
@@ -60,7 +61,7 @@ const CreditCard = () => {
             />
             <label htmlFor="cvc">CVC</label>
             <input
-              className="d-block responsive-input" 
+              className="d-block responsive-input"
               type="number"
               name="cvc"
               id="cvc"
