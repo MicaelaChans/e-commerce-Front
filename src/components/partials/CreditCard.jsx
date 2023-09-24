@@ -38,7 +38,7 @@ const CreditCard = () => {
             />
             <label htmlFor="name">Cardholder Name</label>
             <input
-              className="d-block responsive-input" 
+              className="border-bottom border-0 d-block responsive-input"
               type="text"
               name="name"
               id="name"
@@ -60,7 +60,7 @@ const CreditCard = () => {
             />
             <label htmlFor="cvc">CVC</label>
             <input
-              className="d-block responsive-input" 
+              className="border-bottom border-0 d-block responsive-input"
               type="number"
               name="cvc"
               id="cvc"
