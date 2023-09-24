@@ -39,7 +39,7 @@ function CheckOut(props) {
   if (orders.length > 0) {
    unpaidOrders = orders.filter((order) => order.state === "Pending" && order.user.id == user.id);
   }
-
+ 
   for (let i = 0; i < unpaidOrders.length; i++) {
     for (let j = 0; j < unpaidOrders[i].products.length; j++) {
       const prod = { ...unpaidOrders[i].products[j] };
