@@ -110,19 +110,19 @@ function Register() {
                   <div className="d-flex flex-column ">
                     <div className="d-flex flex-column">
                       <Link to={`/products/${product.id}`}>
-                        <button className=" d-block btn buy-button mb-2 mb-sm-0 mx-0 mx-sm-2">
+                        <button className="  btn buy-button w-100 mb-2">
                           Buy again
                         </button>
                       </Link>
 
                       <button
                         onClick={() => handleRate(product)}
-                        className=" d-block btn rate-button mb-2 mb-sm-0 mx-0 mx-sm-2 mt-2"
+                        className="  btn rate-button w-100"
                       >
                         Rate
                       </button>
                     </div>
-                    <div className="d-block ms-2">
+                    <div >
                       <Rating
                         onClick={handleRating}
                         ratingValue={rating}

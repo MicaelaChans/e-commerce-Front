@@ -134,6 +134,7 @@ function NavBar() {
                   as={Link}
                   to={"/profile"}
                   style={{ display: `${displayProfile}` }}
+                  onClick={() => setExpanded(false)}
                 >
                   Profile
                 </NavDropdown.Item>
@@ -141,6 +142,7 @@ function NavBar() {
                   as={Link}
                   to={"/check-out"}
                   style={{ display: `${displayProfile}` }}
+                  onClick={() => setExpanded(false)}
                 >
                   Go to cart
                 </NavDropdown.Item>
