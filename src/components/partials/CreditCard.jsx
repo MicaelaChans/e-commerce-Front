@@ -23,8 +23,8 @@ const CreditCard = () => {
   return (
     <>
       <form>
-        <div className="d-flex">
-          <div>
+        <div className="d-flex justify-content-center">
+          <div className="me-5">
             <label htmlFor="number">Card Number</label>
             <input
               className="d-block responsive-input border-bottom border-0" 
@@ -71,7 +71,7 @@ const CreditCard = () => {
           </div>
         </div>
       </form>
-      <div className="credit-container mt-3">
+      <div className="credit-container mb-3 mt-3">
         <Cards
           number={state.number}
           expiry={state.expiry}

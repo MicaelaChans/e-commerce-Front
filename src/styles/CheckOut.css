@@ -1,6 +1,7 @@
+
 .container-checkOut {
   width: 85%;
-  margin-top: 10px;
+  margin: 40px auto;
 }
 .paiment-container {
   width: 554px;
@@ -34,6 +35,17 @@
 .form-check-out {
   border: solid 2px #0000;
 }
+.form-check-out label {
+  display: block;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+.form-check-out input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
 .date-check-out {
   font-size: 0.8rem;
 }
@@ -45,12 +57,74 @@
   height: 100%;
 }
 .payment-method-img-paypal {
-  margin-top: 12px;
-  height: 25px;
-  width: 36px;
+  margin-top: 10px;
+  height: 35px;
+  width: 45px;
+}
+.payment-method-img-common {
+  width: 70px;
+  height: 40px;
+  margin: 5px;
 }
 .payment-method-img-mp {
-  margin-top: 10px;
-  height: 27px;
-  width: 67px;
+  margin-top: 12px;
+  height: 32px;
+  width: 80px;
+}
+.selected-payment {
+  border: 2px solid #0da605;
+  border-radius: 3px;
+}
+
+.product-details {
+  flex-grow: 1;
+}
+.order-item {
+  margin: 15px 0;
+}
+
+.order-item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.order-item p {
+  font-size: 0.9rem;
+}
+
+.order-summary {
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-summary ul {
+  list-style-type: none;
+  padding: 0;
+  margin-left: 15px;
+}
+
+.order-summary ul li {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  font-size: 0.9rem;
+}
+
+.order-summary p {
+  padding: 5px 0;
+  font-size: 1rem;
+}
+
+.order-product-image {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+h4 {
+  font-size: 1.3rem;
 }
