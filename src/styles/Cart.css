@@ -34,13 +34,13 @@
   width: 100%;
 }
 
-.cart-container{
+.cart-container {
   position: relative;
   width: 25px;
 }
 
-.cart-number{
-  position:absolute;
+.cart-number {
+  position: absolute;
   top: 0%;
   left: 65%;
   background-color: red;
@@ -50,20 +50,24 @@
   font-weight: 500;
 }
 
-.cart-icon{
+.cart-icon {
   font-size: 1.5rem;
 }
 
-.item-number{
+.item-number {
   font-weight: 500;
   font-size: 1.6rem;
 }
 
-.change-icon{
- color: rgba(0, 0, 0, 0.829);
+.change-icon {
+  color: rgba(0, 0, 0, 0.829);
   font-size: 1.5rem;
 }
 
-.item-price{
+.item-price {
   font-size: 1.2rem;
+}
+
+.false-minus {
+  width: 24px;
 }
