@@ -21,6 +21,7 @@ function CheckOut(props) {
   const [apartment, setApartment] = useState("");
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
   const [updatedAddress, setUpdatedAddress] = useState("");
+  let noProdMsg = "none"
 
   let canBuy = true;
   const cart = [];
@@ -88,7 +89,7 @@ function CheckOut(props) {
       toast.error("Please select a payment method before proceeding.");
       return;
     }
-    if (user && canBuy) {
+    if (user && canBuy && cartShow.length > 0) {
       try {
         await axios({
           method: "PATCH",
@@ -110,7 +111,6 @@ function CheckOut(props) {
   }
 
   async function handleDelete(id) {
-   
       setPaid(!paid);
       try {
         await axios({
@@ -145,6 +145,13 @@ function CheckOut(props) {
     handleCreditCard();
     setSelectedPaymentMethod(type);
   };
+  
+  if(unpaidOrders[0] && unpaidOrders[0].products.length == 0){
+    noProdMsg = "block";
+  }else{
+    noProdMsg = "none";
+  }
+
   return (
     unpaidOrders && (
       <div className="container container-checkOut">
@@ -170,10 +177,13 @@ function CheckOut(props) {
                 </div>
                 <hr />
                 <div className="order-item">
+                <div style={{display: `${noProdMsg}`}}><h4 className="text-center fs-5">There are no products pending to be paid</h4></div>
                   {cartShow.map((product) => (
+                   
                     <div key={product.id}>
                       <div className="product-item mb-1 d-flex align-items-center">
                         <div className="product-image-container ms-4">
+                         
                           <img
                             className="img-check-out"
                             src={product.image}
