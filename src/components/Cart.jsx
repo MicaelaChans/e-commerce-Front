@@ -24,7 +24,6 @@ function Cart() {
   let cartNumber = cart.length;
   let totalPrice = 0;
   let isProduct = false;
-  const [aux, setAux] = useState(false);
   
 
   for (let i = 0; i < cart.length; i++) {
@@ -34,12 +33,10 @@ function Cart() {
     for (let j = 0; j < cartShow.length; j++) {
       if (cartShow[j]) {
         if (cartShow[j].id == cart[i].id && cartShow[j].stock > cartShow[j].quantity) {
-          cartShow[j].quantity++;
-          console.log(cartShow[j].quantity)
+          cartShow[j].quantity++;       
           cartShow[j].addMessage = "none"
           isProduct = true;      
         }if(cartShow[j].id == cart[i].id && cartShow[j].stock == cartShow[j].quantity){
-          console.log("entro")
           isProduct = true;
           cartShow[j].addMessage = "block"
         }

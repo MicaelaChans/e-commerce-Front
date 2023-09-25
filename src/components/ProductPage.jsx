@@ -28,16 +28,22 @@ function ProductPage() {
   const productFilter = products.filter((item) => item.id == params.id);
   const product = productFilter[0];
   const handleAddItem = (item) => {
-    dispatch(
-      addItem({
-        id: item.id,
-        image: item.image,
-        name: item.name,
-        price: item.price,
-        quantity: 1,
-        rating: [0],
-      })
-    );
+    if(item.stock > 0){
+      dispatch(
+        addItem({
+          id: item.id,
+          image: item.image,
+          name: item.name,
+          price: item.price,
+          quantity: 1,
+          rating: [0],
+          stock: item.stock,
+          addMessage: "none"
+        })
+      );  
+    }else{
+      console.log("no hay stock de este item")
+    }
   };
   for (const otProps in product.otherProperties) {
     console.log(otProps);

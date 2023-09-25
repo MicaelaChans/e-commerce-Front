@@ -44,7 +44,6 @@ function CheckOut(props) {
     for (let j = 0; j < unpaidOrders[i].products.length; j++) {
       const prod = { ...unpaidOrders[i].products[j] };
       prod.quantity = 1;
-      prod.createdAt = unpaidOrders[i].createdAt;
       cart.push(prod);
     }
   }
@@ -121,6 +120,7 @@ function CheckOut(props) {
   function handleCreditCard() {
     setShowCreditCard(!showCreditCard);
   }
+
   return (
     unpaidOrders && (
       <div className="container container-checkOut">

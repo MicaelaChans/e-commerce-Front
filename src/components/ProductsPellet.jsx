@@ -39,20 +39,34 @@ function ProductsList() {
   }, []);
 
   const handleAddItem = (item) => {
+    const getOneProduct = async () => {
+      const response = await axios({
+        method: "GET",
+        url: `http://localhost:8000/products`,
+      });
+      dispatch(getProducts(response.data));
+    };
+    getOneProduct();    
+  const productFilter = products.filter((prod) => prod.id == item.id);
+  const product = productFilter[0];
+  if(product.stock > 0){
     dispatch(
-      
       addItem({
-        id: item.id,
-        image: item.image,
-        name: item.name,
-        price: item.price,
+        id: product.id,
+        image: product.image,
+        name: product.name,
+        price: product.price,
         quantity: 1,
         rating: [0],
-        stock: item.stock,
+        stock: product.stock,
         addMessage: "none"
       })
-    );
-    toast.success(`${item.name} successfully added to cart.`);
+    );  
+    toast.success(`${product.name} successfully added to cart.`);   
+  }else{
+    console.log("no hay stock de este item")
+  }
+    
   };
 
   function decoFilter() {
