@@ -37,7 +37,9 @@ function CheckOut(props) {
     getOrders();
   }, [paid]);
   if (orders.length > 0) {
-   unpaidOrders = orders.filter((order) => order.state === "Pending" && order.user.id == user.id);
+    unpaidOrders = orders.filter(
+      (order) => order.state === "Pending" && order.user.id == user.id
+    );
   }
 
   for (let i = 0; i < unpaidOrders.length; i++) {
@@ -67,8 +69,6 @@ function CheckOut(props) {
     }
     isProd = false;
   }
-
-  unpaidOrders.length > 0 && console.log(cartShow);
 
   async function handlePay(id) {
     if (user) {
@@ -293,7 +293,7 @@ function CheckOut(props) {
                     className="payment-method-img-mp"
                   />
                 </div>
-                {showCreditCard ? <div></div> : <div>{props.children}</div>}
+                {showCreditCard ? <div>{props.children}</div> : <div></div>}
               </div>
             </div>
           </div>

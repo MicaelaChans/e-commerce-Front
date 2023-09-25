@@ -16,8 +16,6 @@ const products = useSelector((state) => state.products);
 const [orders, setOrders] = useState([]);
 const productsOfUser = [];
 
-
-//esto en realidad no va, el usuario se obtiene llamando a la store una vez logueado
 useEffect(() => {
   const getOrders = async () => {
     const response = await axios({
