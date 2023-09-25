@@ -110,21 +110,20 @@ function CheckOut(props) {
   }
 
   async function handleDelete(id) {
-    if (user) {
+   
       setPaid(!paid);
       try {
         await axios({
           method: "DELETE",
-          url: `http:localhost:8000/orders/${id}`,
-          data: { orderId: id },
+          url: `http://localhost:8000/orders/${id}`,
+          data: { orderId: unpaidOrders[0].id },
           headers: {
             Authorization: "Bearer " + (user && user.token),
           },
         });
       } catch (error) {
         console.error("Error at delete order:", error);
-      }
-    }
+      }  
   }
 
   function handleNewAddress(e) {
@@ -181,12 +180,22 @@ function CheckOut(props) {
                             alt={product.name}
                           />
                         </div>
-                        <div className="product-details ml-3 d-flex flex-column align-items-end text-start me-4">
-                          <h4 className="mt-2">{product.name}</h4>
+                        <div className="product-details  d-flex justify-content-center ms-5 ">
+                          <div className="d-flex flex-column justify-content-start">
+                          <h4 className="mt-2 fs-4 mb-1">{product.name}</h4>
                           <p className="mb-1">Quantity x {product.quantity}</p>
-                          <p className="fs-5">
-                            US${product.price * product.quantity}
+                          <p className=" mb-0">
+                            US$ {product.price * product.quantity}
                           </p>
+                          <button className="text-start"
+                      style={{ backgroundColor: "white", border: "none" }}
+                    >
+                      <i
+                        className="bi bi-trash3 cart-icon "
+                        onClick={() => handleDelete(product.id)}
+                      ></i>
+                    </button>
+                    </div>
                         </div>
                       </div>
                       <div
