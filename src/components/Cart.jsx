@@ -24,6 +24,7 @@ function Cart() {
   let cartNumber = cart.length;
   let totalPrice = 0;
   let isProduct = false;
+  
 
   for (let i = 0; i < cart.length; i++) {
     totalPrice += cart[i].price;
@@ -31,9 +32,13 @@ function Cart() {
   for (let i = 0; i < cart.length; i++) {
     for (let j = 0; j < cartShow.length; j++) {
       if (cartShow[j]) {
-        if (cartShow[j].id == cart[i].id) {
-          cartShow[j].quantity++;
+        if (cartShow[j].id == cart[i].id && cartShow[j].stock > cartShow[j].quantity) {
+          cartShow[j].quantity++;       
+          cartShow[j].addMessage = "none"
+          isProduct = true;      
+        }if(cartShow[j].id == cart[i].id && cartShow[j].stock == cartShow[j].quantity){
           isProduct = true;
+          cartShow[j].addMessage = "block"
         }
       } else {
         cartShow.push({ ...cart[i] });
@@ -45,11 +50,10 @@ function Cart() {
     }
     isProduct = false;
   }
-
+ 
   function handlePlus(id) {
-    for (let i = 0; i < cartShow.length; i++) {
-      if (cartShow[i].id == id) {
-        cartShow[i].quantity++;
+    for (let i = 0; i < cartShow.length; i++ ) {
+      if (cartShow[i].id == id && cartShow[i].stock > cartShow[i].quantity) {        
         dispatch(
           addItem({
             id: id,
@@ -65,10 +69,10 @@ function Cart() {
   }
 
   function handleMinus(id) {
+    
     for (let i = 0; i < cartShow.length; i++) {
       if (cartShow[i].id == id && cartShow[i].quantity > 1) {
-        dispatch(removeOneItem(id));
-        cartShow[i].quantity--;
+        dispatch(removeOneItem(id));     
       }
     }
   }
@@ -80,7 +84,7 @@ function Cart() {
       }
     }
   }
-
+  
   async function handleCheckOut() {
     if (user && cart.length > 0) {
       await axios({
@@ -160,8 +164,14 @@ function Cart() {
                       ></i>
                     </button>
                   </div>
+                  
+                </div>
+               
+                <div style={{color: "red", display: `${item.addMessage}`}} className="mx-4 mb-2">
+                  <p>Atention! This product has reached the limit of items available in stock. You can not add any other item of this kind to the cart.</p>
                 </div>
               </div>
+              
             ))}
           </div>
           <div className="total-price-section flex-column mx-3 pb-3">

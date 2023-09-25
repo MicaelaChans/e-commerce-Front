@@ -17,6 +17,7 @@ function CheckOut(props) {
   const [address, setAddress] = useState("");
   const [doorNumber, setDoorNumber] = useState("");
   const [apartment, setApartment] = useState("");
+  let canBuy = true;
   const cart = [];
   const cartShow = [];
   let isProd = false;
@@ -41,12 +42,12 @@ function CheckOut(props) {
       (order) => order.state === "Pending" && order.user.id == user.id
     );
   }
-
+ 
   for (let i = 0; i < unpaidOrders.length; i++) {
     for (let j = 0; j < unpaidOrders[i].products.length; j++) {
       const prod = { ...unpaidOrders[i].products[j] };
       prod.quantity = 1;
-      prod.createdAt = unpaidOrders[i].createdAt;
+      prod.stockMessage = "none";
       cart.push(prod);
     }
   }
@@ -70,8 +71,15 @@ function CheckOut(props) {
     isProd = false;
   }
 
+  for(let i=0; i<cartShow.length; i++){
+    if(cartShow[i].quantity > cartShow[i].stock){
+       canBuy = false;
+       cartShow[i].stockMessage = "block";
+    }
+  }
+
   async function handlePay(id) {
-    if (user) {
+    if (user && canBuy) {
       try {
         await axios({
           method: "PATCH",
@@ -122,6 +130,7 @@ function CheckOut(props) {
   function handleCreditCard() {
     setShowCreditCard(!showCreditCard);
   }
+
   return (
     unpaidOrders && (
       <div className="container container-checkOut">
@@ -160,6 +169,7 @@ function CheckOut(props) {
                           </p>
                         </div>
                       </div>
+                      <div className="mx-3" style={{display: `${product.stockMessage}`, color: "red"}}><p>There's not enough stock of this product. Please, do a new order</p></div>
                     </div>
                   ))}
                 </div>
@@ -263,7 +273,7 @@ function CheckOut(props) {
                       </button>
                     </form>
                   </div>
-                )}
+                )}hack
               </div>
               <div className="rounded-3 shadow p-3 mt-4">
                 <div>
