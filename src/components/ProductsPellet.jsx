@@ -132,7 +132,7 @@ function ProductsList() {
       </div>
       <div className="container">
         <div className="text-center d-block d-sm-none">
-          <h2 className="alt-title-wood">PELLET STOVES</h2>
+          <h2 className="alt-title-wood mt-5">PELLET STOVES</h2>
           <hr className="hr-wood" />
         </div>
 
