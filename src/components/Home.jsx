@@ -29,8 +29,8 @@ function Home() {
       <Header />
       <Categories />
       <div className="my-5 text-center">
-        <h1 className="mb-4 pt-5">Warm hearts create warm spaces</h1>
-        <h5 className=" mt-3 pb-5">In Drachen we want your house to become a home</h5>
+        <h1 className="mb-4 pt-5 px-3">Warm hearts create warm spaces</h1>
+        <h5 className=" mt-3 pb-5 px-3">In Drachen we want your house to become a home</h5>
       </div>
       <Footer />
       <ToastContainer position="top-right" />
