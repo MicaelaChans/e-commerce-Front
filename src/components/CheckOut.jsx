@@ -103,6 +103,8 @@ function CheckOut(props) {
         console.error("Error al pagar la orden:", error);
       }
       navigate("/thanks-for-buying");
+    } else if (user && cartShow.length == 0) {
+      console.log("no hay elementos en la orden");
     }
   }
 
