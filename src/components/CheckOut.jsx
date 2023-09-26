@@ -218,8 +218,8 @@ function CheckOut(props) {
                       }}
                     >
                       <p>
-                        There's not enough stock of this product. Please, do a
-                        new order
+                        Sorry, there are {product.stock} items available of this
+                        product. Please, delete it from the order to continue.
                       </p>
                     </div>
                   </div>
