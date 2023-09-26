@@ -80,13 +80,14 @@ function ResetPassword() {
             {isLoading ? "Resetting..." : "Reset Password"}
           </button>
 
-          {errorMessage && <p className="mt-3 text-danger text-center">{errorMessage}</p>}
-          {successMessage && <p className="mt-3 text-success text-center">{successMessage}</p>}
+          {errorMessage && (
+            <p className="mt-3 text-danger text-center">{errorMessage}</p>
+          )}
+          {successMessage && (
+            <p className="mt-3 text-success text-center">{successMessage}</p>
+          )}
 
-          <Link
-            to={"/login"}
-            className="link-register"
-          >
+          <Link to={"/login"} className="link-register">
             Back to Login
           </Link>
         </div>

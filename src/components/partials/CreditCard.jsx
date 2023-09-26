@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Cards from "react-credit-cards-2";
 import "react-credit-cards-2/dist/es/styles-compiled.css";
-import "../../styles/CreditCard.css"
+import "../../styles/CreditCard.css";
 const CreditCard = () => {
   const [state, setState] = useState({
     number: "",
@@ -27,7 +27,7 @@ const CreditCard = () => {
           <div className="me-5">
             <label htmlFor="number">Card Number</label>
             <input
-              className="d-block responsive-input border-bottom border-0" 
+              className="d-block responsive-input border-bottom border-0"
               type="number"
               name="number"
               id="number"

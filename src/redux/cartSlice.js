@@ -8,20 +8,21 @@ const cartSlice = createSlice({
       const item = action.payload;
       state.push({ ...item });
     },
-    removeAll(state, action){
+    removeAll(state, action) {
       return [];
     },
-    removeOneItem(state,action){
+    removeOneItem(state, action) {
       let index = 0;
-      for(let i=0; i<state.length; i++){
-        if(state[i].id == action.payload){
-          index = i;         
+      for (let i = 0; i < state.length; i++) {
+        if (state[i].id == action.payload) {
+          index = i;
         }
       }
-      state.splice(index,1);
-    }
+      state.splice(index, 1);
+    },
   },
 });
 
-export const { addItem, removeItem, removeAll, removeOneItem } = cartSlice.actions;
+export const { addItem, removeItem, removeAll, removeOneItem } =
+  cartSlice.actions;
 export default cartSlice.reducer;

@@ -31,8 +31,6 @@
   height: 1.8px;
 }
 
-
-
 .p-sizes-product {
   color: grey;
   font-size: 0.8rem;
@@ -119,7 +117,6 @@
   font-weight: 600;
   border: solid;
   border-color: #eca354;
-  
 }
 
 .btn-addcart-products:hover {
@@ -138,7 +135,7 @@
   .about-this-project-btn {
     display: none;
   }
-  .filter-wood{
+  .filter-wood {
     margin-top: 100px;
   }
 }

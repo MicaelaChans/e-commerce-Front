@@ -32,8 +32,7 @@ function Profile() {
           headers: {
             Authorization: "Bearer " + (user && user.token),
           },
-        }
-        );
+        });
         const detailedUser = response.data;
         if (detailedUser) {
           const {
@@ -61,11 +60,13 @@ function Profile() {
           Authorization: "Bearer " + (user && user.token),
         },
       });
-  
+
       if (response.data) {
         setOrders(response.data);
       } else {
-        toast.error("Failed to load orders. Response data is missing or undefined.");
+        toast.error(
+          "Failed to load orders. Response data is missing or undefined."
+        );
       }
     };
     if (user) {
@@ -78,42 +79,42 @@ function Profile() {
     e.preventDefault();
 
     if (newPassword !== confirmPassword) {
-        toast.error("New password and confirmation don't match.");
-        return;
+      toast.error("New password and confirmation don't match.");
+      return;
     }
 
     try {
-        const response = await axios({
-            method: "POST",
-            url: "http://localhost:8000/update-password",
-            data: {
-                userId: user.id,
-                oldPassword,
-                newPassword,
-            },
-            headers: {
-                Authorization: "Bearer " + (user && user.token),
-            },
-        });
+      const response = await axios({
+        method: "POST",
+        url: "http://localhost:8000/update-password",
+        data: {
+          userId: user.id,
+          oldPassword,
+          newPassword,
+        },
+        headers: {
+          Authorization: "Bearer " + (user && user.token),
+        },
+      });
 
-        if (response.status === 200) {
-            toast.success(response.data.message);
-            setOldPassword("");
-            setNewPassword("");
-            setConfirmPassword("");
-        } else if (response.data && response.data.error) {
-            toast.error(response.data.error);
-        } else {
-            toast.error("Error updating password. Please try again.");
-        }
+      if (response.status === 200) {
+        toast.success(response.data.message);
+        setOldPassword("");
+        setNewPassword("");
+        setConfirmPassword("");
+      } else if (response.data && response.data.error) {
+        toast.error(response.data.error);
+      } else {
+        toast.error("Error updating password. Please try again.");
+      }
     } catch (error) {
       if (error.response && error.response.data && error.response.data.error) {
-          toast.error(error.response.data.error);
+        toast.error(error.response.data.error);
       } else {
-          toast.error("An error occurred while updating the password.");
+        toast.error("An error occurred while updating the password.");
       }
-  }
-};
+    }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -125,49 +126,49 @@ function Profile() {
 
   const handleUpdateProfile = async () => {
     try {
-        const response = await axios({
-            method: "PATCH",
-            url: `http://localhost:8000/users/${user.id}`,
-            data: editedUser,
-            headers: {
-                Authorization: "Bearer " + (user && user.token),
-            },
-        });
+      const response = await axios({
+        method: "PATCH",
+        url: `http://localhost:8000/users/${user.id}`,
+        data: editedUser,
+        headers: {
+          Authorization: "Bearer " + (user && user.token),
+        },
+      });
 
-        if (response.status === 200) {
-            toast.success("Profile updated successfully.");
-        } else if (response.data && response.data.error) {
-            toast.error(response.data.error);
-        } else {
-            toast.error("Error updating profile. Please try again.");
-        }
+      if (response.status === 200) {
+        toast.success("Profile updated successfully.");
+      } else if (response.data && response.data.error) {
+        toast.error(response.data.error);
+      } else {
+        toast.error("Error updating profile. Please try again.");
+      }
     } catch (error) {
-        toast.error("An error occurred while updating the profile.");
+      toast.error("An error occurred while updating the profile.");
     }
-};
+  };
 
   const handleDeleteAccount = async () => {
     try {
-        const response = await axios({
-            method: "DELETE",
-            url: `http://localhost:8000/users/${user.id}`,
-            headers: {
-                Authorization: "Bearer " + (user && user.token),
-            },
-        });
+      const response = await axios({
+        method: "DELETE",
+        url: `http://localhost:8000/users/${user.id}`,
+        headers: {
+          Authorization: "Bearer " + (user && user.token),
+        },
+      });
 
-        if (response.status === 200 || response.status === 204) {
-            localStorage.setItem("showDeletionToast", "true");
-            navigate("/login");
-        } else if (response.data && response.data.error) {
-            toast.error(response.data.error);
-        } else {
-            toast.error("Error deleting account. Please try again.");
-        }
+      if (response.status === 200 || response.status === 204) {
+        localStorage.setItem("showDeletionToast", "true");
+        navigate("/login");
+      } else if (response.data && response.data.error) {
+        toast.error(response.data.error);
+      } else {
+        toast.error("Error deleting account. Please try again.");
+      }
     } catch (error) {
-        toast.error("An error occurred while deleting the account.");
+      toast.error("An error occurred while deleting the account.");
     }
-};
+  };
 
   return (
     <>
@@ -281,17 +282,15 @@ function Profile() {
                 />
               </div>
               <div className="d-flex justify-content-start mt-5">
-                <button type="submit"  >
-                  Update Password
-                </button>
+                <button type="submit">Update Password</button>
               </div>
             </form>
           </div>
           <ToastContainer position="top-right" />
 
           <div className=" justify-content-start mt-5">
-          <h3 className="mb-0">Danger zone</h3>  
-          <hr className="danger-zone-hr mb-0" />     
+            <h3 className="mb-0">Danger zone</h3>
+            <hr className="danger-zone-hr mb-0" />
             <button
               onClick={() => setShowDeleteModal(true)}
               className="btn  delete-account  btn-primary mt-4"

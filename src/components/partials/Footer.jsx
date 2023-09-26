@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../../styles/Footer.css";
 
 function Footer() {
   return (
-    <div className=" border-top text-center text-sm-start" style={{backgroundColor: "rgb(102, 102, 102)", color: "white"}}>
+    <div
+      className=" border-top text-center text-sm-start"
+      style={{ backgroundColor: "rgb(102, 102, 102)", color: "white" }}
+    >
       <div className="container p-4">
         <div className="row py-lg-4 pb-1 pt-0 ">
           <div className="col-12 col-lg-6 text-lg-start ">
@@ -27,13 +29,25 @@ function Footer() {
           <div className="col-lg-3 col-6 pt-4 d-lg-flex d-block justify-content-center">
             <div>
               <h5 className="mb-3">PRODUCTS</h5>
-              <Link style={{color:"white"}} className="footer-link" to={"/productsWood"}>
+              <Link
+                style={{ color: "white" }}
+                className="footer-link"
+                to={"/productsWood"}
+              >
                 <p className="mb-2">Wood stoves</p>
               </Link>
-              <Link style={{color:"white"}} className="footer-link" to={"/productsPellet"}>
+              <Link
+                style={{ color: "white" }}
+                className="footer-link"
+                to={"/productsPellet"}
+              >
                 <p className="mb-2">Pellet stoves</p>
               </Link>
-              <Link style={{color:"white"}} className="footer-link" to={"/productsAccessories"}>
+              <Link
+                style={{ color: "white" }}
+                className="footer-link"
+                to={"/productsAccessories"}
+              >
                 <p className="mb-1">Accesories</p>
               </Link>
             </div>
@@ -47,7 +61,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div style={{backgroundColor:"rgb(70, 70, 70)"}}>
+      <div style={{ backgroundColor: "rgb(70, 70, 70)" }}>
         <div
           className="col py-3 d-flex justify-content-center"
           style={{ fontSize: "1.5rem" }}

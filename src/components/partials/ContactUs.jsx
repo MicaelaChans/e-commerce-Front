@@ -10,11 +10,13 @@ function ContactUs() {
           <h2 className="mb-3 fs-1">How to Contact Us?</h2>
           <div className="text-about fs-5 ">
             <p>
-              You can contact us by whatsapp or by phone, from monday to friday, from 9 AM untill 6 PM.
+              You can contact us by whatsapp or by phone, from monday to friday,
+              from 9 AM untill 6 PM.
             </p>
             <p>
-              Or if you rather, feel free to come personally. You are always welcome to our store in Bulevar Artigas 1574, Montevideo.
-            </p>    
+              Or if you rather, feel free to come personally. You are always
+              welcome to our store in Bulevar Artigas 1574, Montevideo.
+            </p>
           </div>
         </div>
       </div>
@@ -56,7 +58,12 @@ function ContactUs() {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3 border-bottom" controlId="example">
-                  <Form.Label className="comment-label" style={{paddingBottom:"7px"}}>Comment</Form.Label>
+                  <Form.Label
+                    className="comment-label"
+                    style={{ paddingBottom: "7px" }}
+                  >
+                    Comment
+                  </Form.Label>
                   <Form.Control
                     className=" border-0 formControl"
                     as="textarea"

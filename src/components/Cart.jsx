@@ -3,12 +3,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { useState } from "react";
 import { NavLink } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  removeItem,
-  removeAll,
-  addItem,
-  removeOneItem,
-} from "../redux/cartSlice";
+import { removeAll, addItem, removeOneItem } from "../redux/cartSlice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 

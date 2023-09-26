@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getProducts } from "../redux/productSlice";
 import "react-multi-carousel/lib/styles.css";
 import "../App.css";
@@ -46,27 +46,26 @@ function ProductsList() {
       });
       dispatch(getProducts(response.data));
     };
-    getOneProduct();    
-  const productFilter = products.filter((prod) => prod.id == item.id);
-  const product = productFilter[0];
-  if(product.stock > 0){
-    dispatch(
-      addItem({
-        id: product.id,
-        image: product.image,
-        name: product.name,
-        price: product.price,
-        quantity: 1,
-        rating: [0],
-        stock: product.stock,
-        addMessage: "none"
-      })
-    );  
-    toast.success(`${product.name} successfully added to cart.`);   
-  }else{
-    console.log("no hay stock de este item")
-  }
-    
+    getOneProduct();
+    const productFilter = products.filter((prod) => prod.id == item.id);
+    const product = productFilter[0];
+    if (product.stock > 0) {
+      dispatch(
+        addItem({
+          id: product.id,
+          image: product.image,
+          name: product.name,
+          price: product.price,
+          quantity: 1,
+          rating: [0],
+          stock: product.stock,
+          addMessage: "none",
+        })
+      );
+      toast.success(`${product.name} successfully added to cart.`);
+    } else {
+      console.log("no hay stock de este item");
+    }
   };
 
   function decoFilter() {

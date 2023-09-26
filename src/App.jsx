@@ -11,7 +11,7 @@ import ProductsAccessories from "./components/ProductsAccessories";
 import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
 import AboutThisProject from "./components/AboutThisProject";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MyPurchases from "./components/MyPurchases";
 import Profile from "./components/Profile";
 import ForgotPassword from "./components/ForgotPassword";
@@ -19,6 +19,7 @@ import ResetPassword from "./components/ResetPassword";
 import CheckOut from "./components/CHeckOut";
 import CreditCard from "./components/partials/CreditCard";
 import ThanksForBuy from "./components/ThanksForBuy";
+
 function App() {
   return (
     <div>

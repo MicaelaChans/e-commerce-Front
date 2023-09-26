@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles/ForgotPassword.css";
 
 function ForgotPassword() {
@@ -18,7 +18,7 @@ function ForgotPassword() {
 
       if (response.data.message) {
         toast.success(response.data.message);
-      } else if(response.data.error) { 
+      } else if (response.data.error) {
         toast.error(response.data.error);
       } else {
         toast.error("Error sending email. Please try again.");
@@ -60,11 +60,8 @@ function ForgotPassword() {
             </div>
           </form>
           <div className="mt-4 d-flex justify-content-end">
-            <Link
-              to={"/login"}
-              className="link-register"
-            >
-             Back to Login
+            <Link to={"/login"} className="link-register">
+              Back to Login
             </Link>
           </div>
         </div>

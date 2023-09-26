@@ -1,17 +1,15 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../styles/MyPurchases.css";
 import { useSelector } from "react-redux";
-import { format, formatDistanceToNow } from "date-fns";
+import { format } from "date-fns";
 import Footer from "./partials/Footer";
 import { Rating } from "react-simple-star-rating";
 
 function Register() {
   const user = useSelector((state) => state.user);
-  const products = useSelector((state) => state.products);
   const [orders, setOrders] = useState([]);
   const productsOfUser = [];
   const [rating, setRating] = useState(0);
@@ -122,7 +120,7 @@ function Register() {
                         Rate
                       </button>
                     </div>
-                    <div >
+                    <div>
                       <Rating
                         onClick={handleRating}
                         ratingValue={rating}

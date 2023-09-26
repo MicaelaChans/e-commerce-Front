@@ -12,17 +12,28 @@ function AboutThisProject() {
           <h2 className="mb-3 fs-1">What is DRACHEN?</h2>
           <div className="text-about">
             <p>
-            Drechen is an e-commerce app developed as our final project of a Coding Bootcamp at Hack Academy, an educational institution that specializes in programming courses. The Bootcamp is an immersive and intensive full-time course that lasts for three months and takes more than 600 hours of coding. Its main goal is to prepare the students to be Full Stack Developers.
+              Drechen is an e-commerce app developed as our final project of a
+              Coding Bootcamp at Hack Academy, an educational institution that
+              specializes in programming courses. The Bootcamp is an immersive
+              and intensive full-time course that lasts for three months and
+              takes more than 600 hours of coding. Its main goal is to prepare
+              the students to be Full Stack Developers.
             </p>
             <p>
-            This final project aims to showcase the application of the diverse technologies learned throughout the Bootcamp.
+              This final project aims to showcase the application of the diverse
+              technologies learned throughout the Bootcamp.
             </p>
             <p>
-            The web app was developed over a period of three weeks by a team of six students, totaling approximately 150 hours of work per student. It is a fully functional app designed to be user-friendly and easy to navigate.
+              The web app was developed over a period of three weeks by a team
+              of six students, totaling approximately 150 hours of work per
+              student. It is a fully functional app designed to be user-friendly
+              and easy to navigate.
             </p>
             <p>
-            In this section, we give you some details of the behind-the-scenes journey of creating Drachen and gain a comprehensive understanding of the development process behind our e-commerce app.
-            </p>           
+              In this section, we give you some details of the behind-the-scenes
+              journey of creating Drachen and gain a comprehensive understanding
+              of the development process behind our e-commerce app.
+            </p>
           </div>
         </div>
       </div>

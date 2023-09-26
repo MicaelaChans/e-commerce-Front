@@ -9,8 +9,8 @@ function TechAndTools() {
           also gained hands-on experience with databases and leveraged practical
           tools to optimize our workflow. To ensure efficient task allocation
           within our team, we utilized Trello as our project management tool.
-          </p>
-          <p className=" text-center text-sm-start px-5 px-sm-0">
+        </p>
+        <p className=" text-center text-sm-start px-5 px-sm-0">
           The project was divided into three sprints, with Github serving as our
           primary collaboration platform. Discord played a crucial role in
           facilitating seamless communication throughout the development

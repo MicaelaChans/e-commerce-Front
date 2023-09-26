@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getProducts } from "../redux/productSlice";
 import "react-multi-carousel/lib/styles.css";
 import "../App.css";
@@ -37,19 +37,19 @@ function ProductsList() {
   useEffect(() => {
     setAnimate(true);
   }, []);
- 
+
   const handleAddItem = (item) => {
-      const getOneProduct = async () => {
-        const response = await axios({
-          method: "GET",
-          url: `http://localhost:8000/products`,
-        });
-        dispatch(getProducts(response.data));
-      };
-      getOneProduct();    
+    const getOneProduct = async () => {
+      const response = await axios({
+        method: "GET",
+        url: `http://localhost:8000/products`,
+      });
+      dispatch(getProducts(response.data));
+    };
+    getOneProduct();
     const productFilter = products.filter((prod) => prod.id == item.id);
     const product = productFilter[0];
-    if(product.stock > 0){
+    if (product.stock > 0) {
       dispatch(
         addItem({
           id: product.id,
@@ -59,12 +59,12 @@ function ProductsList() {
           quantity: 1,
           rating: [0],
           stock: product.stock,
-          addMessage: "none"
+          addMessage: "none",
         })
-      );  
-      toast.success(`${product.name} successfully added to cart.`);   
-    }else{
-      console.log("no hay stock de este item")
+      );
+      toast.success(`${product.name} successfully added to cart.`);
+    } else {
+      console.log("no hay stock de este item");
     }
   };
   function harmonyFilter() {
@@ -111,26 +111,30 @@ function ProductsList() {
         <h4 className="mx-3 mb-0">Filter by model:</h4>
         <div className="mt-sm-0 d-flex justify-content-around">
           <div>
-          <button className="filter-button">
-          <h5 className="mb-0 mx-3 filter-word" onClick={() => harmonyFilter()}>
-            Harmony 
-          </h5>
-          </button>
+            <button className="filter-button">
+              <h5
+                className="mb-0 mx-3 filter-word"
+                onClick={() => harmonyFilter()}
+              >
+                Harmony
+              </h5>
+            </button>
           </div>
           <div>
-          <button className="filter-button">
-          <h5 className="mb-0 mx-3 filter-word"  onClick={() => boxFilter()}>
-            Box
-          </h5>
-          </button>
+            <button className="filter-button">
+              <h5 className="mb-0 mx-3 filter-word" onClick={() => boxFilter()}>
+                Box
+              </h5>
+            </button>
           </div>
           <div>
-          <button className="filter-button">
-          <h5 className="mb-0 mx-3 filter-word" onClick={() => allFilter()}>All</h5>
-          </button>
+            <button className="filter-button">
+              <h5 className="mb-0 mx-3 filter-word" onClick={() => allFilter()}>
+                All
+              </h5>
+            </button>
           </div>
         </div>
-        
       </div>
       <div className="container">
         <div className="text-center d-block d-sm-none">
@@ -167,7 +171,7 @@ function ProductsList() {
               </Link>
               <div className="discover-section-container d-flex justify-content-center">
                 <div className="discover-section">
-                  <div >
+                  <div>
                     <hr className="hr-product-wood-top" />
                     <div className="d-flex justify-content-center align-items-center my-3 p-sizes-product">
                       <p className="text-center mx-2 mb-0">

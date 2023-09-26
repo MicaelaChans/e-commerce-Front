@@ -61,7 +61,7 @@
   .categories-section {
     margin-top: 120px !important;
   }
-  .filter-container{
+  .filter-container {
     margin-top: 128px;
   }
 }
@@ -70,7 +70,6 @@
   .categories-button-show-products {
     width: 180px !important;
   }
-  
 }
 
 @media (min-width: 400px) and (max-width: 992px) {
@@ -118,21 +117,19 @@
   margin-top: 20px;
 }
 
-.filter-word{
+.filter-word {
   text-decoration: underline;
 }
 
-.filter-hr{
+.filter-hr {
   height: 4px;
-  color:#f09535;
+  color: #f09535;
   background-color: #ff8400;
-  width:400px;
+  width: 400px;
   margin: auto;
 }
 
-.filter-button{
+.filter-button {
   background-color: white;
   border: none;
 }
-
-

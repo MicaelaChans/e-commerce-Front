@@ -3,7 +3,6 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../redux/productSlice";
 import { useParams } from "react-router-dom";
-import SidebarProduct from "./partials/SidebarProduct";
 import SpecificationsProduct from "./partials/SpecificationsProduct";
 import DescriptionsProduct from "./partials/DescriptionsProduct";
 import Footer from "./partials/Footer";
