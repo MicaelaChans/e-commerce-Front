@@ -1,4 +1,3 @@
-import Hero from "./partials/Hero";
 import Footer from "./partials/Footer";
 import ProductsList from "./partials/ProductsList";
 import { Link } from "react-router-dom";
