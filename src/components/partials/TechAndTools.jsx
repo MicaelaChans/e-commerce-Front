@@ -1,7 +1,7 @@
 function TechAndTools() {
   return (
     <div className="container">
-      <h3 className="my-3 text-center text-sm-start">TECHNOLOGIES & TOOLS</h3>
+      <h3 className="text-center text-sm-start">TECHNOLOGIES & TOOLS</h3>
       <div className="mt-4 d-flex flex-column align-items-center justify-content-center">
         <p className=" pt-1 text-center text-sm-start px-5 px-sm-0">
           Throughout the coding bootcamp, we delved into a wide range of
@@ -21,7 +21,7 @@ function TechAndTools() {
 
       <div
         id="staff-section"
-        className="row d-flex justify-content-center align-items-center text-center gap-5 pt-5 px-5 px-sm-0 m-0 mb-5"
+        className="row d-flex justify-content-center align-items-center text-center gap-5 pt-5 px-5 px-sm-0 m-0 "
       >
         <div className="icon-tech ">
           <h6>
