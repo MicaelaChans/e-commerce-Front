@@ -103,7 +103,7 @@ function CheckOut(props) {
       } catch (error) {
         console.error("Error al pagar la orden:", error);
       }
-      navigate("/");
+      navigate("/thanks-for-buying");
     }
   }
 
@@ -398,12 +398,14 @@ function CheckOut(props) {
                     <strong>Total Price:</strong> US${totalPrice}
                   </p>
                   <div className="d-flex justify-content-sm-end justify-content-center">
+                    
                     <button
                       onClick={() => handlePay(order.id)}
                       className="btn btn-lg buy-button mt-0"
                     >
                       Pay Order
                     </button>
+                   
                   </div>
                 </div>
               </div>

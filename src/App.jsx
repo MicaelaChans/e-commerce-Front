@@ -5,7 +5,6 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import ContactUs from "./components/partials/ContactUs";
-import Cart from "./components/Cart";
 import ProductsPellet from "./components/ProductsPellet";
 import ProductsWood from "./components/ProductsWood";
 import ProductsAccessories from "./components/ProductsAccessories";
@@ -15,11 +14,11 @@ import AboutThisProject from "./components/AboutThisProject";
 import { Link, useNavigate } from "react-router-dom";
 import MyPurchases from "./components/MyPurchases";
 import Profile from "./components/Profile";
-import ScrollToTop from "./components/ScrollToTop";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import CheckOut from "./components/CHeckOut";
 import CreditCard from "./components/partials/CreditCard";
+import ThanksForBuy from "./components/ThanksForBuy";
 function App() {
   return (
     <div>
@@ -29,7 +28,6 @@ function App() {
         </button>
       </Link>
       <NavBar />
-      <ScrollToTop />
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/registro" element={<Navigate replace to="/register" />} />
@@ -54,6 +52,7 @@ function App() {
         <Route path="/productsAccessories" element={<ProductsAccessories />} />
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/my-purchases" element={<MyPurchases />} />
+        <Route path="/thanks-for-buying" element={<ThanksForBuy />} />
         <Route
           path="/check-Out"
           element={
