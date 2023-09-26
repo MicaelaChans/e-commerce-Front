@@ -1,8 +1,8 @@
 function AdminInfo() {
   return (
     <div className="admin-info container">
-      <h3 className="mt-5 text-center">ADMIN PANEL</h3>
-      <p className="pt-5 fs-5">
+      <h3 className="mt-5 text-center text-sm-start">ADMIN PANEL</h3>
+      <p className="pt-3 text-center text-sm-start px-5 px-sm-0">
         In this e-commerce platform, we provide an administrator panel dashboard
         that allows the user to delete, update, or create products, categories,
         and customers. Additionally, they can monitor the status of orders and
