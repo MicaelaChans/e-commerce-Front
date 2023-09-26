@@ -6,7 +6,14 @@ function OurTeam() {
     <div className="row my-3 ">
       {teamMembers.map((member) => (
         <div key={member.key} className="col-6 col-md-4 col-lg-2 my-2">
-          <img src={member.profImg} alt="photoStaff" className="photoStaff hop" />
+          <div className="d-flex justify-content-center align-items-center text-center">
+            <img
+              src={member.profImg}
+              alt="photoStaff"
+              className="photoStaff hop"
+            />
+          </div>
+
           <div className="member-info">
             <h5 className="mt-3">{member.name}</h5>
             <p>Full Stack Developer</p>

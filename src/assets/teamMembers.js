@@ -38,8 +38,8 @@ const teamMembers = [
     key: 6,
     profImg: "https://cdn-icons-png.flaticon.com/512/6596/6596121.png",
     name: "Micaela Chans",
-    linkLi: "#",
-    linkGi: "#",
+    linkLi: "https://www.linkedin.com/in/micaela-chans/",
+    linkGi: "https://github.com/MicaelaChans",
   },
 ];
 

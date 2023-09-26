@@ -2,7 +2,7 @@ function TechAndTools() {
   return (
     <div className="container">
       <h3 className="my-3 text-center">TECHNOLOGIES & TOOLS</h3>
-      <div className="mt-5">
+      <div className="mt-5 d-flex flex-column align-items-center justify-content-center">
         <p className="fs-5">
           Throughout the coding bootcamp, we delved into a wide range of
           technologies encompassing both backend and front end development. We
@@ -19,9 +19,9 @@ function TechAndTools() {
 
       <div
         id="staff-section"
-        className="d-flex m-auto text-center pt-5 gap-2 m-0 mb-5"
+        className="row d-flex justify-content-center align-items-center text-center gap-5 pt-5 m-0 mb-5"
       >
-        <div className="icon-tech">
+        <div className="icon-tech ">
           <h6>
             <i className="fa-brands fa-3x fa-react"></i>
           </h6>

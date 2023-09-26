@@ -23,6 +23,10 @@
 
 .icon-tech {
   width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .team-about {
@@ -40,6 +44,9 @@
 .photoStaff {
   width: 175px;
   height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 576px) {
