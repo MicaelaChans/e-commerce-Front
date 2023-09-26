@@ -6,20 +6,20 @@ function ContactUs() {
   return (
     <>
       <div className="background-contact">
-        <div className="container pt-5 text-center text-sm-start">
+        <div className="container py-sm-4 py-0 px-sm-4 px-5 mt-3 mt-sm-0 text-center text-sm-start">
           <h2 className="mb-3 fs-1">How to Contact Us?</h2>
           <div className="text-about fs-5 ">
             <p>
               You can contact us by whatsapp or by phone, from monday to friday, from 9 AM untill 6 PM.
             </p>
             <p>
-              Or if you rather, feel free to come personaly. You are always welcome to our store in Bulevar Artigas 1574, Montevideo.
+              Or if you rather, feel free to come personally. You are always welcome to our store in Bulevar Artigas 1574, Montevideo.
             </p>    
           </div>
         </div>
       </div>
       <div className="d-flex flex-column px-5 form w-100">
-        <div className="container px-0 px-sm-3">
+        <div className="container px-0 ">
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-12">
               <Form className="fs-3">
