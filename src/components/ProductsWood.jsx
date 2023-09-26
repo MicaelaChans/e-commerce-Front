@@ -107,7 +107,7 @@ function ProductsList() {
           a modern lifestyle.
         </p>
       </div>
-      <div className="d-flex filter-container justify-content-center  align-items-center pt-5">
+      <div className="d-flex  justify-content-center filter-wood align-items-center pt-5">
         <h4 className="mx-3 mb-0">Filter by model:</h4>
         <div className="mt-sm-0 d-flex justify-content-around">
           <div>
