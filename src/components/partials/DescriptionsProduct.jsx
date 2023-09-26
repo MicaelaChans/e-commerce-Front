@@ -1,5 +1,6 @@
 function DescriptionsProduct({
   name,
+  rating,
   description,
   height,
   width,
@@ -10,6 +11,7 @@ function DescriptionsProduct({
   return (
     <div className="col-md-12 col-lg-7 col-xl-8 p-5">
       <h3 className="mb-4">{name}</h3>
+      <p>{rating}</p>
       <div className="d-flex mb-4 align-items-center">
         <p className="m-0 me-3 fw-semibold">Description</p>
         <div className="line-description-product border-bottom w-100"></div>

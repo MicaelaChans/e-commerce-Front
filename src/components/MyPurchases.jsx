@@ -22,7 +22,9 @@ function Register() {
   let prod1 = "";
   let prod2 = "";
   let prod3 = "";
-
+  const handleReset = () => {
+    setRating(0);
+  };
   const handleRate = async (product) => {
     const productId = product.id;
     try {
@@ -152,6 +154,7 @@ function Register() {
                       <Rating
                         onClick={handleRating}
                         ratingValue={rating}
+                        initialValue={rating}
                         size={20}
                       />
                     </div>
