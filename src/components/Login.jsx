@@ -69,10 +69,10 @@ function Login() {
         <div
           className="container d-flex justify-content-center"
         >
-          <div className="row rounded-3 shadow container-register ">
+          <div className="row rounded-3 shadow container-register">
             <div className="d-none col-md-7 flex-column border d-md-flex justify-content-center image-register-container align-items-center">
               <img
-                className=" image-register"
+                className="pb-5 image-register"
                 src="/assets/drachen_logo_white.png"
                 alt="drachen logo"
               />

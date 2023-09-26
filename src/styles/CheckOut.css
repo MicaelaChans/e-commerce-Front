@@ -75,9 +75,33 @@
 
 .product-details {
   flex-grow: 1;
+  margin-right: 80px;
+}
+@media (min-width: 1200px) {
+  .product-details {
+    margin-right: 140px;
+  }
+}
+@media (max-width: 626px) {
+  .product-details {
+    margin-right: 40px;
+  }
 }
 .order-item {
   margin: 15px 0;
+}
+.product-image-container {
+  margin-left: 80px;
+}
+@media (min-width: 1200px) {
+  .product-image-container {
+    margin-left: 140px;
+  }
+}
+@media (max-width: 626px) {
+  .product-image-container {
+    margin-left: 40px;
+  }
 }
 
 .order-item h4 {

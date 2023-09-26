@@ -57,13 +57,13 @@ function Register() {
         <div className="row  rounded-3 shadow container-register ">
           <div className=" d-none col-md-7 flex-column border d-md-flex justify-content-center image-register-container  align-items-center ">
             <img
-              className=" image-register"
+              className="pb-5 image-register"
               src="/assets/drachen_logo_white.png"
               alt="drachen logo"
             />
           </div>
           <div className="col bg-body-tertiary py-5 px-5 px-lg-5 px-md-3 col-md-5 d-flex justify-content-center flex-column">
-            <h2 className="mb-3 pt-3">Sign up!</h2>
+            <h2 className="mb-4 pt-3">Sign up!</h2>
             <form method="POST" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <input
@@ -91,7 +91,7 @@ function Register() {
                   type="email"
                   name="email"
                   className="form-control"
-                  placeholder="email"
+                  placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -103,7 +103,7 @@ function Register() {
                   pattern="[0-9]{9}"
                   name="phone"
                   className="form-control"
-                  placeholder="phone"
+                  placeholder="Phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   required
@@ -114,7 +114,7 @@ function Register() {
                   type="text"
                   name="address"
                   className="form-control"
-                  placeholder="address"
+                  placeholder="Address"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   required
@@ -125,7 +125,7 @@ function Register() {
                   type="password"
                   name="password"
                   className="form-control"
-                  placeholder="password"
+                  placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required

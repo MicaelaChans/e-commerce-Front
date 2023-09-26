@@ -182,7 +182,7 @@ function CheckOut(props) {
                   {cartShow.map((product) => (  
                     <div key={product.id}>
                       <div className="product-item mb-1 d-flex align-items-center">
-                        <div className="product-image-container ms-4">
+                        <div className="product-image-container">
                          
                           <img
                             className="img-check-out"
@@ -190,7 +190,7 @@ function CheckOut(props) {
                             alt={product.name}
                           />
                         </div>
-                        <div className="product-details  d-flex justify-content-end me-3 ">
+                        <div className="product-details  d-flex justify-content-end ">
                           <div className="d-flex flex-column justify-content-start">
                           <h4 className="mt-2 fs-4 mb-1">{product.name}</h4>
                           <p className="mb-1">Quantity x {product.quantity}</p>
@@ -240,14 +240,14 @@ function CheckOut(props) {
                     {showAddressForm ? (
                       <button
                         onClick={handleAddress}
-                        className="btn btn-secondary"
+                        className="btn btn-outline-dark"
                       >
                         New address
                       </button>
                     ) : (
                       <button
                         onClick={handleAddress}
-                        className="btn btn-secondary"
+                        className="btn btn-outline-dark"
                       >
                         New address
                       </button>
