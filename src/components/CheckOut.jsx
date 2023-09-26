@@ -151,7 +151,7 @@ function CheckOut(props) {
   } else {
     noProdMsg = "none";
   }
-  console.log(unpaidOrders);
+
   return unpaidOrders.length > 0 ? (
     <div className="container container-checkOut">
       <ToastContainer />

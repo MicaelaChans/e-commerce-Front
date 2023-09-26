@@ -22,7 +22,6 @@ function Register() {
   let prod3 = "";
 
   const handleRate = async (product) => {
-    console.log(product);
     const productId = product.id;
     await axios({
       method: "PATCH",
