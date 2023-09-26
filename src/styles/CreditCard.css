@@ -1,10 +1,1 @@
-.credit-container {
-  margin-top: 330px;
-}
 
-@media (max-width: 520px) {
-  .responsive-input {
-    display: block;
-    margin-bottom: 10px;
-  }
-}

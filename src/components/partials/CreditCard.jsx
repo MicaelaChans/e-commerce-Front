@@ -23,51 +23,66 @@ const CreditCard = () => {
   return (
     <>
       <form>
-        <div className="d-flex justify-content-center">
-          <div className="me-5">
-            <label htmlFor="number">Card Number</label>
-            <input
-              className="d-block responsive-input border-bottom border-0"
-              type="number"
-              name="number"
-              id="number"
-              value={state.number}
-              onChange={handleInputChange}
-              onFocus={handleInputFocus}
-              maxLength="16"
-            />
-            <label htmlFor="name">Cardholder Name</label>
-            <input
-              className="border-bottom border-0 d-block responsive-input"
-              type="text"
-              name="name"
-              id="name"
-              value={state.name}
-              onChange={handleInputChange}
-              onFocus={handleInputFocus}
-            />
-          </div>
+        <div className="d-flex flex-column align-items-center">
           <div>
-            <label htmlFor="expiry">MM/YY Expiry</label>
-            <input
-              className="d-block responsive-input border-bottom border-0"
-              type="number"
-              name="expiry"
-              id="expiry"
-              value={state.expiry}
-              onChange={handleInputChange}
-              onFocus={handleInputFocus}
-            />
-            <label htmlFor="cvc">CVC</label>
-            <input
-              className="border-bottom border-0 d-block responsive-input"
-              type="number"
-              name="cvc"
-              id="cvc"
-              value={state.cvc}
-              onChange={handleInputChange}
-              onFocus={handleInputFocus}
-            />
+            <div className="input-card " style={{ width: "100%" }}>
+              <label className="mx-1" htmlFor="number">
+                Card Number
+              </label>
+              <input
+                className="mb-2 border-bottom border-0"
+                type="number"
+                name="number"
+                id="number"
+                value={state.number}
+                onChange={handleInputChange}
+                onFocus={handleInputFocus}
+                maxLength="16"
+              />
+            </div>
+            <div className="input-card" style={{ width: "100%" }}>
+              <label className="mx-1" htmlFor="name">
+                Cardholder Name
+              </label>
+              <input
+                className="border-bottom border-0 mb-2"
+                type="text"
+                name="name"
+                id="name"
+                value={state.name}
+                style={{ width: "155px" }}
+                onChange={handleInputChange}
+                onFocus={handleInputFocus}
+              />
+            </div>
+            <div className="input-card" style={{ width: "100%" }}>
+              <label className="mx-1" htmlFor="expiry">
+                MM/YY Expiry
+              </label>
+              <input
+                className=" border-bottom border-0 mb-2"
+                type="number"
+                name="expiry"
+                id="expiry"
+                value={state.expiry}
+                onChange={handleInputChange}
+                onFocus={handleInputFocus}
+              />
+            </div>
+            <div className="input-card" style={{ width: "100%" }}>
+              <label className="mx-1" htmlFor="cvc">
+                CVC
+              </label>
+              <input
+                className="border-bottom border-0 "
+                type="number"
+                name="cvc"
+                id="cvc"
+                value={state.cvc}
+                onChange={handleInputChange}
+                onFocus={handleInputFocus}
+              />
+            </div>
           </div>
         </div>
       </form>
