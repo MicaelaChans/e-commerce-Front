@@ -50,10 +50,9 @@ function Register() {
   };
 
   return (
-    <div className="body-register m-5 d-flex  align-items-center">
+    <div className="body-register d-flex  align-items-center">
       <div
         className="container d-flex justify-content-center"
-        style={{ marginTop: "250px" }}
       >
         <div className="row  rounded-3 shadow container-register ">
           <div className=" d-none col-md-7 flex-column border d-md-flex justify-content-center image-register-container  align-items-center ">

@@ -10,7 +10,6 @@
 }
 
 .image-register-container {
-  height: 100%;
   background-color: black;
 }
 
@@ -19,13 +18,14 @@
 }
 
 .container-register {
-  width: 86%;
   overflow: hidden;
+  margin-top: 110px;
+  width: 85%;
+  height: 80vh;
 }
 
 .body-register {
-  height: 73vh;
-  margin-top: 250px;
+ 
 }
 
 .image-register {
