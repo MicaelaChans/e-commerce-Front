@@ -5,7 +5,7 @@ function Footer() {
   return (
     <div
       className=" border-top text-center text-sm-start"
-      style={{ backgroundColor: "rgb(102, 102, 102)", color: "white" }}
+      style={{ backgroundColor: "rgb(94, 94, 94)", color: "white" }}
     >
       <div className="container p-4">
         <div className="row py-lg-4 pb-1 pt-0 ">
@@ -55,7 +55,7 @@ function Footer() {
           <div className="col-lg-3 col-6 pt-4 d-lg-flex d-block justify-content-center">
             <div>
               <h5 className="mb-3">VISIT OUR STORE</h5>
-              <p className="mb-2">Montevideo, Blvar Artigas 1574</p>
+              <p className="mb-2">Montevideo, Blvar Artigas 1594</p>
               <p>From 9:00 to 18:00</p>
             </div>
           </div>
