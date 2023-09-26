@@ -160,7 +160,7 @@ function CheckOut(props) {
       <div className="text-center header-pay mb-4">
         <h1>Payment and delivery</h1>
       </div>
-      <hr />
+
       <div className="row check-row">
         <div className="col-12 col-check-out-cart ">
           {unpaidOrders.map((order) => (
@@ -185,17 +185,23 @@ function CheckOut(props) {
                 </div>
                 {cartShow.map((product) => (
                   <div key={product.id}>
-                    <div className="product-item mb-1 d-flex align-items-center">
-                      <div className="product-image-container">
+                    <div className="product-item mb-1 d-flex align-items-center justify-content-between">
+                      <div className="mx-4">
                         <img
                           className="img-check-out"
                           src={product.image}
                           alt={product.name}
                         />
                       </div>
-                      <div className="product-details  d-flex justify-content-end ">
-                        <div className="d-flex flex-column justify-content-start">
-                          <h4 className="mt-2 fs-4 mb-1">{product.name}</h4>
+
+                      <div>
+                        <div className="d-flex flex-column justify-content-end">
+                          <h4
+                            className="mt-2 fs-4 mb-1"
+                            style={{ width: "180px" }}
+                          >
+                            {product.name}
+                          </h4>
                           <p className="mb-1">Quantity x {product.quantity}</p>
                           <p className=" mb-0">
                             US$ {product.price * product.quantity}
@@ -224,10 +230,10 @@ function CheckOut(props) {
                         product. Please, delete it from the order to continue.
                       </p>
                     </div>
+                    <hr />
                   </div>
                 ))}
               </div>
-              <hr />
             </div>
           ))}
         </div>
