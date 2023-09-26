@@ -104,7 +104,7 @@ function CheckOut(props) {
       }
       navigate("/thanks-for-buying");
     } else if (user && cartShow.length == 0) {
-      console.log("no hay elementos en la orden");
+      toast.error("There are no items in the order.");
     }
   }
 
