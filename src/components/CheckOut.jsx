@@ -151,9 +151,9 @@ function CheckOut(props) {
   }else{
     noProdMsg = "none";
   }
-
+ console.log(unpaidOrders)
   return (
-    unpaidOrders && (
+    unpaidOrders.length > 0 ? (
       <div className="container container-checkOut">
         <ToastContainer />
         <div className="text-center header-pay mb-4">
@@ -161,7 +161,7 @@ function CheckOut(props) {
         </div>
         <hr />
         <div className="row check-row">
-          <div className="col-lg-6 col-12 col-check-out-cart ">
+          <div className="col-12 col-check-out-cart ">
             {unpaidOrders.map((order) => (
               <div
                 className="mt-3 border rounded-3 shadow p-3 mb-4"
@@ -177,9 +177,8 @@ function CheckOut(props) {
                 </div>
                 <hr />
                 <div className="order-item">
-                <div style={{display: `${noProdMsg}`}}><h4 className="text-center fs-5">There are no products pending to be paid</h4></div>
-                  {cartShow.map((product) => (
-                   
+                <div style={{display: `${noProdMsg}`}}><h4 className="text-center fs-5">There are no products pending to be paid</h4></div>              
+                  {cartShow.map((product) => (  
                     <div key={product.id}>
                       <div className="product-item mb-1 d-flex align-items-center">
                         <div className="product-image-container ms-4">
@@ -190,7 +189,7 @@ function CheckOut(props) {
                             alt={product.name}
                           />
                         </div>
-                        <div className="product-details  d-flex justify-content-center ms-5 ">
+                        <div className="product-details  d-flex justify-content-end me-3 ">
                           <div className="d-flex flex-column justify-content-start">
                           <h4 className="mt-2 fs-4 mb-1">{product.name}</h4>
                           <p className="mb-1">Quantity x {product.quantity}</p>
@@ -206,15 +205,15 @@ function CheckOut(props) {
                       ></i>
                     </button>
                     </div>
-                        </div>
-                      </div>
-                      <div
-                        className="mx-3"
-                        style={{
-                          display: `${product.stockMessage}`,
-                          color: "red",
-                        }}
-                      >
+                  </div>
+                </div>
+                <div
+                className="mx-3"
+                style={{
+                display: `${product.stockMessage}`,
+                color: "red",
+                }}
+                >
                         <p>
                           There's not enough stock of this product. Please, do a
                           new order
@@ -227,9 +226,9 @@ function CheckOut(props) {
               </div>
             ))}
           </div>
-          <div className="col-lg-6 col-12 col-of-action">
-            <div className="">
-              <div className="rounded-3 border shadow p-3 mt-2 mt-lg-0 mb-5 mb-lg-4">
+
+          <div className="col-12 col-md-6 ">
+              <div className="rounded-3 border shadow p-3  mt-lg-0 mb-4 mb-lg-4">
                 <h4 className="mb-3">Delivery address</h4>
                 <div className="d-flex justify-content-between align-items-center">
                   <div>
@@ -242,14 +241,14 @@ function CheckOut(props) {
                         onClick={handleAddress}
                         className="btn btn-secondary"
                       >
-                        Another direction?
+                        New address
                       </button>
                     ) : (
                       <button
                         onClick={handleAddress}
                         className="btn btn-secondary"
                       >
-                        Another direction?
+                        New address
                       </button>
                     )}
                   </div>
@@ -315,16 +314,18 @@ function CheckOut(props) {
                           />
                         </div>
                       </div>
-                      <div className="d-flex justify-content-end">
-                        <button type="submit" className="btn btn-dark mt-2">
-                          Update Address
+                      <div className="d-flex justify-content-sm-end justify-content-center">
+                        <button type="submit" className="btn btn-dark mt-2 ">
+                          Update 
                         </button>
                       </div>
                     </form>
                   </div>
-                )}hack
+                )}
               </div>
-              <div className="rounded-3 border shadow p-3 mt-4">
+          </div>
+          <div className="col-12 col-md-6">
+              <div className="rounded-3 border shadow p-3 mb-4 ">
                 <div>
                   <h4>Payment methods</h4>
                 </div>
@@ -372,8 +373,7 @@ function CheckOut(props) {
                 </div>
                 {showCreditCard ? <div>{props.children}</div> : <div></div>}
               </div>
-            </div>
-          </div>
+          </div>   
           {unpaidOrders.map((order) => (
             <div key={order.id}>
               <div className="col-12 mt-3">
@@ -396,7 +396,7 @@ function CheckOut(props) {
                   <p className="border-top border-bottom pb-3 pt-3 d-flex justify-content-between">
                     <strong>Total Price:</strong> US${totalPrice}
                   </p>
-                  <div className="d-flex justify-content-end">
+                  <div className="d-flex justify-content-sm-end justify-content-center">
                     <button
                       onClick={() => handlePay(order.id)}
                       className="btn btn-lg buy-button mt-0"
@@ -410,6 +410,36 @@ function CheckOut(props) {
           ))}
         </div>
       </div>
+    ) : (
+      <div className="col-12 col-check-out-cart mt-4 p-3">
+        <div className="text-center header-pay mb-4">
+          <h1>Payment and delivery</h1>
+        </div>
+           
+              <div
+                className="mt-3 border rounded-3 shadow p-3 mb-4"
+                
+              >
+                <div className="d-flex justify-content-between align-items-center ">
+                  <p className="mb-0 date-check-out">
+                    
+                  </p>
+                  <p className="mb-0 order-reference-check-out">
+                   
+                  </p>
+                </div>
+                <hr />
+                <div className="order-item">
+                <div><h4 className="text-center fs-5">There are no products pending to be paid</h4></div>              
+                </div>
+                <hr />
+              </div>
+              <div className="d-flex justify-content-center">
+              <button type="submit" className="btn btn-dark mt-2 btn-lg ">
+                Go home
+              </button>
+              </div>
+          </div>
     )
   );
 }
