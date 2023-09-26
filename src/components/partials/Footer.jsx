@@ -4,7 +4,7 @@ import "../../styles/Footer.css";
 
 function Footer() {
   return (
-    <div className=" border-top" style={{backgroundColor: "rgb(102, 102, 102)", color: "white"}}>
+    <div className=" border-top text-center text-sm-start" style={{backgroundColor: "rgb(102, 102, 102)", color: "white"}}>
       <div className="container p-4">
         <div className="row py-lg-4 pb-1 pt-0 ">
           <div className="col-12 col-lg-6 text-lg-start ">

@@ -56,7 +56,7 @@ function ContactUs() {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3 border-bottom" controlId="example">
-                  <Form.Label className="comment-label pb-1">Comment</Form.Label>
+                  <Form.Label className="comment-label" style={{paddingBottom:"7px"}}>Comment</Form.Label>
                   <Form.Control
                     className=" border-0 formControl"
                     as="textarea"

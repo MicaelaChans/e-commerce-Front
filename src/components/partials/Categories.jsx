@@ -1,4 +1,4 @@
-import { Col, Button, Row } from "react-bootstrap";
+import { Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../styles/CategorySection.css";
 
