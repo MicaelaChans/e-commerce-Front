@@ -6,6 +6,7 @@ import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function CheckOut(props) {
   const [orders, setOrders] = useState([]);
@@ -435,9 +436,11 @@ function CheckOut(props) {
                 <hr />
               </div>
               <div className="d-flex justify-content-center">
+                <Link to={"/"}>
               <button type="submit" className="btn btn-dark mt-2 btn-lg ">
                 Go home
               </button>
+              </Link>
               </div>
           </div>
     )
