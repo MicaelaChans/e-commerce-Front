@@ -18,7 +18,7 @@ import Profile from "./components/Profile";
 import ScrollToTop from "./components/ScrollToTop";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
-import CheckOut from "./components/CheckOut";
+import CheckOut from "./components/CHeckOut";
 import CreditCard from "./components/partials/CreditCard";
 function App() {
   return (
