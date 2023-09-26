@@ -31,8 +31,8 @@ const teamMembers = [
     key: 5,
     profImg: "https://cdn-icons-png.flaticon.com/512/6596/6596121.png",
     name: "Mauro de Nava",
-    linkLi: "#",
-    linkGi: "#",
+    linkLi: "https://www.linkedin.com/in/mauro-de-nava",
+    linkGi: "https://github.com/maurodenava01",
   },
   {
     key: 6,
