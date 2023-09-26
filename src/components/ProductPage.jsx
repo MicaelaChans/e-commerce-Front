@@ -8,6 +8,8 @@ import DescriptionsProduct from "./partials/DescriptionsProduct";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
 import "../styles/OneProduct.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function ProductPage() {
   const dispatch = useDispatch();
@@ -41,7 +43,7 @@ function ProductPage() {
         })
       );
     } else {
-      console.log("no hay stock de este item");
+      toast.error("This product is out of stock");
     }
   };
 

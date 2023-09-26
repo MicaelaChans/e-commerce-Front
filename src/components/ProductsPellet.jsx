@@ -64,7 +64,7 @@ function ProductsList() {
       );
       toast.success(`${product.name} successfully added to cart.`);
     } else {
-      console.log("no hay stock de este item");
+      toast.error("This product is out of stock");
     }
   };
 
