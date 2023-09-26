@@ -13,7 +13,7 @@ function CategoryProducts() {
             alt="Wood Stove"
           />
         </Col>
-        <Col xs={12} lg={4} className="categories-first-div px-5">
+        <Col xs={12} lg={4} className="categories-first-div py-4 px-5">
           <h2 className="section-first-title fs-3 mt-3">Pellet Stoves</h2>
           <div className="divider-home"></div>
           <p className="section-first-p my-4">
@@ -35,7 +35,7 @@ function CategoryProducts() {
       </div>
 
       <div className="row-category d-flex w-100 m-0 flex-column flex-lg-row">
-        <Col xs={12} lg={4} className="categories-second-div px-5">
+        <Col xs={12} lg={4} className="categories-second-div py-4 px-5">
           <h2 className="section-second-title fs-3 mt-3">Wood Stoves</h2>
           <div className="divider-home"></div>
           <p className="section-second-p my-4">
@@ -71,7 +71,7 @@ function CategoryProducts() {
             alt="Wood Stove"
           />
         </Col>
-        <Col xs={12} lg={4} className="categories-first-div px-5">
+        <Col xs={12} lg={4} className="categories-first-div py-4 px-5">
           <h2 className="section-first-title fs-3 mt-3 mt-2">Accessories</h2>
           <div className="divider-home"></div>
           <p className="section-first-p my-4">
