@@ -16,6 +16,10 @@ function Register() {
   const handleRating = (rate) => {
     setRating(rate);
   };
+  const [pellet, setPellet] = useState([]);
+  let prod1 = "";
+  let prod2 = "";
+  let prod3 = "";
 
   const handleRate = async (product) => {
     console.log(product);
@@ -30,6 +34,12 @@ function Register() {
     });
   };
 
+  if (pellet.length > 0) {
+    prod1 = pellet.find((prod) => prod.name == "Aduro P1");
+    prod2 = pellet.find((prod) => prod.name == "Aduro P1.3");
+    prod3 = pellet.find((prod) => prod.name == "Aduro P1.4");
+  }
+
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
@@ -42,6 +52,17 @@ function Register() {
       setOrders(response.data);
     };
     getOrders();
+
+    const listProducts = async () => {
+      const response = await axios({
+        method: "GET",
+        url: "http://localhost:8000/products",
+      });
+      setPellet(
+        response.data.filter((product) => product.category.name == "pellet")
+      );
+    };
+    listProducts();
   }, []);
 
   if (orders.length > 0 && user != null) {
@@ -62,7 +83,7 @@ function Register() {
     }
   }
 
-  return productsOfUser[0] ? (
+  return productsOfUser[0] && pellet.length > 0 ? (
     <div>
       <div className="container mb-5" style={{ marginTop: "160px" }}>
         <h1 className="mx-3 title">My Purchases</h1>
@@ -137,40 +158,46 @@ function Register() {
         <div className="mt-5 d-flex flex-column flex-sm-row justify-content-around ">
           <div className="col-12 col-sm-3 p-lg-3 p-2  text-center border rounded-3 shadow mb-4 mb-sm-0">
             <h4 className="mb-3 other-products-name">Aduro P1</h4>
-            <img
-              className="other-images "
-              src="https://www.adurofire.com/typo3temp/assets/_processed_/8/f/csm_aduro-p1-round-pellet-stove-withmatt-surface_01_a7c9377bf6.png"
-              alt="aduroP1"
-            />
+            <Link to={`/products/${prod1.id}`}>
+              <img
+                className="other-images "
+                src="https://www.adurofire.com/typo3temp/assets/_processed_/8/f/csm_aduro-p1-round-pellet-stove-withmatt-surface_01_a7c9377bf6.png"
+                alt="aduroP1"
+              />
+            </Link>
             <div className="d-flex flex-column mt-3">
-              <Link>
-                <button className="btn buy-button ">Add to cart</button>
+              <Link to={`/products/${prod1.id}`}>
+                <button className="btn rate-button  ">Go to page</button>
               </Link>
             </div>
           </div>
           <div className="col-12 col-sm-3 p-lg-3 p-2  text-center border rounded-3 shadow my-4 my-sm-0">
             <h4 className="mb-3 other-products-name">Aduro P1.3</h4>
-            <img
-              className="other-images"
-              src="https://www.adurofire.com/typo3temp/assets/_processed_/4/9/csm_aduro-p1-3-round-pellet-stove-with-black-glass-sides_01_0545dab144.png"
-              alt="aduroP1.3"
-            />
+            <Link to={`/products/${prod2.id}`}>
+              <img
+                className="other-images"
+                src="https://www.adurofire.com/typo3temp/assets/_processed_/4/9/csm_aduro-p1-3-round-pellet-stove-with-black-glass-sides_01_0545dab144.png"
+                alt="aduroP1.3"
+              />
+            </Link>
             <div className="d-flex flex-column mt-3">
-              <Link>
-                <button className="btn buy-button">Add to cart</button>
+              <Link to={`/products/${prod2.id}`}>
+                <button className="btn rate-button">Go to page</button>
               </Link>
             </div>
           </div>
           <div className="col-12 col-sm-3  p-lg-3 p-2 text-center border rounded-3 shadow my-4 my-sm-0">
             <h4 className="mb-3 other-products-name">Aduro P1.4</h4>
-            <img
-              className="other-images"
-              src="https://www.adurofire.com/typo3temp/assets/_processed_/f/9/csm_aduro-p1-4-round-pellet-stove-with-white-glass-sides_01_80b032ab41.png"
-              alt="aduroP1.4"
-            />
+            <Link to={`/products/${prod3.id}`}>
+              <img
+                className="other-images"
+                src="https://www.adurofire.com/typo3temp/assets/_processed_/f/9/csm_aduro-p1-4-round-pellet-stove-with-white-glass-sides_01_80b032ab41.png"
+                alt="aduroP1.4"
+              />
+            </Link>
             <div className="d-flex flex-column mt-3">
-              <Link>
-                <button className="btn buy-button ">Add to cart</button>
+              <Link to={`/products/${prod3.id}`}>
+                <button className="btn rate-button ">Go to page</button>
               </Link>
             </div>
           </div>
