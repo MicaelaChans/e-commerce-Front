@@ -398,14 +398,12 @@ function CheckOut(props) {
                     <strong>Total Price:</strong> US${totalPrice}
                   </p>
                   <div className="d-flex justify-content-sm-end justify-content-center">
-                    <Link to={"/"}>
                     <button
                       onClick={() => handlePay(order.id)}
                       className="btn btn-lg buy-button mt-0"
                     >
                       Pay Order
                     </button>
-                    </Link>
                   </div>
                 </div>
               </div>

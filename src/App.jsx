@@ -5,18 +5,20 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import ContactUs from "./components/partials/ContactUs";
+import Cart from "./components/Cart";
 import ProductsPellet from "./components/ProductsPellet";
 import ProductsWood from "./components/ProductsWood";
 import ProductsAccessories from "./components/ProductsAccessories";
 import NavBar from "./components/partials/NavBar";
 import ProductPage from "./components/ProductPage";
 import AboutThisProject from "./components/AboutThisProject";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MyPurchases from "./components/MyPurchases";
 import Profile from "./components/Profile";
+import ScrollToTop from "./components/ScrollToTop";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
-import CheckOut from "./components/CheckOut"
+import CheckOut from "./components/CheckOut";
 import CreditCard from "./components/partials/CreditCard";
 function App() {
   return (
@@ -27,7 +29,7 @@ function App() {
         </button>
       </Link>
       <NavBar />
-     
+      <ScrollToTop />
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/registro" element={<Navigate replace to="/register" />} />
@@ -53,7 +55,7 @@ function App() {
         <Route path="/products/:id" element={<ProductPage />} />
         <Route path="/my-purchases" element={<MyPurchases />} />
         <Route
-          path="/check-out"
+          path="/check-Out"
           element={
             <CheckOut>
               <CreditCard />
