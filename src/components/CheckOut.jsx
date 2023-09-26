@@ -141,7 +141,6 @@ function CheckOut(props) {
   }
 
   function handleCreditCard(type) {
-    console.log(type);
     if (type == "Visa - Credit Card" || type == "MasterCard - Credit Card") {
       setShowCreditCard(true);
     } else {
