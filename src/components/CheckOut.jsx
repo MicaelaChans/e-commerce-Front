@@ -140,11 +140,16 @@ function CheckOut(props) {
     }
   }
 
-  function handleCreditCard() {
-    setShowCreditCard(!showCreditCard);
+  function handleCreditCard(type) {
+    console.log(type);
+    if (type == "Visa - Credit Card" || type == "MasterCard - Credit Card") {
+      setShowCreditCard(true);
+    } else {
+      setShowCreditCard(false);
+    }
   }
   const handleImageClick = (type) => {
-    handleCreditCard();
+    handleCreditCard(type);
     setSelectedPaymentMethod(type);
   };
 
@@ -359,7 +364,7 @@ function CheckOut(props) {
                 alt="MasterCard"
               />
               <img
-                onClick={() => setSelectedPaymentMethod("Paypal")}
+                onClick={() => handleImageClick("Paypal")}
                 className={`payment-method-img-paypal ${
                   selectedPaymentMethod === "Paypal" ? "selected-payment" : ""
                 }`}
@@ -367,7 +372,7 @@ function CheckOut(props) {
                 alt="PayPal"
               />
               <img
-                onClick={() => setSelectedPaymentMethod("MercadoPago")}
+                onClick={() => handleImageClick("MercadoPago")}
                 src="https://logotipoz.com/wp-content/uploads/2021/10/version-horizontal-large-logo-mercado-pago.webp"
                 alt="MercadoPago"
                 className={`payment-method-img-mp ${
