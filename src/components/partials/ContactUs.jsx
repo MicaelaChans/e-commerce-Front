@@ -22,7 +22,7 @@ function ContactUs() {
         <div className="container px-0 ">
           <div className="row">
             <div className="col-lg-6 col-md-6 col-sm-12">
-              <Form className="fs-3">
+              <Form className="fs-4">
                 <Form.Group className="mb-3 border-bottom" controlId="example">
                   <Form.Label>Name *</Form.Label>
                   <Form.Control
@@ -47,7 +47,7 @@ function ContactUs() {
               </Form>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
-              <Form className="fs-3 ">
+              <Form className="fs-4 ">
                 <Form.Group className="mb-3 border-bottom" controlId="example">
                   <Form.Label>Subject</Form.Label>
                   <Form.Control
