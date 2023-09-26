@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 import { format } from "date-fns";
 import Footer from "./partials/Footer";
 import { Rating } from "react-simple-star-rating";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Register() {
   const user = useSelector((state) => state.user);
@@ -20,17 +22,25 @@ function Register() {
   let prod1 = "";
   let prod2 = "";
   let prod3 = "";
-
+  const handleReset = () => {
+    setRating(0);
+  };
   const handleRate = async (product) => {
     const productId = product.id;
-    await axios({
-      method: "PATCH",
-      url: `http://localhost:8000/products/${productId}`,
-      headers: {
-        Authorization: "Bearer " + (user && user.token),
-      },
-      data: { rating: rating },
-    });
+    try {
+      await axios({
+        method: "PATCH",
+        url: `http://localhost:8000/products/${productId}`,
+        headers: {
+          Authorization: "Bearer " + (user && user.token),
+        },
+        data: { rating: rating },
+      });
+
+      toast.success("Rating added successfully!");
+    } catch (error) {
+      toast.error("There was an error adding your rating.");
+    }
   };
 
   if (pellet.length > 0) {
@@ -144,6 +154,7 @@ function Register() {
                       <Rating
                         onClick={handleRating}
                         ratingValue={rating}
+                        initialValue={rating}
                         size={20}
                       />
                     </div>
@@ -202,7 +213,7 @@ function Register() {
           </div>
         </div>
       </div>
-
+      <ToastContainer />
       <Footer />
     </div>
   ) : (

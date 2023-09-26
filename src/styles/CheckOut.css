@@ -72,10 +72,6 @@
   border-radius: 3px;
 }
 
-.product-details {
-  flex-grow: 1;
-  margin-right: 80px;
-}
 @media (min-width: 1200px) {
   .product-details {
     margin-right: 140px;
@@ -89,9 +85,7 @@
 .order-item {
   margin: 15px 0;
 }
-.product-image-container {
-  margin-left: 80px;
-}
+
 @media (min-width: 1200px) {
   .product-image-container {
     margin-left: 140px;

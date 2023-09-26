@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../redux/productSlice";
@@ -8,12 +8,14 @@ import DescriptionsProduct from "./partials/DescriptionsProduct";
 import Footer from "./partials/Footer";
 import { addItem } from "../redux/cartSlice";
 import "../styles/OneProduct.css";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Rating } from "react-simple-star-rating";
 function ProductPage() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products);
   const params = useParams();
-
+  const [rating, setRating] = useState(1);
   useEffect(() => {
     const getOneProduct = async () => {
       const response = await axios({
@@ -40,9 +42,22 @@ function ProductPage() {
           addMessage: "none",
         })
       );
+      toast.success(`${product.name} successfully added to cart.`);
     } else {
-      console.log("no hay stock de este item");
+      toast.error("This product is out of stock");
     }
+  };
+  function calculatingRatingAverage(rating) {
+    if (rating.length === 0) {
+      return "This product has no rating";
+    }
+
+    const ratingAverage = rating.reduce((acc, rating) => acc + rating, 0);
+    return Math.floor(ratingAverage / rating.length);
+  }
+
+  const handleRating = (rate) => {
+    setRating(rate);
   };
 
   return (
@@ -64,6 +79,12 @@ function ProductPage() {
               </div>
               <DescriptionsProduct
                 name={product.name}
+                rating={
+                  <Rating
+                    readonly={true}
+                    initialValue={calculatingRatingAverage(product.rating)}
+                  />
+                }
                 description={product.description}
                 height={product.otherProperties.height}
                 width={product.otherProperties.width}
@@ -97,6 +118,7 @@ function ProductPage() {
           </div>
         </div>
       </div>
+      <ToastContainer />
       <Footer />
     </>
   );

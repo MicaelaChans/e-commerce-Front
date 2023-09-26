@@ -16,7 +16,7 @@ import MyPurchases from "./components/MyPurchases";
 import Profile from "./components/Profile";
 import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
-import CheckOut from "./components/CHeckOut";
+import CheckOut from "./components/CheckOut";
 import CreditCard from "./components/partials/CreditCard";
 import ThanksForBuy from "./components/ThanksForBuy";
 
