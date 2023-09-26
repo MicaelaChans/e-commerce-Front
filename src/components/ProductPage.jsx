@@ -83,6 +83,8 @@ function ProductPage() {
                   <Rating
                     readonly={true}
                     initialValue={calculatingRatingAverage(product.rating)}
+                    size={29}
+                    className=""
                   />
                 }
                 description={product.description}
