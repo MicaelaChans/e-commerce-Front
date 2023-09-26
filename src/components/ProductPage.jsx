@@ -42,6 +42,7 @@ function ProductPage() {
           addMessage: "none",
         })
       );
+      toast.success(`${product.name} successfully added to cart.`);
     } else {
       toast.error("This product is out of stock");
     }
@@ -99,6 +100,7 @@ function ProductPage() {
           </div>
         </div>
       </div>
+      <ToastContainer />
       <Footer />
     </>
   );
