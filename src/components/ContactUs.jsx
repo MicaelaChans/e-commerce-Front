@@ -94,7 +94,6 @@ function ContactUs() {
                   <Form.Control
                     name="message"
                     required
-                    className=""
                     as="textarea"
                     rows={5}
                   />
