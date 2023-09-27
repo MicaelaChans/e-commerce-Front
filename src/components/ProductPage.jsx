@@ -67,7 +67,7 @@ function ProductPage() {
           <div className="container-left-product-page">
             <div className="row mb-3">
               <div className="col-md-12 col-lg-5 col-xl-4">
-                <div className=" pt-5 d-flex flex-column justify-content-between">
+                <div className=" pt-3 d-flex flex-column justify-content-between">
                   <div className="d-flex justify-content-center">
                     <img
                       className="img-product-page"
