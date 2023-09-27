@@ -5,7 +5,10 @@ function Footer() {
   return (
     <div
       className=" border-top text-center text-sm-start"
-      style={{ backgroundColor: "rgb(94, 94, 94)", color: "white" }}
+      style={{
+        backgroundColor: "rgb(94, 94, 94)",
+        color: "white",
+      }}
     >
       <div className="container p-4">
         <div className="row py-lg-4 pb-1 pt-0 ">

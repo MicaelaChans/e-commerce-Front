@@ -26,6 +26,7 @@ function ProductsList() {
         method: "GET",
         url: `http://localhost:${port}/products`,
       });
+      console.log("asdad");
       dispatch(getProducts(response.data));
     };
     listProducts();
