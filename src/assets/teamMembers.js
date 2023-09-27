@@ -9,7 +9,7 @@ const teamMembers = [
   },
   {
     key: 2,
-    profImg: "https://cdn-icons-png.flaticon.com/512/6596/6596121.png",
+    profImg: "./facundoCenturion.png",
     name: "Facundo Centurión",
     linkLi: "https://www.linkedin.com/in/f-centurion/",
     linkGi: "https://github.com/facundogerman",
