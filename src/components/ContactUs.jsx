@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Form from "react-bootstrap/Form";
 import Footer from "./partials/Footer";
@@ -21,6 +23,7 @@ function ContactUs() {
         (result) => {
           console.log(result.text);
           form.current.reset();
+          toast.success("Thank you for communicating with us!");
         },
         (error) => {
           console.log(error.text);
@@ -87,9 +90,10 @@ function ContactUs() {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3 border-bottom" controlId="example">
-                  <Form.Label className="comment-label">Comment</Form.Label>
+                  <Form.Label className="comment-label">Comment *</Form.Label>
                   <Form.Control
                     name="message"
+                    required
                     className=" border-0 formControl"
                     as="textarea"
                     rows={5}
@@ -104,6 +108,7 @@ function ContactUs() {
                     type="checkbox"
                     value=""
                     id="flexCheckDefault"
+                    required
                   />
                   <label
                     className="form-check-label "
@@ -120,6 +125,7 @@ function ContactUs() {
                   >
                     Send
                   </button>
+                  <ToastContainer className="fs-6" />
                 </Form.Group>
               </div>
             </div>
