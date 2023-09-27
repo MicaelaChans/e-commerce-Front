@@ -14,41 +14,41 @@ function DescriptionsProduct({
     <div className="col-md-12 col-lg-7 col-xl-8 p-5 text-center text-sm-start">
       <h3 className="m-1 ">{name}</h3>
       <p>{rating}</p>
-      <div className="d-flex mb-4 align-items-center justify-content-center fs-5 mt-4 ">
-        <p className="m-0 me-3 fw-semibold ">Description</p>
+      <div className="d-flex mb-2 mb-sm-4 align-items-center justify-content-center fs-5 mt-4 ">
+        <p className=" me-sm-3 me-0 mb-0 fw-semibold ">Description</p>
         <div className="line-description-product border-bottom w-100 d-none d-sm-block"></div>
       </div>
-      <p className="m-4">{description}</p>
-      <hr className="d-block d-sm-none" />
+      <p>{description}</p>
+
       {(height || width || depth) && (
-        <div className="d-flex mb-4 align-items-center justify-content-center fs-5">
-          <p className="m-0 me-3 fw-semibold">Size</p>
+        <div className="d-flex mb-2 mb-sm-4 align-items-center justify-content-center fs-5">
+          <p className=" me-sm-3 me-0 mb-0 fw-semibold">Size</p>
           <div className="line-description-product border-bottom w-100 d-none d-sm-block"></div>
         </div>
       )}
       {(height || width || depth) && (
-        <div className="d-flex m-4 flex-column flex-sm-row text-center align-items-center justify-content-between">
+        <div className="d-flex  flex-column flex-sm-row text-center align-items-center justify-content-between">
           {height && (
-            <div className="d-flex">
-              <p className="fw-semibold m-0 me-2">Height:</p>
-              <p className="m-0">{height}</p>
+            <div className="d-flex m-0 mb-sm-4 ">
+              <p className="fw-semibold me-2 ">Height:</p>
+              <p>{height}</p>
             </div>
           )}
           {width && (
-            <div className="d-flex">
-              <p className="fw-semibold m-0 me-2">Width:</p>
-              <p className="m-0">{width}</p>
+            <div className="d-flex m-0 mb-sm-4">
+              <p className="fw-semibold  me-2">Width:</p>
+              <p>{width}</p>
             </div>
           )}
           {depth && (
-            <div className="d-flex">
-              <p className="fw-semibold m-0 me-2">Depth:</p>
-              <p className="m-0">{depth}</p>
+            <div className="d-flex m-0 mb-sm-4">
+              <p className="fw-semibold  me-2">Depth:</p>
+              <p>{depth}</p>
             </div>
           )}
         </div>
       )}
-      <hr className="d-block d-sm-none" />
+
       <div className="mb-4">
         <div className="line-description-product border-bottom w-100 d-none d-sm-block"></div>
       </div>
