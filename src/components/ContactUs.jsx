@@ -89,12 +89,12 @@ function ContactUs() {
                     type="subject"
                   />
                 </Form.Group>
-                <Form.Group className="mb-3 border-bottom" controlId="example">
+                <Form.Group className="mb-3" controlId="example">
                   <Form.Label className="comment-label">Comment *</Form.Label>
                   <Form.Control
                     name="message"
                     required
-                    className=" border-0 formControl"
+                    className=""
                     as="textarea"
                     rows={5}
                   />
