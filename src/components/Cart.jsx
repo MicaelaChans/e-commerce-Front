@@ -21,9 +21,10 @@ function Cart() {
   let isProduct = false;
   const port = import.meta.env.VITE_APP_PORT;
 
-  for (let i = 0; i < cart.length; i++) {
-    totalPrice += cart[i].price;
+  for (const item of cart) {
+    totalPrice += item.price;
   }
+  
   for (let i = 0; i < cart.length; i++) {
     for (let j = 0; j < cartShow.length; j++) {
       if (cartShow[j]) {
