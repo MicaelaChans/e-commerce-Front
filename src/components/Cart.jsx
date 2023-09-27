@@ -19,6 +19,7 @@ function Cart() {
   let cartNumber = cart.length;
   let totalPrice = 0;
   let isProduct = false;
+  const port = import.meta.env.VITE_APP_PORT;
 
   for (let i = 0; i < cart.length; i++) {
     totalPrice += cart[i].price;
@@ -88,7 +89,7 @@ function Cart() {
   async function handleCheckOut() {
     if (user && cart.length > 0) {
       await axios({
-        url: "http://localhost:8000/orders",
+        url: `http://localhost:${port}/orders`,
         method: "POST",
         headers: {
           Authorization: "Bearer " + (user && user.token),

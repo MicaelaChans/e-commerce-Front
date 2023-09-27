@@ -15,6 +15,7 @@ function Register() {
   const [orders, setOrders] = useState([]);
   const productsOfUser = [];
   const [rating, setRating] = useState(0);
+  const port = import.meta.env.VITE_APP_PORT;
   const handleRating = (rate) => {
     setRating(rate);
   };
@@ -30,7 +31,7 @@ function Register() {
     try {
       await axios({
         method: "PATCH",
-        url: `http://localhost:8000/products/${productId}`,
+        url: `http://localhost:${port}/products/${productId}`,
         headers: {
           Authorization: "Bearer " + (user && user.token),
         },
@@ -53,7 +54,7 @@ function Register() {
     const getOrders = async () => {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:8000/orders`,
+        url: `http://localhost:${port}/orders`,
         headers: {
           Authorization: "Bearer " + (user && user.token),
         },
@@ -65,7 +66,7 @@ function Register() {
     const listProducts = async () => {
       const response = await axios({
         method: "GET",
-        url: "http://localhost:8000/products",
+        url: `http://localhost:${port}/products`,
       });
       setPellet(
         response.data.filter((product) => product.category.name == "pellet")

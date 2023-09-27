@@ -9,6 +9,7 @@ function ResetPassword() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const port = import.meta.env.VITE_APP_PORT;
 
   const token = new URLSearchParams(window.location.search).get("token");
 
@@ -24,7 +25,7 @@ function ResetPassword() {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:8000/reset-password",
+        `http://localhost:${port}/reset-password`,
         {
           token,
           newPassword,

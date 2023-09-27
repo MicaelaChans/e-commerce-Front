@@ -22,6 +22,7 @@ function CheckOut(props) {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
   const [updatedAddress, setUpdatedAddress] = useState("");
   let noProdMsg = "none";
+  const port = import.meta.env.VITE_APP_PORT;
 
   let canBuy = true;
   const cart = [];
@@ -34,7 +35,7 @@ function CheckOut(props) {
     const getOrders = async () => {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:8000/orders`,
+        url: `http://localhost:${port}/orders`,
         headers: {
           Authorization: "Bearer " + (user && user.token),
         },
@@ -93,7 +94,7 @@ function CheckOut(props) {
       try {
         await axios({
           method: "PATCH",
-          url: `http://localhost:8000/orders/${id}`,
+          url: `http://localhost:${port}/orders/${id}`,
           headers: {
             Authorization: "Bearer " + (user && user.token),
           },
@@ -117,7 +118,7 @@ function CheckOut(props) {
     try {
       await axios({
         method: "DELETE",
-        url: `http://localhost:8000/orders/${id}`,
+        url: `http://localhost:${port}/orders/${id}`,
         data: { orderId: unpaidOrders[0].id },
         headers: {
           Authorization: "Bearer " + (user && user.token),

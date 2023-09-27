@@ -16,11 +16,13 @@ function ProductPage() {
   const products = useSelector((state) => state.products);
   const params = useParams();
   const [rating, setRating] = useState(1);
+  const port = import.meta.env.VITE_APP_PORT;
+
   useEffect(() => {
     const getOneProduct = async () => {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:8000/products`,
+        url: `http://localhost:${port}/products`,
       });
       dispatch(getProducts(response.data));
     };

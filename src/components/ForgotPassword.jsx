@@ -6,13 +6,14 @@ import "../styles/ForgotPassword.css";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
+  const port = import.meta.env.VITE_APP_PORT;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/forgot-password",
+        `http://localhost:${port}/forgot-password`,
         { email }
       );
 

@@ -20,7 +20,7 @@ function Profile() {
     address: "",
     email: "",
   });
-
+  const port = import.meta.env.VITE_APP_PORT;
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function Profile() {
       try {
         const response = await axios({
           method: "GET",
-          url: `http://localhost:8000/users/${user.id}`,
+          url: `http://localhost:8000/${port}/${user.id}`,
           headers: {
             Authorization: "Bearer " + (user && user.token),
           },
@@ -55,7 +55,7 @@ function Profile() {
     const fetchOrders = async () => {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:8000/users/${user.id}/orders`,
+        url: `http://localhost:${port}/users/${user.id}/orders`,
         headers: {
           Authorization: "Bearer " + (user && user.token),
         },
@@ -86,7 +86,7 @@ function Profile() {
     try {
       const response = await axios({
         method: "POST",
-        url: "http://localhost:8000/update-password",
+        url: `http://localhost:${port}/update-password`,
         data: {
           userId: user.id,
           oldPassword,
