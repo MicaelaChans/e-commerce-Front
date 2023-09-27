@@ -1,6 +1,6 @@
 import Form from "react-bootstrap/Form";
-import Footer from "./Footer";
-import "../../styles/ContactUs.css";
+import Footer from "./partials/Footer";
+import "../styles/ContactUs.css";
 
 function ContactUs() {
   return (
@@ -58,12 +58,7 @@ function ContactUs() {
                   />
                 </Form.Group>
                 <Form.Group className="mb-3 border-bottom" controlId="example">
-                  <Form.Label
-                    className="comment-label"
-                    style={{ paddingBottom: "7px" }}
-                  >
-                    Comment
-                  </Form.Label>
+                  <Form.Label className="comment-label">Comment</Form.Label>
                   <Form.Control
                     className=" border-0 formControl"
                     as="textarea"

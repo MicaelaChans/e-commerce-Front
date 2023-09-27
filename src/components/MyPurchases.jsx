@@ -154,7 +154,7 @@ function Register() {
                       <Rating
                         onClick={handleRating}
                         ratingValue={rating}
-                        initialValue={rating}
+                        initialValue={1}
                         size={20}
                       />
                     </div>

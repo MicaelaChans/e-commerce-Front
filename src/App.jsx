@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
-import ContactUs from "./components/partials/ContactUs";
+import ContactUs from "./components/ContactUs";
 import ProductsPellet from "./components/ProductsPellet";
 import ProductsWood from "./components/ProductsWood";
 import ProductsAccessories from "./components/ProductsAccessories";
