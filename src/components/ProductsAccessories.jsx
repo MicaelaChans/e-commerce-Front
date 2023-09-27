@@ -18,12 +18,13 @@ function ProductsList() {
   const [animate, setAnimate] = useState(false);
   const [firstCategory, setFirstCategory] = useState([]);
   const [aux, setAux] = useState(true);
+  const port = import.meta.env.VITE_APP_PORT;
 
   useEffect(() => {
     const listProducts = async () => {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:8000/products`,
+        url: `http://localhost:${port}/products`,
       });
       dispatch(getProducts(response.data));
     };
