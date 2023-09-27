@@ -65,10 +65,10 @@ function ProductPage() {
       <div className="container container-product-page">
         <div className="d-flex justify-content-center">
           <div className="container-left-product-page">
-            <div className="row mb-5">
+            <div className="row mb-3">
               <div className="col-md-12 col-lg-5 col-xl-4">
-                <div className="left-column-product pt-5 d-flex flex-column justify-content-between">
-                  <div>
+                <div className=" pt-5 d-flex flex-column justify-content-between">
+                  <div className="d-flex justify-content-center">
                     <img
                       className="img-product-page"
                       src={product.image}
@@ -77,35 +77,39 @@ function ProductPage() {
                   </div>
                 </div>
               </div>
-              <DescriptionsProduct
-                name={product.name}
-                rating={
-                  <Rating
-                    readonly={true}
-                    initialValue={calculatingRatingAverage(product.rating)}
-                    size={29}
-                    className=""
-                  />
-                }
-                description={product.description}
-                height={product.otherProperties.height}
-                width={product.otherProperties.width}
-                depth={product.otherProperties.depth}
-                price={product.price}
-              >
-                <button
-                  className="btn btn-light btn-product-page p-2"
-                  onClick={() => handleAddItem(product)}
+              <div className="text-center text-sm-start">
+                <DescriptionsProduct
+                  name={product.name}
+                  rating={
+                    <Rating
+                      readonly={true}
+                      initialValue={calculatingRatingAverage(product.rating)}
+                      size={29}
+                      className=""
+                    />
+                  }
+                  description={product.description}
+                  height={product.otherProperties.height}
+                  width={product.otherProperties.width}
+                  depth={product.otherProperties.depth}
+                  price={product.price}
                 >
-                  Add to Cart
-                </button>
-              </DescriptionsProduct>
+                  <button
+                    className="btn btn-light btn-product-page p-2"
+                    onClick={() => handleAddItem(product)}
+                  >
+                    Add to Cart
+                  </button>
+                </DescriptionsProduct>
+              </div>
             </div>
             {product.category.name !== "accessories" && (
               <div className="pb-5">
-                <div className="d-flex mb-4 align-items-center">
-                  <p className="m-0 fw-semibold">TECHNICAL SPECIFICATIONS</p>
-                  <div className="line-description-product border-bottom w-100"></div>
+                <div className="d-flex mb-4 align-items-center justify-content-center">
+                  <p className="m-0 fw-semibold fs-5">
+                    TECHNICAL SPECIFICATIONS
+                  </p>
+                  <div className="line-description-product border-bottom w-100 d-none d-sm-block"></div>
                 </div>
                 <SpecificationsProduct
                   height={product.otherProperties.height}

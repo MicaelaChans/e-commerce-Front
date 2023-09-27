@@ -7,7 +7,7 @@ function SpecificationsProduct({
   nominal,
 }) {
   return (
-    <div className="d-sm-block d-lg-flex justify-content-around">
+    <div className="d-sm-block d-lg-flex justify-content-around text-center text-sm-start">
       <ul className="ul-product-page m-0 p-0">
         <li className="li-product-page p-2 d-flex">
           <p className="m-0">Height:</p>
@@ -39,7 +39,7 @@ function SpecificationsProduct({
       <ul className="ul-product-page m-0 p-0">
         <li className="li-product-page p-2 d-flex">
           <p className="m-0">Log size:</p>
-          <p className="m-0">50 cm</p>
+          <p className="m-0">50cm</p>
         </li>
         <li className="li-product-page-light p-2 d-flex">
           <p className="m-0">Closed combustion:</p>
