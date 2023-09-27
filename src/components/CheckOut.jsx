@@ -199,15 +199,17 @@ function CheckOut(props) {
                       </div>
 
                       <div>
-                        <div className="d-flex flex-column justify-content-end">
+                        <div className="d-flex flex-column">
                           <h4
-                            className="mt-2 fs-4 mb-1"
-                            style={{ width: "180px" }}
+                            className="mt-2 fs-3 mb-1"
+                            style={{ width: "130px" }}
                           >
                             {product.name}
                           </h4>
-                          <p className="mb-1">Quantity x {product.quantity}</p>
-                          <p className=" mb-0">
+                          <p className="mb-1 fs-5">
+                            Quantity x {product.quantity}
+                          </p>
+                          <p className=" mb-0 fs-5">
                             US$ {product.price * product.quantity}
                           </p>
                           <button
@@ -215,7 +217,7 @@ function CheckOut(props) {
                             style={{ backgroundColor: "white", border: "none" }}
                           >
                             <i
-                              className="bi bi-trash3 cart-icon "
+                              className="bi bi-trash3 cart-icon fs-3 "
                               onClick={() => handleDelete(product.id)}
                             ></i>
                           </button>
