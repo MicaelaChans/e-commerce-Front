@@ -60,9 +60,9 @@ function ForgotPassword() {
               </button>
             </div>
           </form>
-          <div className="mt-4 d-flex justify-content-end">
+          <div className="mt-2 d-flex">
             <Link to={"/login"} className="link-register">
-              Back to Login
+            &larr; Back to Login
             </Link>
           </div>
         </div>
