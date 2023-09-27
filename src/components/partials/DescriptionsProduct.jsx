@@ -11,8 +11,8 @@ function DescriptionsProduct({
   children,
 }) {
   return (
-    <div className="col-md-12 col-lg-7 col-xl-8 p-5">
-      <h3 className="m-1">{name}</h3>
+    <div className="col-md-12 col-lg-7 col-xl-8 p-5 text-center text-sm-start">
+      <h3 className="m-1 ">{name}</h3>
       <p>{rating}</p>
       <div className="d-flex mb-4 align-items-center justify-content-center fs-5 mt-4 ">
         <p className="m-0 me-3 fw-semibold ">Description</p>

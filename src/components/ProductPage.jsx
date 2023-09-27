@@ -67,45 +67,42 @@ function ProductPage() {
           <div className="container-left-product-page">
             <div className="row mb-3">
               <div className="col-md-12 col-lg-5 col-xl-4">
-                <div className=" pt-3 d-flex flex-column justify-content-between">
+                <div className=" pt-5 d-flex flex-column  justify-content-between">
                   <div className="d-flex justify-content-center">
                     <img
-                      className="img-product-page"
+                      className="mx-lg-5  img-product-page"
                       src={product.image}
                       alt={product.name}
                     />
                   </div>
                 </div>
               </div>
-              <div className="text-center text-sm-start">
-                <DescriptionsProduct
-                  name={product.name}
-                  rating={
-                    <Rating
-                      readonly={true}
-                      initialValue={calculatingRatingAverage(product.rating)}
-                      size={29}
-                      className=""
-                    />
-                  }
-                  description={product.description}
-                  height={product.otherProperties.height}
-                  width={product.otherProperties.width}
-                  depth={product.otherProperties.depth}
-                  price={product.price}
+              <DescriptionsProduct
+                name={product.name}
+                rating={
+                  <Rating
+                    readonly={true}
+                    initialValue={calculatingRatingAverage(product.rating)}
+                    size={29}
+                  />
+                }
+                description={product.description}
+                height={product.otherProperties.height}
+                width={product.otherProperties.width}
+                depth={product.otherProperties.depth}
+                price={product.price}
+              >
+                <button
+                  className="btn btn-light btn-product-page p-2"
+                  onClick={() => handleAddItem(product)}
                 >
-                  <button
-                    className="btn btn-light btn-product-page p-2"
-                    onClick={() => handleAddItem(product)}
-                  >
-                    Add to Cart
-                  </button>
-                </DescriptionsProduct>
-              </div>
+                  Add to Cart
+                </button>
+              </DescriptionsProduct>
             </div>
             {product.category.name !== "accessories" && (
               <div className="pb-5">
-                <div className="d-flex mb-4 align-items-center justify-content-center">
+                <div className="d-flex mb-4 justify-content-center align-items-center">
                   <p className="m-0 fw-semibold fs-5">
                     TECHNICAL SPECIFICATIONS
                   </p>
