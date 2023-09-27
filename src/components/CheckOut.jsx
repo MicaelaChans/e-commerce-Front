@@ -196,6 +196,7 @@ function CheckOut(props) {
                           className="img-check-out"
                           src={product.image}
                           alt={product.name}
+                          style={{ width: "130px", height: "150px" }}
                         />
                       </div>
 
