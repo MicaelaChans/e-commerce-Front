@@ -28,7 +28,7 @@ function Profile() {
       try {
         const response = await axios({
           method: "GET",
-          url: `http://localhost:8000/${port}/${user.id}`,
+          url: `http://localhost:${port}/users/${user.id}`,
           headers: {
             Authorization: "Bearer " + (user && user.token),
           },
