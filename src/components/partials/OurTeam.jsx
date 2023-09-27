@@ -5,7 +5,7 @@ function OurTeam() {
   return (
     <div className="row my-3 ">
       {teamMembers.map((member) => (
-        <div key={member.key} className="col-6 col-md-4 col-lg-2 my-2">
+        <div key={member.key} className="col-6 col-md-4 col-lg-4 my-2">
           <div className="d-flex justify-content-center align-items-center text-center">
             <img
               src={member.profImg}
