@@ -114,7 +114,7 @@ function Login() {
                   </div>
                 </div>
               </form>
-              <p className="text-center mt-3">
+              <p className="text-center mt-2">
                 Don't have an account?
                 <Link
                   to="/register"
@@ -139,6 +139,18 @@ function Login() {
                 >
                   Recover password
                 </Link>
+              </p>
+              <p className="text-center mt-2">
+                Are you administrator?
+                <a
+                  style={{
+                    color: "blue",
+                    textDecoration: "none",
+                    display: "block",
+                  }}
+                >
+                  Go to Admin page
+                </a>
               </p>
             </div>
           </div>

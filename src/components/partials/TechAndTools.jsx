@@ -1,21 +1,27 @@
 function TechAndTools() {
   return (
     <div className="container">
-      <h3 className="text-center text-sm-start">TECHNOLOGIES & TOOLS</h3>
-      <div className="mt-4 d-flex flex-column align-items-center justify-content-center">
-        <p className=" pt-1 text-center text-sm-start px-5 px-sm-0">
+      <h3 className="text-center text-sm-start mt-5">TECHNOLOGIES & TOOLS</h3>
+      <div className="mt-4 text-center text-sm-start ">
+        <p className=" pt-1 px-5 px-sm-0">
           Throughout the coding bootcamp, we delved into a wide range of
           technologies encompassing both backend and front end development. We
           also gained hands-on experience with databases and leveraged practical
-          tools to optimize our workflow. To ensure efficient task allocation
-          within our team, we utilized Trello as our project management tool.
+          tools to optimize our workflow.{" "}
+        </p>
+        <p>
+          To ensure efficient task allocation within our team, we utilized
+          Trello as our project management tool.
         </p>
         <p className=" text-center text-sm-start px-5 px-sm-0">
           The project was divided into three sprints, with Github serving as our
           primary collaboration platform. Discord played a crucial role in
           facilitating seamless communication throughout the development
-          process. For this project, we handpicked the following set of tools to
-          boost our productivity.
+          process.{" "}
+        </p>
+        <p>
+          For this project, we handpicked the following set of tools to boost
+          our productivity.
         </p>
       </div>
 

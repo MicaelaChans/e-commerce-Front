@@ -9,15 +9,25 @@ function AboutThisProject() {
     <>
       <div className="background-aboutProject">
         <div className="container pt-sm-5">
-          <h2 className="mb-3 fs-1">What is DRACHEN?</h2>
-          <div className="text-about">
+          <h1 style={{ fontSize: "3.5rem" }} className="text-center my-5">
+            About this project
+          </h1>
+        </div>
+      </div>
+      <div className="info-about py-5">
+        <div className="container">
+          <h3 className="text-center text-sm-start">WHAT IS DRACHEN?</h3>
+          <div className="mb-5 mt-4 text-center text-sm-start">
             <p>
               Drechen is an e-commerce app developed as our final project of a
               Coding Bootcamp at Hack Academy, an educational institution that
-              specializes in programming courses. The Bootcamp is an immersive
-              and intensive full-time course that lasts for three months and
-              takes more than 600 hours of coding. Its main goal is to prepare
-              the students to be Full Stack Developers.
+              specializes in programming courses.{" "}
+            </p>
+            <p>
+              The Bootcamp is an immersive and intensive full-time course that
+              lasts for three months and takes more than 600 hours of coding.
+              Its main goal is to prepare the students to be Full Stack
+              Developers.
             </p>
             <p>
               This final project aims to showcase the application of the diverse
@@ -29,15 +39,9 @@ function AboutThisProject() {
               student. It is a fully functional app designed to be user-friendly
               and easy to navigate.
             </p>
-            <p>
-              In this section, we give you some details of the behind-the-scenes
-              journey of creating Drachen and gain a comprehensive understanding
-              of the development process behind our e-commerce app.
-            </p>
           </div>
+          <hr />
         </div>
-      </div>
-      <div className="info-about py-5">
         <TechAndTools />
       </div>
       <hr className="container" />
