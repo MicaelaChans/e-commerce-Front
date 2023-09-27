@@ -25,13 +25,17 @@ function ForgotPassword() {
         toast.error("Error sending email. Please try again.");
       }
     } catch (error) {
-      toast.error("Error sending email. Please try again.");
+      if (error.response && error.response.data && error.response.data.error) {
+        toast.error(error.response.data.error);
+      } else {
+        toast.error("Error sending email. Please try again.");
+      }
     }
   };
 
   return (
     <>
-      <ToastContainer position="top-right" />
+      <ToastContainer />
       <div className="forgot-password-container p-5 d-flex justify-content-center align-items-center">
         <div className="forgot-password-panel p-5 rounded shadow">
           <h2 className="text-center mb-4">Forgot Password</h2>
