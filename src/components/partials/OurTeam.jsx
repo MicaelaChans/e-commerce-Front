@@ -20,18 +20,18 @@ function OurTeam() {
           </div>
           <div>
             <h5 className="gap-2">
-              <a href={member.linkLi} target="_blank">
+              <Link to={member.linkLi} target="_blank">
                 <i
                   className="fa-brands fa-xl fa-linkedin"
                   style={{ color: "#ffffff" }}
                 ></i>
-              </a>
-              <a href={member.linkGi} target="_blank">
+              </Link>
+              <Link to={member.linkGi} target="_blank">
                 <i
                   className="fa-brands fa-xl fa-github"
                   style={{ color: "#ffffff" }}
                 ></i>
-              </a>
+              </Link>
             </h5>
           </div>
         </div>

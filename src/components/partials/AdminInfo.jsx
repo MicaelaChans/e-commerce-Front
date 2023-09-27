@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function AdminInfo() {
   return (
     <div className="admin-info container">
@@ -14,6 +16,9 @@ function AdminInfo() {
           src="https://cdn.dribbble.com/users/2253180/screenshots/15223174/media/83b2ac94850951a219cda00a3662e526.png"
           alt="admin panel"
         />
+        <p>
+          You cam acceed to admin panel by clicking <Link to="">here</Link>
+        </p>
       </div>
     </div>
   );
