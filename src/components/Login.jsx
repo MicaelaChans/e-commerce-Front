@@ -10,8 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 import jwt from "jwt-decode";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("maria.perez@gmail.com");
+  const [password, setPassword] = useState("user");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
