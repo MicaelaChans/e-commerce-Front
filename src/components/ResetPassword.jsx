@@ -46,10 +46,9 @@ function ResetPassword() {
       <ToastContainer />
       <div className="container full-height mt-5">
       <div className="d-flex justify-content-center">
-        <div className="form-box">
-          <h2 className="text-center mb-5">Reset Your Password</h2>
-
-          <div className="form-group my-4">
+        <div className="form-box rounded shadow">
+          <h2 className="text-center mt-2 mb-4">Reset Your Password</h2>
+          <div className="form-group mb-3">
             <label>New Password</label>
             <input
               type="password"
@@ -60,7 +59,7 @@ function ResetPassword() {
             />
           </div>
 
-          <div className="form-group my-4">
+          <div className="form-group mb-4">
             <label>Confirm Password</label>
             <input
               type="password"
