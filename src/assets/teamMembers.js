@@ -25,8 +25,7 @@ const teamMembers = [
     key: 4,
     profImg: "./martinGestido.jpeg",
     name: "Martin Gestido",
-    linkLi:
-      "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAACexfF4BpytvlGvqrP1iN4OoC4C0PnaQ8Vc&keywords=mart%C3%ADn%20gestido&origin=RICH_QUERY_SUGGESTION&position=0&searchId=859b9c87-3b90-41ce-8f34-bc51ece8bf85&sid=phn",
+    linkLi: "https://www.linkedin.com/in/martin-gestido/",
     linkGi: "https://github.com/MartinGestido",
   },
   {
