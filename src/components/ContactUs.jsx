@@ -1,8 +1,33 @@
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 import Form from "react-bootstrap/Form";
 import Footer from "./partials/Footer";
 import "../styles/ContactUs.css";
 
 function ContactUs() {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_z19b6c9",
+        "template_e2ub379",
+        form.current,
+        "xY8_BaXK6sunmmSVR"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          form.current.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <>
       <div className="background-contact">
@@ -22,19 +47,23 @@ function ContactUs() {
       </div>
       <div className="d-flex flex-column px-5 form w-100">
         <div className="container px-0 ">
-          <div className="row">
-            <div className="col-lg-6 col-md-6 col-sm-12">
-              <Form className="fs-4">
+          <Form ref={form} onSubmit={sendEmail} className="fs-4">
+            <div className="row">
+              <div className="col-lg-6 col-md-6 col-sm-12">
                 <Form.Group className="mb-3 border-bottom" controlId="example">
                   <Form.Label>Name *</Form.Label>
                   <Form.Control
+                    required
+                    name="user_name"
                     className=" border-0 formControl"
-                    type="email"
+                    type="text"
                   />
                 </Form.Group>
                 <Form.Group className="mb-3 border-bottom" controlId="example">
                   <Form.Label>Email *</Form.Label>
                   <Form.Control
+                    required
+                    name="user_email"
                     className=" border-0 formControl"
                     type="email"
                   />
@@ -42,17 +71,17 @@ function ContactUs() {
                 <Form.Group className="mb-3 border-bottom" controlId="example">
                   <Form.Label>Phone</Form.Label>
                   <Form.Control
+                    name="user_phone"
                     className=" border-0 formControl"
                     type="phone"
                   />
                 </Form.Group>
-              </Form>
-            </div>
-            <div className="col-lg-6 col-md-6 col-sm-12">
-              <Form className="fs-4 ">
+              </div>
+              <div className="col-lg-6 col-md-6 col-sm-12">
                 <Form.Group className="mb-3 border-bottom" controlId="example">
                   <Form.Label>Subject</Form.Label>
                   <Form.Control
+                    name="subject"
                     className="border-0  formControl"
                     type="subject"
                   />
@@ -60,36 +89,41 @@ function ContactUs() {
                 <Form.Group className="mb-3 border-bottom" controlId="example">
                   <Form.Label className="comment-label">Comment</Form.Label>
                   <Form.Control
+                    name="message"
                     className=" border-0 formControl"
                     as="textarea"
                     rows={5}
                   />
                 </Form.Group>
-              </Form>
-            </div>
-            <div className="col-0 col-md-6" />
-            <div className="col-12 col-md-6">
-              <div className="form-check fs-6">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  value=""
-                  id="flexCheckDefault"
-                />
-                <label className="form-check-label " htmlFor="flexCheckDefault">
-                  I consent to the terms of the privacy politic.
-                </label>
               </div>
-              <Form.Group className="d-flex justify-content-sm-end justify-content-center mt-5">
-                <button
-                  className="btn btn-outline-light shadow btnSend fw-semibold"
-                  type="button"
-                >
-                  Send
-                </button>
-              </Form.Group>
+              <div className="col-0 col-md-6" />
+              <div className="col-12 col-md-6">
+                <div className="form-check fs-6">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                  />
+                  <label
+                    className="form-check-label "
+                    htmlFor="flexCheckDefault"
+                  >
+                    I consent to the terms of the privacy politic.
+                  </label>
+                </div>
+                <Form.Group className="d-flex justify-content-sm-end justify-content-center mt-5">
+                  <button
+                    className="btn btn-outline-light shadow btnSend fw-semibold"
+                    type="submit"
+                    value="Send"
+                  >
+                    Send
+                  </button>
+                </Form.Group>
+              </div>
             </div>
-          </div>
+          </Form>
         </div>
       </div>
       <Footer />
