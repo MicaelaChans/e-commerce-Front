@@ -113,7 +113,7 @@ function ProductPage() {
                   width={product.otherProperties.width}
                   depth={product.otherProperties.depth}
                   consumption={product.otherProperties.consumption}
-                  efficiency={product.otherProperties.eficiency}
+                  efficiency={product.otherProperties.efficiency}
                   nominal={product.otherProperties.nominalPower}
                 />
               </div>
