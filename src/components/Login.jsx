@@ -142,7 +142,8 @@ function Login() {
               </p>
               <p className="text-center mt-2">
                 Are you administrator?
-                <a
+                <Link
+                  to="https://e-commerce-admin-bice-rho.vercel.app/"
                   style={{
                     color: "blue",
                     textDecoration: "none",
@@ -150,7 +151,7 @@ function Login() {
                   }}
                 >
                   Go to Admin page
-                </a>
+                </Link>
               </p>
             </div>
           </div>
