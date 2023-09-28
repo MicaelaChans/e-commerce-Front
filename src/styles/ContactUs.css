@@ -6,7 +6,7 @@
       rgba(0, 0, 0, 0.87) 0%,
       rgba(0, 0, 0, 0.57) 100%
     ),
-    url("./contact.jpg");
+    url("/contact.jpg");
   background-size: cover;
   color: white;
   padding-top: 200px;
