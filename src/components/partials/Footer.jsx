@@ -29,7 +29,7 @@ function Footer() {
               </p>
             </div>
           </div>
-          <div className="col-lg-3 col-6 pt-4 d-lg-flex d-block justify-content-center">
+          <div className="col-lg-3 col-sm-6 col-12 pt-4 d-lg-flex d-block justify-content-center">
             <div>
               <h5 className="mb-3">PRODUCTS</h5>
               <Link
@@ -55,9 +55,9 @@ function Footer() {
               </Link>
             </div>
           </div>
-          <div className="col-lg-3 col-6 pt-4 d-lg-flex d-block justify-content-center">
+          <div className="col-lg-3 col-sm-6 col-12 pt-4 d-lg-flex d-block justify-content-center">
             <div>
-              <h5 className="mb-3">VISIT OUR STORE</h5>
+              <h5 className="mb-3 mt-3 mt-sm-0">VISIT OUR STORE</h5>
               <p className="mb-2">Montevideo, Blvar Artigas 1594</p>
               <p>From 9:00 to 18:00</p>
             </div>
