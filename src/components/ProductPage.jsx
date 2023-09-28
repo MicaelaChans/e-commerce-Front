@@ -105,9 +105,7 @@ function ProductPage() {
             {product.category.name !== "accessories" && (
               <div className="pb-5">
                 <div className="d-flex mb-4 justify-content-center align-items-center">
-                  <p className="m-0 fw-semibold fs-5">
-                    TECHNICAL SPECIFICATIONS
-                  </p>
+                  <p className="m-0 fw-semibold">TECHNICAL SPECIFICATIONS</p>
                   <div className="line-description-product border-bottom w-100 d-none d-sm-block"></div>
                 </div>
                 <SpecificationsProduct

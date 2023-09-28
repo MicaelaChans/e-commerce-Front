@@ -108,11 +108,11 @@ function Register() {
             {productsOfUser.map((product, id = product.id) => (
               <div key={id} className="mt-3 border rounded-3 shadow p-3">
                 <div className="d-flex justify-content-between align-items-center ">
-                  <p className="mb-0">
+                  <p className="mb-0 p-my-purchases">
                     {" "}
                     {format(new Date(product.date), "MMMM dd yyyy")}
                   </p>
-                  <p className="mb-0 order-reference">
+                  <p className="mb-0 order-reference p-my-purchases">
                     Order:{" "}
                     <span style={{ fontWeight: "600" }}>{product.orderId}</span>{" "}
                   </p>
@@ -125,10 +125,14 @@ function Register() {
                       src={product.image}
                       alt={product.name}
                     />
-                    <div className="mx-2 d-flex flex-column">
-                      <p className="mb-3 mx-2">{product.state}</p>
-                      <p className="mb-0 mx-2 product-name">{product.name}</p>
-                      <p className="mb-0 mx-2">
+                    <div className="mx-2 d-flex flex-column ">
+                      <p className="mb-3 mx-2 p-my-purchases">
+                        {product.state}
+                      </p>
+                      <p className="mb-0 mx-2 product-name p-my-purchases">
+                        {product.name}
+                      </p>
+                      <p className="mb-0 mx-2 p-my-purchases">
                         Price:{" "}
                         <span className="product-name">
                           USD {product.price}

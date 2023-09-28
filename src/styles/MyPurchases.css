@@ -51,7 +51,7 @@
 .other-images {
   width: 60%;
 }
-@media (min-width: 361px) and (max-width: 576px) {
+@media (min-width: 381px) and (max-width: 576px) {
   .other-images {
     width: 20%;
   }
@@ -67,8 +67,8 @@
     font-size: 1.2rem;
   }
 }
-@media (min-width: 0px) and (max-width: 360px) {
-  p {
+@media (min-width: 0px) and (max-width: 380px) {
+  .p-my-purchases {
     font-size: 0.8rem;
   }
   .other-images {

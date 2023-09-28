@@ -83,3 +83,15 @@
 .li-product-page-light p {
   width: 50%;
 }
+
+@media (min-width: 0px) and (max-width: 576px) {
+  .img-product-page {
+    width: 100%;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .specifications {
+    font-size: 0.9rem;
+  }
+}

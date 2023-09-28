@@ -107,10 +107,13 @@ function ProductsList() {
         </p>
       </div>
       <div className="d-flex filter-wood justify-content-center align-items-center pt-5 pb-2">
-        <h4 className="mx-4 mb-0">Filter by model:</h4>
+        <h4 className="mx-4 mb-0 title-filter">Filter by model:</h4>
         <div>
           <button className="filter-button">
-            <h5 className="mb-0 mx-3 filter-word" onClick={() => decoFilter()}>
+            <h5
+              className="mb-0 mx-0 mx-sm-3 filter-word"
+              onClick={() => decoFilter()}
+            >
               Deco
             </h5>
           </button>

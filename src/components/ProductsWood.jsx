@@ -109,10 +109,10 @@ function ProductsList() {
         </p>
       </div>
       <div className="d-flex  justify-content-center filter-wood align-items-center pt-5">
-        <h4 className="mx-3 mb-0">Filter by model:</h4>
+        <h4 className="mx-3 mb-0 title-filter">Filter by model:</h4>
         <div className="mt-sm-0 d-flex justify-content-around">
           <div>
-            <button className="filter-button">
+            <button className="filter-button ">
               <h5
                 className="mb-0 mx-3 filter-word"
                 onClick={() => harmonyFilter()}
@@ -123,7 +123,10 @@ function ProductsList() {
           </div>
           <div>
             <button className="filter-button">
-              <h5 className="mb-0 mx-3 filter-word" onClick={() => boxFilter()}>
+              <h5
+                className="mb-0 mx-0 mx-sm-3 filter-word"
+                onClick={() => boxFilter()}
+              >
                 Box
               </h5>
             </button>
@@ -175,14 +178,14 @@ function ProductsList() {
                   <div>
                     <hr className="hr-product-wood-top" />
                     <div className="d-flex justify-content-center align-items-center my-3 p-sizes-product">
-                      <p className="text-center mx-2 mb-0">
+                      <p className="text-center mx-2 mb-0 properties">
                         H: {product.otherProperties.height}
                       </p>
-                      <p className="text-center mx-2 mb-0">
+                      <p className="text-center mx-2 mb-0 properties">
                         {" "}
                         W: {product.otherProperties.width}
                       </p>
-                      <p className="text-center mx-2 mb-0">
+                      <p className="text-center mx-2 mb-0 properties">
                         {" "}
                         D: {product.otherProperties.depth}
                       </p>
