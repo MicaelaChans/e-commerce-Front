@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
       <Link to={"/aboutThisProject"}>
-        <button className="rounded-top about-this-project-btn">
+        <button className="rounded-bottom about-this-project-btn">
           About this project
         </button>
       </Link>
