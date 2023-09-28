@@ -17,7 +17,7 @@ function AdminInfo() {
           alt="admin panel"
         />
         <p className="mt-5 text-center" style={{ fontSize: "1.5rem" }}>
-          You can acceed to admin panel by clicking <Link to="">here.</Link>
+          You can accees to admin panel by clicking <Link to="">here.</Link>
         </p>
       </div>
     </div>
