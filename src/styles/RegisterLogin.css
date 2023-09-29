@@ -1,5 +1,8 @@
 /*Register y Login CSS*/
-
+.body-register {
+  min-height: 100vh;
+  overflow: hidden;
+}
 .image-register-container {
   height: 100%;
   padding: 30px;
@@ -32,5 +35,11 @@
   display: block;
 }
 
-@media (min-width: 0px) and (max-width: 576px) {
+@media (max-width: 576px) {
+  .container-register {
+      margin-bottom: 60px;  
+  }
+  .container-register h2 {
+    text-align: center; 
+}
 }

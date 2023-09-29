@@ -62,7 +62,7 @@ function Register() {
             />
           </div>
           <div className="col bg-body-tertiary py-5 px-5 px-lg-5 px-md-3 col-md-5 d-flex justify-content-center flex-column">
-            <h2 className="mb-4 pt-3">Sign up!</h2>
+            <h2 className="mb-5 pt-3">Sign up!</h2>
             <form method="POST" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <input
