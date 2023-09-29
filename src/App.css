@@ -17,8 +17,9 @@
   font-size: large;
   z-index: 100;
   transition: 1s;
-  transform: rotate(270deg);
+  transform: rotate(270deg) translateZ(0);
   margin-left: -77px;
+  translateZ(0);
 }
 
 .about-this-project-btn:hover {
@@ -28,7 +29,8 @@
   border: solid;
   border-color: #000000;
   transform: scale(1.1);
-  transform: rotate(270deg);
+  transform: rotate(270deg) translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* NavBar CSS */
