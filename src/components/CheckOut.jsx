@@ -174,7 +174,7 @@ function CheckOut(props) {
               key={order.id}
             >
               <div className="d-flex justify-content-between align-items-center ">
-                <p className="mb-0 date-check-out">
+                <p className="mb-0 me-3 me-sm-0 date-check-out">
                   {format(new Date(order.createdAt), "MMMM dd yyyy")}
                 </p>
                 <p className="mb-0 order-reference-check-out">
@@ -193,33 +193,36 @@ function CheckOut(props) {
                     <div className="product-item mb-1 d-flex align-items-center justify-content-between">
                       <div className="mx-4">
                         <img
-                          className="img-check-out"
+                          className="img-check-out me-2 me-sm-0"
                           src={product.image}
                           alt={product.name}
-                          style={{ width: "130px", height: "150px" }}
                         />
                       </div>
 
                       <div>
                         <div className="d-flex flex-column">
                           <h4
-                            className="mt-2 fs-3 mb-1"
+                            className="mt-2 mb-1 title-image-checkOut"
                             style={{ width: "130px" }}
                           >
                             {product.name}
                           </h4>
-                          <p className="mb-1 fs-5">
+                          <p className="mb-1 data-checkOut ">
                             Quantity x {product.quantity}
                           </p>
-                          <p className=" mb-0 fs-5">
+                          <p className=" mb-0 data-checkOut ">
                             US$ {product.price * product.quantity}
                           </p>
                           <button
                             className="text-start"
-                            style={{ backgroundColor: "white", border: "none" }}
+                            style={{
+                              backgroundColor: "white",
+                              border: "none",
+                              width: "50px",
+                            }}
                           >
                             <i
-                              className="bi bi-trash3 cart-icon fs-3 "
+                              className="bi bi-trash3 cart-icon "
                               onClick={() => handleDelete(product.id)}
                             ></i>
                           </button>
@@ -341,16 +344,16 @@ function CheckOut(props) {
           </div>
         </div>
         <div className="col-12 col-md-6">
-          <div className="rounded-3 border shadow p-3 mb-4 ">
+          <div className="rounded-3 border shadow px-3 py-3 mb-4 ">
             <div>
-              <h4>Payment methods</h4>
+              <h4 className="mb-3 mb-md-4">Payment methods</h4>
             </div>
             <div className="d-flex justify-content-around payment-container my-3">
               <img
                 onClick={() => handleImageClick("Visa - Credit Card")}
                 src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
                 alt="Visa"
-                className={`payment-method-img ${
+                className={`me-1 payment-method-img ${
                   selectedPaymentMethod === "Visa - Credit Card"
                     ? "selected-payment"
                     : ""
@@ -358,7 +361,7 @@ function CheckOut(props) {
               />
               <img
                 onClick={() => handleImageClick("MasterCard - Credit Card")}
-                className={`payment-method-img ${
+                className={`me-1 payment-method-img ${
                   selectedPaymentMethod === "MasterCard - Credit Card"
                     ? "selected-payment"
                     : ""
@@ -368,7 +371,7 @@ function CheckOut(props) {
               />
               <img
                 onClick={() => handleImageClick("Paypal")}
-                className={`payment-method-img-paypal ${
+                className={`me-1 payment-method-img-paypal ${
                   selectedPaymentMethod === "Paypal" ? "selected-payment" : ""
                 }`}
                 src="https://logodownload.org/wp-content/uploads/2014/10/paypal-logo-1-1.png"
@@ -385,7 +388,11 @@ function CheckOut(props) {
                 }`}
               />
             </div>
-            {showCreditCard ? <div>{props.children}</div> : <div></div>}
+            {showCreditCard ? (
+              <div className="d-none d-sm-block">{props.children}</div>
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
         {unpaidOrders.map((order) => (
@@ -393,22 +400,31 @@ function CheckOut(props) {
             <div className="col-12 mt-3">
               <div className="order-summary rounded-3 border shadow p-3">
                 <h4 className="mb-2">Order Summary:</h4>
-                <p className="mb-2 pt-3 d-flex justify-content-between">
+                <p className="mb-2 pt-3 d-flex justify-content-between title-summary">
                   <strong>Date:</strong>{" "}
-                  {format(new Date(order.createdAt), "MMMM dd yyyy, HH:mm")}
+                  <span className="info-summary">
+                    {" "}
+                    {format(new Date(order.createdAt), "MMMM dd yyyy, HH:mm")}
+                  </span>
                 </p>
-                <p className="border-top mb-2 pt-3 d-flex justify-content-between">
-                  <strong>Order ID:</strong> {order.id}
+                <p className="border-top mb-2 pt-3 d-flex justify-content-between title-summary">
+                  <strong>Order ID:</strong>{" "}
+                  <span className="info-summary">{order.id}</span>
                 </p>
-                <p className="border-top mb-2 pt-3 d-flex justify-content-between">
+                <p className="border-top mb-2 pt-3 d-flex justify-content-between title-summary ">
                   <strong>Delivery Address:</strong>{" "}
-                  {updatedAddress || user.address}
+                  <span className="info-summary">
+                    {" "}
+                    {updatedAddress || user.address}
+                  </span>
                 </p>
-                <p className="border-top mb-2 pt-3 d-flex justify-content-between">
-                  <strong>Payment Method:</strong> {selectedPaymentMethod}
+                <p className="border-top mb-2 pt-3 d-flex justify-content-between title-summary">
+                  <strong>Payment Method:</strong>{" "}
+                  <span className="info-summary">{selectedPaymentMethod}</span>
                 </p>
-                <p className="border-top border-bottom pb-3 pt-3 d-flex justify-content-between">
-                  <strong>Total Price:</strong> US${totalPrice}
+                <p className="border-top border-bottom pb-3 pt-3 d-flex justify-content-between title-summary">
+                  <strong>Total Price:</strong>{" "}
+                  <span className="info-summary"> US${totalPrice}</span>
                 </p>
                 <div className="d-flex justify-content-sm-end justify-content-center">
                   <button

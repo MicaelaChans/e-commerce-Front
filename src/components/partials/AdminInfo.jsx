@@ -16,10 +16,14 @@ function AdminInfo() {
           src="https://cdn.dribbble.com/users/2253180/screenshots/15223174/media/83b2ac94850951a219cda00a3662e526.png"
           alt="admin panel"
         />
-        <p className="mt-5 text-center" style={{ fontSize: "1.5rem" }}>
-          You can accees to admin panel by clicking{" "}
-          <Link to="https://e-commerce-admin-bice-rho.vercel.app/">here.</Link>
-        </p>
+        <div className="border rounded-3 shadow mt-3">
+          <p className="p-3 my-0 text-center">
+            You can accees to admin panel by clicking{" "}
+            <Link to="https://e-commerce-admin-bice-rho.vercel.app/">
+              here.
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );

@@ -24,8 +24,8 @@
 }
 
 .img-check-out {
-  height: 120px;
-  width: 90px;
+  height: 150px;
+  width: 130px;
 }
 .form-check-out {
   margin: auto;
@@ -46,7 +46,7 @@
   padding: 5px;
 }
 .date-check-out {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 .order-reference-check-out {
   font-size: 0.8rem;
@@ -97,13 +97,23 @@
   }
 }
 
-.order-item h4 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
-}
-
-.order-item p {
-  font-size: 0.9rem;
+@media (min-width: 0px) and (max-width: 576px) {
+  .img-check-out {
+    width: 90px;
+    height: 100px;
+  }
+  .title-image-checkOut {
+    font-size: 1rem;
+  }
+  .date-check-out {
+    font-size: 0.5rem;
+  }
+  .data-checkOut {
+    font-size: 0.8rem;
+  }
+  .info-summary {
+    font-size: 0.8rem;
+  }
 }
 
 .order-summary {
@@ -137,8 +147,4 @@
   height: 50px;
   object-fit: cover;
   margin-right: 10px;
-}
-
-h4 {
-  font-size: 1.3rem;
 }
