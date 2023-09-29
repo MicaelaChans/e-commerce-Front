@@ -348,7 +348,7 @@ function CheckOut(props) {
             <div>
               <h4 className="mb-3 mb-md-4">Payment methods</h4>
             </div>
-            <div className="d-flex justify-content-around payment-container my-3">
+            <div className="d-flex justify-content-around payment-container my-2">
               <img
                 onClick={() => handleImageClick("Visa - Credit Card")}
                 src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg"
