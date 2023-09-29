@@ -18,11 +18,11 @@ function OurTeam() {
           </div>
 
           <div className="member-info">
-            <h5 className="mt-3">{member.name}</h5>
-            <p>Full Stack Developer</p>
+            <h5 className="mt-3 mb-0">{member.name}</h5>
+            <p className="mb-0">Full Stack Developer</p>
           </div>
           <div>
-            <h5 className="gap-2">
+            <h5 className="gap-2 mb-5 mb-sm-3">
               <Link to={member.linkLi} target="_blank">
                 <i
                   className="fa-brands fa-xl fa-linkedin"
