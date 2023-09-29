@@ -8,27 +8,23 @@ import Footer from "./partials/Footer";
 import "../styles/ContactUs.css";
 
 function ContactUs() {
+  const serviceID = import.meta.env.VITE_APP_SERVICE_ID;
+  const templateID = import.meta.env.VITE_APP_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_APP_PUBLIC_KEY;
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_z19b6c9",
-        "template_e2ub379",
-        form.current,
-        "xY8_BaXK6sunmmSVR"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          form.current.reset();
-          toast.success("Thank you for communicating with us!");
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(serviceID, templateID, form.current, publicKey).then(
+      (result) => {
+        console.log(result.text);
+        form.current.reset();
+        toast.success("Thank you for communicating with us!");
+      },
+      (error) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
