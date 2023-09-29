@@ -104,7 +104,7 @@ function ProductsList() {
           }`}
         >
           For Drachen, heating is more than just a practical or aesthetic
-          matter. We see our stoves as innovative pieces of forniture that suit
+          matter. We see our stoves as innovative pieces of furniture that suit
           a modern lifestyle.
         </p>
       </div>
