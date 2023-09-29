@@ -25,6 +25,7 @@
   overflow: hidden;
   margin-top: 160px;
   width: 85%;
+  margin-bottom: 50px;
 }
 
 .image-register {
@@ -36,10 +37,7 @@
 }
 
 @media (max-width: 576px) {
-  .container-register {
-      margin-bottom: 50px;  
-  }
   .container-register h2 {
-    text-align: center; 
-}
+    text-align: center;
+  }
 }
