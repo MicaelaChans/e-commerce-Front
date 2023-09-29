@@ -11,11 +11,10 @@ function AdminInfo() {
         make necessary modifications.
       </p>
       <div className="py-5">
-        <img
-          className="img-fluid"
-          src="https://cdn.dribbble.com/users/2253180/screenshots/15223174/media/83b2ac94850951a219cda00a3662e526.png"
-          alt="admin panel"
-        />
+        <div className="d-flex justify-content-center">
+          <img className="img-fluid" src="/adminPanel.jpg" alt="admin panel" />
+        </div>
+
         <div className="border rounded-3 shadow mt-3">
           <p className="p-3 my-0 text-center">
             You can accees to admin panel by clicking{" "}
