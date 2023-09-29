@@ -19,7 +19,7 @@
   transition: 1s;
   transform: rotate(270deg) translateZ(0);
   margin-left: -77px;
-  translateZ(0);
+  backface-visibility: hidden;
 }
 
 .about-this-project-btn:hover {
