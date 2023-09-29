@@ -35,7 +35,7 @@ function CheckOut(props) {
     const getOrders = async () => {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:${port}/orders`,
+        url: `${apiUrl}/orders`,
         headers: {
           Authorization: "Bearer " + (user && user.token),
         },
@@ -94,7 +94,7 @@ function CheckOut(props) {
       try {
         await axios({
           method: "PATCH",
-          url: `http://localhost:${port}/orders/${id}`,
+          url: `${apiUrl}/orders/${id}`,
           headers: {
             Authorization: "Bearer " + (user && user.token),
           },
@@ -118,7 +118,7 @@ function CheckOut(props) {
     try {
       await axios({
         method: "DELETE",
-        url: `http://localhost:${port}/orders/${id}`,
+        url: `${apiUrl}/orders/${id}`,
         data: { orderId: unpaidOrders[0].id },
         headers: {
           Authorization: "Bearer " + (user && user.token),

@@ -17,13 +17,13 @@ function Register() {
   const [warningMsg, setWarningMsg] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const port = import.meta.env.VITE_APP_PORT;
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await axios({
       method: "POST",
-      url: `http://localhost:${port}/register`,
+      url: `${apiUrl}/register`,
       data: { firstname, lastname, email, phone, address, password },
     });
     console.log(response.data);

@@ -20,7 +20,7 @@ function Profile() {
     address: "",
     email: "",
   });
-  const port = import.meta.env.VITE_APP_PORT;
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
   const user = useSelector((state) => state.user);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function Profile() {
       try {
         const response = await axios({
           method: "GET",
-          url: `http://localhost:${port}/users/${user.id}`,
+          url: `${apiUrl}/users/${user.id}`,
           headers: {
             Authorization: "Bearer " + (user && user.token),
           },
@@ -55,7 +55,7 @@ function Profile() {
     const fetchOrders = async () => {
       const response = await axios({
         method: "GET",
-        url: `http://localhost:${port}/users/${user.id}/orders`,
+        url: `${apiUrl}/users/${user.id}/orders`,
         headers: {
           Authorization: "Bearer " + (user && user.token),
         },
@@ -86,7 +86,7 @@ function Profile() {
     try {
       const response = await axios({
         method: "POST",
-        url: `http://localhost:${port}/update-password`,
+        url: `${apiUrl}/update-password`,
         data: {
           userId: user.id,
           oldPassword,
@@ -128,7 +128,7 @@ function Profile() {
     try {
       const response = await axios({
         method: "PATCH",
-        url: `http://localhost:8000/users/${user.id}`,
+        url: `${apiUrl}/users/${user.id}`,
         data: editedUser,
         headers: {
           Authorization: "Bearer " + (user && user.token),
@@ -151,7 +151,7 @@ function Profile() {
     try {
       const response = await axios({
         method: "DELETE",
-        url: `http://localhost:8000/users/${user.id}`,
+        url: `${apiUrl}/users/${user.id}`,
         headers: {
           Authorization: "Bearer " + (user && user.token),
         },

@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 function ProductsList() {
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
@@ -14,7 +15,7 @@ function ProductsList() {
     const listProducts = async () => {
       const response = await axios({
         method: "GET",
-        url: "http://localhost:8000/products",
+        url: `${apiUrl}/products`,
       });
       dispatch(getProducts(response.data));
     };

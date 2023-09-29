@@ -14,7 +14,7 @@ function Login() {
   const [password, setPassword] = useState("user");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const port = import.meta.env.VITE_APP_PORT;
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
 
   useEffect(() => {
     if (localStorage.getItem("showDeletionToast") === "true") {
@@ -28,7 +28,7 @@ function Login() {
 
     try {
       const response = await axios({
-        url: `http://localhost:${port}/tokens`,
+        url: `${apiUrl}/tokens`,
         method: "POST",
         data: { email, password },
       });

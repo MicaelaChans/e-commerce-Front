@@ -6,16 +6,13 @@ import "../styles/ForgotPassword.css";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
-  const port = import.meta.env.VITE_APP_PORT;
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        `http://localhost:${port}/forgot-password`,
-        { email }
-      );
+      const response = await axios.post(`${apiUrl}/forgot-password`, { email });
 
       if (response.data.message) {
         toast.success(response.data.message);
@@ -66,7 +63,7 @@ function ForgotPassword() {
           </form>
           <div className="mt-2 d-flex">
             <Link to={"/login"} className="link-register">
-            &larr; Back to Login
+              &larr; Back to Login
             </Link>
           </div>
         </div>

@@ -1,5 +1,3 @@
-import { hr } from "date-fns/locale";
-
 function DescriptionsProduct({
   name,
   rating,
