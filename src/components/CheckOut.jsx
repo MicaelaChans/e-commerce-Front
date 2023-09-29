@@ -22,7 +22,7 @@ function CheckOut(props) {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("");
   const [updatedAddress, setUpdatedAddress] = useState("");
   let noProdMsg = "none";
-  const port = import.meta.env.VITE_APP_PORT;
+  const apiUrl = import.meta.env.VITE_APP_API_URL;
 
   let canBuy = true;
   const cart = [];
