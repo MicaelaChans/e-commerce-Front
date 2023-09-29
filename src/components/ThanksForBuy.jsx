@@ -34,7 +34,7 @@ function ThanksForBuy() {
         </Link>
       </div>
       <div className="pt-5">
-        <p>
+        <p className="text-center text-sm-start">
           For any problem whit your order you can{" "}
           <Link to={"/contact"} className="text-decoration-none fw-semibold">
             Contact Us
