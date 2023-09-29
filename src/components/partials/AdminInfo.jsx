@@ -10,7 +10,7 @@ function AdminInfo() {
         and customers. Additionally, they can monitor the status of orders and
         make necessary modifications.
       </p>
-      <div className="py-5">
+      <div className="py-3 py-sm-5">
         <div className="d-flex justify-content-center">
           <img className="img-fluid" src="/adminPanel.jpg" alt="admin panel" />
         </div>
