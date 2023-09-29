@@ -46,7 +46,7 @@ function Register() {
       localStorage.setItem("showSuccessToast", "true");
       navigate("/");
     } else {
-      setWarningMsg("Error registrando. Por favor intenta de nuevo.");
+      setWarningMsg("Error registering. Please try again.");
     }
   };
 
