@@ -43,7 +43,7 @@ function Register() {
           role,
         })
       );
-      toast.success("Usuario creado exitosamente.");
+      localStorage.setItem("showSuccessToast", "true");
       navigate("/");
     } else {
       setWarningMsg("Error registrando. Por favor intenta de nuevo.");
