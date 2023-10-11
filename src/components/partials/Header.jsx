@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/Header.css";
 import Carousel from "react-bootstrap/Carousel";
 
-function Footer() {
+function Header() {
   return (
     <Carousel className="d-none d-lg-block">
       <Carousel.Item className="image-container1">
@@ -21,4 +21,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default Header;
